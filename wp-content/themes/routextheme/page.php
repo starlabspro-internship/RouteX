@@ -15,13 +15,13 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+	<main id="primary" class="site-main">
 
     <!-- This is a bootstrap test you can remove the next 2 rows -->
     <div class="alert alert-success" role="alert"> This is a success alert—check it out!</div>
     <button type="button" class="btn btn-primary">Primary Button</button>
 
-    <?php
+		<?php
 		while ( have_posts() ) :
 			the_post();?>
 
@@ -42,7 +42,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-</main><!-- #main -->
+	</main><!-- #main -->
 
 <?php
 get_sidebar();
