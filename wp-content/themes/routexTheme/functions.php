@@ -138,6 +138,10 @@ add_action( 'widgets_init', 'routextheme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function routextheme_scripts() {
+
+	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), null, true);
+
 	wp_enqueue_style( 'routextheme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'routextheme-style', 'rtl', 'replace' );
 
@@ -176,3 +180,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function add_google_fonts() {
+    wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
