@@ -20,9 +20,24 @@ get_header();
     <!-- This is a bootstrap test you can remove the next 2 rows -->
     <div class="alert alert-success" role="alert"> This is a success alert—check it out!</div>
     <button type="button" class="btn btn-primary">Primary Button</button>
+<main id="primary" class="site-main">
 
-		<?php
+    <!-- This is a bootstrap test you can remove the next 2 rows -->
+    <div class="alert alert-success" role="alert"> This is a success alert—check it out!</div>
+    <button type="button" class="btn btn-primary">Primary Button</button>
+
+    <?php
 		while ( have_posts() ) :
+			the_post();?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <?php get_template_part( 'template-parts/content', 'page' ); ?>
+            </div>
+        </div>
+    </div>
+    <?php
 			the_post();?>
 
     <div class="container">
@@ -42,7 +57,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();
