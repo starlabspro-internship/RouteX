@@ -201,3 +201,10 @@ function my_acf_json_load_point($paths) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 }
+
+function my_theme_enqueue_styles() {
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css'); // Compiled CSS file
+    wp_enqueue_style('rtl-style', get_template_directory_uri() . '/style-rtl.css', array('main-style')); // RTL compiled CSS
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
