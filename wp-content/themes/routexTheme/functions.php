@@ -184,3 +184,20 @@ function add_google_fonts() {
     wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap', false );
 }
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
+
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point($path) {
+    // Update the path to save the JSON file in your theme folder
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point($paths) {
+    // Remove the default path
+    unset($paths[0]);
+
+    // Add the new path for loading JSON files
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+}
