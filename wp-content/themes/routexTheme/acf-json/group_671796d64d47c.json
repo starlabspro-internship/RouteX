@@ -3793,26 +3793,6 @@
             "min": "",
             "max": "",
             "button_label": "Add Row"
-        },
-        {
-            "key": "field_6718a3984d25b",
-            "label": "testest",
-            "name": "testest",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -3833,5 +3813,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729667999
+    "modified": 1729672491
 }
