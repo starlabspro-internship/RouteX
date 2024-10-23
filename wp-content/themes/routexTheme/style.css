@@ -71,6 +71,18 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
+/* style.css */
+
+:root {
+    --white: #ffffff;       /* White */
+    --dark-green: #034833;  /* Dark Green */
+    --gray: #727272;        /* Gray */
+    --dark: #111214;        /* Dark Color */
+    --light-gray: #e3dbd8;  /* Light Gray */
+    --off-white: #f1f5eb;   /* Off White */
+    --green: #83cd20;       /* Bright Green */
+}
+
 /* Sections
 	 ========================================================================== */
 
