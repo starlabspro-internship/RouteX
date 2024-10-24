@@ -23,7 +23,7 @@ get_header();
 
     <?php
 		while ( have_posts() ) :
-			the_post();?>
+        the_post();?>
 
     <div class="container">
         <div class="row">
@@ -32,18 +32,31 @@ get_header();
             </div>
         </div>
     </div>
-    <?php
-			the_post();?>
 
     <?php
+    the_post();
+    // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+        comments_template();
+    endif;
+    endwhile; // End of the loop.
+	?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
 
-		endwhile; // End of the loop.
-		?>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </div>
+    <script src="<?php echo get_template_directory_uri(); ?>/app.js"></script>
 
 </main><!-- #main -->
 
