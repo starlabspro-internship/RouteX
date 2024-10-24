@@ -46,5 +46,4 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
-/wp-content/themes/routextheme/functions.php
-/wp-content/themes/routextheme/page.php
+/wp-content/themes/routextheme/
