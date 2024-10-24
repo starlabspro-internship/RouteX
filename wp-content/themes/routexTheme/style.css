@@ -1079,3 +1079,31 @@ textarea {
     font-size: 0.675rem; /* Smaller font size */
     font-weight: var(--plus-jakarta-sans-regular); /* Apply font weight */
 }
+
+
+/* Hide sub-menu by default */
+.main-navigation #primary-menu .sub-menu {
+    display: none; /* Hide sub-menu */
+    background-color: var(--off-white); /* Match with header background */
+    border: 1px solid var(--light-gray); /* Border for sub-menu */
+    padding: 0.5rem; /* Padding around sub-menu items */
+}
+
+/* Show sub-menu on parent menu item hover */
+.main-navigation #primary-menu li:hover > .sub-menu {
+    display: block; /* Show sub-menu when hovering over parent item */
+}
+
+.main-navigation #primary-menu .sub-menu li {
+    margin: 0; /* Remove margin */
+    padding: 0.5rem 0; /* Add padding to sub-menu items */
+}
+
+.main-navigation #primary-menu .sub-menu li a {
+    color: var(--dark-green); /* Sub-menu text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.main-navigation #primary-menu .sub-menu li a:hover {
+    color: var(--green); /* Hover color for sub-menu items */
+}
