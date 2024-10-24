@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Optional parameters
     loop: true,
     autoplay: {
-      delay: 2500,
+      // delay: 2500,
       disableOnInteraction: false,
     },
     pagination: {
