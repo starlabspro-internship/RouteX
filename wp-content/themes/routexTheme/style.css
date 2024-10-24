@@ -74,6 +74,14 @@ html {
 /* style.css */
 
 :root {
+	/*Font weight*/
+	--plus-jakarta-sans-regular:400;
+	--plus-jakarta-sans-bold:700;
+
+	/*Font family*/
+	--plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+	
+	/*Colors*/
     --white: #ffffff;       /* White */
     --dark-green: #034833;  /* Dark Green */
     --gray: #727272;        /* Gray */
@@ -406,7 +414,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -416,7 +423,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: var(--plus-jakarta-sans);
 	font-size: 1rem;
 	line-height: 1.5;
 }

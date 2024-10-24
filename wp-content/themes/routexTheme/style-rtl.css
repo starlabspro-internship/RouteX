@@ -403,7 +403,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-family: var(--plus-jakarta-sans);
 	font-size: 1rem;
 	line-height: 1.5;
 }
