@@ -18,6 +18,14 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+
+	<?php if(get_field('dark_mode', 'options')):?>
+		<style>
+			body{
+				background: #000 !important;
+			}
+		</style>
+	<?php endif;?>
 </head>
 
 <body <?php body_class(); ?>>

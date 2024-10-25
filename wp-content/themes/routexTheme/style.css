@@ -74,9 +74,23 @@ html {
 /* style.css */
 
 :root {
-	/*Font weight*/
-	--plus-jakarta-sans-regular:400;
-	--plus-jakarta-sans-bold:700;
+	/* Regular weights */
+	--plus-jakarta-sans-thin: 200;
+	--plus-jakarta-sans-light: 300;
+	--plus-jakarta-sans-regular: 400;
+	--plus-jakarta-sans-medium: 500;
+	--plus-jakarta-sans-semibold: 600;
+	--plus-jakarta-sans-bold: 700;
+	--plus-jakarta-sans-extrabold: 800;
+  
+	/* Italic weights */
+	--plus-jakarta-sans-italic-thin: 200;
+	--plus-jakarta-sans-italic-light: 300;
+	--plus-jakarta-sans-italic-regular: 400;
+	--plus-jakarta-sans-italic-medium: 500;
+	--plus-jakarta-sans-italic-semibold: 600;
+	--plus-jakarta-sans-italic-bold: 700;
+	--plus-jakarta-sans-italic-extrabold: 800;
 
 	/*Font family*/
 	--plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
@@ -88,7 +102,7 @@ html {
     --dark: #111214;        /* Dark Color */
     --light-gray: #e3dbd8;  /* Light Gray */
     --off-white: #f1f5eb;   /* Off White */
-    --green: #83cd20;       /* Bright Green */
+    --bright-green: #83cd20;  /* Bright Green */
 }
 
 
