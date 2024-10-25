@@ -2989,6 +2989,35 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_671b9127490d8": {
+                    "key": "layout_671b9127490d8",
+                    "name": "google_map",
+                    "label": "Google map",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671b912e490d9",
+                            "label": "Google Map Location",
+                            "name": "google_map_location",
+                            "aria-label": "",
+                            "type": "google_map",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "center_lat": "",
+                            "center_lng": "",
+                            "zoom": "",
+                            "height": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -3014,5 +3043,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729857898
+    "modified": 1729859907
 }
