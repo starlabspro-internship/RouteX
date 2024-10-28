@@ -157,6 +157,7 @@ function routextheme_scripts() {
 add_action( 'wp_enqueue_scripts', 'routextheme_scripts' );
 
 
+
 add_filter('use_block_editor_for_post', '__return_false');
 /**
  * Implement the Custom Header feature.
@@ -212,6 +213,40 @@ function my_theme_enqueue_styles() {
     wp_enqueue_style('rtl-style', get_template_directory_uri() . '/style-rtl.css', array('main-style')); // RTL compiled CSS
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
+
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+    // Start Level
+    function start_lvl( &$output, $depth = 0, $args = null ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class=\"submenu\">\n"; // Customize as needed
+    }
+
+    // Start Element
+    function start_el( &$output, $item, $depth = 0, $args = null, $current_object_id = 0 ) { // Updated method signature
+        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
+        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+        $output .= $indent . '<li' . $id . $class_names . '>';
+        $output .= '<a href="' . esc_url( $item->url ) . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+    }
+
+    // End Element
+    function end_el( &$output, $item, $depth = 0, $args = null ) {
+        $output .= "</li>\n";
+    }
+
+    // End Level
+    function end_lvl( &$output, $depth = 0, $args = null ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n"; // Closing the submenu
+    }
+}
 
 if(function_exists('acf_add_options_page')){
 	acf_add_options_page(

@@ -102,7 +102,49 @@ html {
     --dark: #111214;        /* Dark Color */
     --light-gray: #e3dbd8;  /* Light Gray */
     --off-white: #f1f5eb;   /* Off White */
-    --bright-green: #83cd20;  /* Bright Green */
+    --green: #83cd20;       /* Bright Green */
+	
+  /* Border Radius */
+  --border-50: 50px;
+  --border-20: 20px;
+  --border-10: 10px;
+
+  /* Padding */
+  --padding-10: 10px;
+  --padding-20: 20px;
+  --padding-30: 30px;
+
+  /* Buttons */
+  --button-padding: 15px 30px;
+  --button-border-radius: 20px;
+}
+
+/* Title-Subtitle */
+.title {
+  font-weight: var(--plus-jakarta-sans-bold);
+  font-size: 24px;
+  color: var(--dark);
+}
+
+.subtitle {
+  font-weight: var(--plus-jakarta-sans-regular);
+  font-size: 18px;
+  color: var(--gray);
+}
+
+/* Button */
+.button {
+  background-color: var(--green);
+  color: var(--white);
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  border: none;
+  font-weight: var(--plus-jakarta-sans-bold);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--dark-green);
 }
 
 
@@ -1000,4 +1042,124 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* General Styles for the Header */
+.site-header {
+    background-color: var(--off-white); /* Use off white background */
+    font-family: var(--plus-jakarta-sans), sans-serif; /* Apply font */
+}
+
+/* Header Container Styles */
+.header-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width */
+    padding: 1rem 2rem; /* Add padding */
+}
+
+/* Logo Styles */
+.site-branding {
+    flex: 1; /* Takes up space but aligns to the left */
+}
+
+/* Navigation Styles */
+.main-navigation {
+    flex: 2; /* Allow navigation to take up more space */
+    display: flex;
+    justify-content: center; /* Center the navigation */
+}
+
+.main-navigation #primary-menu {
+    display: flex; /* Flexbox for horizontal layout */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    justify-content: center; /* Center the menu items */
+    text-transform: uppercase; /* Make text all capital letters */
+}
+
+/* Menu Item Styles */
+.main-navigation #primary-menu li {
+    margin: 0 1rem; /* Spacing between menu items */
+}
+
+.main-navigation #primary-menu a {
+    text-decoration: none; /* Remove underline */
+    color: var(--dark-green); /* Text color */
+    font-weight: var(--plus-jakarta-sans-bold); /* Font weight */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.main-navigation #primary-menu a:hover {
+    color: var(--green); /* Hover color */
+}
+
+/* Button Styles */
+.menu-toggle {
+    background-color: var(--dark-green); /* Button background */
+    color: var(--white); /* Button text color */
+    border: none; /* Remove border */
+    padding: 0.5rem 1rem; /* Add padding */
+    cursor: pointer; /* Change cursor */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Font weight */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.menu-toggle:hover {
+    background-color: var(--green); /* Button hover color */
+}
+
+.site-branding img {
+    max-width: 150px; /* Adjust this value to your desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Appointment Button Wrapper Styles */
+.button-div {
+    flex: 1; /* Takes up space and aligns to the right */
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+}
+
+/* Appointment Button Styles */
+.appointment-button {
+    background-color: var(--green); /* Use green background */
+    color: var(--white); /* Text color */
+    padding: 15px 30px; /* Increased padding */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Round the corners */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Ensure it behaves like a button */
+    font-size: 0.675rem; /* Smaller font size */
+    font-weight: var(--plus-jakarta-sans-regular); /* Apply font weight */
+}
+
+
+/* Hide sub-menu by default */
+.main-navigation #primary-menu .sub-menu {
+    display: none; /* Hide sub-menu */
+    background-color: var(--off-white); /* Match with header background */
+    border: 1px solid var(--light-gray); /* Border for sub-menu */
+    padding: 0.5rem; /* Padding around sub-menu items */
+}
+
+/* Show sub-menu on parent menu item hover */
+.main-navigation #primary-menu li:hover > .sub-menu {
+    display: block; /* Show sub-menu when hovering over parent item */
+}
+
+.main-navigation #primary-menu .sub-menu li {
+    margin: 0; /* Remove margin */
+    padding: 0.5rem 0; /* Add padding to sub-menu items */
+}
+
+.main-navigation #primary-menu .sub-menu li a {
+    color: var(--dark-green); /* Sub-menu text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.main-navigation #primary-menu .sub-menu li a:hover {
+    color: var(--green); /* Hover color for sub-menu items */
 }
