@@ -140,7 +140,7 @@ add_action( 'widgets_init', 'routextheme_widgets_init' );
 function routextheme_scripts() {
 	
     // Enqueue Bootstrap CSS and JS
-	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css');
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), null, true);
 
 	// Enqueue Swiper CSS and JS
@@ -216,11 +216,11 @@ function my_acf_json_load_point($paths) {
     return $paths;
 }
 
-function my_theme_enqueue_styles() {
-    wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css'); // Compiled CSS file
-    wp_enqueue_style('rtl-style', get_template_directory_uri() . '/style-rtl.css', array('main-style')); // RTL compiled CSS
-}
-add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+// function my_theme_enqueue_styles() {
+//     wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css'); // Compiled CSS file
+//     wp_enqueue_style('rtl-style', get_template_directory_uri() . '/style-rtl.css', array('main-style')); // RTL compiled CSS
+// }
+// add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {

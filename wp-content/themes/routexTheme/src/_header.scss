@@ -1,0 +1,46 @@
+.site-header {
+	background-color: var($off-white);
+	font-family: var($plus-jakarta-sans), sans-serif;
+}
+.header-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 2rem;
+}
+.site-branding {
+	flex: 1;
+	img {
+		max-width: 150px;
+		height: auto;
+	}
+}
+.menu-toggle {
+	background-color: var($dark-green);
+	color: var($white);
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: var($green);
+	}
+}
+.button-div {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+.appointment-button {
+	background-color: var($green);
+	color: var($white);
+	padding: 15px 30px;
+	border: none;
+	border-radius: 25px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.675rem;
+	font-weight: var($plus-jakarta-sans-regular);
+}
