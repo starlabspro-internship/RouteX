@@ -17,7 +17,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
+<<<<<<< HEAD
     <?php wp_head(); ?>
+=======
+	<?php wp_head(); ?>
+
+	<?php if(get_field('dark_mode', 'options')):?>
+		<style>
+			body{
+				background: #000 !important;
+			}
+		</style>
+	<?php endif;?>
+>>>>>>> 1c5c227a1039daafbc3fba705b81b4531af86bd4
 </head>
 
 <body <?php body_class(); ?>>

@@ -187,7 +187,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function add_google_fonts() {
+<<<<<<< HEAD
     wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap', false );
+=======
+    wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap', false );
+>>>>>>> 1c5c227a1039daafbc3fba705b81b4531af86bd4
 }
 add_action( 'wp_enqueue_scripts', 'add_google_fonts', 1);
 
@@ -215,7 +219,10 @@ function my_theme_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c5c227a1039daafbc3fba705b81b4531af86bd4
 class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
     // Start Level
     function start_lvl( &$output, $depth = 0, $args = null ) {
@@ -248,3 +255,49 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= "$indent</ul>\n"; // Closing the submenu
     }
 }
+<<<<<<< HEAD
+=======
+
+if(function_exists('acf_add_options_page')){
+	acf_add_options_page(
+		array(
+			'page_title' => 'Theme Settings',
+			'menu_title' => 'Theme Settings',
+			'menu_slug' => 'theme-settings',
+			'capability' => 'edit_posts'
+		)
+	);
+
+	acf_add_options_sub_page(
+		array(
+			'page_title' => 'Global Settings',
+			'menu_title' => 'Global Settings',
+			'parent_slug' => 'theme-settings'
+		)
+	);
+
+	acf_add_options_sub_page(
+		array(
+			'page_title' => 'Header Settings',
+			'menu_title' => 'Header Settings',
+			'parent_slug' => 'theme-settings'
+		)
+	);
+
+	acf_add_options_sub_page(
+		array(
+			'page_title' => 'Footer Settings',
+			'menu_title' => 'Footer Settings',
+			'parent_slug' => 'theme-settings'
+		)
+	);
+
+	acf_add_options_sub_page(
+		array(
+			'page_title' => 'Company Settings',
+			'menu_title' => 'Company Settings',
+			'parent_slug' => 'theme-settings'
+		)
+	);
+}
+>>>>>>> 1c5c227a1039daafbc3fba705b81b4531af86bd4
