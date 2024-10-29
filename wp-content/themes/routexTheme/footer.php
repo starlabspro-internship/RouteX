@@ -12,6 +12,11 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+
+		<?php the_field('copyright','options')?>
+
+		<div class="social-media-facebook"></div>
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'routextheme' ) ); ?>">
 				<?php
