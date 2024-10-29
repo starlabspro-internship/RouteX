@@ -1,11 +1,16 @@
-/* Colors */
-/* White */
-/* Dark Green */
-/* Gray */
-/* Dark Color */
-/* Light Gray */
-/* Off White */
-/* Bright Green */
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --base-color: #727272;
+  --contrast-color: #111214;
+  --light-color: #e3dbd8;
+  --dark-color: #f1f5eb;
+  --accent-color: #83cd20;
+  --negatives-color: #83cd20;
+  --neutrals-color: #83cd20;
+  --positives-color: #83cd20;
+}
+
 /*Font family*/
 /* Regular weights */
 /* Italic weights */
@@ -13,34 +18,33 @@
 /* Padding */
 /* Buttons */
 .title {
-  font-weight: var(700);
+  font-weight: 700;
   font-size: 24px;
-  color: var(#111214);
+  color: var(--dark-color);
 }
 
 .subtitle {
-  font-weight: var(400);
+  font-weight: 400;
   font-size: 18px;
-  color: var(#727272);
+  color: var(--light-color);
 }
 
 .button {
-  background-color: var(#83cd20);
-  color: var(#ffffff);
-  padding: var(15px 30px);
-  border-radius: var(20px);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: 20px;
   border: none;
-  font-weight: var(700);
+  font-weight: 700;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: var(#034833);
+  background-color: var(--accent-color);
 }
 
 .site-header {
-  background-color: var(#f1f5eb);
-  font-family: var("Plus Jakarta Sans", sans-serif), sans-serif;
+  background-color: var(--primary-color);
 }
 
 .header-container {
@@ -59,8 +63,8 @@
 }
 
 .menu-toggle {
-  background-color: var(#034833);
-  color: var(#ffffff);
+  background-color: var(--dark-color);
+  color: var(--light-color);
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -69,7 +73,7 @@
   transition: background-color 0.3s;
 }
 .menu-toggle:hover {
-  background-color: var(#83cd20);
+  background-color: var(--neutrals-color);
 }
 
 .button-div {
@@ -79,15 +83,15 @@
 }
 
 .appointment-button {
-  background-color: var(#83cd20);
-  color: var(#ffffff);
+  background-color: var(--accent-color);
+  color: var(--light-color);
   padding: 15px 30px;
   border: none;
   border-radius: 25px;
   text-decoration: none;
   display: inline-block;
   font-size: 0.675rem;
-  font-weight: var(400);
+  font-weight: 400;
 }
 
 html {
@@ -121,7 +125,6 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace;
   font-size: 1em;
   background: #eee;
   font-family: "Courier 10 Pitch", courier, monospace;
@@ -213,7 +216,9 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* For WebKit-based browsers */
+  -moz-appearance: button; /* For Firefox */
+  appearance: button; /* Standard syntax */
 }
 
 button::-moz-focus-inner,
@@ -265,7 +270,9 @@ textarea {
 }
 
 [type=search] {
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield; /* For WebKit-based browsers (Safari, Chrome) */
+  -moz-appearance: textfield; /* For Firefox */
+  appearance: textfield; /* Standard syntax */
   outline-offset: -2px;
 }
 
@@ -307,7 +314,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: var("Plus Jakarta Sans", sans-serif);
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -544,17 +551,17 @@ select {
 }
 .main-navigation #primary-menu a {
   text-decoration: none;
-  color: var(#034833);
-  font-weight: var(700);
+  color: var(--dark);
+  font-weight: 700;
   transition: color 0.3s;
 }
 .main-navigation #primary-menu a:hover {
-  color: var(#83cd20);
+  color: var(--accent);
 }
 .main-navigation #primary-menu .sub-menu {
   display: none;
-  background-color: var(#f1f5eb);
-  border: 1px solid var(#e3dbd8);
+  background-color: var(--light);
+  border: 1px solid var(--light);
   padding: 0.5rem;
 }
 .main-navigation #primary-menu .sub-menu li {
@@ -562,11 +569,11 @@ select {
   padding: 0.5rem 0;
 }
 .main-navigation #primary-menu .sub-menu li a {
-  color: var(#034833);
+  color: var(--dark);
   text-decoration: none;
 }
 .main-navigation #primary-menu .sub-menu li a:hover {
-  color: var(#83cd20);
+  color: var(--accent);
 }
 
 .main-navigation ul ul li:hover > ul,

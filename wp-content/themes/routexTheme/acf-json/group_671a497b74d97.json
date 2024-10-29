@@ -222,7 +222,7 @@
             "label": "Fonts",
             "name": "fonts",
             "aria-label": "",
-            "type": "repeater",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -232,19 +232,13 @@
                 "id": ""
             },
             "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_671b9c08e420e",
-                    "label": "Font Name",
-                    "name": "font_name",
+                    "key": "field_67201b26db78b",
+                    "label": "Primary Font",
+                    "name": "primary_font",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -253,19 +247,53 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_671b5fb497254"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67201b59db78c",
+                            "label": "Font URL",
+                            "name": "font_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_67201b66db78d",
+                            "label": "Font Name",
+                            "name": "font_name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
                 },
                 {
-                    "key": "field_671b9c14e420f",
-                    "label": "Font URL",
-                    "name": "font_url",
+                    "key": "field_67201b7ddb78e",
+                    "label": "Secondary Font",
+                    "name": "secondary_font",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -274,9 +302,46 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_671b5fb497254"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67201b8ddb78f",
+                            "label": "Font URL",
+                            "name": "font_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_67201b9ddb790",
+                            "label": "Font Name",
+                            "name": "font_name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -689,5 +754,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729871838
+    "modified": 1730157516
 }

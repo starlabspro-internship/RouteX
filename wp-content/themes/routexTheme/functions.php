@@ -147,11 +147,7 @@ function routextheme_scripts() {
 	wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.css');
 	wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.js', array('jquery'), null, true);
 
-	// Enqueue theme styles
-	wp_enqueue_style('routextheme-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('routextheme-style', 'rtl', 'replace');
-
-	// Enqueue theme navigation script
+	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
 	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], 1, 'all');
@@ -161,8 +157,14 @@ function routextheme_scripts() {
 
 	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], 1, true);
     wp_enqueue_script('app');
+
+	// Enqueue dynamic colors CSS
+	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], 1, 'all');
+    wp_enqueue_style('dynamic-colors');
+
+	// wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
 }
-add_action( 'wp_enqueue_scripts', 'routextheme_scripts' );
+add_action( 'wp_enqueue_scripts', 'routextheme_scripts');
 
 
 
@@ -215,13 +217,6 @@ function my_acf_json_load_point($paths) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 }
-
-// function my_theme_enqueue_styles() {
-//     wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css'); // Compiled CSS file
-//     wp_enqueue_style('rtl-style', get_template_directory_uri() . '/style-rtl.css', array('main-style')); // RTL compiled CSS
-// }
-// add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
-
 
 class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
     // Start Level

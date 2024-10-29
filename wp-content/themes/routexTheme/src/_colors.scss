@@ -1,8 +1,25 @@
-/* Colors */
-$white: #ffffff;       /* White */
-$dark-green: #034833;  /* Dark Green */
-$gray: #727272;        /* Gray */
-$dark: #111214;        /* Dark Color */
-$light-gray: #e3dbd8;  /* Light Gray */
-$off-white: #f1f5eb;   /* Off White */
-$green: #83cd20;       /* Bright Green */
+
+// /* Colors */
+// $primary: blue;
+// $secondary: #034833;
+// $base: #727272;   
+// $contrast: #111214;      
+// $light: #e3dbd8;  
+// $dark: #f1f5eb;   
+// $accent: #83cd20;       
+// $negatives: #83cd20;       
+// $neutrals: #83cd20;       
+// $positives: #83cd20;     
+
+:root {
+    --primary-color: #000; // Default value, can be overridden by PHP
+    --secondary-color: #fff;
+    --base-color: #727272;   
+    --contrast-color: #111214;      
+    --light-color: #e3dbd8;  
+    --dark-color: #f1f5eb;   
+    --accent-color: #83cd20;       
+    --negatives-color: #83cd20;       
+    --neutrals-color: #83cd20;       
+    --positives-color: #83cd20; 
+}

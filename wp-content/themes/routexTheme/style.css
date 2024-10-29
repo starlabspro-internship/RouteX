@@ -1,4 +1,4 @@
-/*!
+/* !
 Theme Name: routexTheme
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -408,7 +408,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: var(--plus-jakarta-sans);
+	/* font-family: var(--plus-jakarta-sans); */
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -976,7 +976,7 @@ textarea {
 /* General Styles for the Header */
 .site-header {
     background-color: var(--off-white); /* Use off white background */
-    font-family: var(--plus-jakarta-sans), sans-serif; /* Apply font */
+    /* font-family: var(--plus-jakarta-sans), sans-serif; Apply font */
 }
 
 /* Header Container Styles */
@@ -1016,7 +1016,7 @@ textarea {
 .main-navigation #primary-menu a {
     text-decoration: none; /* Remove underline */
     color: var(--dark-green); /* Text color */
-    font-weight: var(--plus-jakarta-sans-bold); /* Font weight */
+    /* font-weight: var(--plus-jakarta-sans-bold); Font weight */
     transition: color 0.3s; /* Transition effect */
 }
 
@@ -1062,7 +1062,7 @@ textarea {
     text-decoration: none; /* Remove underline */
     display: inline-block; /* Ensure it behaves like a button */
     font-size: 0.675rem; /* Smaller font size */
-    font-weight: var(--plus-jakarta-sans-regular); /* Apply font weight */
+    /* font-weight: var(--plus-jakarta-sans-regular); Apply font weight */
 }
 
 

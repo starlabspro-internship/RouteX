@@ -1,14 +1,12 @@
-@import 'colors';
-@import 'fonts';
-@import 'general';
-@import 'header';
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'general' as *;
+@use 'header' as *;
 
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 	box-sizing: border-box;
-}
-:root {
 }
 body {
 	margin: 0;
@@ -31,7 +29,6 @@ hr {
 	margin-bottom: 1.5em;
 }
 pre {
-	font-family: monospace, monospace;
 	font-size: 1em;
 	background: #eee;
 	font-family: "Courier 10 Pitch", courier, monospace;
@@ -109,7 +106,9 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-	-webkit-appearance: button;
+	-webkit-appearance: button; /* For WebKit-based browsers */
+	-moz-appearance: button; /* For Firefox */
+    appearance: button;  /* Standard syntax */
 }
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -152,7 +151,9 @@ textarea {
 	height: auto;
 }
 [type="search"] {
-	-webkit-appearance: textfield;
+	-webkit-appearance: textfield; /* For WebKit-based browsers (Safari, Chrome) */
+    -moz-appearance: textfield; /* For Firefox */
+    appearance: textfield;  /* Standard syntax */
 	outline-offset: -2px;
 }
 [type="search"]::-webkit-search-decoration {
@@ -186,7 +187,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: var($plus-jakarta-sans);
+	font-family: $plus-jakarta-sans;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -396,26 +397,26 @@ select {
 		}
 		a {
 			text-decoration: none;
-			color: var($dark-green);
-			font-weight: var($plus-jakarta-sans-bold);
+			color: var(--dark);
+			font-weight: $plus-jakarta-sans-bold;
 			transition: color 0.3s;
 			&:hover {
-				color: var($green);
+				color: var(--accent);
 			}
 		}
 		.sub-menu {
 			display: none;
-			background-color: var($off-white);
-			border: 1px solid var($light-gray);
+			background-color: var(--light);
+			border: 1px solid var(--light);
 			padding: 0.5rem;
 			li {
 				margin: 0;
 				padding: 0.5rem 0;
 				a {
-					color: var($dark-green);
+					color: var(--dark);
 					text-decoration: none;
 					&:hover {
-						color: var($green);
+						color: var(--accent);
 					}
 				}
 			}

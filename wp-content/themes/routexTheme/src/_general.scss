@@ -1,3 +1,6 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
 /* Border Radius */
 $border-50: 50px;
 $border-20: 20px;
@@ -13,24 +16,24 @@ $button-padding: 15px 30px;
 $button-border-radius: 20px;
 
 .title {
-	font-weight: var($plus-jakarta-sans-bold);
+	font-weight: $plus-jakarta-sans-bold;
 	font-size: 24px;
-	color: var($dark);
+	color: var(--dark-color);
 }
 .subtitle {
-	font-weight: var($plus-jakarta-sans-regular);
+	font-weight: $plus-jakarta-sans-regular;
 	font-size: 18px;
-	color: var($gray);
+	color: var(--light-color);
 }
 .button {
-	background-color: var($green);
-	color: var($white);
-	padding: var($button-padding);
-	border-radius: var($button-border-radius);
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	padding: $button-padding;
+	border-radius: $button-border-radius;
 	border: none;
-	font-weight: var($plus-jakarta-sans-bold);
+	font-weight: $plus-jakarta-sans-bold;
 	cursor: pointer;
 }
 .button:hover {
-    background-color: var($dark-green);
+    background-color: var(--accent-color);
 }
