@@ -1,11 +1,9 @@
 .hero-section {
-  background-color: var(
-    --secondary-color
-  ); // Dark green from updated color palette
-  border-radius: 20px; // Directly using value for compatibility
+  background-color: var(--secondary-color);
+  border-radius: 20px;
   margin: 50px;
-  padding: 100px 80px;
-  color: var(--primary-color); // White text
+  padding: 100px 180px;
+  color: var(--primary-color);
   position: relative;
   overflow: hidden;
 }
@@ -20,7 +18,7 @@
   font-size: 48px;
   font-weight: bold;
   line-height: 1.2;
-  color: var(--primary-color); // White
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -54,10 +52,10 @@
 
 .btn-transparent {
   background-color: transparent;
-  color: var(--primary-color); // White
-  padding: 10px 20px; // Direct padding values
-  border-radius: 50px; // Direct border-radius value
-  border: 1px solid var(--primary-color); // White
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-color);
   text-decoration: none;
   font-size: 16px;
   display: inline-flex;
@@ -65,8 +63,8 @@
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: var(--primary-color); // White on hover
-    color: var(--secondary-color); // Dark green text
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
   i {
@@ -82,7 +80,7 @@
   height: 50px;
   border-radius: 50%;
 
-  color: var(--secondary-color); // Dark green icon color
+  color: var(--secondary-color);
   transition: background-color 0.3s;
   margin-right: -8px;
 
@@ -93,7 +91,7 @@
 }
 
 .video-text {
-  color: var(--primary-color) !important; // White text
+  color: var(--primary-color) !important;
   font-size: 16px;
   position: relative;
   text-decoration: none;
@@ -103,11 +101,11 @@
 .decorative-circle {
   position: absolute;
   width: 400px;
-  height: 400px; // Making it more balanced as a circle
-  background-color: var(--accent-color); // Bright green
+  height: 400px;
+  background-color: var(--accent-color);
   border-radius: 50%;
-  top: 75%; // Adjusted for alignment
-  right: 20%; // Placed closer to `.right-tower`
+  top: 75%;
+  right: 20%;
   transform: translateY(-50%);
   opacity: 0.6;
   z-index: 0;
