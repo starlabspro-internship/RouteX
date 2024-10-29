@@ -74,11 +74,6 @@ html {
 /* style.css */
 
 :root {
-<<<<<<< HEAD
-	/*Font weight*/
-	--plus-jakarta-sans-regular:400;
-	--plus-jakarta-sans-bold:700;
-=======
 	/* Regular weights */
 	--plus-jakarta-sans-thin: 200;
 	--plus-jakarta-sans-light: 300;
@@ -96,7 +91,6 @@ html {
 	--plus-jakarta-sans-italic-semibold: 600;
 	--plus-jakarta-sans-italic-bold: 700;
 	--plus-jakarta-sans-italic-extrabold: 800;
->>>>>>> 1c5c227a1039daafbc3fba705b81b4531af86bd4
 
 	/*Font family*/
 	--plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
