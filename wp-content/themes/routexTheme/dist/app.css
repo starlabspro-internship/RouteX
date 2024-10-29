@@ -14,6 +14,11 @@
 /*Font family*/
 /* Regular weights */
 /* Italic weights */
+:root {
+  --primary-font-family: "Default Font", sans-serif;
+  --secondary-font-family: "Default Font", sans-serif;
+}
+
 /* Border Radius */
 /* Padding */
 /* Buttons */
@@ -41,6 +46,13 @@
 
 .button:hover {
   background-color: var(--accent-color);
+}
+
+.header-logo {
+  --header-logo: url("");
+  background-image: var(--header-logo);
+  width: 100px;
+  height: 100px;
 }
 
 .site-header {
@@ -92,6 +104,70 @@
   display: inline-block;
   font-size: 0.675rem;
   font-weight: 400;
+}
+
+.footer-logo {
+  --footer-logo: url("");
+  background-image: var(--footer-logo);
+  width: 100px;
+  height: 100px;
+}
+
+.social-media-facebook {
+  --facebook-logo: url("");
+  --facebook-url: "";
+}
+
+.social-media-facebook {
+  --facebook-logo: url("");
+  --facebook-url: "";
+}
+
+.social-media-instagram {
+  --instagram-logo: url("");
+  --instagram-url: "";
+}
+
+.social-media-linkedin {
+  --linkedin-logo: url("");
+  --linkedin-url: "";
+}
+
+.social-media-x {
+  --x-logo: url("");
+  --x-url: "";
+}
+
+.social-media-facebook, .social-media-instagram, .social-media-linkedin, .social-media-x {
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media-facebook:hover,
+.social-media-instagram:hover,
+.social-media-linkedin:hover,
+.social-media-x:hover {
+  cursor: pointer;
+}
+
+.social-media-facebook {
+  background-image: var(--facebook-logo);
+}
+
+.social-media-instagram {
+  background-image: var(--instagram-logo);
+}
+
+.social-media-linkedin {
+  background-image: var(--linkedin-logo);
+}
+
+.social-media-x {
+  background-image: var(--x-logo);
 }
 
 html {
@@ -314,7 +390,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--primary-font-family);
   font-size: 1rem;
   line-height: 1.5;
 }

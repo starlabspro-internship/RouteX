@@ -1,4 +1,6 @@
-<!-- <?php
+<?php
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+
 header("Content-type: text/css");
 
 // Fetch the fonts group from ACF
@@ -24,6 +26,6 @@ if ($fonts) {
 ?>
 
 :root {
-    --primary-font-family: '<?php echo  $primary_font_family; ?>', sans-serif; // Fallback font
-    --secondary-font-family: '<?php echo $secondary_font_family; ?>', sans-serif; // Fallback font
-} -->
+    --primary-font-family: '<?php echo  $primary_font_family; ?>', sans-serif;
+    --secondary-font-family: '<?php echo $secondary_font_family; ?>', sans-serif;
+}

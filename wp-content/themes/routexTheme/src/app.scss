@@ -2,6 +2,7 @@
 @use 'fonts' as *;
 @use 'general' as *;
 @use 'header' as *;
+@use 'footer' as *;
 
 html {
 	line-height: 1.15;
@@ -187,7 +188,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: $plus-jakarta-sans;
+	font-family: var(--primary-font-family);
 	font-size: 1rem;
 	line-height: 1.5;
 }

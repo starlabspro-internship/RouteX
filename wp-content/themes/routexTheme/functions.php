@@ -162,7 +162,11 @@ function routextheme_scripts() {
 	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], 1, 'all');
     wp_enqueue_style('dynamic-colors');
 
-	// wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
+	wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
+
+	wp_enqueue_style('dynamic-header', get_template_directory_uri() . '/dynamic-assets/dynamic-header.php');
+
+	wp_enqueue_style('dynamic-footer', get_template_directory_uri() . '/dynamic-assets/dynamic-footer.php');
 }
 add_action( 'wp_enqueue_scripts', 'routextheme_scripts');
 

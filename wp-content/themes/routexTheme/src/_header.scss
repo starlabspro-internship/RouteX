@@ -1,6 +1,13 @@
 @use 'colors' as *;
 @use 'fonts' as *;
 
+.header-logo{
+	--header-logo: url('');
+    background-image: var(--header-logo);
+	width: 100px;
+	height: 100px;
+}
+
 .site-header {
 	background-color: var(--primary-color);
 }

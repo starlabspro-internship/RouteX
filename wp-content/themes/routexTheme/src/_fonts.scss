@@ -1,5 +1,5 @@
 /*Font family*/
-$plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+// $plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
 
 /* Regular weights */
 $plus-jakarta-sans-thin: 200;
@@ -20,7 +20,7 @@ $plus-jakarta-sans-italic-bold: 700;
 $plus-jakarta-sans-italic-extrabold: 800;
 
 
-// :root {
-//     --primary-font-family: 'Default Font', sans-serif; // Default font, can be overridden by PHP
-//     --secondary-font-family: 'Default Font', sans-serif;
-// }
+:root {
+    --primary-font-family: 'Default Font', sans-serif; // Default font, can be overridden by PHP
+    --secondary-font-family: 'Default Font', sans-serif;
+}
