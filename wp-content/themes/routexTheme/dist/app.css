@@ -1,12 +1,14 @@
 :root {
-  /* Colors */
-  --primary-color: #ffffff; /* White */
-  --secondary-color: #034833; /* Dark Green */
-  --base-color: #727272; /* Gray */
-  --contrast-color: #111214; /* Dark Color */
-  --light-color: #e3dbd8; /* Light Gray */
-  --dark-color: #f1f5eb; /* Off White */
-  --accent-color: #83cd20; /* Bright Green */
+  --primary-color: #ffffff;
+  --secondary-color: #034833;
+  --base-color: #727272;
+  --contrast-color: #f1f5eb;
+  --light-color: #e3dbd8;
+  --dark-color: #111214;
+  --accent-color: #83cd20;
+  --negatives-color: #cd2424;
+  --neutrals-color: #20b0cd;
+  --positives-color: #046a14;
 }
 
 /*Font family*/
@@ -288,6 +290,34 @@
   width: 400px;
   height: 530px;
   filter: sepia(0.3) brightness(1.6);
+}
+
+.countries-section {
+  width: 1800px;
+  color: var(--primary-color);
+  height: 866px;
+  top: 2374.04px;
+  left: 60px;
+  gap: 0px;
+  border-radius: 50px;
+  opacity: 0px;
+  background-color: var(--secondary-color);
+}
+
+.countries-section-title-container {
+  width: 1290px;
+  height: 150px;
+  top: 2488.04px;
+  left: 315px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.template-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 html {
