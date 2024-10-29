@@ -4,6 +4,8 @@
 @use "header" as *;
 @use "footer" as *;
 @use "hero-section" as *;
+@use 'countries-section' as *;
+@use 'template-home' as *;
 
 html {
   line-height: 1.15;

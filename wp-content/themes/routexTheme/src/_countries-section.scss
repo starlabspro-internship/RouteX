@@ -1,0 +1,22 @@
+@use 'colors' as *;
+
+.countries-section{
+    width: 1800px;
+    color: var(--primary-color);
+    height: 866px;
+    top: 2374.04px;
+    left: 60px;
+    gap: 0px;
+    border-radius: 50px;
+    opacity: 0px;
+    background-color: var(--secondary-color);
+}
+
+.countries-section-title-container{
+    width: 1290px;
+    height: 150px;
+    top: 2488.04px;
+    left: 315px;
+    gap: 0px;
+    opacity: 0px;
+}
