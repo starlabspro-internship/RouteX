@@ -1,0 +1,43 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+/* Circle styles */
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: #83cd20;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+}
+
+/* Card styles */
+.card {
+    background-color: var(--off-white); // Creamy background color
+    border: 1px solid lightgray; // Small black border
+    border-radius: 15px; // Slightly rounded corners
+    padding: 15px;
+    font-family: var(--primary-font-family); // Use the imported font
+
+    .card-body {
+        padding: 20px; // Increased padding
+    }
+
+    .circle {
+        margin-bottom: 15px; // Space between the image and title
+    }
+
+    .card-title {
+        color: var(--dark-green);
+        font-weight: $plus-jakarta-sans-bold; // Bold weight from your imported fonts
+        margin-bottom: 3%; // Space between the title and text
+        margin-top: 7%; // Space between the title and text
+    }
+
+    .card-text {
+        color: gray;
+        font-size: 78%;
+    }
+}
