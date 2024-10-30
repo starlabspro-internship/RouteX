@@ -141,8 +141,7 @@ function routextheme_scripts() {
 	
    
 	// Enqueue Swiper CSS and JS
-	wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.css');
-	wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.js', array('jquery'), null, true);
+	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 
 	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -160,10 +159,6 @@ function routextheme_scripts() {
     wp_enqueue_style('dynamic-colors');
 
 	wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
-
-	wp_enqueue_style('dynamic-header', get_template_directory_uri() . '/dynamic-assets/dynamic-header.php');
-
-	wp_enqueue_style('dynamic-footer', get_template_directory_uri() . '/dynamic-assets/dynamic-footer.php');
 }
 add_action( 'wp_enqueue_scripts', 'routextheme_scripts');
 
