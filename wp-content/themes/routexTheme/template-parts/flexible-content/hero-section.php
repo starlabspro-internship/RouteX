@@ -23,7 +23,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="hero-content">
-                    <h1 class="title">Visa Made Easy<br>Dreams Made<br> Possible</h1>
+                    <h1 class="hero-content-title">Visa Made Easy<br>Dreams Made<br> Possible</h1>
                     <div class="btn-wrapper">
                         <a href="404.php" class="btn btn-transparent">Read More <i
                                 class="fa-solid fa-arrow-right"></i></a>

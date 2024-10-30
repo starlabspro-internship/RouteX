@@ -1,6 +1,3 @@
-@use 'colors' as *;
-@use 'fonts' as *;
-
 /* Circle styles */
 .circle {
     width: 80px;
@@ -31,7 +28,7 @@
 
     .card-title {
         color: var(--secondary-color);
-        font-weight: $plus-jakarta-sans-bold; // Bold weight from your imported fonts
+        font-weight: var(--bold); // Bold weight from your imported fonts
         margin-bottom: 3%; // Space between the title and text
         margin-top: 7%; // Space between the title and text
     }
