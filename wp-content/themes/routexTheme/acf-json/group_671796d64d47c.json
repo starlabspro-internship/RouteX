@@ -111,12 +111,12 @@
         },
         {
             "key": "field_6717ad273fc10",
-            "label": "Offers",
-            "name": "Offers",
+            "label": "Cards",
+            "name": "cards",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -126,7 +126,7 @@
             "layout": "row",
             "pagination": 0,
             "min": 0,
-            "max": 0,
+            "max": 3,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
@@ -492,7 +492,7 @@
                 {
                     "key": "field_6718c285ec86c",
                     "label": "logos",
-                    "name": "logos",
+                    "name": "logos_image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -503,7 +503,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "array",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -3011,8 +3011,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730193728
+    "modified": 1730296421
 }
