@@ -138,6 +138,9 @@ add_action( 'widgets_init', 'routextheme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function routextheme_scripts() {
+
+	// Enqueue Bootstrap Grid CSS from CDN
+    wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');
 	
    
 	// Enqueue Swiper CSS and JS
@@ -294,3 +297,4 @@ if(function_exists('acf_add_options_page')){
 		)
 	);
 }
+
