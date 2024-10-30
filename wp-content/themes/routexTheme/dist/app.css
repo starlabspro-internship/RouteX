@@ -179,11 +179,6 @@
   overflow: hidden;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .title {
   font-family: var(--plus-jakarta-sans);
   font-size: 2.5rem;
@@ -285,7 +280,7 @@
 .gray-photo {
   position: absolute;
   top: 99%;
-  right: 24%;
+  right: 23.5%;
   transform: translateY(-50%);
   z-index: 1;
 }
@@ -317,6 +312,83 @@
     align-items: flex-start;
   }
 }
+/* Circle styles */
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #83cd20;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6%;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--off-white);
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  padding: 15px;
+  font-family: var(--primary-font-family);
+}
+.card .card-body {
+  padding: 20px;
+}
+.card .circle {
+  margin-bottom: 15px;
+}
+.card .card-title {
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin-bottom: 3%;
+  margin-top: 7%;
+}
+.card .card-text {
+  color: gray;
+  font-size: 78%;
+}
+
+@keyframes rtl-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.client-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: rtl-scroll 30s linear infinite;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.client-img {
+  width: 100px;
+  max-height: 50px;
+  margin: 0 10px;
+  display: inline-block;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+
+.client-img:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;

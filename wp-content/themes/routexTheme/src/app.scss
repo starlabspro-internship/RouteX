@@ -3,10 +3,9 @@
 @use "general" as *;
 @use "header" as *;
 @use "footer" as *;
-@use "hero-section" as *;
+@use "flexible-content/hero-section" as *;
 @use "cards-section" as *;
 @use "client-section" as *;
-
 
 html {
   line-height: 1.15;
