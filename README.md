@@ -1,9 +1,12 @@
 # RouteX
 
-1. Boni backup dikun folderin Routex dikun,
-2. tani bone remove repository(RouteX) ne git,
-3. edhe bone clone prap,
-4. tani qe mju hap ne browser, i merrni files(wp-admin, wp-includes, etj ) prej maheret,
-5. Perveq gitignore, wp-content, Readme, qto tria mos i prekni!!!
-6. Plus punoni nbranch dikun tjt, mos boni commita direkt ne main, tani kur te kryni krejt e boni merg, respekte!
-TLUTEM MOS E MERRNI GITINGORE PREJ MAHERET!!!
+If this is your first time, skip the first three steps:
+
+    Make a backup somewhere of the Routex folder.
+    Now remove the RouteX repository in Git.
+    Then clone it again.
+    Now that it opens in your browser, take the files (wp-admin, wp-includes, etc.) from before.
+    Except for .gitignore, wp-content, and README, do not touch these three!!!
+    Also, work in a separate branch, do not commit directly to main. Once you finish everything, then merge. Respect!
+
+PLEASE DO NOT TAKE .gitignore FROM BEFORE!!!
