@@ -17,13 +17,17 @@ $button-border-radius: 20px;
 
 .title {
 	font-weight: $plus-jakarta-sans-bold;
-	font-size: 24px;
-	color: var(--dark-color);
+	font-size: 50px;
+	line-height: 60px;
+	color: var(--primary-color);
+	width: 630px;
+	height: 120px;
+	margin-bottom: 0;
 }
 .subtitle {
-	font-weight: $plus-jakarta-sans-regular;
-	font-size: 18px;
-	color: var(--light-color);
+	font-weight: $plus-jakarta-sans-semibold;
+	font-size: 14px;
+	color: var(--primary-color);
 }
 .button {
 	background-color: var(--secondary-color);
