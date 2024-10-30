@@ -1,0 +1,55 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+.header-logo{
+	--header-logo: url('');
+    background-image: var(--header-logo);
+	width: 100px;
+	height: 100px;
+}
+
+.site-header {
+	background-color: var(--primary-color);
+}
+.header-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 2rem;
+}
+.site-branding {
+	flex: 1;
+	img {
+		max-width: 150px;
+		height: auto;
+	}
+}
+.menu-toggle {
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: var(--neutrals-color);
+	}
+}
+.button-div {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+.appointment-button {
+	background-color: var(--accent-color);
+	color: var(--light-color);
+	padding: 15px 30px;
+	border: none;
+	border-radius: 25px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.675rem;
+	font-weight: $plus-jakarta-sans-regular;
+}

@@ -104,7 +104,7 @@
             "label": "Sponsors",
             "name": "sponsors",
             "aria-label": "",
-            "type": "repeater",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -114,19 +114,13 @@
                 "id": ""
             },
             "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_671b9ba9b9e8a",
-                    "label": "Sponsor Name",
-                    "name": "sponsor_name",
+                    "key": "field_6720aebaae103",
+                    "label": "Sponsor 1",
+                    "name": "sponsor_1",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -135,19 +129,78 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_671a5dcc437de"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6720aedcae105",
+                            "label": "Sponsor Name",
+                            "name": "sponsor_name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6720aee7ae106",
+                            "label": "Sponsor Link",
+                            "name": "sponsor_link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6720aef4ae107",
+                            "label": "Sponsor Logo",
+                            "name": "sponsor_logo",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
+                        }
+                    ]
                 },
                 {
-                    "key": "field_671b9ae5bd0e9",
-                    "label": "Sponsor URL",
-                    "name": "sponsor_url",
+                    "key": "field_6720aec4ae104",
+                    "label": "Sponsor 2",
+                    "name": "sponsor_2",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -156,35 +209,71 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_671a5dcc437de"
-                },
-                {
-                    "key": "field_671b9b0fbd0ea",
-                    "label": "Sponsor Logo",
-                    "name": "sponsor_logo",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Min: 16x16, Max: 48x48",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": 16,
-                    "min_height": 16,
-                    "min_size": "",
-                    "max_width": 48,
-                    "max_height": 48,
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium",
-                    "parent_repeater": "field_671a5dcc437de"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6720af1dae108",
+                            "label": "Sponsor Name",
+                            "name": "sponsor_name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6720af28ae109",
+                            "label": "Sponsor Link",
+                            "name": "sponsor_link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6720af33ae10a",
+                            "label": "Sponsor Logo",
+                            "name": "sponsor_logo",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
+                        }
+                    ]
                 }
             ]
         },
@@ -281,5 +370,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729870601
+    "modified": 1730195305
 }
