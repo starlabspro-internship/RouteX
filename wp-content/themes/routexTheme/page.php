@@ -25,7 +25,7 @@ get_header();
         // get_template_part('template-parts/hero-section'); 
         ?>
         <?php 
-        get_template_part('template-parts/countries-section');
+        get_template_part('template-parts/flexible-content/countries-section');
          ?>
     </div>
 
