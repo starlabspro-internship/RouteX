@@ -1,5 +1,5 @@
 .site-header {
-	background-color: var(--primary-color);
+	background-color: var(--contrast-color);
 }
 .header-container {
 	display: flex;
@@ -42,4 +42,14 @@
 	display: inline-block;
 	font-size: 0.675rem;
 	font-weight: var(--regular);
+}
+.main-navigation a {
+    color: var(--secondary-color) !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-navigation a:hover {
+    color: var(--accent-color) !important; /* Optional hover color */
 }
