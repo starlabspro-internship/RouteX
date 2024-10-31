@@ -144,6 +144,7 @@ function routextheme_scripts() {
 	
    
 	// Enqueue Swiper CSS and JS
+	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 
 	// // Enqueue theme navigation script
