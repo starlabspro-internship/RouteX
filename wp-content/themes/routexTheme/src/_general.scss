@@ -14,13 +14,16 @@ $button-border-radius: 20px;
 
 .title {
 	font-weight: var(--bold);
-	font-size: 24px;
-	color: var(--dark-color);
+	font-size: 50px;
+	line-height: 60px;
+	color: var(--primary-color);
+	margin-bottom: 0;
+	max-width: 630px;
 }
 .subtitle {
-	font-weight: var(--regular);
-	font-size: 18px;
-	color: var(--light-color);
+	font-weight: var(--semibold);
+	font-size: 14px;
+	color: var(--primary-color);
 }
 .button {
 	background-color: var(--secondary-color);

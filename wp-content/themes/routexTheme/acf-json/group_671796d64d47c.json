@@ -600,6 +600,32 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
+                                    "key": "field_6723726abff0a",
+                                    "label": "Card Small Image",
+                                    "name": "card_small_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_6718d94df36b3"
+                                },
+                                {
                                     "key": "field_6718d958f36b4",
                                     "label": "Card Background",
                                     "name": "card_background",
@@ -3014,5 +3040,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730296421
+    "modified": 1730376331
 }
