@@ -701,11 +701,6 @@ select {
   overflow: hidden;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .hero-content-title {
   font-family: var(--plus-jakarta-sans);
   font-size: 2.5rem;
@@ -807,7 +802,7 @@ select {
 .gray-photo {
   position: absolute;
   top: 99%;
-  right: 24%;
+  right: 23.5%;
   transform: translateY(-50%);
   z-index: 1;
 }
