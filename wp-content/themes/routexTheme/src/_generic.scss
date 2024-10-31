@@ -311,7 +311,7 @@ select {
 		a {
 			text-decoration: none;
 			color: var(--dark);
-			font-weight: --bold;
+			font-weight: var(--bold);
 			transition: color 0.3s;
 			&:hover {
 				color: var(--accent);
