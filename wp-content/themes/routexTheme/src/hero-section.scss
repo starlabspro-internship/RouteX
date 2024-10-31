@@ -10,19 +10,14 @@
   overflow: hidden;
 }
 
-// .container {
-//   max-width: 100%;
-//   margin: 0 auto;
-// }
-
-// .title {
-//   font-family: var(--plus-jakarta-sans);
-//   font-size: 48px;
-//   font-weight: bold;
-//   line-height: 1.2;
-//   color: var(--primary-color); // White
-//   margin-bottom: 20px;
-// }
+.hero-section-title {
+  font-family: var(--plus-jakarta-sans);
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--primary-color); // White
+  margin-bottom: 20px;
+}
 
 .left-tower {
   position: absolute;
