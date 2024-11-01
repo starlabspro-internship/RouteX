@@ -1,5 +1,5 @@
 <?php
-require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
 
 header("Content-type: text/css");
 
@@ -26,6 +26,6 @@ if ($fonts) {
 ?>
 
 :root {
-    --primary-font-family: '<?php echo  $primary_font_family; ?>', sans-serif;
-    --secondary-font-family: '<?php echo $secondary_font_family; ?>', sans-serif;
+--primary-font-family: '<?php echo  $primary_font_family; ?>', sans-serif;
+--secondary-font-family: '<?php echo $secondary_font_family; ?>', sans-serif;
 }
