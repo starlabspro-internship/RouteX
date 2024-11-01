@@ -20,13 +20,15 @@ get_header();
     <?php get_template_part('template-parts/flexible-content/hero-section'); ?>
     <?php get_template_part('template-parts/flexible-content/cards-section'); ?>
     <?php get_template_part('template-parts/flexible-content/client-section'); ?>
+    <?php 
+        get_template_part('template-parts/flexible-content/countries-section');
+         ?>
+             <?php get_template_part('template-parts/flexible-content/visa-section'); ?>
     <div class="template-home">
         <?php 
         // get_template_part('template-parts/hero-section'); 
         ?>
-        <?php 
-        get_template_part('template-parts/flexible-content/countries-section');
-         ?>
+        
     </div>
 
 </main>
