@@ -38,3 +38,21 @@
         font-size: 78%;
     }
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .card {
+        margin-top: 20px; /* Add space between cards on mobile */
+    }
+
+    /* Adjust other card styles for mobile if necessary */
+    .card-body {
+        padding: 15px; /* Slightly reduce padding for mobile */
+    }
+
+    .circle {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+}
