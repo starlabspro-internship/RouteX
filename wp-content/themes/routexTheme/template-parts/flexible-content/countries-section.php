@@ -45,14 +45,10 @@
                 </div>
                 <div class="countries-section-buttons">
                     <button class="countries-section-button" aria-label="Previous slide">
-                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.9688 7.03906C14.9688 7.60156 14.5312 8.03906 14 8.03906H4.40625L7.6875 11.3516C8.09375 11.7266 8.09375 12.3828 7.6875 12.7578C7.5 12.9453 7.25 13.0391 7 13.0391C6.71875 13.0391 6.46875 12.9453 6.28125 12.7578L1.28125 7.75781C0.875 7.38281 0.875 6.72656 1.28125 6.35156L6.28125 1.35156C6.65625 0.945312 7.3125 0.945312 7.6875 1.35156C8.09375 1.72656 8.09375 2.38281 7.6875 2.75781L4.40625 6.03906H14C14.5312 6.03906 14.9688 6.50781 14.9688 7.03906Z" fill="white"/>
-                        </svg>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="">
                     </button>
                     <button class="countries-section-button" aria-label="Next slide">
-                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.6875 7.75781L8.6875 12.7578C8.5 12.9453 8.25 13.0391 8 13.0391C7.71875 13.0391 7.46875 12.9453 7.28125 12.7578C6.875 12.3828 6.875 11.7266 7.28125 11.3516L10.5625 8.03906H1C0.4375 8.03906 0 7.60156 0 7.03906C0 6.50781 0.4375 6.03906 1 6.03906H10.5625L7.28125 2.75781C6.875 2.38281 6.875 1.72656 7.28125 1.35156C7.65625 0.945312 8.3125 0.945312 8.6875 1.35156L13.6875 6.35156C14.0938 6.72656 14.0938 7.38281 13.6875 7.75781Z" fill="white"/>
-                        </svg>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="">
                     </button>
                 </div>
             </div>
@@ -100,11 +96,9 @@
                                                 echo '                    <h4>'.esc_html($card_title).'</h4>';
                                                 echo '                    <p>'.esc_html($card_text).'</p>';
                                                 echo '                    <div class="swiper-slide-single-content-button">';
-                                                echo '                        <a href="'.esc_url($card_link).'">Apply Now 
-                                                                                                                    <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                                                        <path d="M13.7266 5.41797L10.2266 8.91797C9.89844 9.27344 9.32422 9.27344 8.99609 8.91797C8.64062 8.58984 8.64062 8.01562 8.99609 7.6875L10.9922 5.66406H0.875C0.382812 5.66406 0 5.28125 0 4.78906C0 4.26953 0.382812 3.91406 0.875 3.91406H10.9922L8.99609 1.91797C8.64062 1.58984 8.64062 1.01562 8.99609 0.6875C9.32422 0.332031 9.89844 0.332031 10.2266 0.6875L13.7266 4.1875C14.082 4.51562 14.082 5.08984 13.7266 5.41797Z" fill="white"/>
-                                                                                                                    </svg>
-                                                                                                                </i></a>';
+                                                echo "                      <a href='" . esc_url($card_link) . "'>Apply Now 
+                                                                                <img  src='" . get_template_directory_uri() . "/assets/icons/right-arrow.svg' alt=''>
+                                                                            </a>";
                                                 echo '                    </div>';
                                                 echo '                </div>';
                                                 echo '            </div>';
@@ -168,10 +162,9 @@
                                             echo '                        <h4>' . esc_html($card_title) . '</h4>';
                                             echo '                        <p>' . esc_html($card_text) . '</p>';
                                             echo '                        <div class="swiper-slide-single-content-button">';
-                                            echo '                            <a href="' . esc_url($card_link) . '">Apply Now <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                                                        <path d="M13.7266 5.41797L10.2266 8.91797C9.89844 9.27344 9.32422 9.27344 8.99609 8.91797C8.64062 8.58984 8.64062 8.01562 8.99609 7.6875L10.9922 5.66406H0.875C0.382812 5.66406 0 5.28125 0 4.78906C0 4.26953 0.382812 3.91406 0.875 3.91406H10.9922L8.99609 1.91797C8.64062 1.58984 8.64062 1.01562 8.99609 0.6875C9.32422 0.332031 9.89844 0.332031 10.2266 0.6875L13.7266 4.1875C14.082 4.51562 14.082 5.08984 13.7266 5.41797Z" fill="white"/>
-                                                                                                                        </svg>
-                                                                                                                        </i></a>';
+                                            echo "                          <a href='" . esc_url($card_link) . "'>Apply Now 
+                                                                                <img  src='" . get_template_directory_uri() . "/assets/icons/right-arrow.svg' alt=''>
+                                                                            </a>";
                                             echo '                        </div>';
                                             echo '                    </div>';
                                             echo '                </div>';
