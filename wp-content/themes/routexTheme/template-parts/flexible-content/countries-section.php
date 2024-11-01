@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="countries-section-slider-1">
-                <div class="swiper">
+                <div class="swiper ">
                     <div class="swiper-wrapper">
                         <?php
                             $our_countries = get_field('our_countries', 'options');
@@ -126,7 +126,7 @@
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
             <div class="countries-section-slider-2">
-                <div class="swiper ">
+                <div class="swiper">
                     <div class="swiper-wrapper" >
                         <?php
                             $our_countries = get_field('our_countries', 'options');
@@ -199,10 +199,6 @@
                 },
                 slidesPerView: 1,
                 spaceBetween: 30,
-            });
-
-            swiper.on('slideChange', function () {
-                console.log('Slide changed');
             });
         });
 
