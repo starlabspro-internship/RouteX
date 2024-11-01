@@ -1,5 +1,10 @@
 <?php
-require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+//elona
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
+//engjell
+//require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+//leka
+//require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
 
 header("Content-type: text/css");
 
@@ -20,14 +25,14 @@ $positives_color = esc_attr($brand_colors['positives']);
 ?>
 
 :root {
-    --primary-color: <?php echo $primary_color; ?>;
-    --secondary-color: <?php echo $secondary_color; ?>;
-    --base-color: <?php echo $base_color; ?>;   
-    --contrast-color: <?php echo $contrast_color; ?>;      
-    --light-color: <?php echo $light_color; ?>;  
-    --dark-color: <?php echo $dark_color; ?>;   
-    --accent-color: <?php echo $accent_color; ?>;       
-    --negatives-color: <?php echo $negatives_color; ?>;       
-    --neutrals-color: <?php echo $neutrals_color; ?>;       
-    --positives-color: <?php echo $positives_color; ?>;   
+--primary-color: <?php echo $primary_color; ?>;
+--secondary-color: <?php echo $secondary_color; ?>;
+--base-color: <?php echo $base_color; ?>;
+--contrast-color: <?php echo $contrast_color; ?>;
+--light-color: <?php echo $light_color; ?>;
+--dark-color: <?php echo $dark_color; ?>;
+--accent-color: <?php echo $accent_color; ?>;
+--negatives-color: <?php echo $negatives_color; ?>;
+--neutrals-color: <?php echo $neutrals_color; ?>;
+--positives-color: <?php echo $positives_color; ?>;
 }
