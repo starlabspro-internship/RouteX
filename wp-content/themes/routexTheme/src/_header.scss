@@ -53,3 +53,11 @@
 .main-navigation a:hover {
     color: var(--accent-color) !important; /* Optional hover color */
 }
+
+
+@media (max-width: 768px) {
+	header{
+		display: none;
+	}
+
+}
