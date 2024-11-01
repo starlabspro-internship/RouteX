@@ -111,12 +111,12 @@
         },
         {
             "key": "field_6717ad273fc10",
-            "label": "Cards",
-            "name": "cards",
+            "label": "Offers",
+            "name": "Offers",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -126,7 +126,7 @@
             "layout": "row",
             "pagination": 0,
             "min": 0,
-            "max": 3,
+            "max": 0,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
@@ -492,7 +492,7 @@
                 {
                     "key": "field_6718c285ec86c",
                     "label": "logos",
-                    "name": "logos_image",
+                    "name": "logos",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -503,7 +503,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -964,7 +964,7 @@
                         {
                             "key": "field_6717b375dbaea",
                             "label": "Title",
-                            "name": "title_",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -1067,10 +1067,10 @@
                                 },
                                 {
                                     "key": "field_6718d9e3fcdfd",
-                                    "label": "Card Text",
-                                    "name": "card_text",
+                                    "label": "Card Bullet Points",
+                                    "name": "card_bullet_points",
                                     "aria-label": "",
-                                    "type": "text",
+                                    "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1079,11 +1079,36 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "layout": "table",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6725150363bcf",
+                                            "label": "Card Text",
+                                            "name": "card_text",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6718d9e3fcdfd"
+                                        }
+                                    ],
                                     "parent_repeater": "field_6718d9c6fcdfa"
                                 }
                             ]
@@ -3040,5 +3065,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730376331
+    "modified": 1730483909
 }
