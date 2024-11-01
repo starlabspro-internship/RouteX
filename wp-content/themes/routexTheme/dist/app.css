@@ -738,11 +738,11 @@ select {
 .right-tower {
   position: absolute;
   top: 57%;
-  right: 15%;
+  right: 14%;
   transform: translateY(-50%);
   opacity: 0.5;
   width: 26vw;
-  max-width: 300px;
+  max-width: 280px;
   height: auto;
   z-index: 1;
 }
@@ -807,8 +807,8 @@ select {
   background-color: var(--accent-color);
   border-radius: 50%;
   top: 75%;
-  right: 20%;
-  transform: translateY(-50%);
+  right: 15%;
+  transform: translateY(-25%);
   opacity: 0.6;
   z-index: 0;
 }
@@ -817,7 +817,7 @@ select {
   position: absolute;
   top: 99%;
   right: 23.5%;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   z-index: 1;
 }
 .gray-photo img {
@@ -832,7 +832,7 @@ select {
   .hero-section {
     padding: 40px 5%;
   }
-  .hero-content-title {
+  .title {
     font-size: 1.75rem;
   }
   .left-tower,
@@ -885,6 +885,21 @@ select {
   font-size: 78%;
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .card {
+    margin-top: 20px; /* Add space between cards on mobile */
+  }
+  /* Adjust other card styles for mobile if necessary */
+  .card-body {
+    padding: 15px; /* Slightly reduce padding for mobile */
+  }
+  .circle {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+}
 @keyframes rtl-scroll {
   from {
     transform: translateX(100%);
