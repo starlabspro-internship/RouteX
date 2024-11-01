@@ -41,7 +41,6 @@
             <div class="col-md-6">
                 <div class="decorative-circle"></div>
                 <div class="gray-photo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gray.jpg" alt="Gray Photo">
                 </div>
             </div>
         </div>
