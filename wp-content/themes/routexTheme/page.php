@@ -22,10 +22,7 @@ get_header();
     <?php get_template_part('template-parts/flexible-content/client-section'); ?>
     <div class="template-home">
         <?php 
-        // get_template_part('template-parts/hero-section'); 
-        ?>
-        <?php 
-        get_template_part('template-parts/flexible-content/countries-section');
+            get_template_part('template-parts/flexible-content/countries-section');
          ?>
     </div>
 
