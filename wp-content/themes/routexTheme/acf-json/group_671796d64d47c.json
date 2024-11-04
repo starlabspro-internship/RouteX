@@ -110,31 +110,6 @@
             "button_label": "Add Row"
         },
         {
-            "key": "acfcloneindex",
-            "label": "New Field",
-            "name": "new_field",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_6717ad273fc10",
             "label": "Offers",
             "name": "Offers",
@@ -243,14 +218,14 @@
             "layouts": {
                 "layout_6717adda8831a": {
                     "key": "layout_6717adda8831a",
-                    "name": "left_layout",
+                    "name": "leftlayout",
                     "label": "LeftLayout",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_67179b15e32b9",
-                            "label": "Image 1",
-                            "name": "image_1",
+                            "label": "First Photo - Third Sector",
+                            "name": "first_photo_third_sector",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -261,8 +236,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -274,8 +249,8 @@
                         },
                         {
                             "key": "field_67179b514cf9f",
-                            "label": "Image 2",
-                            "name": "image_2",
+                            "label": "Second Photo - Third Sector",
+                            "name": "second_photo_third_sector",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -286,8 +261,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -299,8 +274,8 @@
                         },
                         {
                             "key": "field_67179b684cfa0",
-                            "label": "Image 3",
-                            "name": "image_3",
+                            "label": "Third Photo - Third Sector",
+                            "name": "third_photo_third_sector",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -311,8 +286,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -324,8 +299,8 @@
                         },
                         {
                             "key": "field_67179b879dd85",
-                            "label": "Experience Text",
-                            "name": "experience_text",
+                            "label": "Experience Text - Third Sector",
+                            "name": "experience_text_third_sector",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -348,7 +323,7 @@
                 },
                 "layout_6717ae28c2534": {
                     "key": "layout_6717ae28c2534",
-                    "name": "right_layout",
+                    "name": "rightlayout",
                     "label": "RightLayout",
                     "display": "block",
                     "sub_fields": [
@@ -399,7 +374,7 @@
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -408,7 +383,7 @@
                             },
                             "layout": "table",
                             "min": 0,
-                            "max": 2,
+                            "max": 0,
                             "collapsed": "",
                             "button_label": "Add Row",
                             "rows_per_page": 20,
@@ -482,26 +457,6 @@
                                     "parent_repeater": "field_67179bff13e50"
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_67237644eabf2",
-                            "label": "Phone Number",
-                            "name": "phone_number",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
                         }
                     ],
                     "min": "",
@@ -536,8 +491,8 @@
             "sub_fields": [
                 {
                     "key": "field_6718c285ec86c",
-                    "label": "logo",
-                    "name": "logos_image",
+                    "label": "logos",
+                    "name": "logos",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -644,6 +599,32 @@
                             "button_label": "Add Row",
                             "rows_per_page": 20,
                             "sub_fields": [
+                                {
+                                    "key": "field_6723726abff0a",
+                                    "label": "Card Small Image",
+                                    "name": "card_small_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_6718d94df36b3"
+                                },
                                 {
                                     "key": "field_6718d958f36b4",
                                     "label": "Card Background",
@@ -761,31 +742,6 @@
                     "label": "VisaCategoryLayout",
                     "display": "block",
                     "sub_fields": [
-                        {
-                            "key": "field_67238490dd8d1",
-                            "label": "Title Icon",
-                            "name": "svg_icon",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "preview_size": "medium"
-                        },
                         {
                             "key": "field_6717b1b470a5b",
                             "label": "Small TItle",
@@ -916,32 +872,11 @@
                                     "parent_repeater": "field_6718d7d7ff29b"
                                 },
                                 {
-                                    "key": "field_6718d81cff2a0",
-                                    "label": "Visa Card Link",
-                                    "name": "visa_card_link",
-                                    "aria-label": "",
-                                    "type": "page_link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": "",
-                                    "taxonomy": "",
-                                    "allow_archives": 1,
-                                    "multiple": 0,
-                                    "allow_null": 0,
-                                    "parent_repeater": "field_6718d7d7ff29b"
-                                },
-                                {
                                     "key": "field_6718d811ff29f",
                                     "label": "Visa Card Icon",
                                     "name": "visa_card_icon",
                                     "aria-label": "",
-                                    "type": "image",
+                                    "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -950,16 +885,28 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "preview_size": "medium",
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                },
+                                {
+                                    "key": "field_6718d81cff2a0",
+                                    "label": "Visa Card Link",
+                                    "name": "visa_card_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
                                     "parent_repeater": "field_6718d7d7ff29b"
                                 }
                             ]
@@ -1680,7 +1627,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array",
+                                    "return_format": "url",
                                     "parent_repeater": "field_6718dbd517ed1"
                                 }
                             ]
@@ -3103,9 +3050,9 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "current_user",
                 "operator": "==",
-                "value": "top_level"
+                "value": "logged_in"
             }
         ]
     ],
@@ -3118,5 +3065,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730483909
+    "modified": 1730720742
 }

@@ -1,34 +1,9 @@
-@media (min-width: 1200px) {
-    .container {
-      width: 1320px;
-      max-width: 100%;
-    }
-}
-
 .available-countries-section-container{
     max-width: 1290px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
     color: var(--secondary-color);
-}
-
-@media (max-width: 1820px) {
-    .available-countries-section-container {
-      border-radius: 0;
-    }
-}
-
-.top-bottom {
-    padding-top: 120px !important;
-    padding-bottom: 120px !important;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .top-bottom {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-  }
 }
 
 .available-countries-section-title-container{
@@ -41,12 +16,6 @@
     margin-bottom: 60px;
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    .title {
-      font-size: 35px;
-      line-height: 45px;
-    }
-}
 
 .available-countries-title{
     color: var(--secondary-color);
@@ -102,6 +71,7 @@
     border: 1px solid var(--light-color);
     border-radius: 20px;
     transition: 0.3s;
+    margin-bottom: 30px;
 }
 
 .available-countries-item-icon img {

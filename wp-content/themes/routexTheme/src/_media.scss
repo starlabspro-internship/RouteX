@@ -1,0 +1,37 @@
+@mixin media-sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+}
+  
+@mixin media-md {
+    @media (min-width: 768px) {
+      @content;
+    }
+}
+  
+@mixin media-lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+}
+  
+@mixin media-xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+}
+
+@mixin media-xxl {
+    @media (min-width: 1820px) {
+      @content;
+    }
+}
+  
+  //Example
+  // @include media-sm {
+  //     .col-xl-7 {s
+  //       padding-right: 15px;
+  //       padding-left: 15px;
+  //     }
+  // }

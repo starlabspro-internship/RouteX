@@ -25,6 +25,7 @@ get_header();
             get_template_part('template-parts/flexible-content/countries-section');
             get_template_part('template-parts/flexible-content/visa-section');
             get_template_part('template-parts/flexible-content/available-countries-section');
+            get_template_part('template-parts/flexible-content/coaching-section');
          ?>
     </div>
 
