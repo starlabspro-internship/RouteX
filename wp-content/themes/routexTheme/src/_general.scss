@@ -14,18 +14,41 @@ $button-border-radius: 20px;
 
 .title {
 	font-weight: var(--bold);
-	font-size: 50px;
-	line-height: 60px;
+	font-size: 28px;
+    line-height: 38px;
 	color: var(--primary-color);
 	margin-bottom: 0;
 	max-width: 630px;
 }
+
+@include media-md{
+    .title{
+      font-size: 35px;
+      line-height: 45px;
+    }
+}
+
+@include media-lg{
+    .title{
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+@include media-xl{
+    .title{
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+  
 .subtitle {
 	font-weight: var(--semibold);
 	font-size: 14px;
 	color: var(--primary-color);
 	text-transform: uppercase;
 }
+
 .button {
 	background-color: var(--secondary-color);
 	color: var(--primary-color);
@@ -35,6 +58,7 @@ $button-border-radius: 20px;
 	font-weight: var(--bold);
 	cursor: pointer;
 }
+
 .button:hover {
     background-color: var(--accent-color);
 }
@@ -49,4 +73,16 @@ $button-border-radius: 20px;
     justify-content: center;
     align-items: center;
     padding: 6%;
+}
+
+.top-bottom {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+@include media-md{
+    .top-bottom {
+        padding-top: 120px !important;
+        padding-bottom: 120px !important;
+    }
 }

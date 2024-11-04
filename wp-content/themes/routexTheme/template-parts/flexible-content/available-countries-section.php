@@ -49,7 +49,7 @@
                     ?>
                 </div>
             </div>
-            <div class="available-countries-section">
+            <div class="available-countries-section-cards">
                 <div class="row">
                     <?php
                         $available_countries = get_field('available_countries', 'options');
