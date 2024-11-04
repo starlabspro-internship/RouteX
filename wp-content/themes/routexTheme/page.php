@@ -23,7 +23,8 @@ get_header();
             get_template_part('template-parts/flexible-content/cards-section');
             get_template_part('template-parts/flexible-content/client-section');
             get_template_part('template-parts/flexible-content/countries-section');
-            get_template_part('template-parts/flexible-content/visa-section');
+            get_template_part('template-parts/flexible-content/visa-section');            
+            get_template_part('template-parts/flexible-content/cta-section');
             get_template_part('template-parts/flexible-content/available-countries-section');
             get_template_part('template-parts/flexible-content/coaching-section');
          ?>
