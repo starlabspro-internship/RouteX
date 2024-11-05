@@ -101,12 +101,12 @@
     gap: 15px;
 }
 
-.latest-team__item-media {
+.coaching__item-media {
     overflow: hidden;
     border-radius: 10px;
 }
 
-.latest-item_thumb-image {
+.coaching-item_thumb-image {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -114,7 +114,7 @@
     border: 1px solid transparent;
 }
 
-.latest-team__item-media-img-title {
+.coaching__item-media-img-title {
     background: var(--primary-color);
     right: 0;
     margin: auto;
@@ -131,7 +131,7 @@
     display: flex;
 }
 
-.latest-team__item-media-img-title-text h4 {
+.coaching__item-media-img-title-text h4 {
     color: var(--secondary-color);
     font-weight: var(--bold);
     line-height: 30px;
@@ -140,7 +140,7 @@
     margin-top: 0;
 }
 
-.latest-team__item-media-img-title-text p {
+.coaching__item-media-img-title-text p {
     color: var(--base-color);
     font-weight: var(--regular);
     line-height: 22px;
@@ -149,12 +149,12 @@
     margin-bottom: 0;
 }
 
-.latest-team__item-media-img-title-button {
+.coaching__item-media-img-title-button {
     display: flex;
     align-items: center;
 }
 
-.latest-team__item-media-img-title-button a {
+.coaching__item-media-img-title-button a {
     background: var(--primary-color);
     display: flex;
     justify-content: center;
@@ -162,11 +162,11 @@
     padding: 17px;
 }
 
-.latest-item_thumb{
+.coaching-item_thumb{
     height: 324px;
 }
 
-.latest-team__item-media-img-title-button-image {
+.coaching__item-media-img-title-button-image {
     padding: 17px;
     border: 1px solid var(--light-color);
     border-radius: 20px;
