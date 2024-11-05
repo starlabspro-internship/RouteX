@@ -80,28 +80,7 @@
     border-radius: 50%;
 }
 
-.coaching-item-content h3 {
-    font-weight: var(--bold);
-    line-height: 30px;
-    font-size: 22px;
-}
-
-.coaching-item-content-list ul{
-    margin: 0px;
-    padding: 0px;
-}
-
-.coaching-item-content-list ul li {
-    color: var(--base-color);
-    font-weight: var(--regular);
-    line-height: 30px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.coaching__item-media {
+.latest-team__item-media {
     overflow: hidden;
     border-radius: 10px;
 }
