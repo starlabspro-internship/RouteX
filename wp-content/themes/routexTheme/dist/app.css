@@ -708,7 +708,6 @@ select {
   align-items: center;
   gap: 20px;
   margin: 0 40px;
-  /* Styling for the support message text */
 }
 .footer__area-common .footer-top .footer-top-left .footer-left-svg,
 .footer__area-common .footer-top .footer-top-left .footer-right-svg,
@@ -765,8 +764,8 @@ select {
 
 .footer__logo-container {
   display: flex;
-  align-items: center; /* Align items horizontally in the center */
-  gap: 20px; /* Add space between the logo and text */
+  align-items: center;
+  gap: 20px;
   margin-bottom: 15px;
   margin-top: 20px;
 }
@@ -774,10 +773,9 @@ select {
 .footer-description {
   color: var(--contrast-color);
   text-align: left;
-  margin-top: 5px; /* Add space between the title and description */
+  margin-top: 5px;
 }
 
-/* Center-align social icons below the text */
 .footer__social {
   display: flex;
   justify-content: flex-start;
