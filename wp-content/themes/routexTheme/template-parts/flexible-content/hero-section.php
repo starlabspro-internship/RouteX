@@ -8,7 +8,6 @@
  */
 
 ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <section class="hero-section">
     <div class="container">
         <div class="decorative-icon left-tower">
@@ -25,8 +24,7 @@
                 <div class="hero-content">
                     <h1 class="hero-content-title">Visa Made Easy<br>Dreams Made<br> Possible</h1>
                     <div class="btn-wrapper">
-                        <a href="404.php" class="btn btn-transparent">Read More <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.php" class="btn btn-transparent">Read More →</a>
                         <a href="https://www.youtube.com/watch?v=71EZb94AS1k" class="banner-video-button">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

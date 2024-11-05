@@ -33,8 +33,14 @@
   margin-bottom: 20px;
 }
 
-.left-tower {
+.left-tower,
+.right-tower,
+.decorative-circle,
+.gray-photo {
   position: relative;
+}
+
+.left-tower {
   top: 50%;
   right: 25%;
   transform: translateY(215%) scaleX(-1);
@@ -45,7 +51,6 @@
 }
 
 .right-tower {
-  position: relative;
   top: 50%;
   right: -78%;
   transform: translateY(112%);
@@ -56,7 +61,6 @@
 }
 
 .decorative-circle {
-  position: relative;
   width: 638px;
   height: 469px;
   background-color: var(--accent-color);
@@ -69,7 +73,6 @@
 }
 
 .gray-photo {
-  position: relative;
   top: 50%;
   right: 12.5%;
   transform: translateY(-90%);
@@ -77,13 +80,6 @@
   background-color: #e3e3e3;
   width: 597px;
   height: 684.83px;
-
-  @media (max-width: 768px) {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 50px;
-  }
 }
 
 .btn-wrapper {
@@ -103,7 +99,7 @@
   display: inline-flex;
   align-items: center;
   transition: background-color 0.3s, color 0.3s;
-  text-decoration: none; // Removes underline
+  text-decoration: none;
 
   &:hover {
     background-color: var(--primary-color);
@@ -138,4 +134,18 @@
   position: relative;
   text-decoration: none;
   margin-left: 10px;
+}
+
+/* Remove any mobile-specific transformations and maintain normal positioning */
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 10px;
+  }
+
+  .gray-photo {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 }
