@@ -27,6 +27,7 @@ get_header();
             get_template_part('template-parts/flexible-content/cta-section');
             get_template_part('template-parts/flexible-content/available-countries-section');
             get_template_part('template-parts/flexible-content/coaching-section');
+            get_template_part('template-parts/flexible-content/process-overview-section');
          ?>
     </div>
 
