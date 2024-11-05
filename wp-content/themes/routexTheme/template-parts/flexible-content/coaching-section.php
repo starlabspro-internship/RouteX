@@ -64,21 +64,21 @@
                                             // <img src="' . esc_url($card_background) . '" alt="images not found">
 
                                             echo '<div class="swiper-slide">
-                                                    <div class="latest-team__item-media">
-                                                    <div class="latest-item_thumb" >
+                                                    <div class="coaching__item-media">
+                                                    <div class="coaching-item_thumb" >
                                                         <a href="' . esc_url($card_link) . '">
                                                 
-                                                            <img class="latest-item_thumb-image" src="">
+                                                            <img class="coaching-item_thumb-image" src="">
                                                         </a>
                                                     </div>
-                                                    <div class="latest-team__item-media-img-title d-flex">
-                                                        <div class="latest-team__item-media-img-title-text">
+                                                    <div class="coaching__item-media-img-title d-flex">
+                                                        <div class="coaching__item-media-img-title-text">
                                                             <h4>' . esc_html($card_title) . '</h4>
                                                             <p>' . esc_html($card_text) . '</p>
                                                         </div>
-                                                        <div class="latest-team__item-media-img-title-button">
+                                                        <div class="coaching__item-media-img-title-button">
                                                             <a href="' . esc_url($card_link) . '">
-                                                                <img class="latest-team__item-media-img-title-button-image" src="' . esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg') . '" alt="">
+                                                                <img class="coaching__item-media-img-title-button-image" src="' . esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg') . '" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
