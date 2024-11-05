@@ -53,16 +53,16 @@
                                     if ($country['acf_fc_layout'] === 'sector5' && isset($country['cards'])) {
                                         $card_count = 0;
                                         echo '<div class="swiper-slide">';
-                                        echo '<div class="swiper-slide-single">';
-                                        echo '    <ul class="swiper-slide-item">';
+                                        echo '<div class="countries-swiper-slide-single">';
+                                        echo '    <ul class="countries-swiper-slide-item">';
 
                                         foreach ($country['cards'] as $card) {
                                             if ($card_count > 0 && $card_count % 5 === 0) {
                                                 echo '    </ul>';
                                                 echo '</div>';
                                                 echo '</div><div class="swiper-slide">';
-                                                echo '<div class="swiper-slide-single">';
-                                                echo '    <ul class="swiper-slide-item">';
+                                                echo '<div class="countries-swiper-slide-single">';
+                                                echo '    <ul class="countries-swiper-slide-item">';
                                             }
 
                                             $card_small_image = $card['card_small_image'];
@@ -73,19 +73,19 @@
                                             // if ($card_small_image && $card_background && $card_title && $card_text && $card_link) {
                                                 
                                                 echo '        <li>';
-                                                echo '            <div class="swiper-slide-single-inner">';
-                                                echo '                <div class="swiper-slide-single-small-img">';
+                                                echo '            <div class="countries-swiper-slide-single-inner">';
+                                                echo '                <div class="countries-swiper-slide-single-small-img">';
                                                 // echo '                    <img src="' . esc_url($card_small_image) . '" alt="Card Image">';
                                                 echo '                    <img src="" >';
                                                 echo '                </div>';
-                                                // echo '                <div class="swiper-slide-single-img" style="background-image: url(' . esc_url($card_background) . ');">';
-                                                echo '                <div class="swiper-slide-single-img" style="background-image: url();">';
+                                                // echo '                <div class="countries-swiper-slide-single-img" style="background-image: url(' . esc_url($card_background) . ');">';
+                                                echo '                <div class="countries-swiper-slide-single-img" style="background-image: url();">';
                                                 echo '                </div>';
                                                 echo '                <div class="bg-overlay"></div>';
-                                                echo '                <div class="swiper-slide-single-content">';
+                                                echo '                <div class="countries-swiper-slide-single-content">';
                                                 echo '                    <h4>'.esc_html($card_title).'</h4>';
                                                 echo '                    <p>'.esc_html($card_text).'</p>';
-                                                echo '                    <div class="swiper-slide-single-content-button">';
+                                                echo '                    <div class="countries-swiper-slide-single-content-button">';
                                                 echo "                      <a href='" . esc_url($card_link) . "'>Apply Now 
                                                                                 <img  src='" . get_template_directory_uri() . "/assets/icons/right-arrow.svg' alt=''>
                                                                             </a>";
@@ -128,9 +128,9 @@
                                             // if ($card_small_image && $card_background && $card_title && $card_text && $card_link) {
 
                                             echo '<div class="swiper-slide">';
-                                            echo '    <div class="swiper-slide-single">';
-                                            echo '                <div class="swiper-slide-single-inner-zoomed min-vh-100">';
-                                            echo '                    <div class="swiper-slide-single-small-img">';
+                                            echo '    <div class="countries-swiper-slide-single">';
+                                            echo '                <div class="countries-swiper-slide-single-inner-zoomed min-vh-100">';
+                                            echo '                    <div class="countries-swiper-slide-single-small-img">';
 
                                             if ($card_small_image) {
                                                 echo '                        <img src="' . esc_url($card_small_image) . '" alt="Card Image">';
@@ -141,17 +141,17 @@
                                             echo '                    </div>';
 
                                             if ($card_background) {
-                                                echo '                    <div class="swiper-slide-single-img" style="background-image: url(' . esc_url($card_background) . ');">';
+                                                echo '                    <div class="countries-swiper-slide-single-img" style="background-image: url(' . esc_url($card_background) . ');">';
                                             } else {
-                                                echo '                    <div class="swiper-slide-single-img" style="background-image: url();">';
+                                                echo '                    <div class="countries-swiper-slide-single-img" style="background-image: url();">';
                                             }
 
                                             echo '                    </div>';
                                             echo '                    <div class="bg-overlay"></div>';
-                                            echo '                    <div class="swiper-slide-single-content">';
+                                            echo '                    <div class="countries-swiper-slide-single-content">';
                                             echo '                        <h4>' . esc_html($card_title) . '</h4>';
                                             echo '                        <p>' . esc_html($card_text) . '</p>';
-                                            echo '                        <div class="swiper-slide-single-content-button">';
+                                            echo '                        <div class="countries-swiper-slide-single-content-button">';
                                             echo "                          <a href='" . esc_url($card_link) . "'>Apply Now 
                                                                                 <img  src='" . get_template_directory_uri() . "/assets/icons/right-arrow.svg' alt=''>
                                                                             </a>";
@@ -186,7 +186,7 @@
 
         });
 
-        const listItems = document.querySelectorAll('.swiper-slide-item li');
+        const listItems = document.querySelectorAll('.countries-swiper-slide-item li');
 
         listItems.forEach(item => {
             item.addEventListener('mouseenter', function () {

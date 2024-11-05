@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 
-.swiper-slide-item {
+.countries-swiper-slide-item {
     position: relative;
     display: flex;
     align-items: center;
@@ -81,7 +81,7 @@
     padding: 0;
 }
 
-.swiper-slide-item li {
+.countries-swiper-slide-item li {
     border-radius: 20px;
     cursor: pointer;
     flex: 1;
@@ -91,22 +91,22 @@
     transition: flex 0.3s ease;
 }
 
-.swiper-slide-item li.active {
+.countries-swiper-slide-item li.active {
     flex: 2.3;
   }
 
-.swiper-slide-single-inner {
+.countries-swiper-slide-single-inner {
     position: relative;
     display: block;
     min-height: 422px;
 }
 
-.swiper-slide-single-inner-zoomed {
+.countries-swiper-slide-single-inner-zoomed {
     position: relative;
     display: block;
     min-height: 422px;
 }
-.swiper-slide-single-small-img {
+.countries-swiper-slide-single-small-img {
     position: absolute;
     margin-right: 20px;
     margin-top: 20px;
@@ -116,14 +116,14 @@
     z-index: 2;
 }
 
-.swiper-slide-single-small-img img {
+.countries-swiper-slide-single-small-img img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     border: 1px solid var(--accent-color);
   }
 
-.swiper-slide-single-img {
+.countries-swiper-slide-single-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,7 +139,7 @@
     background-color:#D9D9D9;
 }
 
-.swiper-slide-single-content {
+.countries-swiper-slide-single-content {
     background: var(--accent-color);
     position: absolute;
     transform: perspective(400px) rotateX(0deg) scaleY(1);
@@ -157,7 +157,7 @@
     z-index: 3;
 }
 
-.swiper-slide-item li.active .swiper-slide-single-content {
+.countries-swiper-slide-item li.active .countries-swiper-slide-single-content {
     transform: perspective(400px) rotateX(0deg) scaleY(1);
     transition-delay: 0.1s;
     transition-timing-function: ease-in-out;
@@ -166,7 +166,7 @@
     opacity: 1;
 }
 
-.swiper-slide-single-content h4 {
+.countries-swiper-slide-single-content h4 {
     line-height: 22px;
     font-weight: 700;
     font-style: normal;
@@ -174,7 +174,7 @@
     margin-bottom: 10px;
 }
 
-.swiper-slide-single-content p {
+.countries-swiper-slide-single-content p {
     font-weight:400;
     line-height: 30px;
     font-size: 16px;
@@ -182,11 +182,11 @@
     font-style: normal;
 }
 
-.swiper-slide-single-content-button {
+.countries-swiper-slide-single-content-button {
     margin-top: 20px;
 }
 
-.swiper-slide-single-content-button a {
+.countries-swiper-slide-single-content-button a {
     background: var(--accent-color);
     color: var(--primary-color);
     font-weight: 600;
@@ -203,25 +203,25 @@
     padding: 10px 20px;
 }
 
-.swiper-slide-single-content-button a:hover {
+.countries-swiper-slide-single-content-button a:hover {
     background: var(--secondary-color);
     color: var(--primary-color);
     border-color: var(--secondary-color);
 }
 
-.swiper-slide-single-content-button a:visited{
+.countries-swiper-slide-single-content-button a:visited{
     color: var(--primary-color);
 }
 
 @include media-sm {
-    .swiper-slide-single-content {
+    .countries-swiper-slide-single-content {
       bottom: 15px;
       width: calc(100% - 65px);
     }
 }
 
 @include media-md{
-    .swiper-slide-single-content {
+    .countries-swiper-slide-single-content {
         width: calc(100% - 24px);
         bottom: 15px;
         overflow: hidden;
@@ -239,43 +239,43 @@
         padding: 20px 15px;
     }
 
-    .swiper-slide-single-content h4 {
+    .countries-swiper-slide-single-content h4 {
         font-size: 18px;
         margin-bottom: 6px;
     }
 
-    .swiper-slide-single-content p {
+    .countries-swiper-slide-single-content p {
         font-size: 15px;
         line-height: 25px;
     }
 
-    .swiper-slide-single-content-button {
+    .countries-swiper-slide-single-content-button {
         margin-top: 15px;
     }
 
-    .swiper-slide-single-content-button a {
+    .countries-swiper-slide-single-content-button a {
         padding: 7px 15px
     }
 }
 
 @include media-xl{
-    .swiper-slide-single-content h4 {
+    .countries-swiper-slide-single-content h4 {
         font-size: 22px;
         margin-bottom: 10px;
         line-height: 22px;
     }
 
-    .swiper-slide-single-content p {
+    .countries-swiper-slide-single-content p {
         font-size: 16px;
         line-height: 30px;
         margin-bottom: 0;
     }
 
-    .swiper-slide-single-content-button {
+    .countries-swiper-slide-single-content-button {
         margin-top: 20px;
     }
 
-    .swiper-slide-single-content-button a {
+    .countries-swiper-slide-single-content-button a {
         padding: 15px 30px;
     }
 }
