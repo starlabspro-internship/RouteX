@@ -63,7 +63,7 @@
                                             if ($footer_logo_image) {
                                                 echo '<img src="' . esc_url($footer_logo_image) . '" alt="RouteX Logo" class="footer__logo-icon">';
                                             }
-                                            echo '<p class="footer-logo-text">' . esc_html($footer_logo_text) . '</p>';
+                                            echo '<p class="footer-logo-text"><strong>' . esc_html($footer_logo_text) . '</strong></p>';
                                             echo '<br><br>';
                                             
                                         }
