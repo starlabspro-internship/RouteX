@@ -110,31 +110,6 @@
             "button_label": "Add Row"
         },
         {
-            "key": "acfcloneindex",
-            "label": "New Field",
-            "name": "new_field",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_6717ad273fc10",
             "label": "Cards",
             "name": "cards",
@@ -1571,14 +1546,14 @@
             "layouts": {
                 "layout_6717b8a67f03c": {
                     "key": "layout_6717b8a67f03c",
-                    "name": "sector_10_layout_1",
-                    "label": "Sector 10 Layout 1",
+                    "name": "our_coaching_layout",
+                    "label": "our_coaching_layout",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6717b8ba0932a",
-                            "label": "Sector 10 Layout 1 Small Title",
-                            "name": "sector_10_layout_1_small_title",
+                            "key": "field_672a15c866a54",
+                            "label": "Sub_title",
+                            "name": "sub_title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -1596,9 +1571,9 @@
                             "append": ""
                         },
                         {
-                            "key": "field_6717b8ce0932b",
-                            "label": "Sector 10 Layout 1 Title",
-                            "name": "sector_10_layout_1_title",
+                            "key": "field_672a15d066a55",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -1614,25 +1589,15 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6717b8e029dcb": {
-                    "key": "layout_6717b8e029dcb",
-                    "name": "sector_10_layout_2",
-                    "label": "Sector 10 Layout 2",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_6718dc6b32a5c",
-                            "label": "Emplooyes",
-                            "name": "emplooyes",
+                            "key": "field_672a15de66a56",
+                            "label": "Cards",
+                            "name": "cards",
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -1641,13 +1606,13 @@
                             },
                             "layout": "table",
                             "min": 0,
-                            "max": 0,
+                            "max": 3,
                             "collapsed": "",
                             "button_label": "Add Row",
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_6718dce432a5d",
+                                    "key": "field_672a15ef66a57",
                                     "label": "Name",
                                     "name": "name",
                                     "aria-label": "",
@@ -1665,10 +1630,10 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "parent_repeater": "field_6718dc6b32a5c"
+                                    "parent_repeater": "field_672a15de66a56"
                                 },
                                 {
-                                    "key": "field_6718dce932a5e",
+                                    "key": "field_672a15f566a58",
                                     "label": "Position",
                                     "name": "position",
                                     "aria-label": "",
@@ -1686,24 +1651,168 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "parent_repeater": "field_6718dc6b32a5c"
+                                    "parent_repeater": "field_672a15de66a56"
+                                },
+                                {
+                                    "key": "field_672a229289f0c",
+                                    "label": "Person_Link",
+                                    "name": "person_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_672a15de66a56"
                                 }
                             ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6717b99d27c88": {
-                    "key": "layout_6717b99d27c88",
-                    "name": "sector_10_layout_3",
-                    "label": "Sector 10 Layout 3",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_6717b9ad27c8f",
-                            "label": "Sector 10 Layout 3 Image",
-                            "name": "sector_10_layout_3_image",
+                            "key": "field_672a162066a5a",
+                            "label": "Social Media Card",
+                            "name": "social_media_card",
+                            "aria-label": "",
+                            "type": "flexible_content",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layouts": {
+                                "layout_672a1674b6c88": {
+                                    "key": "layout_672a1674b6c88",
+                                    "name": "social_media_card_layout",
+                                    "label": "Social Media Card Layout",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_672a167866a5c",
+                                            "label": "Card Background Image",
+                                            "name": "card_background_image",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "url",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "medium"
+                                        },
+                                        {
+                                            "key": "field_672a160066a59",
+                                            "label": "Links",
+                                            "name": "links",
+                                            "aria-label": "",
+                                            "type": "group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_672a202ac2e3e",
+                                                    "label": "Twitter",
+                                                    "name": "twitter",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array"
+                                                },
+                                                {
+                                                    "key": "field_672a295b94f59",
+                                                    "label": "Facebook",
+                                                    "name": "facebook",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array"
+                                                },
+                                                {
+                                                    "key": "field_672a296a94f5a",
+                                                    "label": "Instagram",
+                                                    "name": "instagram",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array"
+                                                },
+                                                {
+                                                    "key": "field_672a297294f5b",
+                                                    "label": "Linkedin",
+                                                    "name": "linkedin",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            },
+                            "min": "",
+                            "max": "",
+                            "button_label": "Add Row"
+                        },
+                        {
+                            "key": "field_672a3fa77ee36",
+                            "label": "Background Image",
+                            "name": "background_image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -1724,46 +1833,6 @@
                             "max_size": "",
                             "mime_types": "",
                             "preview_size": "medium"
-                        },
-                        {
-                            "key": "field_6718dd0eba3ef",
-                            "label": "Links",
-                            "name": "links",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "table",
-                            "min": 0,
-                            "max": 0,
-                            "collapsed": "",
-                            "button_label": "Add Row",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_6718dd18ba3f0",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "url",
-                                    "parent_repeater": "field_6718dd0eba3ef"
-                                }
-                            ]
                         }
                     ],
                     "min": "",
@@ -1819,17 +1888,7 @@
                             "max_size": "",
                             "mime_types": "",
                             "preview_size": "medium"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_6717ba5902baa": {
-                    "key": "layout_6717ba5902baa",
-                    "name": "testimonial_Right_layout",
-                    "label": "Testimonial Right Layout",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
                             "key": "field_6718dee6dd525",
                             "label": "Testimonial Card",
@@ -1844,7 +1903,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "layout": "table",
+                            "layout": "block",
                             "min": 0,
                             "max": 0,
                             "collapsed": "",
@@ -3025,5 +3084,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730823256
+    "modified": 1730840858
 }
