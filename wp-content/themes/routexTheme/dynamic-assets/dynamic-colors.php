@@ -1,8 +1,7 @@
 <?php
 //elona
-require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
 //engjell & leka
-// require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+ require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
 
 header("Content-type: text/css");
 

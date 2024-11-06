@@ -25,6 +25,8 @@ get_header();
             get_template_part('template-parts/flexible-content/countries-section');
             get_template_part('template-parts/flexible-content/visa-section');            
             get_template_part('template-parts/flexible-content/cta-section');
+            get_template_part('template-parts/flexible-content/our-coaching-section');
+            get_template_part('template-parts/flexible-content/testimonial-section');
             get_template_part('template-parts/flexible-content/available-countries-section');
             get_template_part('template-parts/flexible-content/coaching-section');
             get_template_part('template-parts/flexible-content/process-overview-section');
