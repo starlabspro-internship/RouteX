@@ -2,16 +2,16 @@
   background: var(--secondary-color);
   background-image: url("/wp-content/themes/routexTheme/assets/icons/Map.svg");
   background-repeat: no-repeat;
-  background-position: center 280px, calc(100% - 50px) 100px;
-  background-size: 90%, 40px;
+  background-position: center 200px;
+  background-size: cover;
   position: relative;
   z-index: 1;
   padding: 40px 0;
   color: var(--contrast-color);
 
-  @media (max-width: 768px) {
-    background-position: center 200px;
-    background-size: cover;
+  @include media-md {
+    background-position: center 280px, calc(100% - 50px) 100px;
+    background-size: 90%, 40px;
   }
 
   .footer-top {
@@ -177,10 +177,9 @@
   }
 
   .submit {
-    position: absolute;
-    right: 12%;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    left: 60%;
+    top: -50%;
     background-color: var(--accent-color);
     border-radius: 50%;
     padding: 10px;
@@ -189,6 +188,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include media-md {
+      right: 12%;
+    }
   }
 }
 
@@ -203,28 +205,28 @@
   font-size: 0.9rem;
   min-height: 100px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  // @include media-md {
+  //   flex-direction: column;
+  //   text-align: center;
+  // }
 }
 
 .footer__copyright {
-  text-align: left;
+  text-align: center;
   font-size: 0.9rem;
   position: relative;
-  top: 45px;
+  top: 0;
 
-  @media (max-width: 768px) {
-    text-align: center;
-    top: 0;
+  @include media-md {
+    text-align: left;
+    top: 45px;
   }
 }
 
 .footer__copyright-menu {
-  text-align: right;
+  text-align: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 15px;
 
   ul {
@@ -247,8 +249,8 @@
     }
   }
 
-  @media (max-width: 768px) {
-    text-align: center;
-    justify-content: center;
+  @include media-md {
+    text-align: right;
+    justify-content: flex-end;
   }
 }
