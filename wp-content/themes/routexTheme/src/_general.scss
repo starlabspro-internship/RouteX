@@ -76,13 +76,11 @@ $button-border-radius: 20px;
 }
 
 .top-bottom {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+    padding: 80px 15px;
 }
 
 @include media-md{
     .top-bottom {
-        padding-top: 120px !important;
-        padding-bottom: 120px !important;
+        padding: 120px 15px;
     }
 }

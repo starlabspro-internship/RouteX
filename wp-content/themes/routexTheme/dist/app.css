@@ -986,14 +986,12 @@ select {
 }
 
 .top-bottom {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
+  padding: 80px 15px;
 }
 
 @media (min-width: 768px) {
   .top-bottom {
-    padding-top: 120px !important;
-    padding-bottom: 120px !important;
+    padding: 120px 15px;
   }
 }
 .hero-section {
@@ -1401,7 +1399,6 @@ select {
   max-width: 1800px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--primary-color);
   border-radius: 50px;
   background-color: var(--secondary-color);
@@ -1668,7 +1665,6 @@ select {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--secondary-color);
 }
 
@@ -1820,7 +1816,6 @@ select {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--secondary-color);
 }
 
@@ -2439,7 +2434,6 @@ select {
   max-width: 1800px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   border-radius: 50px;
   position: relative;
   z-index: 1 !important;
@@ -2538,7 +2532,6 @@ select {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--secondary-color);
 }
 
@@ -2761,7 +2754,6 @@ select {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--secondary-color);
 }
 
