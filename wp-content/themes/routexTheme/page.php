@@ -21,8 +21,8 @@ get_header();
         <?php 
             get_template_part('template-parts/flexible-content/hero-section');
             get_template_part('template-parts/flexible-content/cards-section');
-            get_template_part('template-parts/flexible-content/client-section');
             get_template_part('template-parts/flexible-content/why-choose-us-section');
+            get_template_part('template-parts/flexible-content/client-section');
             get_template_part('template-parts/flexible-content/countries-section');
             get_template_part('template-parts/flexible-content/visa-section');            
             get_template_part('template-parts/flexible-content/cta-section');
