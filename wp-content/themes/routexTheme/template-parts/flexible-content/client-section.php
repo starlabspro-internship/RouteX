@@ -4,10 +4,11 @@
             <?php 
             if( have_rows('logos') ): 
                 while( have_rows('logos') ): the_row();
-                    $logo_image = get_sub_field('logos_image'); 
+                    
+                    $logo_image = get_sub_field('logos'); 
                     if( $logo_image ): ?>
-                        <img src="<?php echo esc_url($logo_image['url']); ?>" 
-                             alt="<?php echo esc_attr($logo_image['alt']); ?>" 
+                        <img src="<?php echo esc_url($logo_image); ?>" 
+                             alt="" 
                              class="img-fluid client-img">
                     <?php endif; 
                 endwhile;
