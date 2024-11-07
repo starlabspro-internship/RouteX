@@ -207,11 +207,6 @@ function my_acf_json_save_point($path) {
     $path = get_stylesheet_directory() . '/acf-json';
     return $path;
 }
-function enqueue_font_awesome() {
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
-
 
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 function my_acf_json_load_point($paths) {
