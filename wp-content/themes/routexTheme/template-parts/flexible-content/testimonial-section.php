@@ -1,7 +1,7 @@
-<section class="testimonial-section">
-    <div class="container">
-        <?php if (have_rows('testimonial')): ?>
+<?php if (have_rows('testimonial')): ?>
             <?php while (have_rows('testimonial')): the_row(); ?>
+            <section class="testimonial-section">
+                <div class="container">
                 <?php if (get_row_layout() == 'testimonial_left_layout'): ?>
                     <div class="row">
                         <!-- Left Column: Image -->

@@ -1,9 +1,9 @@
-<div class="container cta-container">
-    <div class="row">
-        <!-- Left Div (30%) -->
-        <div class="col-md-4 ctadiv imagediv col-12">
-            <?php if (have_rows('cta')): ?>
-                <?php while (have_rows('cta')): the_row(); ?>
+ <?php if (have_rows('cta')): ?>
+    <?php while (have_rows('cta')): the_row(); ?>
+        <div class="container cta-container">
+            <div class="row">
+                <!-- Left Div (30%) -->
+                <div class="col-md-4 ctadiv imagediv col-12">
                     <?php 
                     // Retrieve left image
                     $left_image = get_sub_field('left_image'); 
