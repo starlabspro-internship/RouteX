@@ -36,14 +36,14 @@
                                     <!-- Container for the link SVG and other SVG icon -->
                                     <div class="d-flex card-bottom-layout">
                                     <div class="container link-container">
-    <?php $visa_card_link = get_sub_field('visa_card_link'); ?>
-    <a href="<?php echo esc_url($visa_card_link); ?>">
-        <svg class="svg-link" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.5" y="0.539062" width="59" height="59" rx="19.5" stroke="#83CD20" />
-            <path d="M37.1581 26.0008V34.8397C37.1581 35.1711 37.02 35.4749 36.799 35.6959C36.5504 35.9445 36.2466 36.0826 35.9151 36.0826C35.2246 36.1102 34.6445 35.5302 34.6721 34.8397L34.6445 29.0115L26.1924 37.4637C25.6952 37.9609 24.9218 37.9609 24.4246 37.4637C23.9551 36.9941 23.9274 36.1931 24.4246 35.6959L32.8768 27.2438H27.0763C26.3857 27.2714 25.8057 26.6914 25.8333 26.0008C25.8057 25.3103 26.3857 24.7302 27.0763 24.7579H35.9151C36.6056 24.7302 37.1857 25.3103 37.1581 26.0008Z" fill="#83CD20"/>
-        </svg>
-    </a>
-</div>
+                                    <?php $visa_card_link = get_sub_field('visa_card_link'); ?>
+                                    <a href="<?php echo esc_url($visa_card_link); ?>">
+                                        <svg class="svg-link" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="0.539062" width="59" height="59" rx="19.5" stroke="#83CD20" />
+                                            <path d="M37.1581 26.0008V34.8397C37.1581 35.1711 37.02 35.4749 36.799 35.6959C36.5504 35.9445 36.2466 36.0826 35.9151 36.0826C35.2246 36.1102 34.6445 35.5302 34.6721 34.8397L34.6445 29.0115L26.1924 37.4637C25.6952 37.9609 24.9218 37.9609 24.4246 37.4637C23.9551 36.9941 23.9274 36.1931 24.4246 35.6959L32.8768 27.2438H27.0763C26.3857 27.2714 25.8057 26.6914 25.8333 26.0008C25.8057 25.3103 26.3857 24.7302 27.0763 24.7579H35.9151C36.6056 24.7302 37.1857 25.3103 37.1581 26.0008Z" fill="#83CD20"/>
+                                        </svg>
+                                    </a>
+                                </div>
 
                                         <div class="container visa-icon-container">
                                             <!-- ACF SVG icon on the right -->

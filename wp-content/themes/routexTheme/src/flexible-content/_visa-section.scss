@@ -1,95 +1,66 @@
-.visa-section{
-    margin-top: 2.5%;
+/* Container holding all the visa cards */
+.visa-section {
+    display: flex;
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 20px; /* Space between cards using flex gap */
+    padding-bottom: 40px; /* Add bottom padding */
 }
+
+/* Card layout adjustments */
 .visa-card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    padding: 15px; /* Padding around the card */
+    padding-left: 5px;
+    padding-right: 5px;
     border: 1px solid var(--light-color);
     border-radius: 25px;
-    padding: 20px; /* Add padding for consistent spacing */
     transition: transform 0.2s;
-    display: flex;
-    align-items: stretch; /* Ensure children fill the card height */
-    height: 100%; /* Make card responsive to content height */
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Let content determine height */
+    margin-bottom: 10%;
 }
 
-.visa-div{
-    padding: 10px;
-}
-.row {
-    margin-top: 30px; /* Add space between rows */
-    margin-bottom: 30px; /* Add space between rows */
-}
-
+/* Image styling */
 .visa-image {
-    padding: 0;
-    min-height: 100%;
-    height: 100%; /* Set full height for the image container */
+    min-width: 100%;
+    height: auto; /* Fixed height for image */
     display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    padding-top: 5px;
 }
 
 .visa-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Scale image to fill container */
-    border-radius: 8px;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
+/* Content section styling */
 .visa-content {
-    flex: 1;
-    padding-left: 10%;
-}
-
-.visa-content p{
-    color: var(--base-color);
-}
-
-.visa-card-title {
-    margin-bottom: 10px;
-    color: var(--secondary-color);
-}
-
-.visa-small-title, .visa-title {
-    color: var(--secondary-color);
+    min-width: 100%;
     text-align: center;
 }
 
-.visa-small-title{
-    font-weight: var(--semibold);
-	font-size: 14px;
-}
-
-.visa-title{
-    padding-left: 23%;
-    padding-right: 23%;
-    font-size: 50px;
-}
-
+/* Card bottom layout styling */
 .card-bottom-layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.svg-link {
-    display: flex;
+    width: 100%;
+    padding-bottom: 0;
     align-items: center;
     justify-content: center;
 }
 
+.link-container,
 .visa-icon-container {
     display: flex;
-    align-items: right;
-    justify-content: right;
-    width: 50%;
-    height: auto;
-}
-
-.link-container {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    padding-left: 0;
-    width: 50%;
-    height: auto;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Default to center content */
+    width: 100%; /* Full width for mobile view */
 }
 
 .svg-link {
@@ -117,63 +88,77 @@
     outline: none; /* Remove focus outline */
 }
 
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
+/* Desktop media query */
+@media (min-width: 768px) {
+    .visa-div { margin-bottom: 35px; /* Add vertical space between the card containers */}
     .visa-card {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center-align items */
-        width: 100%; /* Full width on smaller screens */
-        padding: 15px; /* Adjust padding on smaller screens */
+        min-width: 0;
+        min-height: 0;
+        flex-direction: row; /* Row layout for desktop */
+        display: flex;
+        align-items: stretch; /* Stretch to make image and content the same height */
+        padding: 20px;
+        border: 1px solid var(--light-color);
+        border-radius: 25px;
+        height: 100%; /* Ensure the card fills the parent height */
+        margin-bottom: 0;
     }
-
+    
     .visa-image {
-        width: 100%; /* Full width for the image container */
-        min-width: 100%;
-        max-height: 150px; /* Ensure image container fits content */
-        min-height: 0px;
+        min-width: 0;
+        min-height: 0;
+        flex-grow: 1; /* Allow image to take up available height */
+        max-width: 45%; /* 50% width on desktop */
+        height: 100%; /* Full height for desktop */
+        padding: 0;
         display: flex;
         justify-content: center;
-        margin-bottom: 15px; /* Space between image and content */
+        border-radius: 25px;
     }
-
+    
     .visa-image img {
-        width: 100%; /* Ensure image fills the width of its container */
-        min-width: 100%; /* Full width for the image container */
-        max-height: 150px; /* Ensure image container fits content */
-        object-fit: cover; /* Scale image to fill container */
+        min-width: 0;
+        width: 100%; /* Full width within container */
+        height: 100%; /* Full height to match the container */
+        object-fit: cover; /* Ensure the image covers the area */
+        border-radius: 20px;
     }
-
+    
     .visa-content {
-        width: 100%; /* Ensure content takes full width */
-        text-align: center; /* Center-align content on mobile */
-        min-width: 100%; /* Full width for the image container */
-        padding-left: 3%;
+        min-width: 0;
+        min-height: 0;
+        width: 55%;
+        flex: 1;
+        padding-left: 5%;
+        text-align: left;
+        padding-bottom: 0;
     }
-
+    
     .visa-card-title,
     .visa-small-title,
     .visa-title {
-        text-align: center;
-        width: 100%;
-        min-width: 100%; /* Full width for the image container */
-    }
-
-    .visa-title{
-        padding-left: 0%;
-        padding-right: 0%;
-        font-size: 32px;
+        text-align: left;
     }
 
     .card-bottom-layout {
-        display: flex;
-        margin-top: 5px;
-        width: 100%;
+        padding: 0;
+        justify-content: space-between;
     }
 
     .link-container,
     .visa-icon-container {
-        width: 100%; /* Full width for mobile view */
-        margin-bottom: 10px; /* Space between stacked items */
+        width: 50%; /* 50% width for each container */
+        display: flex;
+        align-items: center; /* Vertically center content */
+        justify-content: center; /* Center content within each container */
+    }
+
+    /* Ensure both the link and icon containers are centered */
+    .link-container {
+        justify-content: center;
+    }
+
+    .visa-icon-container {
+        justify-content: center;
     }
 }
