@@ -908,7 +908,7 @@ select {
   gap: 15px;
 }
 .footer__copyright-menu ul li a {
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
   font-size: 0.9rem;
   text-decoration: none;
 }

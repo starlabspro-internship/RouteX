@@ -109,7 +109,10 @@
                                                     $social_icon = get_sub_field('social_icon');
                                                     $social_url = get_sub_field('social_url');
 
-                                                    echo '<a href="' . esc_url($social_url) . '" target="_blank" rel="noopener noreferrer">';
+                                                    if ($social_icon) {
+                                                        echo '<img src="' . esc_url($social_icon) . '" alt="socials Logo" class="social_icon">';
+                                                    }
+                                                
                                                     echo '<i class="' . esc_attr($social_icon) . '"></i>';
                                                     echo '</a>';
                                                 }
@@ -326,4 +329,5 @@
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

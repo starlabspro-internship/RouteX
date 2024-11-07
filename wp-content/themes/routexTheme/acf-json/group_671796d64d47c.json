@@ -236,8 +236,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -261,8 +261,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -286,8 +286,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
+                            "return_format": "",
+                            "library": "",
                             "min_width": "",
                             "min_height": "",
                             "min_size": "",
@@ -327,26 +327,6 @@
                     "label": "RightLayout",
                     "display": "block",
                     "sub_fields": [
-                        {
-                            "key": "acfcloneindex",
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
                         {
                             "key": "field_67179bac13e4e",
                             "label": "Title",
@@ -389,8 +369,8 @@
                         },
                         {
                             "key": "field_67179bff13e50",
-                            "label": "Cards",
-                            "name": "cards",
+                            "label": "Card",
+                            "name": "card",
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
@@ -456,11 +436,11 @@
                                     "parent_repeater": "field_67179bff13e50"
                                 },
                                 {
-                                    "key": "field_672bed47405aa",
-                                    "label": "Card Bullet Points",
-                                    "name": "card_bullet_points",
+                                    "key": "field_6718d8c265a1e",
+                                    "label": "Card Text",
+                                    "name": "card_text",
                                     "aria-label": "",
-                                    "type": "repeater",
+                                    "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -469,56 +449,14 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "layout": "table",
-                                    "pagination": 0,
-                                    "min": 0,
-                                    "max": 0,
-                                    "collapsed": "",
-                                    "button_label": "Add Row",
-                                    "rows_per_page": 20,
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_672bed52405ab",
-                                            "label": "Bullet Point Text",
-                                            "name": "bullet_point_text",
-                                            "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_672bed47405aa"
-                                        }
-                                    ],
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
                                     "parent_repeater": "field_67179bff13e50"
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_672bedd036915",
-                            "label": "Button Link",
-                            "name": "button_link",
-                            "aria-label": "",
-                            "type": "url",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -3387,7 +3325,7 @@
                                     "label": "social_icon",
                                     "name": "social_icon",
                                     "aria-label": "",
-                                    "type": "text",
+                                    "type": "image",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -3396,11 +3334,16 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
                                     "parent_repeater": "field_672ba1534ade9"
                                 },
                                 {
@@ -3862,5 +3805,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730941174
+    "modified": 1730978259
 }
