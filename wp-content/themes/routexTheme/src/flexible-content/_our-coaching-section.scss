@@ -151,7 +151,7 @@
     
 
     // Media Query for Larger Screens
-    @media (min-width: 768px) {
+    @include media-md{
 
         background-color: transparent; // Set background color for desktop view
 

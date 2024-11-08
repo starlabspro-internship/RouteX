@@ -107,7 +107,7 @@
 }
 
 /* Desktop media query */
-@media (min-width: 768px) {
+@include media-md{
     .visa-div { 
         margin-bottom: 35px; 
     }

@@ -35,7 +35,7 @@
     gap: 20px; /* Space between the cards */
 }
 /* Media Query for Desktop - Inline Flex Layout */
-@media (min-width: 768px) {
+@include media-md{
     .cardrow {
         display: flex;
         flex-direction: row;

@@ -676,7 +676,7 @@ select {
 }
 
 /* Menu Layout on Desktop */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .main-navigation {
     display: flex;
     justify-content: center; /* Center the navigation links */
