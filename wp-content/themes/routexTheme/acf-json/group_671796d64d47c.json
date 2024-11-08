@@ -357,6 +357,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_672e032050962",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
                             "key": "field_67179bac13e4e",
                             "label": "Title",
                             "name": "title",
@@ -398,8 +418,8 @@
                         },
                         {
                             "key": "field_67179bff13e50",
-                            "label": "Card",
-                            "name": "card",
+                            "label": "Cards",
+                            "name": "cards",
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
@@ -466,10 +486,10 @@
                                 },
                                 {
                                     "key": "field_6718d8c265a1e",
-                                    "label": "Card Text",
-                                    "name": "card_text",
+                                    "label": "Card Bullet Points",
+                                    "name": "card_bullet_points",
                                     "aria-label": "",
-                                    "type": "text",
+                                    "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -478,21 +498,46 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "layout": "table",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_672e01ecc1a2d",
+                                            "label": "Bullet Point Text",
+                                            "name": "bullet_point_text",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6718d8c265a1e"
+                                        }
+                                    ],
                                     "parent_repeater": "field_67179bff13e50"
                                 }
                             ]
                         },
                         {
-                            "key": "field_67237644eabf2",
-                            "label": "Phone Number",
-                            "name": "phone_number",
+                            "key": "field_672e1704487ee",
+                            "label": "Button Link",
+                            "name": "button_link",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "url",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -502,10 +547,7 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -648,6 +690,32 @@
                             "button_label": "Add Row",
                             "rows_per_page": 20,
                             "sub_fields": [
+                                {
+                                    "key": "field_672e2ca324446",
+                                    "label": "Card Small Image",
+                                    "name": "card_small_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_6718d94df36b3"
+                                },
                                 {
                                     "key": "field_6718d958f36b4",
                                     "label": "Card Background",
@@ -1021,7 +1089,7 @@
                         {
                             "key": "field_6717b375dbaea",
                             "label": "Title",
-                            "name": "title_",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -1123,11 +1191,11 @@
                                     "parent_repeater": "field_6718d9c6fcdfa"
                                 },
                                 {
-                                    "key": "field_6718d9e3fcdfd",
-                                    "label": "Card Text",
-                                    "name": "card_text",
+                                    "key": "field_672e2fccda0c1",
+                                    "label": "Card Bullet Points",
+                                    "name": "card_bullet_points",
                                     "aria-label": "",
-                                    "type": "text",
+                                    "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1136,11 +1204,36 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "layout": "table",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_672e3010da0c2",
+                                            "label": "Card Text",
+                                            "name": "card_text",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_672e2fccda0c1"
+                                        }
+                                    ],
                                     "parent_repeater": "field_6718d9c6fcdfa"
                                 }
                             ]
@@ -1544,7 +1637,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array",
+                                    "return_format": "url",
                                     "parent_repeater": "field_6718dbd517ed1"
                                 }
                             ]
@@ -3806,5 +3899,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731003944
+    "modified": 1731080217
 }
