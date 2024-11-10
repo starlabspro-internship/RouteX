@@ -5,16 +5,14 @@
             if( have_rows('logos') ): 
                 while( have_rows('logos') ): the_row();
                     
-                    $logo_image = get_sub_field('logos'); 
+                    $logo_image = get_sub_field('logos_image'); 
                     if( $logo_image ): ?>
                         <img src="<?php echo esc_url($logo_image); ?>" 
                              alt="" 
                              class="img-fluid client-img">
                     <?php endif; 
                 endwhile;
-            else: ?>
-                <p><?php esc_html_e('No logos found.', ''); ?></p> 
-            <?php endif; ?>
+            endif; ?>
         </div>
     </div>
 </div>
