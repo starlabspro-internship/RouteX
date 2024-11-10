@@ -1,11 +1,4 @@
 <?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package routexTheme
- */
 
 ?>
 <section class="hero-section">
