@@ -92,7 +92,6 @@
                                 }
                             }
                             ?>
-
                         <!-- Social Links -->
                         <div class="footer__social">
                             <?php

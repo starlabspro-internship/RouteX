@@ -869,7 +869,7 @@ select {
 .footer__social {
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 10px;
   margin-top: 15px;
 }
 .footer__social a {
