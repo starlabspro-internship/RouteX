@@ -1,52 +1,50 @@
-<?php if (have_rows('our_coaching')): ?>
-        <?php while (have_rows('our_coaching')): the_row(); ?>
-        <div class="container joindiv" style="background-image: url('<?php echo esc_url(get_sub_field('background_image')); ?>');">
+<div class="container joindiv" style="background-image: url('<?php echo esc_url(get_sub_field('background_image')); ?>');">
 <section class="our-coaching-section container my-5">
     <!-- Our Coaching Section -->
     
-            <!-- Top Div with Title and Subtitle -->
-            <div class="row mb-4 title-subtitle-div">
-                <div class="col-12 text-center">
-                    <?php if (get_sub_field('sub_title')): ?>
-                        <p class="subtitle">             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
-                        <?php the_sub_field('sub_title'); ?></p>
-                    <?php endif; ?>
-                    <?php if (get_sub_field('title')): ?>
-                        <h2><?php the_sub_field('title'); ?></h2>
-                    <?php endif; ?>
-                    
-                </div>
-            </div>
+    <!-- Top Div with Title and Subtitle -->
+    <div class="row mb-4 title-subtitle-div">
+        <div class="col-12 text-center">
+            <?php if (get_sub_field('sub_title')): ?>
+                <p class="subtitle">             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+                <?php the_sub_field('sub_title'); ?></p>
+            <?php endif; ?>
+            <?php if (get_sub_field('title')): ?>
+                <h2><?php the_sub_field('title'); ?></h2>
+            <?php endif; ?>
+            
+        </div>
+    </div>
 
-            <!-- Bottom Row with Left and Right Divs -->
-            <div class="row">
-                <!-- Left Div (70% width) with Cards -->
-                <div class="col-lg-8 col-md-7 col-12">
-                    <div class="card-container">
-                        <?php if (have_rows('cards')): ?>
-                            <?php while (have_rows('cards')): the_row(); ?>
-                                <div class="card mb-3 p-3 border">
-                                    <div class="name-pos-div">
-                                    <h5><?php the_sub_field('name'); ?></h5>
-                                    <p> <?php the_sub_field('position'); ?></p>
+    <!-- Bottom Row with Left and Right Divs -->
+    <div class="row">
+        <!-- Left Div (70% width) with Cards -->
+        <div class="col-lg-8 col-md-7 col-12">
+            <div class="card-container">
+                <?php if (have_rows('cards')): ?>
+                    <?php while (have_rows('cards')): the_row(); ?>
+                        <div class="card mb-3 p-3 border">
+                            <div class="name-pos-div">
+                            <h5><?php the_sub_field('name'); ?></h5>
+                            <p> <?php the_sub_field('position'); ?></p>
+                            </div>
+                                <div class="d-flex card-person-link">
+                                    <div class="container link-container">
+                                        <a class="person-link" href="<?php the_sub_field('position'); ?>" aria-label="Link to <?php the_sub_field('name'); ?>'s profile">
+                                        <svg class="svg-link2" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="30" cy="30.5" r="29.5" stroke="#83CD20" />
+                                            <path d="M37.1581 26.0008V34.8397C37.1581 35.1711 37.02 35.4749 36.799 35.6959C36.5504 35.9445 36.2466 36.0826 35.9151 36.0826C35.2246 36.1102 34.6445 35.5302 34.6721 34.8397L34.6445 29.0115L26.1924 37.4637C25.6952 37.9609 24.9218 37.9609 24.4246 37.4637C23.9551 36.9941 23.9274 36.1931 24.4246 35.6959L32.8768 27.2438H27.0763C26.3857 27.2714 25.8057 26.6914 25.8333 26.0008C25.8057 25.3103 26.3857 24.7302 27.0763 24.7579H35.9151C36.6056 24.7302 37.1857 25.3103 37.1581 26.0008Z" fill="#83CD20"/>
+                                        </svg>
+                                        </a>
                                     </div>
-                                        <div class="d-flex card-person-link">
-                                            <div class="container link-container">
-                                                <a class="person-link" href="<?php the_sub_field('position'); ?>" aria-label="Link to <?php the_sub_field('name'); ?>'s profile">
-                                                <svg class="svg-link2" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="30" cy="30.5" r="29.5" stroke="#83CD20" />
-                                                    <path d="M37.1581 26.0008V34.8397C37.1581 35.1711 37.02 35.4749 36.799 35.6959C36.5504 35.9445 36.2466 36.0826 35.9151 36.0826C35.2246 36.1102 34.6445 35.5302 34.6721 34.8397L34.6445 29.0115L26.1924 37.4637C25.6952 37.9609 24.9218 37.9609 24.4246 37.4637C23.9551 36.9941 23.9274 36.1931 24.4246 35.6959L32.8768 27.2438H27.0763C26.3857 27.2714 25.8057 26.6914 25.8333 26.0008C25.8057 25.3103 26.3857 24.7302 27.0763 24.7579H35.9151C36.6056 24.7302 37.1857 25.3103 37.1581 26.0008Z" fill="#83CD20"/>
-                                                </svg>
-                                                </a>
-                                            </div>
-                                        </div>
                                 </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
 
-                <!-- Right Div (30% width) with Background Image and Links -->
+<!-- Right Div (30% width) with Background Image and Links -->
 <?php if (have_rows('social_media_card')): ?>
     <div class="col-lg-4 col-md-5 col-12 d-flex align-items-center justify-content-center flex-column">
         <?php while (have_rows('social_media_card')): the_row(); ?>
@@ -91,9 +89,6 @@
         <?php endwhile; ?>
     </div>
 <?php endif; ?>
-
-            </div>
-        <?php endwhile; ?>
-    <?php endif; ?>
+    </div>
 </section>
 </div>
