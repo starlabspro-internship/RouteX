@@ -676,7 +676,7 @@ select {
 }
 
 /* Menu Layout on Desktop */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .main-navigation {
     display: flex;
     justify-content: center; /* Center the navigation links */
@@ -869,7 +869,7 @@ select {
 .footer__social {
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 10px;
   margin-top: 15px;
 }
 .footer__social a {
@@ -1481,6 +1481,7 @@ select {
     -o-object-fit: cover;
        object-fit: cover; /* Ensure the image covers the area */
     border-radius: 20px;
+    max-height: 250px;
   }
   .visa-content {
     min-width: 0;
@@ -2205,6 +2206,8 @@ select {
   padding: 0 15px;
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 .testimonial-section .testimonial-buttons {
   gap: 10px;

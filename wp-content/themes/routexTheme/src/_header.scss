@@ -65,7 +65,7 @@
 }
 
 /* Menu Layout on Desktop */
-@media (min-width: 769px) {
+@include media-md{
     .main-navigation {
         display: flex;
         justify-content: center; /* Center the navigation links */

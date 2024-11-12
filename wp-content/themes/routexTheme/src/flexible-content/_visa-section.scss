@@ -107,7 +107,7 @@
 }
 
 /* Desktop media query */
-@media (min-width: 768px) {
+@include media-md{
     .visa-div { 
         margin-bottom: 35px; 
     }
@@ -166,6 +166,7 @@
         height: 100%; /* Full height to match the container */
         object-fit: cover; /* Ensure the image covers the area */
         border-radius: 20px;
+        max-height: 250px;
     }
     
     .visa-content {

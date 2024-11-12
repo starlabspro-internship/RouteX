@@ -6,6 +6,9 @@
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
 
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
     .testimonial-buttons {
         gap: 10px; // Increased gap for more space between buttons
         display: flex;
@@ -116,7 +119,7 @@
         color: var(--primary-color);
     }
 
-@media (min-width: 768px) {
+    @include media-md{
         align-items: stretch;
 
         .testimonial-card {

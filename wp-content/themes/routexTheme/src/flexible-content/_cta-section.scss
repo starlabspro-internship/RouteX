@@ -109,7 +109,7 @@
     border-radius: 20px; /* Updated from 25px to 20px */
 }
 
-@media (min-width: 768px) {
+@include media-md{
     .ctadiv {
         display: flex;
     }
