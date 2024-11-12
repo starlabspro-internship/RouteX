@@ -1269,10 +1269,10 @@ select {
     flex-wrap: wrap; /* Allow cards to wrap to the next line */
     gap: 20px; /* Space between cards */
   }
-  .col-md-4 {
+  .cards-wrapper {
     flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
   }
-  .col-md-4:nth-child(2) {
+  .cards-wrapper:nth-child(2) {
     margin-left: auto; /* Push the second row card to the right */
   }
   .card1 {
@@ -2036,7 +2036,7 @@ select {
 
 .ctadiv {
   border: 1px solid var(--light-color);
-  border-radius: 20px; /* Updated from 25px to 20px */
+  border-radius: 20px;
   padding: 20px;
   display: block;
   margin-bottom: 20px;
@@ -2061,7 +2061,7 @@ select {
   color: var(--secondary-color);
   padding: 15px 30px;
   border: 1px solid var(--light-color);
-  border-radius: 20px; /* Updated from 25px to 20px */
+  border-radius: 20px;
   text-decoration: none;
   display: inline-block;
   font-size: 0.875rem;
@@ -2070,11 +2070,11 @@ select {
 }
 .top-right-section .button:hover {
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--primary-color);
   transform: scale(1.02);
 }
 .top-right-section .img2 {
-  border-radius: 20px 20px 20px 0; /* Updated from 25px to 20px */
+  border-radius: 20px 20px 20px 0;
   padding-top: 10px;
   height: 100%;
   -o-object-fit: cover;
@@ -2110,7 +2110,7 @@ select {
 }
 
 .imagediv img {
-  border-radius: 20px; /* Updated from 25px to 20px */
+  border-radius: 20px;
   max-width: 100%;
   height: auto;
 }
@@ -2134,7 +2134,7 @@ select {
   padding: 0;
   margin: 0;
   margin-top: 5%;
-  border-radius: 20px; /* Updated from 25px to 20px */
+  border-radius: 20px;
 }
 
 @media (min-width: 768px) {
@@ -2171,12 +2171,11 @@ select {
     background-position: center;
     display: flex;
     flex-direction: column;
-    border-radius: 20px; /* Updated from 25px to 20px */
+    border-radius: 20px;
     padding: 0;
     margin-top: 0;
     position: relative;
   }
-  /* Add the triangle */
   .right-image::after {
     content: "";
     position: absolute;
@@ -2184,7 +2183,7 @@ select {
     left: 0;
     width: 0;
     height: 0;
-    border-left: 35px solid white;
+    border-left: 35px solid var(--primary-color);
     border-top: 200px solid transparent;
   }
   .bottom-counter {
@@ -2200,7 +2199,7 @@ select {
   }
 }
 .testimonial-section {
-  max-width: 950px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -2316,36 +2315,34 @@ select {
   .testimonial-section .testimonial-card {
     min-height: inherit;
     margin-top: 0;
+    padding-bottom: 40px;
   }
   .testimonial-section .testimonial-left {
     height: auto;
   }
   .testimonial-section .buttons-wrapper {
     width: 30%;
-    justify-content: space-between;
-    padding-left: 3%;
-  }
-  .testimonial-section .testimonial-buttons {
-    display: flex;
-    justify-content: left;
-  }
-  .testimonial-section .testimonial-buttons .separator {
-    width: 70%;
-    height: 2px;
-    background-color: var(--light-color);
-  }
-  .testimonial-section .testimonial-buttons .prev-testimonial,
-  .testimonial-section .testimonial-buttons .next-testimonial {
-    line-height: 0;
-    position: relative;
-  }
-  .testimonial-section .testimonial-text {
-    padding-top: 2%;
-    font-size: 130%;
-    font-weight: 100;
+    padding-left: 4%;
   }
   .testimonial-section .next-testimonial {
     margin-left: 5%;
+  }
+  .testimonial-section .testimonial-buttons {
+    align-items: left;
+    justify-content: left;
+    padding-left: 0;
+    padding-top: 10%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .testimonial-section .separator {
+    width: 100%;
+    height: 2px; /* Set a height to make it visible */
+    background-color: var(--light-color); /* Set a contrasting color */
+    margin: 0; /* Center it */
+    justify-self: left;
+    padding: 0;
   }
 }
 
@@ -2382,11 +2379,11 @@ select {
   justify-content: space-between;
   align-items: center;
 }
-.our-coaching-section .card-container .card .name-pos-div {
+.our-coaching-section .card-container .card .name-position-div {
   flex: 1;
   padding-left: 3%;
 }
-.our-coaching-section .card-container .card .name-pos-div h5 {
+.our-coaching-section .card-container .card .name-position-div h5 {
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
   margin-bottom: 0.5rem;
@@ -2395,7 +2392,7 @@ select {
   margin-top: 0;
   padding-top: 4%;
 }
-.our-coaching-section .card-container .card .name-pos-div p {
+.our-coaching-section .card-container .card .name-position-div p {
   color: var(--base-color);
   font-family: var(--primary-font-family);
   margin-bottom: 0.5rem;
@@ -2506,14 +2503,14 @@ select {
   .our-coaching-section .card-container .card p {
     padding-bottom: 2%;
   }
-  .our-coaching-section .name-pos-div {
+  .our-coaching-section .name-position-div {
     padding: 0;
     padding-left: 3%;
     margin-bottom: 0;
     margin: 0;
     text-align: left;
   }
-  .our-coaching-section .name-pos-div p {
+  .our-coaching-section .name-position-div p {
     text-align: left;
     margin-bottom: 0;
     padding-bottom: 0;

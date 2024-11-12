@@ -59,7 +59,7 @@ endif;
                         <?php foreach ($cards as $card): ?>
                             <?php if ($card['name'] || $card['position']): ?>
                                 <div class="card mb-3 p-3 border">
-                                    <div class="name-pos-div">
+                                    <div class="name-position-div">
                                         <h5><?php echo esc_html($card['name']); ?></h5>
                                         <p><?php echo esc_html($card['position']); ?></p>
                                     </div>
