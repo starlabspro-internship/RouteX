@@ -739,7 +739,7 @@
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -809,7 +809,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
+                                    "return_format": "array",
                                     "parent_repeater": "field_672a15de66a56"
                                 }
                             ]
@@ -1499,8 +1499,8 @@
                                     "sub_fields": [
                                         {
                                             "key": "field_672e3010da0c2",
-                                            "label": "Bullet Point Text",
-                                            "name": "bullet_point_text",
+                                            "label": "Card Text",
+                                            "name": "card_text",
                                             "aria-label": "",
                                             "type": "text",
                                             "instructions": "",
@@ -3012,5 +3012,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731423044
+    "modified": 1731428051
 }
