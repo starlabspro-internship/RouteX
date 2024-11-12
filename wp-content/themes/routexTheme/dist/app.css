@@ -1096,19 +1096,17 @@ select {
   align-items: center;
   justify-content: space-between;
 }
-
-.hero-content {
+.hero-section .hero-content {
   position: relative;
   z-index: 2;
   max-width: 740px;
   margin-right: 10%;
+  margin-top: -110%;
   display: flex;
-  margin-top: -90%;
   flex-direction: column;
   justify-content: center;
 }
-
-.hero-content-title {
+.hero-section .hero-content .hero-content-title {
   font-family: var(--plus-jakarta-sans);
   font-size: 2.5rem;
   font-weight: bold;
@@ -1116,15 +1114,13 @@ select {
   color: var(--primary-color);
   margin-bottom: 20px;
 }
-
-.left-tower,
-.right-tower,
-.decorative-circle,
-.gray-photo {
+.hero-section .left-tower,
+.hero-section .right-tower,
+.hero-section .decorative-circle,
+.hero-section .gray-photo {
   position: relative;
 }
-
-.left-tower {
+.hero-section .left-tower {
   top: 50%;
   right: 25%;
   transform: translateY(215%) scaleX(-1);
@@ -1133,30 +1129,27 @@ select {
   height: 460.73px;
   z-index: 1;
 }
-
-.right-tower {
+.hero-section .right-tower {
   top: 50%;
-  right: -78%;
+  right: -79%;
   transform: translateY(112%);
-  opacity: 0.5;
+  opacity: 1;
   width: 345.33px;
   height: 460.73px;
   z-index: 1;
 }
-
-.decorative-circle {
+.hero-section .decorative-circle {
   width: 638px;
   height: 469px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  top: 50%;
+  top: 20px;
   right: 2%;
   transform: translateY(20%);
   opacity: 0.6;
   z-index: 0;
 }
-
-.gray-photo {
+.hero-section .gray-photo {
   top: 50%;
   right: 12.5%;
   transform: translateY(-90%);
@@ -1165,15 +1158,13 @@ select {
   width: 597px;
   height: 684.83px;
 }
-
-.btn-wrapper {
+.hero-section .btn-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-top: 20px;
 }
-
-.btn-transparent {
+.hero-section .btn-wrapper .btn-transparent {
   background-color: transparent;
   color: var(--primary-color);
   padding: 10px 20px;
@@ -1185,15 +1176,14 @@ select {
   transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
 }
-.btn-transparent:hover {
+.hero-section .btn-wrapper .btn-transparent:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
-.btn-transparent i {
+.hero-section .btn-wrapper .btn-transparent i {
   margin-left: 8px;
 }
-
-.banner-video-button {
+.hero-section .banner-video-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1204,30 +1194,35 @@ select {
   transition: background-color 0.3s;
   margin-right: -8px;
 }
-.banner-video-button svg {
+.hero-section .banner-video-button svg {
   width: 100%;
   height: 100%;
 }
-
-.video-text {
-  color: var(--primary-color) !important;
+.hero-section .video-text {
+  color: var(--primary-color);
   font-size: 16px;
   position: relative;
   text-decoration: none;
   margin-left: 10px;
 }
-
-/* Remove any mobile-specific transformations and maintain normal positioning */
 @media (max-width: 768px) {
   .hero-section {
     padding: 10px;
   }
-  .gray-photo {
-    width: 100%;
+  .hero-section .hero-content-title {
+    margin-top: 65%;
+  }
+  .hero-section .right-tower {
+    margin-top: -60%;
+    margin-left: -60%;
+  }
+  .hero-section .gray-photo {
+    width: 30%;
     height: auto;
     margin-top: 10px;
   }
 }
+
 /* Card styles */
 .cards-div {
   margin-top: 30px;
@@ -2155,10 +2150,12 @@ select {
 }
 
 @media (min-width: 768px) {
-  .ctadiv {
-    display: flex;
+  .cta-container {
     margin-top: 60px;
     margin-bottom: 60px;
+  }
+  .ctadiv {
+    display: flex;
   }
   .circle {
     margin-left: 0;
@@ -2496,6 +2493,7 @@ select {
 @media (min-width: 768px) {
   .our-coaching-section {
     background-color: transparent;
+    padding-bottom: 85px;
   }
   .our-coaching-section h2 {
     font-size: 2.6rem;

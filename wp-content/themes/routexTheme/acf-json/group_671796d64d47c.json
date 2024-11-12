@@ -809,7 +809,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array",
+                                    "return_format": "url",
                                     "parent_repeater": "field_672a15de66a56"
                                 }
                             ]
@@ -3012,5 +3012,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731335154
+    "modified": 1731418715
 }
