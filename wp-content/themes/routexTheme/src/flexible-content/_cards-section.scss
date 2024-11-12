@@ -1,4 +1,8 @@
 /* Card styles */
+.cards-div{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 .card1 {
     background-color: var(--off-white); // Creamy background color
     border: 1px solid lightgray; // Small border
@@ -36,6 +40,10 @@
 }
 /* Media Query for Desktop - Inline Flex Layout */
 @include media-md{
+    .cards-div{
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
     .cardrow {
         display: flex;
         flex-direction: row;

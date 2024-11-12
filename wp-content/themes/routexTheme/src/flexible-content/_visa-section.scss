@@ -4,7 +4,9 @@
     flex-direction: column; /* Stack the cards vertically */
     gap: 20px; /* Space between cards using flex gap */
     padding-bottom: 40px; /* Add bottom padding */
-    margin-top: 4rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
     
     h1 {
         color: var(--secondary-color);
@@ -113,7 +115,8 @@
     }
     
     .visa-section{
-        margin-top: 5rem;
+        margin-top: 60px;
+        margin-bottom: 60px;
 
         h1 {
             color: var(--secondary-color);
