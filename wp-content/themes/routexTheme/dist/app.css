@@ -1250,7 +1250,7 @@ select {
   margin-top: 7%;
 }
 .card1 .card-text {
-  color: gray;
+  color: var(--base-color);
   font-size: 78%;
 }
 
@@ -1424,7 +1424,7 @@ select {
 }
 
 .svg-link:hover path {
-  fill: white; /* Change the arrow color to white on hover */
+  fill: var(--primary-color); /* Change the arrow color to white on hover */
 }
 
 /* Optional: To prevent text selection on hover */
@@ -1445,7 +1445,7 @@ select {
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
     font-size: 2.75rem;
-    text-align: left;
+    text-align: center;
     padding-bottom: 0;
     margin-top: 0;
     padding-top: 0;
@@ -1454,7 +1454,7 @@ select {
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
     padding: 0;
     margin: 0;
   }
@@ -2467,7 +2467,7 @@ select {
   stroke: none; /* Change the border color to white on hover */
 }
 .our-coaching-section .svg-link2:hover path {
-  fill: white; /* Change the arrow color to white on hover */
+  fill: var(--primary-color); /* Change the arrow color to white on hover */
 }
 .our-coaching-section .social-media-links-div {
   background-color: var(--primary-color);

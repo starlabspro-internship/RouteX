@@ -121,7 +121,7 @@
     }
     
     .svg-link2:hover path {
-        fill: white; /* Change the arrow color to white on hover */
+        fill: var(--primary-color); /* Change the arrow color to white on hover */
     }
 
     .social-media-links-div{
