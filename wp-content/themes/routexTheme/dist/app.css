@@ -1229,6 +1229,11 @@ select {
   }
 }
 /* Card styles */
+.cards-div {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .card1 {
   background-color: var(--off-white);
   border: 1px solid lightgray;
@@ -1263,6 +1268,10 @@ select {
 
 /* Media Query for Desktop - Inline Flex Layout */
 @media (min-width: 768px) {
+  .cards-div {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
   .cardrow {
     display: flex;
     flex-direction: row;
@@ -1325,7 +1334,8 @@ select {
   flex-direction: column; /* Stack the cards vertically */
   gap: 20px; /* Space between cards using flex gap */
   padding-bottom: 40px; /* Add bottom padding */
-  margin-top: 4rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .visa-section h1 {
   color: var(--secondary-color);
@@ -1432,7 +1442,8 @@ select {
     margin-bottom: 35px;
   }
   .visa-section {
-    margin-top: 5rem;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   .visa-section h1 {
     color: var(--secondary-color);
@@ -2034,6 +2045,11 @@ select {
   gap: 15px;
 }
 
+.cta-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .ctadiv {
   border: 1px solid var(--light-color);
   border-radius: 20px;
@@ -2140,6 +2156,8 @@ select {
 @media (min-width: 768px) {
   .ctadiv {
     display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   .circle {
     margin-left: 0;
@@ -2205,8 +2223,8 @@ select {
   padding: 0 15px;
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .testimonial-section .testimonial-buttons {
   gap: 10px;
@@ -2309,8 +2327,9 @@ select {
   color: var(--primary-color);
 }
 @media (min-width: 768px) {
-  .testimonial-section {
-    align-items: stretch;
+  .testimonial-section .testimonial-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   .testimonial-section .testimonial-card {
     min-height: inherit;
@@ -2347,8 +2366,8 @@ select {
 }
 
 .our-coaching-section {
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 2rem;
 }
 .our-coaching-section h2 {
@@ -2549,6 +2568,8 @@ select {
   width: 95%;
   border-radius: 25px;
   max-width: 1800px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .process-overview-section-container {

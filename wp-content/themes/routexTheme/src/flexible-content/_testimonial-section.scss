@@ -5,8 +5,8 @@
     padding: 0 15px;
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
     .testimonial-buttons {
         gap: 10px;
@@ -119,8 +119,11 @@
     }
 
     @include media-md {
-        align-items: stretch;
-
+        .testimonial-section{
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        
         .testimonial-card {
             min-height: inherit;
             margin-top: 0;

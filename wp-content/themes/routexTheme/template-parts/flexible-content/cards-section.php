@@ -11,7 +11,7 @@ if (have_rows('card_repeater')) :
 endif;
 ?>
 
-<div class="container my-5">
+<div class="container my-5 cards-div">
     <div class="row cardrow">
         <?php if ($cards) : ?>
             <?php foreach ($cards as $card) : ?>
