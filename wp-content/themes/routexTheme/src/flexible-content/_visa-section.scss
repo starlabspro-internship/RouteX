@@ -100,7 +100,7 @@
 }
 
 .svg-link:hover path {
-    fill: white; /* Change the arrow color to white on hover */
+    fill: var(--primary-color); /* Change the arrow color to white on hover */
 }
 
 /* Optional: To prevent text selection on hover */
@@ -122,7 +122,7 @@
             color: var(--secondary-color);
             font-family: var(--primary-font-family); // Use the defined font family
             font-size: 2.75rem; // Responsive size
-            text-align: left;
+            text-align: center;
             padding-bottom: 0;
             margin-top: 0;
             padding-top: 0;
@@ -132,7 +132,7 @@
             color: var(--secondary-color);
             font-family: var(--primary-font-family); // Use the defined font family
             font-size: 1rem; // Responsive size
-            text-align: left;
+            text-align: center;
             padding: 0;
             margin: 0;
         }
