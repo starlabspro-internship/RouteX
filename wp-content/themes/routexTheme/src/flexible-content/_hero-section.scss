@@ -89,6 +89,10 @@
   margin-top: 20px;
 }
 
+.btn-wrapper a:visited{
+  color:inherit;
+}
+
 .btn-transparent {
   background-color: transparent;
   color: var(--primary-color);
@@ -103,6 +107,10 @@
 
   &:hover {
     background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+
+  &:hover:visited {
     color: var(--secondary-color);
   }
 
@@ -129,7 +137,7 @@
 }
 
 .video-text {
-  color: var(--primary-color) !important;
+  color: var(--primary-color) ;
   font-size: 16px;
   position: relative;
   text-decoration: none;

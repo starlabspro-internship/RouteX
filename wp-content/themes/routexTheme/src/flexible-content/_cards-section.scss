@@ -1,57 +1,53 @@
-/* Card styles */
 .card1 {
-    background-color: var(--off-white); // Creamy background color
-    border: 1px solid lightgray; // Small border
-    border-radius: 15px; // Slightly rounded corners
+	background-color: var(--contrast-color);
+	// Creamy background color
+    border: 1px solid var(--light-color);
+	// Small border
+    border-radius: 15px;
+	// Slightly rounded corners
     padding: 15px;
-    font-family: var(--primary-font-family); // Use the imported font
-
+	font-family: var(--primary-font-family);
+	// Use the imported font
     .card-body {
-        padding: 20px; // Increased padding
+        padding: 20px;
+	margin-top: 0;
     }
-
     .cardic {
         align-self: left;
         margin-left: 0;
     }
-
     .card-title {
         color: var(--secondary-color);
-        font-weight: var(--bold); // Bold weight from your imported fonts
-        margin-bottom: 3%; // Space between the title and text
-        margin-top: 7%; // Space between the title and text
+        font-weight: var(--bold);
+        // Bold weight from your imported fonts
+            margin-bottom: 3%;
+        // Space between the title and text
+            margin-top: 7%;
     }
-
     .card-text {
         color: gray;
         font-size: 78%;
     }
+
+	.cardrow {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
 }
 
-/* Mobile First - Stacked Cards */
-.cardrow {
-    display: flex;
-    flex-direction: column; /* Stack cards vertically by default */
-    gap: 20px; /* Space between the cards */
-}
-/* Media Query for Desktop - Inline Flex Layout */
-@include media-md{
+@include media-md {
     .cardrow {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap; /* Allow cards to wrap to the next line */
-        gap: 20px; /* Space between cards */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
     }
+}
 
-    .col-md-4 {
-        flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
-    }
-
-    .col-md-4:nth-child(2) {
-        margin-left: auto; /* Push the second row card to the right */
-    }
-
-    .card1 {
-        margin-top: 0; /* Remove margin-top for cards on desktop */
-    }
+.col-md-4 {
+	flex: 1 1 calc(33.33% - 20px);
+	&:nth-child(2) {
+		margin-left: auto;
+	}
 }
