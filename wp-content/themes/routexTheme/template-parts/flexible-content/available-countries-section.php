@@ -2,6 +2,7 @@
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
 $button = get_sub_field('button');
+$cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
         $cards[] = [
@@ -11,6 +12,7 @@ if (have_rows('cards')) :
         ];
     endwhile;
 endif;
+if ($smalltitle || $title || $button || has_non_empty_cards($cards)) :
 ?>
 <section class="available-countries-section">
     <div class="available-countries-section-container top-bottom">
@@ -40,12 +42,12 @@ endif;
                 <?php endif; ?>
                 <?php if ($button) : ?>
                 <div class="available-countries-section-buttons">
-                    <a class="available-countries-section-button" href="<?php echo esc_url($button) ?>">View More <img src="<?php echo get_template_directory_uri() . '/assets/icons/right-arrow.svg' ?>" alt="" > </a>
+                    <a class="available-countries-section-button" href="<?php echo esc_url($button) ?>">View More <img src="<?php echo get_template_directory_uri() . '/assets/icons/right-arrow.svg' ?>" alt="" ></a>
                 </div>
                 <?php endif; ?>
             </div>
             <?php endif; ?>
-            <?php if ($cards) : ?>
+            <?php if (has_non_empty_cards($cards)) : ?>
             <div class="available-countries-section-cards">
                 <div class="row">
                     <?php
@@ -59,7 +61,7 @@ endif;
                                         <img src=""> 
                                     </div>
                                     <?php endif; ?>
-                                    <?php if ($card['card_title'] || $card['card_bullet_points']) : ?>
+                                    <?php if ($card['card_title'] || has_non_empty_values($card['card_bullet_points'])) : ?>
                                     <div class="available-countries-item-content">
                                         <?php if ($card['card_title']) : ?>
                                         <h3><?php echo esc_html($card['card_title']); ?></h3>
@@ -68,10 +70,9 @@ endif;
                                         <div class="available-countries-item-content-list">
                                             <ul>
                                                 <?php foreach ($card['card_bullet_points'] as $card_bullet_points) { ?>
-                                                
-                                                    <li><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/green-checkmark.svg" alt=""><?php echo esc_html($card_bullet_points['card_text']); ?></li>
-                                                
-                                                <?php }?>
+                                                    <?php if (!empty($card_bullet_points['bullet_point_text'])) : ?>
+                                                    <li><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/green-checkmark.svg" alt=""><?php echo esc_html($card_bullet_points['bullet_point_text']); ?></li>
+                                                <?php endif; }?>
                                             </ul>
                                         </div>
                                         <?php endif; ?>
@@ -88,4 +89,4 @@ endif;
         </div>
     </div>
 </section>
-
+<?php endif; ?>

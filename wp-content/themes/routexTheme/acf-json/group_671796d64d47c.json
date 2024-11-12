@@ -739,7 +739,7 @@
                             "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -1499,8 +1499,8 @@
                                     "sub_fields": [
                                         {
                                             "key": "field_672e3010da0c2",
-                                            "label": "Card Text",
-                                            "name": "card_text",
+                                            "label": "Bullet Point Text",
+                                            "name": "bullet_point_text",
                                             "aria-label": "",
                                             "type": "text",
                                             "instructions": "",
@@ -3012,5 +3012,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731335154
+    "modified": 1731423044
 }

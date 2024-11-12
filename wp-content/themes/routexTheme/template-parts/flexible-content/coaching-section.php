@@ -1,6 +1,7 @@
 <?php
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
+$cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
         $cards[] = [
@@ -11,6 +12,8 @@ if (have_rows('cards')) :
         ];
     endwhile;
 endif;
+
+if ($title || $small_title || has_non_empty_cards($cards)) :
 ?>
 <section class="coaching-section">
     <div class="coaching-section-container top-bottom">
@@ -37,6 +40,7 @@ endif;
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
+                <?php if (has_non_empty_cards($cards)) : ?>
                 <div class="coaching-section-buttons">
                     <button class="coaching-section-button" aria-label="Previous slide">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
@@ -47,8 +51,9 @@ endif;
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
                     </button>
                 </div>
+                <?php endif; ?>
             </div>
-            <?php if ($cards) : ?>
+            <?php if (has_non_empty_cards($cards)) : ?>
             <div class="">
                 <div class="swiper coaching-section-swiper">
                     <div class="swiper-wrapper">
@@ -125,5 +130,6 @@ endif;
         });
     </script>
 </section>
+<?php endif; ?> 
 
             
