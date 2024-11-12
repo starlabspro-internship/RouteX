@@ -662,7 +662,7 @@ select {
 
 .main-navigation a {
   display: block; /* Ensure items are block level elements */
-  color: var(--secondary-color) !important;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -672,7 +672,7 @@ select {
 }
 
 .main-navigation a:hover {
-  color: var(--accent-color) !important; /* Optional hover color */
+  color: var(--accent-color); /* Optional hover color */
 }
 
 /* Menu Layout on Desktop */
@@ -1512,15 +1512,15 @@ select {
   .visa-icon-container {
     width: 50%; /* 50% width for each container */
     display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Center content within each container */
   }
   /* Ensure both the link and icon containers are centered */
   .link-container {
-    justify-content: center;
+    justify-content: left;
+    padding-left: 0;
   }
   .visa-icon-container {
-    justify-content: center;
+    justify-content: right;
+    padding-right: 0;
   }
 }
 .countries-section-container {
