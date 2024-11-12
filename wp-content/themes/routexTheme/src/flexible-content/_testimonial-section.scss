@@ -1,24 +1,23 @@
 .testimonial-section {
-    max-width: 950px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
-
     margin-top: 3rem;
     margin-bottom: 3rem;
 
     .testimonial-buttons {
-        gap: 10px; // Increased gap for more space between buttons
+        gap: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
 
         .prev-testimonial,
         .next-testimonial {
-            width: 50px; // Reduced width
-            height: 50px; // Reduced height
+            width: 50px;
+            height: 50px;
             border: 1px solid var(--light-color);
             border-radius: 50%;
             background-color: var(--primary-color);
@@ -119,49 +118,47 @@
         color: var(--primary-color);
     }
 
-    @include media-md{
+    @include media-md {
         align-items: stretch;
 
         .testimonial-card {
             min-height: inherit;
             margin-top: 0;
+            padding-bottom: 40px;
         }
 
         .testimonial-left {
             height: auto;
         }
 
-        .buttons-wrapper{
+        .buttons-wrapper {
             width: 30%;
-            justify-content: space-between;
-            padding-left: 3%;
+            padding-left: 4%;
         }
 
-        .testimonial-buttons {
-            display: flex;
-            justify-content: left;
-
-            .separator {
-                width: 70%;
-                height: 2px;
-                background-color: var(--light-color);
-            }
-
-            .prev-testimonial,
-            .next-testimonial {
-                line-height: 0;
-                position: relative;
-            }
-        }
-
-        .testimonial-text {
-            padding-top: 2%;
-            font-size: 130%;
-            font-weight: 100;
-        }
 
         .next-testimonial{
             margin-left: 5%;
         }
+
+        .testimonial-buttons{
+            align-items: left;
+            justify-content: left;
+            padding-left: 0;
+            padding-top: 10%;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .separator {
+            width: 100%;
+            height: 2px; /* Set a height to make it visible */
+            background-color: var(--light-color); /* Set a contrasting color */
+            margin: 0 ; /* Center it */
+            justify-self: left;
+            padding: 0;
+        }
+        
     }
 }

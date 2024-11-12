@@ -1,6 +1,6 @@
 .ctadiv {
     border: 1px solid var(--light-color);
-    border-radius: 20px; /* Updated from 25px to 20px */
+    border-radius: 20px;
     padding: 20px;
     display: block;
     margin-bottom: 20px;
@@ -27,7 +27,7 @@
         color: var(--secondary-color);
         padding: 15px 30px;
         border: 1px solid var(--light-color);
-        border-radius: 20px; /* Updated from 25px to 20px */
+        border-radius: 20px;
         text-decoration: none;
         display: inline-block;
         font-size: 0.875rem;
@@ -37,12 +37,12 @@
 
     .button:hover {
         background-color: var(--accent-color);
-        color: #fff;
+        color: var(--primary-color);
         transform: scale(1.02);
     }
 
     .img2 {
-        border-radius: 20px 20px 20px 0; /* Updated from 25px to 20px */
+        border-radius: 20px 20px 20px 0;
         padding-top: 10px;
         height: 100%;
         object-fit: cover;
@@ -82,7 +82,7 @@
 }
 
 .imagediv img {
-    border-radius: 20px; /* Updated from 25px to 20px */
+    border-radius: 20px;
     max-width: 100%;
     height: auto;
 }
@@ -106,10 +106,10 @@
     padding: 0;
     margin: 0;
     margin-top: 5%;
-    border-radius: 20px; /* Updated from 25px to 20px */
+    border-radius: 20px;
 }
 
-@include media-md{
+@include media-md {
     .ctadiv {
         display: flex;
     }
@@ -118,7 +118,7 @@
         margin-left: 0;
     }
 
-    .cta-container{
+    .cta-container {
         padding-left: 1.4%;
     }
 
@@ -149,13 +149,12 @@
         background-position: center;
         display: flex;
         flex-direction: column;
-        border-radius: 20px; /* Updated from 25px to 20px */
+        border-radius: 20px;
         padding: 0;
         margin-top: 0;
         position: relative;
     }
 
-    /* Add the triangle */
     .right-image::after {
         content: "";
         position: absolute;
@@ -163,7 +162,7 @@
         left: 0;
         width: 0;
         height: 0;
-        border-left: 35px solid white;
+        border-left: 35px solid var(--primary-color);
         border-top: 200px solid transparent;
     }
 

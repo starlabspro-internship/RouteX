@@ -16,7 +16,7 @@ endif;
         <?php if ($cards) : ?>
             <?php foreach ($cards as $card) : ?>
                 <?php if ($card['card_icon'] || $card['card_title'] || $card['card_text']) : ?>
-                    <div class="col-md-4">
+                    <div class="col-md-4 cards-wrapper">
                         <div class="card card1">
                             <div class="card-body">
                                 <div class="circle cardic">

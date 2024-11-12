@@ -43,11 +43,11 @@
         gap: 20px; /* Space between cards */
     }
 
-    .col-md-4 {
+    .cards-wrapper {
         flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
     }
 
-    .col-md-4:nth-child(2) {
+    .cards-wrapper:nth-child(2) {
         margin-left: auto; /* Push the second row card to the right */
     }
 
