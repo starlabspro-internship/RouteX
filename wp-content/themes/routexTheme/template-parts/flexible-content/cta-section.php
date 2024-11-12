@@ -5,7 +5,6 @@ $top_title = get_sub_field('top_title');
 $top_text = get_sub_field('top_text');
 $button = get_sub_field('button');
 $right_image = get_sub_field('right_image');
-
 $bottom_counters = [];
 if (have_rows('bottom_counter')) :
     while (have_rows('bottom_counter')) : the_row();
@@ -15,9 +14,9 @@ if (have_rows('bottom_counter')) :
         ];
     endwhile;
 endif;
+if ($left_image || $icon || $top_title || $top_text || $button || $right_image || has_non_empty_cards($bottom_counters)) : 
 ?>
-
-<div class="container cta-container">
+<section class="container cta-container">
     <div class="row">
         <!-- Left Div (30%) -->
         <div class="col-md-4 ctadiv imagediv col-12">
@@ -65,7 +64,7 @@ endif;
             </div>
 
             <!-- Bottom Counter Section -->
-            <?php if ($bottom_counters) : ?>
+            <?php if (has_non_empty_cards($bottom_counters)) : ?>
                 <div class="bottom-counter ctadiv">
                     <?php foreach ($bottom_counters as $counter) : ?>
                         <?php if ($counter['numbers'] || $counter['title']) : ?>
@@ -83,4 +82,5 @@ endif;
             <?php endif; ?>
         </div>
     </div>
-</div>
+</section>
+<?php endif; ?>

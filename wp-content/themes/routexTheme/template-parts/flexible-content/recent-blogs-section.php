@@ -1,6 +1,7 @@
 <?php
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
+$cards = [];
 if (have_rows('blog_cards')) :
     while (have_rows('blog_cards')) : the_row();
         $cards[] = [
@@ -13,6 +14,7 @@ if (have_rows('blog_cards')) :
         ];
     endwhile;
 endif;
+if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
 <section class="recent-blogs-section">
     <div class="recent-blogs-section-container top-bottom">
@@ -51,7 +53,7 @@ endif;
                 </div>
             </div>
 
-            <?php if ($cards) : ?>
+            <?php if (has_non_empty_cards($cards)) : ?>
             <div class="">
                 <div class="swiper recent-blogs-section-swiper">
                     <div class="swiper-wrapper">   
@@ -131,3 +133,4 @@ endif;
         });
     </script>
 </section>
+<?php endif; ?>
