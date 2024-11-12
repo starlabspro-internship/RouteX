@@ -1,22 +1,18 @@
 <footer class="footer__area-common">
     <!-- Footer Top Section -->
     <div class="footer-top">
-        <?php
-        if (have_rows('footer')) {
-            while (have_rows('footer')) {
-                the_row();
-                if (have_rows('footer_top_section')) {
-                    while (have_rows('footer_top_section')) {
-                        the_row();
+        <?php if (have_rows('footer')) : ?>
+        <?php while (have_rows('footer')) : the_row(); ?>
+        <?php if (have_rows('footer_top_section')) : ?>
+        <?php while (have_rows('footer_top_section')) : the_row(); 
                         $left_support_message = get_sub_field('left_support_message');
-                        $right_support_message = get_sub_field('right_support_message');
-                        ?>
-
+                        $right_support_message = get_sub_field('right_support_message'); 
+                    ?>
         <div class="footer-top-left">
             <div class="footer-left-svg">
                 <?php echo file_get_contents(get_template_directory() . '/assets/icons/money.svg'); ?>
             </div>
-            <?php if ($left_support_message): ?>
+            <?php if ($left_support_message) : ?>
             <h3><?php echo esc_html($left_support_message); ?></h3>
             <?php endif; ?>
         </div>
@@ -27,100 +23,76 @@
             <div class="footer-right-svg">
                 <?php echo file_get_contents(get_template_directory() . '/assets/icons/World-Icon.svg'); ?>
             </div>
-            <?php if ($right_support_message): ?>
+            <?php if ($right_support_message) : ?>
             <h3><?php echo esc_html($right_support_message); ?></h3>
             <?php endif; ?>
         </div>
-
-        <?php
-                    }
-                }
-            }
-        }
-        ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 
+    <!-- Footer Bottom Wrapper -->
     <div class="footer__bottom1-wrapper">
         <div class="container">
             <div class="row mb-minus-40 footer-wrap">
-
                 <!-- RouteX Section -->
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-1 wow fadeInLeft animated" data-wow-delay=".2s">
                         <div class="footer__logo-container">
-                            <?php
-                            if (have_rows('footer')) {
-                                while (have_rows('footer')) {
-                                    the_row();
-                                    if (have_rows('footer_routex')) {
-                                        while (have_rows('footer_routex')) {
-                                            the_row();
-
+                            <?php if (have_rows('footer')) : ?>
+                            <?php while (have_rows('footer')) : the_row(); ?>
+                            <?php if (have_rows('footer_routex')) : ?>
+                            <?php while (have_rows('footer_routex')) : the_row(); 
                                             $footer_logo_image = get_sub_field('footer_logo_image');
-                                            $footer_logo_text = get_sub_field('footer_logo_text');
-                                           
-
-                                            if ($footer_logo_image) {
-                                                echo '<img src="' . esc_url($footer_logo_image) . '" alt="RouteX Logo" class="footer__logo-icon">';
-                                            }
-                                            echo '<p class="footer-logo-text"><strong>' . esc_html($footer_logo_text) . '</strong></p>';
-                                            echo '<br><br>';
-                                            
-                                        }
-                                    }
-                                }
-                            }
-                            ?>
+                                            $footer_logo_text = get_sub_field('footer_logo_text'); 
+                                        ?>
+                            <?php if ($footer_logo_image) : ?>
+                            <img src="<?php echo esc_url($footer_logo_image); ?>" alt="RouteX Logo"
+                                class="footer__logo-icon">
+                            <?php endif; ?>
+                            <p class="footer-logo-text"><strong><?php echo esc_html($footer_logo_text); ?></strong></p>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
-                        <?php
-                            if (have_rows('footer')) {
-                                while (have_rows('footer')) {
-                                    the_row();
-                                    if (have_rows('footer_routex')) {
-                                        while (have_rows('footer_routex')) {
-                                            the_row();
 
-                                            $footer_description = get_sub_field('footer_description');
+                        <?php if (have_rows('footer')) : ?>
+                        <?php while (have_rows('footer')) : the_row(); ?>
+                        <?php if (have_rows('footer_routex')) : ?>
+                        <?php while (have_rows('footer_routex')) : the_row(); 
+                                        $footer_description = get_sub_field('footer_description'); 
+                                    ?>
+                        <p class="footer-description"><?php echo nl2br(esc_html($footer_description)); ?></p>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
 
-                                            if ($footer_logo_image) {
-                                               
-                                            }
-                                           
-                                            echo '<p class="footer-description">' . nl2br(esc_html($footer_description)) . '</p>';
-                                        }
-                                    }
-                                }
-                            }
-                            ?>
                         <!-- Social Links -->
                         <div class="footer__social">
-                            <?php
-                            if (have_rows('footer')) {
-                                while (have_rows('footer')) {
-                                    the_row();
-                                    if (have_rows('footer_routex')) {
-                                        while (have_rows('footer_routex')) {
-                                            the_row();
-                                            if (have_rows('footer_social_links')) {
-                                                while (have_rows('footer_social_links')) {
-                                                    the_row();
-
+                            <?php if (have_rows('footer')) : ?>
+                            <?php while (have_rows('footer')) : the_row(); ?>
+                            <?php if (have_rows('footer_routex')) : ?>
+                            <?php while (have_rows('footer_routex')) : the_row(); ?>
+                            <?php if (have_rows('footer_social_links')) : ?>
+                            <?php while (have_rows('footer_social_links')) : the_row(); 
                                                     $social_icon = get_sub_field('social_icon');
-                                                    $social_url = get_sub_field('social_url');
-
-                                                    if ($social_icon) {
-                                                        echo '<img src="' . esc_url($social_icon) . '" alt="socials Logo" class="social_icon">';
-                                                    }
-                                                
-                                                    echo '<i class="' . esc_attr($social_icon) . '"></i>';
-                                                    echo '</a>';
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            ?>
+                                                    $social_url = get_sub_field('social_url'); 
+                                                ?>
+                            <?php if ($social_icon) : ?>
+                            <a href="<?php echo esc_url($social_url); ?>" target="_blank" rel="noopener noreferrer">
+                                <img src="<?php echo esc_url($social_icon); ?>" alt="Social Icon" class="social_icon">
+                            </a>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -275,58 +247,47 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Copyright Section -->
-    <div class="footer__bottom-wrapper">
-        <div class="container">
-            <div class="footer__bottom">
-                <div class="footer__copyright wow fadeInLeft animated" data-wow-delay=".6s">
-                    <?php
-                        if (have_rows('footer')) {
-                            while (have_rows('footer')) {
-                                the_row();
-                                if (have_rows('footer_bottom')) {
-                                    while (have_rows('footer_bottom')) {
-                                        the_row();
-                                        $some_field = get_sub_field('footer_copyright');
-                                        echo '<p>' . esc_html($some_field) . '</p>';
-                                    }
-                                }
-                            }
-                        }
-                        ?>
-                </div>
+        <!-- Copyright Section -->
+        <div class="footer__bottom-wrapper">
+            <div class="container">
+                <div class="footer__bottom">
+                    <div class="footer__copyright wow fadeInLeft animated" data-wow-delay=".6s">
+                        <?php if (have_rows('footer')) : ?>
+                        <?php while (have_rows('footer')) : the_row(); ?>
+                        <?php if (have_rows('footer_bottom')) : ?>
+                        <?php while (have_rows('footer_bottom')) : the_row(); 
+                                    $footer_copyright = get_sub_field('footer_copyright'); 
+                                ?>
+                        <p><?php echo esc_html($footer_copyright); ?></p>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
 
-                <!-- Footer Menu Links -->
-                <div class="footer__copyright-menu">
-                    <ul>
-                        <?php
-                            if (have_rows('footer')) {
-                                while (have_rows('footer')) {
-                                    the_row();
-                                    if (have_rows('footer_menu_links')) {
-                                        while (have_rows('footer_menu_links')) {
-                                            the_row();
-                                            $menu_link_text = get_sub_field('menu_link_text');
-                                            $menu_link_url = get_sub_field('menu_link_url');
-                                            echo '<li><a href="' . esc_url($menu_link_url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($menu_link_text) . '</a></li>';
-                                        }
-                                    }
-                                }
-                            }
-                            ?>
-                    </ul>
+                    <div class="footer__copyright-menu">
+                        <ul>
+                            <?php if (have_rows('footer')) : ?>
+                            <?php while (have_rows('footer')) : the_row(); ?>
+                            <?php if (have_rows('footer_menu_links')) : ?>
+                            <?php while (have_rows('footer_menu_links')) : the_row(); 
+                                        $menu_link_text = get_sub_field('menu_link_text');
+                                        $menu_link_url = get_sub_field('menu_link_url'); 
+                                    ?>
+                            <li>
+                                <a href="<?php echo esc_url($menu_link_url); ?>" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <?php echo esc_html($menu_link_text); ?>
+                                </a>
+                            </li>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </footer>
-</footer>
-</div>
-
-<?php wp_footer(); ?>
-
-</body>
-
-</html>
