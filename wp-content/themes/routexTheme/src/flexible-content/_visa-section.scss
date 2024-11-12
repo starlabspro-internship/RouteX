@@ -197,16 +197,16 @@
     .visa-icon-container {
         width: 50%; /* 50% width for each container */
         display: flex;
-        align-items: center; /* Vertically center content */
-        justify-content: center; /* Center content within each container */
     }
 
     /* Ensure both the link and icon containers are centered */
     .link-container {
-        justify-content: center;
+        justify-content: left;
+        padding-left: 0;
     }
 
     .visa-icon-container {
-        justify-content: center;
+        justify-content: right;
+        padding-right: 0;
     }
 }

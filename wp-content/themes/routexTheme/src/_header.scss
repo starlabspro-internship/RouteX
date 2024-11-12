@@ -51,7 +51,7 @@
 
 .main-navigation a {
     display: block; /* Ensure items are block level elements */
-    color: var(--secondary-color) !important;
+    color: var(--secondary-color) ;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -61,7 +61,7 @@
 }
 
 .main-navigation a:hover {
-    color: var(--accent-color) !important; /* Optional hover color */
+    color: var(--accent-color) ; /* Optional hover color */
 }
 
 /* Menu Layout on Desktop */
