@@ -1,6 +1,7 @@
 <?php
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
+$cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
         $cards[] = [
@@ -12,6 +13,7 @@ if (have_rows('cards')) :
         ];
     endwhile;
 endif;
+if ($smalltitle || $title || has_non_empty_cards($cards)) : 
 ?>
 <section class="countries-section">
     <div class="countries-section-container top-bottom">
@@ -47,7 +49,7 @@ endif;
                     </button>
                 </div>
             </div>
-            <?php if ($cards) : ?>
+            <?php if (has_non_empty_cards($cards)) : ?>
             <div class="countries-section-slider-1">
                 <div class="swiper countries-section-swiper">
                     <div class="swiper-wrapper">
@@ -110,8 +112,6 @@ endif;
                 </div>
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
-            <?php endif; ?>
-            <?php if ($cards) : ?>
             <div class="countries-section-slider-2">
                 <div class="swiper countries-section-swiper">
                     <div class="swiper-wrapper" >
@@ -182,3 +182,4 @@ endif;
         });
     </script>
 </section>
+<?php endif; ?>
