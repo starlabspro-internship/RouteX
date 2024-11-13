@@ -1260,6 +1260,14 @@ select {
   gap: 20px;
 }
 
+/* Mobile First - Stacked Cards */
+.cardrow {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically by default */
+  gap: 20px; /* Space between the cards */
+}
+
+/* Media Query for Desktop - Inline Flex Layout */
 @media (min-width: 768px) {
   .cards-div {
     margin-top: 60px;
@@ -1269,24 +1277,20 @@ select {
   .cardrow {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Allow cards to wrap to the next line */
-    gap: 20px; /* Space between cards */
-  }
-  .cards-wrapper {
-    flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
-  }
-  .cards-wrapper:nth-child(2) {
-    margin-left: auto; /* Push the second row card to the right */
-  }
-  .card1 {
-    margin-top: 0; /* Remove margin-top for cards on desktop */
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }
-.col-md-4 {
-  flex: 1 1 calc(33.33% - 20px);
+.cards-wrapper {
+  flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
 }
-.col-md-4:nth-child(2) {
-  margin-left: auto;
+
+.cards-wrapper:nth-child(2) {
+  margin-left: auto; /* Push the second row card to the right */
+}
+
+.card1 {
+  margin-top: 0; /* Remove margin-top for cards on desktop */
 }
 
 @keyframes rtl-scroll {
@@ -2212,6 +2216,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 5%;
 }
 .testimonial-section .testimonial-buttons .prev-testimonial,
 .testimonial-section .testimonial-buttons .next-testimonial {
