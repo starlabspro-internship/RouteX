@@ -779,8 +779,9 @@ select {
   background-size: cover;
   position: relative;
   z-index: 1;
-  padding: 40px 0;
+  padding: 20px 0;
   color: var(--contrast-color);
+  margin-bottom: -25px;
 }
 @media (min-width: 768px) {
   .footer__area-common {
@@ -872,11 +873,18 @@ select {
   margin-top: 15px;
 }
 .footer__social a {
-  color: var(--primary-color);
-  font-size: 1.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 .footer__social a:hover {
-  color: var(--accent-color);
+  transform: scale(1.1); /* Slightly enlarges the link on hover */
+}
+.footer__social a .social_icon {
+  filter: invert(0) brightness(1); /* Default: white icons */
+  transition: filter 0.3s ease;
+}
+.footer__social a .social_icon:hover {
+  filter: invert(0.5) brightness(1.4); /* Example hover effect */
 }
 
 .footer__widget-title h4 {
@@ -965,7 +973,7 @@ select {
   align-items: center;
   color: var(--contrast-color);
   font-size: 0.9rem;
-  min-height: 100px;
+  min-height: 90px;
 }
 
 .footer__copyright {
@@ -985,7 +993,7 @@ select {
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 .footer__copyright-menu ul {
   list-style: none;
