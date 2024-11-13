@@ -42,8 +42,8 @@ function has_content_in_layout() {
 
 if (has_content_in_layout() || $phone_number) :
     ?>
-        <section class="choose-us-section">
-            <div class="choose-us-section-container top-bottom">
+        <section class="choose-us-section top-bottom-small">
+            <div class="choose-us-section-container ">
                 <div class="container">
                     <div class="row">
     <?php
@@ -63,15 +63,12 @@ if (has_content_in_layout() || $phone_number) :
                         <div class="choose-us-media-thumb-img">
                             <div class="choose-us-media-thumb-img-green-border" ></div>
                             <div class="choose-us-media-thumb-img-img" >
-                                <!-- <img src="<?php echo esc_url($first_photo_third_sector); ?>" alt="Why Choose Us Image"> -->
-                                <img src="" alt="">
+                                <img src="<?php echo esc_url($first_photo_third_sector); ?>" alt="Why Choose Us Image">
                             </div>
                         </div>
                         <?php endif; ?>
                         <?php if ($second_photo_third_sector) : ?>
-                        <div class="choose-us-media-thumb-circle spin">
-                            <!-- <img src="<?php echo esc_url($second_photo_third_sector); ?>" alt="Why Choose Us Image"> -->
-
+                        <div class="choose-us-media-thumb-circle">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="">
                         </div>
                         <?php endif; ?>
@@ -87,8 +84,7 @@ if (has_content_in_layout() || $phone_number) :
                         <?php endif; ?>
                         <?php if ($third_photo_third_sector) : ?>
                         <div class="choose-us-media-img-picture" >
-                            <!-- <img src="<?php echo esc_url($third_photo_third_sector); ?>" alt="Why Choose Us Image"> -->
-                            <img src="">
+                            <img src="<?php echo esc_url($third_photo_third_sector); ?>" alt="Why Choose Us Image">
                         </div>
                         <?php endif; ?>
                     </div>

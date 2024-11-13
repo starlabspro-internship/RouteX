@@ -1060,7 +1060,6 @@ select {
   background-color: var(--accent-color);
 }
 
-/* Circle styles */
 .circle {
   width: 80px;
   height: 80px;
@@ -1076,9 +1075,18 @@ select {
   padding: 80px 15px;
 }
 
+.top-bottom-small {
+  padding: 40px 15px;
+}
+
 @media (min-width: 768px) {
   .top-bottom {
     padding: 120px 15px;
+  }
+}
+@media (min-width: 768px) {
+  .top-bottom-small {
+    padding: 60px 15px;
   }
 }
 .hero-section {
@@ -1153,7 +1161,6 @@ select {
   right: 12.5%;
   transform: translateY(-90%);
   z-index: 2;
-  background-color: #e3e3e3;
   width: 597px;
   height: 684.83px;
 }
@@ -1334,11 +1341,8 @@ select {
 /* Container holding all the visa cards */
 .visa-section {
   display: flex;
-  flex-direction: column; /* Stack the cards vertically */
-  gap: 20px; /* Space between cards using flex gap */
-  padding-bottom: 40px; /* Add bottom padding */
-  margin-top: 30px;
-  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 20px;
 }
 .visa-section h1 {
   color: var(--secondary-color);
@@ -1443,10 +1447,6 @@ select {
 @media (min-width: 768px) {
   .visa-div {
     margin-bottom: 35px;
-  }
-  .visa-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
   }
   .visa-section h1 {
     color: var(--secondary-color);
@@ -1870,7 +1870,6 @@ select {
   height: 100%;
   border-radius: 10px;
   background-color: #D9D9D9;
-  border: 1px solid transparent;
 }
 
 .coaching__item-media-img-title {
@@ -1910,13 +1909,22 @@ select {
 .coaching__item-media-img-title-button {
   display: flex;
   align-items: center;
-}
-.coaching__item-media-img-title-button a {
   background: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 17px;
+  border: none;
+}
+.coaching__item-media-img-title-button:hover {
+  cursor: pointer;
+}
+.coaching__item-media-img-title-button:hover img.default-img {
+  display: none;
+}
+.coaching__item-media-img-title-button:hover img.hover-img {
+  display: inline;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+}
+.coaching__item-media-img-title-button img.hover-img {
+  display: none;
 }
 
 .coaching-item_thumb {
@@ -2027,11 +2035,6 @@ select {
   gap: 15px;
 }
 
-.cta-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 .ctadiv {
   border: 1px solid var(--light-color);
   border-radius: 20px;
@@ -2054,19 +2057,19 @@ select {
 .top-right-section p {
   color: var(--base-color);
 }
-.top-right-section .button {
+.top-right-section .cta-button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding: 15px 30px;
   border: 1px solid var(--light-color);
-  border-radius: 20px;
+  border-radius: 30px;
   text-decoration: none;
   display: inline-block;
   font-size: 0.875rem;
   font-weight: var(--regular);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.top-right-section .button:hover {
+.top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   transform: scale(1.02);
@@ -2136,10 +2139,6 @@ select {
 }
 
 @media (min-width: 768px) {
-  .cta-container {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
   .ctadiv {
     display: flex;
   }
@@ -2204,11 +2203,7 @@ select {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .testimonial-section .testimonial-buttons {
   gap: 10px;
@@ -2347,22 +2342,12 @@ select {
   }
 }
 
-.our-coaching-section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 2rem;
-}
 .our-coaching-section h2 {
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
-  margin-bottom: 1rem;
-  font-size: 1.75rem;
   text-align: center;
 }
 .our-coaching-section p {
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
-  font-size: 1rem;
   text-align: center;
 }
 .our-coaching-section .card-container {
@@ -2477,16 +2462,13 @@ select {
 @media (min-width: 768px) {
   .our-coaching-section {
     background-color: transparent;
-    padding-bottom: 85px;
   }
   .our-coaching-section h2 {
-    font-size: 2.6rem;
     text-align: left;
     margin-top: 0;
     padding-top: 0;
   }
   .our-coaching-section p {
-    font-size: 1.125rem;
     padding-left: 0.3%;
     text-align: left;
     padding-bottom: 0;
@@ -2551,8 +2533,19 @@ select {
   width: 95%;
   border-radius: 25px;
   max-width: 1800px;
-  margin-top: 60px;
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+}
+
+.title-subtitle-div {
   margin-bottom: 60px;
+}
+
+.our-coaching-section-subtitle-costum {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .process-overview-section-container {

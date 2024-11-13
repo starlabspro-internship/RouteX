@@ -79,7 +79,6 @@
 	height: 100%;
 	border-radius: 10px;
 	background-color: #D9D9D9;
-	border: 1px solid transparent;
 }
 .coaching__item-media-img-title {
 	background: var(--primary-color);
@@ -118,12 +117,25 @@
 .coaching__item-media-img-title-button {
 	display: flex;
 	align-items: center;
-	a {
-		background: var(--primary-color);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 17px;
+	background: var(--primary-color);
+	border: none;
+	&:hover {
+		cursor: pointer;
+		img {
+			&.default-img {
+				display: none;
+			}
+			&.hover-img {
+				display: inline;
+				border: 1px solid var(--accent-color);
+				background-color: var(--accent-color);
+			}
+		}
+	}
+	img {
+		&.hover-img {
+			display: none;
+		}
 	}
 }
 .coaching-item_thumb {
@@ -134,3 +146,5 @@
 	border: 1px solid var(--light-color);
 	border-radius: 20px;
 }
+
+
