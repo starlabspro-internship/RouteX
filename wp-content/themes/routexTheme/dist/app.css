@@ -1258,22 +1258,22 @@ select {
     padding: 10px;
   }
   .hero-section .hero-content-title {
-    margin-top: 15%;
+    margin-top: 25%;
   }
   .hero-section .right-tower {
     margin-top: -60%;
     margin-left: -60%;
   }
   .hero-section .gray-photo {
-    width: 70%;
+    width: 80%;
     height: auto;
-    margin-bottom: -105px;
+    margin-bottom: -115px;
     margin-left: 20px;
   }
   .hero-section .decorative-circle {
-    width: 398px;
-    height: 299px;
-    margin-right: -5px;
+    width: 458px;
+    height: 409px;
+    margin-left: -65px;
   }
 }
 
