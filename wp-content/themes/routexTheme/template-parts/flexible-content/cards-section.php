@@ -12,8 +12,8 @@ if (have_rows('card_repeater')) :
 
     if (has_non_empty_cards($cards)) :
 ?>
-<section class="container">
-    <div class="row cardrow">
+<section class="container cards-div">
+    <div class="row cardrow ">
         <?php foreach ($cards as $card) : ?>
             <?php if ($card['card_icon'] || $card['card_title'] || $card['card_text']) : ?>
                 <div class="col-md-4 cards-wrapper">

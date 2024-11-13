@@ -610,8 +610,6 @@ select {
   margin-bottom: 1.5em;
 }
 
-/* General Styles */
-/* Header Styles */
 .site-header {
   background-color: var(--contrast-color);
 }
@@ -621,7 +619,8 @@ select {
   align-items: center;
   width: 100%;
   padding: 1rem 2rem;
-  justify-content: space-between; /* Ensures space between branding, menu, and button */
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .site-branding img {
@@ -629,9 +628,8 @@ select {
   height: auto;
 }
 
-/* Mobile Menu Toggle Styles */
 .menu-toggle {
-  display: block; /* Make toggle button visible on mobile */
+  display: block;
   background-color: var(--accent-color);
   color: var(--light-color);
   border: none;
@@ -646,50 +644,77 @@ select {
   background-color: var(--secondary-color);
 }
 
-/* Navigation Menu */
 .main-navigation {
-  display: none; /* Hide navigation menu by default on mobile */
-  flex-direction: column; /* Ensure items are displayed vertically */
-  align-items: center; /* Center items vertically */
+  display: none;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--contrast-color);
-  width: 100%; /* Take up full width */
+  width: 100%;
 }
 
 .main-navigation.active {
-  display: flex; /* Show menu when toggled */
-  flex-direction: column; /* Ensure items are displayed vertically */
+  display: flex;
+  flex-direction: column;
 }
 
 .main-navigation a {
-  display: block; /* Ensure items are block level elements */
+  padding: 1rem;
+  text-align: center;
+  font-size: 10px;
+  display: block;
+}
+
+.main-navigation #primary-menu li {
+  margin: 0;
+}
+
+.menu-menu-1-container {
+  width: 100%;
+}
+
+#primary-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  justify-content: stretch;
+}
+
+#primary-menu li {
+  width: 100%;
+}
+
+#primary-menu li a {
+  display: block;
+  text-align: center;
   color: var(--secondary-color);
+  font-size: 14px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
-  padding: 1rem; /* Ensure spacing for each item */
-  text-align: center;
-  width: 100%; /* Make each link fill the container */
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
 .main-navigation a:hover {
-  color: var(--accent-color); /* Optional hover color */
+  color: var(--accent-color);
 }
 
-/* Menu Layout on Desktop */
-@media (min-width: 768px) {
-  .main-navigation {
-    display: flex;
-    justify-content: center; /* Center the navigation links */
-    flex-direction: row; /* Align the menu items horizontally on desktop */
-  }
-  .menu-toggle {
-    display: none; /* Hide the menu toggle button on desktop */
-  }
+.header-container {
+  flex-direction: column;
+  padding: 1rem;
 }
-/* Button Styles */
+
+.menu-toggle {
+  margin-top: 1rem;
+  order: 1;
+  font-size: 15px;
+  padding: 3% 5%;
+  border-radius: 25px;
+}
+
 .button-div {
-  display: flex;
-  justify-content: flex-end;
+  order: 2;
+  margin-top: 1rem;
 }
 
 .appointment-button {
@@ -704,67 +729,46 @@ select {
   font-weight: var(--regular);
 }
 
-/* Media Queries for Mobile */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .header-container {
-    flex-direction: column; /* Stack items vertically on mobile */
-    padding: 1rem; /* Adjust padding for mobile */
-  }
-  .menu-toggle {
-    margin-top: 1rem;
-    order: 1; /* Position the toggle button above the menu */
-    font-size: 15px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    border-radius: 25px;
-    margin-top: 0;
+    flex-direction: row;
+    padding: 1rem;
   }
   .main-navigation {
-    display: none;
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: center;
-    background-color: var(--contrast-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
-  .main-navigation.active {
-    display: flex; /* Show the menu when toggled */
+  .menu-toggle {
+    display: none;
   }
   .main-navigation a {
-    padding: 1rem;
-    text-align: center;
-    font-size: 10px;
-    display: block; /* Ensure items are block level elements */
+    padding: 0.5rem 1rem;
+    text-align: left;
+    width: auto;
   }
-  .main-navigation #primary-menu li {
-    margin: 0;
-  }
-  .menu-menu-1-container {
-    width: 100%;
+  .button-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   #primary-menu {
     display: flex;
-    flex-direction: column; /* Arrange menu items vertically */
-    width: 100%; /* Full width for each menu item */
-    text-align: center;
-    justify-content: stretch;
+    flex-direction: row;
+    width: auto;
+    justify-content: center;
   }
   #primary-menu li {
-    width: 100%; /* Each menu item takes up the full width */
+    width: auto;
+    margin: 0 1rem;
   }
   #primary-menu li a {
-    display: block;
     text-align: center;
     color: var(--secondary-color);
     font-size: 14px;
-    text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
-    width: 100%;
-  }
-  .button-div {
-    order: 2; /* Position the button below the menu */
-    margin-top: 1rem;
+    width: auto;
   }
 }
 .footer__area-common {
@@ -2331,9 +2335,6 @@ select {
     align-items: left;
     justify-content: left;
     padding-left: 0;
-    padding-top: 10%;
-    padding-bottom: 0;
-    margin-bottom: 0;
     width: 100%;
   }
   .testimonial-section .separator {
@@ -2437,20 +2438,20 @@ select {
   background-color: var(--primary-color);
 }
 .our-coaching-section .svg-link2 {
-  position: relative; /* For positioning pseudo-elements */
-  display: inline-block; /* Make sure the link behaves as a block */
-  overflow: hidden; /* Hide overflow for the transition effect */
-  border-radius: 40px; /* Match border-radius of the SVG */
-  transition: background-color 0.2s ease; /* Transition for background color */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 40px;
+  transition: background-color 0.2s ease;
 }
 .our-coaching-section .svg-link2:hover {
-  background-color: var(--accent-color); /* Change background color on hover */
+  background-color: var(--accent-color);
 }
 .our-coaching-section .svg-link2:hover rect {
-  stroke: none; /* Change the border color to white on hover */
+  stroke: none;
 }
 .our-coaching-section .svg-link2:hover path {
-  fill: var(--primary-color); /* Change the arrow color to white on hover */
+  fill: var(--primary-color);
 }
 .our-coaching-section .social-media-links-div {
   background-color: var(--primary-color);
@@ -2464,14 +2465,14 @@ select {
   padding: 6%;
 }
 .our-coaching-section .svg-link-icon {
-  position: relative; /* For positioning pseudo-elements */
-  display: inline-block; /* Make sure the link behaves as a block */
-  overflow: hidden; /* Hide overflow for the transition effect */
-  transition: fill 1s ease; /* Transition for fill color */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: fill 1s ease;
 }
 .our-coaching-section .svg-link-icon:hover path,
 .our-coaching-section .svg-link-icon:hover rect {
-  fill: var(--accent-color); /* Change the fill color of SVG elements on hover */
+  fill: var(--accent-color);
 }
 @media (min-width: 768px) {
   .our-coaching-section {
