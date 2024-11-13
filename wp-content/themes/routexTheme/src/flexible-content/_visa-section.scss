@@ -1,47 +1,45 @@
-/* Container holding all the visa cards */
 .visa-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
+    padding-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
     h1 {
         color: var(--secondary-color);
         font-family: var(--primary-font-family);
-        font-size: 2.25rem; 
+        font-size: 35px;
         text-align: center;
         padding-bottom: 0;
     }
 
     h5 {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family); 
-        font-size: 1rem;
+        font-family: var(--primary-font-family);
+        font-size: 20px;
         text-align: center;
         padding: 0;
         margin: 0;
     }
 }
 
-/* Card layout adjustments */
 .visa-card {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center-align items */
-    padding: 15px; /* Padding around the card */
-    padding-left: 5px;
-    padding-right: 5px;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
     border: 1px solid var(--light-color);
     border-radius: 25px;
     transition: transform 0.2s;
-    width: 100%; /* Full width on smaller screens */
-    height: auto; /* Let content determine height */
+    width: 100%;
+    height: auto;
     margin-bottom: 10%;
 }
 
-/* Image styling */
 .visa-image {
     min-width: 100%;
-    height: auto; /* Fixed height for image */
+    height: auto;
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
@@ -56,13 +54,11 @@
     border-radius: 20px;
 }
 
-/* Content section styling */
 .visa-content {
     min-width: 100%;
     text-align: center;
 }
 
-/* Card bottom layout styling */
 .card-bottom-layout {
     display: flex;
     width: 100%;
@@ -74,47 +70,48 @@
 .link-container,
 .visa-icon-container {
     display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Default to center content */
-    width: 100%; /* Full width for mobile view */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .svg-link {
-    position: relative; /* For positioning pseudo-elements */
-    display: inline-block; /* Make sure the link behaves as a block */
-    overflow: hidden; /* Hide overflow for the transition effect */
-    border-radius: 19px; /* Match border-radius of the SVG */
-    transition: background-color 0.2s ease; /* Transition for background color */
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 19px;
+    transition: background-color 0.2s ease;
 }
 
 .svg-link:hover {
-    background-color: var(--accent-color); /* Change background color on hover */
+    background-color: var(--accent-color);
 }
 
 .svg-link:hover rect {
-    stroke: none; /* Change the border color to white on hover */
+    stroke: none;
 }
 
 .svg-link:hover path {
-    fill: var(--primary-color); /* Change the arrow color to white on hover */
+    fill: var(--primary-color);
 }
 
-/* Optional: To prevent text selection on hover */
 .svg-link:focus {
-    outline: none; /* Remove focus outline */
+    outline: none;
 }
 
-/* Desktop media query */
-@include media-md{
-    .visa-div { 
-        margin-bottom: 35px; 
+@include media-md {
+    .visa-div {
+        margin-bottom: 35px;
     }
     
-    .visa-section{
+    .visa-section {
+        margin-top: 60px;
+        margin-bottom: 60px;
+
         h1 {
             color: var(--secondary-color);
-            font-family: var(--primary-font-family); // Use the defined font family
-            font-size: 2.75rem; // Responsive size
+            font-family: var(--primary-font-family);
+            font-size: 50px;
             text-align: center;
             padding-bottom: 0;
             margin-top: 0;
@@ -123,8 +120,8 @@
                                                                                             
         h5 {
             color: var(--secondary-color);
-            font-family: var(--primary-font-family); // Use the defined font family
-            font-size: 1rem; // Responsive size
+            font-family: var(--primary-font-family);
+            font-size: 15px;
             text-align: center;
             padding: 0;
             margin: 0;
@@ -134,22 +131,22 @@
     .visa-card {
         min-width: 0;
         min-height: 0;
-        flex-direction: row; /* Row layout for desktop */
+        flex-direction: row;
         display: flex;
-        align-items: stretch; /* Stretch to make image and content the same height */
+        align-items: stretch;
         padding: 20px;
         border: 1px solid var(--light-color);
         border-radius: 25px;
-        height: 100%; /* Ensure the card fills the parent height */
+        height: 100%;
         margin-bottom: 0;
     }
     
     .visa-image {
         min-width: 0;
         min-height: 0;
-        flex-grow: 1; /* Allow image to take up available height */
-        max-width: 45%; /* 50% width on desktop */
-        height: 100%; /* Full height for desktop */
+        flex-grow: 1;
+        max-width: 45%;
+        height: 100%;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -158,9 +155,9 @@
     
     .visa-image img {
         min-width: 0;
-        width: 100%; /* Full width within container */
-        height: 100%; /* Full height to match the container */
-        object-fit: cover; /* Ensure the image covers the area */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 20px;
         max-height: 250px;
     }
@@ -188,11 +185,10 @@
 
     .link-container,
     .visa-icon-container {
-        width: 50%; /* 50% width for each container */
+        width: 50%;
         display: flex;
     }
 
-    /* Ensure both the link and icon containers are centered */
     .link-container {
         justify-content: left;
         padding-left: 0;

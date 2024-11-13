@@ -618,7 +618,7 @@ select {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 16px 32px;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -633,7 +633,7 @@ select {
   background-color: var(--accent-color);
   color: var(--light-color);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
@@ -658,7 +658,7 @@ select {
 }
 
 .main-navigation a {
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
   font-size: 10px;
   display: block;
@@ -701,11 +701,11 @@ select {
 
 .header-container {
   flex-direction: column;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .menu-toggle {
-  margin-top: 1rem;
+  margin-top: 16px;
   order: 1;
   font-size: 15px;
   padding: 3% 5%;
@@ -714,7 +714,7 @@ select {
 
 .button-div {
   order: 2;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 .appointment-button {
@@ -725,14 +725,23 @@ select {
   border-radius: 25px;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.675rem;
+  font-size: 10.8px;
   font-weight: var(--regular);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.appointment-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
   .header-container {
     flex-direction: row;
-    padding: 1rem;
+    padding: 16px;
+    justify-content: center;
+    justify-self: center;
+    max-width: 2000px;
   }
   .main-navigation {
     display: flex;
@@ -743,7 +752,7 @@ select {
     display: none;
   }
   .main-navigation a {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     text-align: left;
     width: auto;
   }
@@ -760,15 +769,25 @@ select {
   }
   #primary-menu li {
     width: auto;
-    margin: 0 1rem;
+    margin: 0 16px;
   }
   #primary-menu li a {
     text-align: center;
     color: var(--secondary-color);
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s;
-    width: auto;
+    transition: 0.4s, color 0.4s;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  #primary-menu li:hover {
+    color: var(--accent-color);
+  }
+  .appointment-button {
+    margin-top: 0;
+  }
+  .button-div {
+    margin-top: 0;
   }
 }
 .footer__area-common {
@@ -1307,7 +1326,7 @@ select {
   .cards-div {
     margin-top: 60px;
     margin-bottom: 60px;
-    min-width: 1450px;
+    min-width: 1475px;
   }
   .cardrow {
     display: flex;
@@ -1367,48 +1386,46 @@ select {
   transform: scale(1.1);
 }
 
-/* Container holding all the visa cards */
 .visa-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .visa-section h1 {
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
-  font-size: 2.25rem;
+  font-size: 35px;
   text-align: center;
   padding-bottom: 0;
 }
 .visa-section h5 {
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
-  font-size: 1rem;
+  font-size: 20px;
   text-align: center;
   padding: 0;
   margin: 0;
 }
 
-/* Card layout adjustments */
 .visa-card {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center-align items */
-  padding: 15px; /* Padding around the card */
-  padding-left: 5px;
-  padding-right: 5px;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 5px;
   border: 1px solid var(--light-color);
   border-radius: 25px;
   transition: transform 0.2s;
-  width: 100%; /* Full width on smaller screens */
-  height: auto; /* Let content determine height */
+  width: 100%;
+  height: auto;
   margin-bottom: 10%;
 }
 
-/* Image styling */
 .visa-image {
   min-width: 100%;
-  height: auto; /* Fixed height for image */
+  height: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
@@ -1424,13 +1441,11 @@ select {
   border-radius: 20px;
 }
 
-/* Content section styling */
 .visa-content {
   min-width: 100%;
   text-align: center;
 }
 
-/* Card bottom layout styling */
 .card-bottom-layout {
   display: flex;
   width: 100%;
@@ -1442,45 +1457,47 @@ select {
 .link-container,
 .visa-icon-container {
   display: flex;
-  align-items: center; /* Vertically center the content */
-  justify-content: center; /* Default to center content */
-  width: 100%; /* Full width for mobile view */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .svg-link {
-  position: relative; /* For positioning pseudo-elements */
-  display: inline-block; /* Make sure the link behaves as a block */
-  overflow: hidden; /* Hide overflow for the transition effect */
-  border-radius: 19px; /* Match border-radius of the SVG */
-  transition: background-color 0.2s ease; /* Transition for background color */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 19px;
+  transition: background-color 0.2s ease;
 }
 
 .svg-link:hover {
-  background-color: var(--accent-color); /* Change background color on hover */
+  background-color: var(--accent-color);
 }
 
 .svg-link:hover rect {
-  stroke: none; /* Change the border color to white on hover */
+  stroke: none;
 }
 
 .svg-link:hover path {
-  fill: var(--primary-color); /* Change the arrow color to white on hover */
+  fill: var(--primary-color);
 }
 
-/* Optional: To prevent text selection on hover */
 .svg-link:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
 }
 
-/* Desktop media query */
 @media (min-width: 768px) {
   .visa-div {
     margin-bottom: 35px;
   }
+  .visa-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
   .visa-section h1 {
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
-    font-size: 2.75rem;
+    font-size: 50px;
     text-align: center;
     padding-bottom: 0;
     margin-top: 0;
@@ -1489,7 +1506,7 @@ select {
   .visa-section h5 {
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
-    font-size: 1rem;
+    font-size: 15px;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -1497,21 +1514,21 @@ select {
   .visa-card {
     min-width: 0;
     min-height: 0;
-    flex-direction: row; /* Row layout for desktop */
+    flex-direction: row;
     display: flex;
-    align-items: stretch; /* Stretch to make image and content the same height */
+    align-items: stretch;
     padding: 20px;
     border: 1px solid var(--light-color);
     border-radius: 25px;
-    height: 100%; /* Ensure the card fills the parent height */
+    height: 100%;
     margin-bottom: 0;
   }
   .visa-image {
     min-width: 0;
     min-height: 0;
-    flex-grow: 1; /* Allow image to take up available height */
-    max-width: 45%; /* 50% width on desktop */
-    height: 100%; /* Full height for desktop */
+    flex-grow: 1;
+    max-width: 45%;
+    height: 100%;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -1519,10 +1536,10 @@ select {
   }
   .visa-image img {
     min-width: 0;
-    width: 100%; /* Full width within container */
-    height: 100%; /* Full height to match the container */
+    width: 100%;
+    height: 100%;
     -o-object-fit: cover;
-       object-fit: cover; /* Ensure the image covers the area */
+       object-fit: cover;
     border-radius: 20px;
     max-height: 250px;
   }
@@ -1546,10 +1563,9 @@ select {
   }
   .link-container,
   .visa-icon-container {
-    width: 50%; /* 50% width for each container */
+    width: 50%;
     display: flex;
   }
-  /* Ensure both the link and icon containers are centered */
   .link-container {
     justify-content: left;
     padding-left: 0;
@@ -2371,24 +2387,35 @@ select {
   }
 }
 
+.our-coaching-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 32px;
+}
 .our-coaching-section h2 {
   color: var(--secondary-color);
+  font-family: var(--primary-font-family);
+  margin-bottom: 16px;
+  font-size: 28px;
   text-align: center;
 }
 .our-coaching-section p {
   color: var(--secondary-color);
+  font-family: var(--primary-font-family);
+  font-size: 16px;
   text-align: center;
 }
 .our-coaching-section .card-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 .our-coaching-section .card-container .card {
   background-color: var(--primary-color);
   border: 1px solid var(--light-color);
   border-radius: 15px;
-  padding: 1rem;
+  padding: 16px;
+  padding-top: 0;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -2401,24 +2428,25 @@ select {
 .our-coaching-section .card-container .card .name-position-div h5 {
   color: var(--secondary-color);
   font-family: var(--primary-font-family);
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-size: 20px;
   text-align: left;
   margin-top: 0;
-  padding-top: 4%;
+  padding-top: 32px;
 }
 .our-coaching-section .card-container .card .name-position-div p {
   color: var(--base-color);
   font-family: var(--primary-font-family);
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  margin-bottom: 8px;
+  font-size: 14px;
   text-align: left;
-  padding-bottom: 2%;
+  padding-bottom: 16px;
 }
 .our-coaching-section .card-container .card .person-link {
   display: flex;
   align-items: center;
   margin-left: auto;
+  margin-top: 23px;
 }
 .our-coaching-section .card-container .card .person-link a {
   color: var(--accent-color);
@@ -2491,13 +2519,19 @@ select {
 @media (min-width: 768px) {
   .our-coaching-section {
     background-color: transparent;
+    padding-bottom: 85px;
+  }
+  .our-coaching-section .title-subtitle-div {
+    margin-bottom: 30px;
   }
   .our-coaching-section h2 {
+    font-size: 45px;
     text-align: left;
     margin-top: 0;
     padding-top: 0;
   }
   .our-coaching-section p {
+    font-size: 15px;
     padding-left: 0.3%;
     text-align: left;
     padding-bottom: 0;
@@ -2538,8 +2572,8 @@ select {
     padding-left: 0;
   }
   .our-coaching-section .person-link {
-    margin-left: 0;
-    padding-left: 0;
+    padding: 0;
+    margin-bottom: 20px;
   }
   .our-coaching-section .bg-image {
     height: 100%;
@@ -2562,19 +2596,8 @@ select {
   width: 95%;
   border-radius: 25px;
   max-width: 1800px;
-  background-color: var(--primary-color);
-  position: relative;
-  z-index: 1;
-}
-
-.title-subtitle-div {
+  margin-top: 60px;
   margin-bottom: 60px;
-}
-
-.our-coaching-section-subtitle-costum {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .process-overview-section-container {
