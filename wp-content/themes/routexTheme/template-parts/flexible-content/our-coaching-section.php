@@ -87,16 +87,19 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                                     <?php foreach (['twitter', 'facebook', 'instagram', 'linkedin'] as $platform): ?>
                                         <?php if (!empty($links[$platform])): ?>
                                             <a style="text-decoration: none;" href="<?php echo esc_url($links[$platform]['url']); ?>" class="social-link" aria-label="<?php echo ucfirst($platform); ?> link">
-                                                <?php
-                                                $svg_icons = [
-                                                    'twitter' => '<img src="' . get_template_directory_uri() . '/assets/icons/x.svg" alt="">',
-                                                    'facebook' => '<img src="' . get_template_directory_uri() . '/assets/icons/facebook.svg" alt="">',
-                                                    'instagram' => '<img src="' . get_template_directory_uri() . '/assets/icons/instagram.svg" alt="">',
-                                                    'linkedin' => '<img src="' . get_template_directory_uri() . '/assets/icons/linkedin.svg" alt="">',
-                                                ];
-                                                echo $svg_icons[$platform];
-                                                ?>
-                                            </a>
+    <?php
+    $svg_icons = [
+        'twitter' => file_get_contents(get_template_directory() . '/assets/icons/x.svg'),
+        'facebook' => file_get_contents(get_template_directory() . '/assets/icons/facebook.svg'),
+        'instagram' => file_get_contents(get_template_directory() . '/assets/icons/instagram.svg'),
+        'linkedin' => file_get_contents(get_template_directory() . '/assets/icons/linkedin.svg'),
+    ];
+
+    // Output the SVG with the 'svg-link2' class
+    echo str_replace('<svg', '<svg class="svg-link-icon"', $svg_icons[$platform]);
+    ?>
+</a>
+
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
