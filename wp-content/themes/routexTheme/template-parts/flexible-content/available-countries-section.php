@@ -14,8 +14,8 @@ if (have_rows('cards')) :
 endif;
 if ($smalltitle || $title || $button || has_non_empty_cards($cards)) :
 ?>
-<section class="available-countries-section">
-    <div class="available-countries-section-container top-bottom">
+<section class="available-countries-section top-bottom-small">
+    <div class="available-countries-section-container ">
         <div class="container">
             <?php if ($smalltitle || $title || $button) : ?>
             <div class="available-countries-section-title-container">
@@ -57,8 +57,7 @@ if ($smalltitle || $title || $button || has_non_empty_cards($cards)) :
                                 <div class="available-countries-item">
                                     <?php if ($card['card_icon']) : ?>
                                     <div class="available-countries-item-icon">
-                                        <!-- <img src="<?php echo esc_url($card['card_icon']); ?>" alt="Card icon"> -->
-                                        <img src=""> 
+                                        <img src="<?php echo esc_url($card['card_icon']); ?>" alt="Card icon">
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($card['card_title'] || has_non_empty_values($card['card_bullet_points'])) : ?>

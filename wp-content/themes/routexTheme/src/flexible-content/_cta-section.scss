@@ -1,7 +1,4 @@
-.cta-container{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
+
 .ctadiv {
     border: 1px solid var(--light-color);
     border-radius: 20px;
@@ -26,12 +23,12 @@
         color: var(--base-color);
     }
 
-    .button {
+    .cta-button {
         background-color: var(--primary-color);
         color: var(--secondary-color);
         padding: 15px 30px;
         border: 1px solid var(--light-color);
-        border-radius: 20px;
+        border-radius: 30px;
         text-decoration: none;
         display: inline-block;
         font-size: 0.875rem;
@@ -39,7 +36,7 @@
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .button:hover {
+    .cta-button:hover {
         background-color: var(--accent-color);
         color: var(--primary-color);
         transform: scale(1.02);
@@ -114,10 +111,6 @@
 }
 
 @include media-md {
-    .cta-container{
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
     .ctadiv {
         display: flex;
     }

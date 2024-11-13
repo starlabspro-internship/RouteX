@@ -63,7 +63,6 @@ $button-border-radius: 20px;
     background-color: var(--accent-color);
 }
 
-/* Circle styles */
 .circle {
     width: 80px;
     height: 80px;
@@ -79,8 +78,18 @@ $button-border-radius: 20px;
     padding: 80px 15px;
 }
 
+.top-bottom-small{
+    padding: 40px 15px;
+}
+
 @include media-md{
     .top-bottom {
         padding: 120px 15px;
+    }
+}
+
+@include media-md{
+    .top-bottom-small {
+        padding: 60px 15px;
     }
 }

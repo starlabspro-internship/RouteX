@@ -73,13 +73,11 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                             <div class="countries-swiper-slide-single-inner">
                                                 <?php if ($card['card_small_image']) : ?>
                                                 <div class="countries-swiper-slide-single-small-img">
-                                                    <!-- <img src="<?php echo esc_url($card['card_small_image']); ?>" alt=""> -->
-                                                    <img src="" alt="">
+                                                    <img src="<?php echo esc_url($card['card_small_image']); ?>" alt="">
                                                 </div>
                                                 <?php endif; ?>
                                                 <?php if ($card['card_background']) : ?>
-                                                <!-- <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div> -->
-                                                <div class="countries-swiper-slide-single-img" style="background-image: url();"></div>
+                                                <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div>
                                                 <?php endif; ?>
                                                 <div class="bg-overlay"></div>
                                                 <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
@@ -121,13 +119,11 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                 <div class="countries-swiper-slide-single-inner-zoomed">
                                     <?php if ($card['card_small_image']) : ?>
                                     <div class="countries-swiper-slide-single-small-img">
-                                        <!-- <img src="<?php echo esc_url($card['card_small_image']); ?>" alt="Card Image"> -->
-                                        <img src="">
+                                        <img src="<?php echo esc_url($card['card_small_image']); ?>" alt="Card Image">
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($card['card_background']) : ?>
-                                    <!-- <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div> -->
-                                    <div class="countries-swiper-slide-single-img" style="background-image: url();"></div>
+                                    <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div>
                                     <?php endif; ?>
                                     <div class="bg-overlay"></div>
                                     <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>

@@ -1,10 +1,8 @@
 <?php
-// ACF Fields
 $background_image = get_sub_field('background_image');
 $small_title = get_sub_field('sub_title');
 $title = get_sub_field('title');
 
-// Cards Repeater Field
 $cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
@@ -16,7 +14,6 @@ if (have_rows('cards')) :
     endwhile;
 endif;
 
-// Social Media Card Repeater Field
 $social_media_cards = [];
 if (have_rows('social_media_card')) :
     while (have_rows('social_media_card')) : the_row();
@@ -30,19 +27,20 @@ endif;
 if ($background_image || $small_title || $title || has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)) :
 ?>
 
-<section class="container joindiv" style="background-image: url('<?php echo esc_url($background_image); ?>');">
-    <div class="our-coaching-section container">
+<section class="container joindiv top-bottom">
+    <div class="our-coaching-section container ">
+    <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/coaching-bg-img.png');"></div>
         <?php if ($small_title || $title): ?>
-        <div class="row mb-4 title-subtitle-div">
-            <div class="col-12 text-center">
+        <div class="row title-subtitle-div">
+            <div class="col-12">
                 <?php if ($small_title): ?>
-                    <p class="subtitle">
+                    <p class="subtitle our-coaching-section-subtitle-costum">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
                         <?php echo esc_html($small_title); ?>
                     </p>
                 <?php endif; ?>
                 <?php if ($title): ?>
-                    <h2><?php echo esc_html($title); ?></h2>
+                    <h2 class="title"><?php echo esc_html($title); ?></h2>
                 <?php endif; ?>
             </div>
         </div>

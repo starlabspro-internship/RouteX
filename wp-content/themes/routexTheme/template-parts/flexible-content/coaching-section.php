@@ -15,8 +15,8 @@ endif;
 
 if ($title || $small_title || has_non_empty_cards($cards)) :
 ?>
-<section class="coaching-section">
-    <div class="coaching-section-container top-bottom">
+<section class="coaching-section top-bottom-small">
+    <div class="coaching-section-container ">
         <div class="container">
             <div class="coaching-section-title-container">
                 <?php if ($title || $small_title) : ?>
@@ -65,13 +65,12 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                     <?php if ($card['card_image']) : ?>
                                     <div class="coaching-item_thumb">
                                         <a href="<?php echo esc_url($card['card_link']); ?>">
-                                            <!-- <img class="coaching-item_thumb-image" src="<?php echo esc_url($card['card_image']) ?>" alt="Images not found"> -->
-                                            <img class="coaching-item_thumb-image" src="" alt="">
+                                            <img class="coaching-item_thumb-image" src="<?php echo esc_url($card['card_image']) ?>" alt="Images not found">
                                         </a>
                                     </div>
                                     <?php endif; ?>  
                                     <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
-                                    <div class="coaching__item-media-img-title d-flex">
+                                    <div class="coaching__item-media-img-title">
                                         <?php if ($card['card_title'] || $card['card_text'] ) : ?>
                                         <div class="coaching__item-media-img-title-text">
                                             <?php if ($card['card_title']) : ?>
@@ -83,11 +82,14 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                         </div>
                                         <?php endif; ?> 
                                         <?php if ($card['card_link']) : ?>
-                                        <div class="coaching__item-media-img-title-button">
+                                        <button class="coaching__item-media-img-title-button">
                                             <a href="<?php echo esc_url($card['card_link']); ?>">
-                                                <img class="coaching__item-media-img-title-button-image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="">
+                                                <img class="coaching__item-media-img-title-button-image hover-img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="">
                                             </a>
-                                        </div>
+                                            <a href="<?php echo esc_url($card['card_link']); ?>">
+                                                <img class="coaching__item-media-img-title-button-image default-img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="">
+                                            </a>
+                                        </button>
                                         <?php endif; ?> 
                                     </div>
                                     <?php endif; ?>
