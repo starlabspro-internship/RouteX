@@ -16,9 +16,8 @@ if (have_rows('bottom_counter')) :
 endif;
 if ($left_image || $icon || $top_title || $top_text || $button || $right_image || has_non_empty_cards($bottom_counters)) : 
 ?>
-<section class="container cta-container">
+<section class="container cta-container top-bottom-small">
     <div class="row">
-        <!-- Left Div (30%) -->
         <div class="col-md-4 ctadiv imagediv col-12">
             <?php if ($left_image) : ?>
                 <img src="<?php echo esc_url($left_image); ?>" class="img-fluid" alt="Left Image" />
@@ -27,43 +26,33 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
             <?php endif; ?>
         </div>
 
-        <!-- Right Div (70%) -->
         <div class="col-md-8 col-12 cta-content-div">
-            <div class="top-right-section ctadiv mb-4 d-flex flex-wrap">
-                <!-- Left Content Div -->
-                <div class="left-content col-md-8 col-12 d-flex flex-column align-items-start">
-                    <!-- Icon -->
+            <div class="top-right-section ctadiv ">
+                <div class="left-content col-md-8 col-12 ">
                     <?php if ($icon) : ?>
                         <div class="circle">
                             <img src="<?php echo esc_url($icon); ?>" class="icon" alt="Icon" />
                         </div>
-                    <?php else : ?>
-                        <p>Icon not found.</p>
                     <?php endif; ?>
 
-                    <!-- Top Title -->
                     <?php if ($top_title) : ?>
                         <h2 class="title2"><?php echo esc_html($top_title); ?></h2>
                     <?php endif; ?>
 
-                    <!-- Top Text -->
                     <?php if ($top_text) : ?>
                         <p><?php echo esc_html($top_text); ?></p>
                     <?php endif; ?>
 
-                    <!-- Button -->
                     <?php if ($button) : ?>
-                        <a href="<?php echo esc_url($button); ?>" class="button btn btn-primary">Contact us ➜</a>
+                        <a href="<?php echo esc_url($button); ?>" class="cta-button">Contact us ➜</a>
                     <?php endif; ?>
                 </div>
 
-                <!-- Right Image Div -->
                 <?php if ($right_image) : ?>
                     <div class="right-image col-md-4 col-12" style="background-image: url('<?php echo esc_url($right_image); ?>');"></div>
                 <?php endif; ?>
             </div>
 
-            <!-- Bottom Counter Section -->
             <?php if (has_non_empty_cards($bottom_counters)) : ?>
                 <div class="bottom-counter ctadiv">
                     <?php foreach ($bottom_counters as $counter) : ?>

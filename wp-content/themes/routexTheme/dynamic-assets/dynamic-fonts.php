@@ -4,7 +4,7 @@
 //engjell 
 require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
 //leka
-// require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
 
 
 header("Content-type: text/css");

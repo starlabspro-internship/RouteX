@@ -38,44 +38,41 @@ $header_logo = get_field('header_logo', 'options');
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-    <div class="header-container">
-        <div class="site-branding">
-            <?php the_custom_logo(); ?>
-        </div><!-- .site-branding -->            
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
-        <nav id="site-navigation" class="main-navigation">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'menu-1',
-                    'menu_id'        => 'primary-menu',
-                )
-            );
-            ?>
-        </nav><!-- #site-navigation -->
-		<div class="button-div">
-        <a href="#" style="color: white;" class="appointment-button">Get An Appointment ➜</a>
-		</div><!-- .button-div -->
-    </div><!-- .header-container -->
-</header><!-- #masthead -->
+        <div class="header-container">
+            <div class="site-branding">
+                <?php the_custom_logo(); ?>
+            </div>          
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
+            <nav id="site-navigation" class="main-navigation">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu',
+                    )
+                );
+                ?>
+            </nav>
+            <div class="button-div">
+            <a href="#" style="color: white;" class="appointment-button">Get An Appointment ➜</a>
+            </div>
+        </div>
+    </header>
 
     <script> 
         document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNavigation = document.querySelector('.main-navigation');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNavigation = document.querySelector('.main-navigation');
 
-    if (menuToggle && mainNavigation) {
-        menuToggle.addEventListener('click', function() {
-            mainNavigation.classList.toggle('active'); // Toggle the active class to show/hide the menu
+            if (menuToggle && mainNavigation) {
+                menuToggle.addEventListener('click', function() {
+                    mainNavigation.classList.toggle('active');
 
-            // Update aria-expanded attribute for accessibility
-            const expanded = mainNavigation.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    const expanded = mainNavigation.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                });
+            }
         });
-    }
-});
-
     </script>
 
     <div id="content" class="site-content">
-        <!-- Your content will go here -->

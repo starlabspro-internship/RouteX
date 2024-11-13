@@ -16,8 +16,8 @@ if (have_rows('blog_cards')) :
 endif;
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
-<section class="recent-blogs-section">
-    <div class="recent-blogs-section-container top-bottom">
+<section class="recent-blogs-section top-bottom-small">
+    <div class="recent-blogs-section-container ">
         <div class="container">
             <div class="recent-blogs-section-title-container">
                 <?php if ($title || $small_title) : ?>
@@ -63,8 +63,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                     <?php if ($card['card_background']) : ?>
                                     <div class="recent-blog-item-media">
                                         <a href="<?php echo esc_url($card['card_link']) ?>">
-                                            <!-- <img src="<?php echo esc_url($card['card_background']) ?>" alt="images not found"> -->
-                                            <img src="">
+                                            <img src="<?php echo esc_url($card['card_background']) ?>" alt="images not found">
                                         </a>
                                     </div>
                                     <?php endif; ?>

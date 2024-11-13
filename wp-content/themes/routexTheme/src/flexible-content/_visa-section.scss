@@ -1,25 +1,21 @@
 /* Container holding all the visa cards */
 .visa-section {
     display: flex;
-    flex-direction: column; /* Stack the cards vertically */
-    gap: 20px; /* Space between cards using flex gap */
-    padding-bottom: 40px; /* Add bottom padding */
-    margin-top: 30px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 20px;
 
-    
     h1 {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family); // Use the defined font family
-        font-size: 2.25rem; // Responsive size
+        font-family: var(--primary-font-family);
+        font-size: 2.25rem; 
         text-align: center;
         padding-bottom: 0;
     }
 
     h5 {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family); // Use the defined font family
-        font-size: 1rem; // Responsive size
+        font-family: var(--primary-font-family); 
+        font-size: 1rem;
         text-align: center;
         padding: 0;
         margin: 0;
@@ -115,9 +111,6 @@
     }
     
     .visa-section{
-        margin-top: 60px;
-        margin-bottom: 60px;
-
         h1 {
             color: var(--secondary-color);
             font-family: var(--primary-font-family); // Use the defined font family

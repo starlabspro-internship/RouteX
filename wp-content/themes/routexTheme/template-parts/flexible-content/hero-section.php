@@ -42,7 +42,8 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
             </div>
             <div class="col-md-6">
                 <div class="decorative-circle"></div>
-                <div class="gray-photo">
+                <div class="gray-photo" >
+                    <img src="<?php echo esc_url($image_first_sector); ?>" alt="">
                 </div>
             </div>
         </div>
