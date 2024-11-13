@@ -1,5 +1,5 @@
+</div>
 <footer class="footer__area-common">
-    <!-- Footer Top Section -->
     <div class="footer-top">
         <?php if (have_rows('footer')) : ?>
         <?php while (have_rows('footer')) : the_row(); ?>
@@ -33,11 +33,9 @@
         <?php endif; ?>
     </div>
 
-    <!-- Footer Bottom Wrapper -->
     <div class="footer__bottom1-wrapper">
         <div class="container">
             <div class="row mb-minus-40 footer-wrap">
-                <!-- RouteX Section -->
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-1 wow fadeInLeft animated" data-wow-delay=".2s">
                         <div class="footer__logo-container">
@@ -71,7 +69,6 @@
                         <?php endwhile; ?>
                         <?php endif; ?>
 
-                        <!-- Social Links -->
                         <div class="footer__social">
                             <?php if (have_rows('footer')) : ?>
                             <?php while (have_rows('footer')) : the_row(); ?>
@@ -97,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- Services Section -->
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-2 footer3__item-2 wow fadeInLeft animated"
                         data-wow-delay=".3s">
@@ -147,7 +143,6 @@
                     </div>
                 </div>
 
-                <!-- Useful Links Section -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-3 wow fadeInLeft animated mt-md-50 mt-sm-40 mt-xs-35"
                         data-wow-delay=".4s">
@@ -195,7 +190,6 @@
                     </div>
                 </div>
 
-                <!-- Subscribe -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-4 wow fadeInLeft animated mt-md-50 mt-sm-40 mt-xs-35"
                         data-wow-delay=".5s">
@@ -248,7 +242,6 @@
             </div>
         </div>
 
-        <!-- Copyright Section -->
         <div class="footer__bottom-wrapper">
             <div class="container">
                 <div class="footer__bottom">
@@ -291,3 +284,8 @@
             </div>
         </div>
 </footer>
+<?php wp_footer(); ?>
+
+</body>
+
+</html>

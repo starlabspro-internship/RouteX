@@ -18,19 +18,17 @@ if (have_rows('testimonial_card')) {
 if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
-<section class="testimonial-section">
-    <div class="container cta-container">
+<section class="testimonial-section top-bottom-small">
+    <div class="container cta-container ">
         <div class="row">
-            <!-- Left Column: Image -->
             <?php if ($testimonial_left_image): ?>
             <div class="col-12 col-md-4 testimonial-left" style="background-image: url('<?php echo $testimonial_left_image; ?>');"></div>
             <?php endif; ?>
-            <!-- Right Column: Testimonial Cards -->
             <?php if (has_non_empty_cards($testimonial_cards)): ?>
             <div class="col-12 col-md-8 testimonial-right d-flex flex-column justify-content-center">
                 <div class="testimonial-cards">
                     <?php 
-                    $card_count = 0; // Re-initialize card count for navigation
+                    $card_count = 0;
                     foreach ($testimonial_cards as $index => $card): 
                         $card_count++; 
                     ?>

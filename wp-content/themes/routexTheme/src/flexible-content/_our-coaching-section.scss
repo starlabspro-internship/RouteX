@@ -1,127 +1,116 @@
 .our-coaching-section {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 2rem; // Mobile padding
-
-    // Title and Subtitle Styles
+    
     h2 {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family); // Use the defined font family
-        margin-bottom: 1rem; // Space below title
-        font-size: 1.75rem; // Responsive size
         text-align: center;
     }
 
     p {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family); // Use the defined font family
-        font-size: 1rem; // Responsive size
         text-align: center;
     }
 
-    // Card Container Styles
     .card-container {
-        display: flex; // Use flexbox for mobile view
-        flex-direction: column; // Stack cards vertically
-        gap: 1rem; // Space between cards
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
         .card {
-            background-color: var(--primary-color); // Card background color
+            background-color: var(--primary-color);
             border: 1px solid var(--light-color);
-            border-radius: 15px; // Rounded corners
-            padding: 1rem; // Padding inside card
-            text-align: left; // Align text to the left
-            display: flex; // Use flexbox for the card layout
-            justify-content: space-between; // Space between content and person link
-            align-items: center; // Center vertically
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             .name-position-div {
-                flex: 1; // Allow this to take available space
+                flex: 1;
                 padding-left: 3%;
                 h5 {
-                    color: var(--secondary-color); // Title color
-                    font-family: var(--primary-font-family); // Font family
-                    margin-bottom: 0.5rem; // Space below name
-                    font-size: 1.25rem; // Responsive size
+                    color: var(--secondary-color);
+                    font-family: var(--primary-font-family);
+                    margin-bottom: 0.5rem;
+                    font-size: 1.25rem;
                     text-align: left;
                     margin-top: 0;
                     padding-top: 4%;
                 }
 
                 p {
-                    color: var(--base-color); // Position color
-                    font-family: var(--primary-font-family); // Font family
-                    margin-bottom: 0.5rem; // Space below position
-                    font-size: 0.875rem; // Responsive size
+                    color: var(--base-color);
+                    font-family: var(--primary-font-family);
+                    margin-bottom: 0.5rem;
+                    font-size: 0.875rem;
                     text-align: left;
                     padding-bottom: 2%;
                 }
             }
 
             .person-link {
-                display: flex; // Flexbox for aligning the link
-                align-items: center; // Center align the SVG link
-                margin-left: auto; // Push it to the right
+                display: flex;
+                align-items: center;
+                margin-left: auto;
 
                 a {
-                    color: var(--accent-color); // Link color
+                    color: var(--accent-color);
                     text-decoration: none;
                     transition: color 0.3s ease;
 
                     &:hover {
-                        color: var(--primary-color); // Change color on hover
+                        color: var(--primary-color);
                     }
                 }
             }
         }
     }
 
-    // Background Image Div Styles
     .bg-image {
-        position: relative; // Position relative for overlay
-        height: 400px; // Fixed height for mobile view
-        display: flex; // Flexbox for center alignment
+        position: relative;
+        height: 400px;
+        display: flex;
         border-radius: 25px;
         margin-top: 5%;
 
         .overlay-content {
-            position: absolute; // Position absolute for overlay
-            bottom: 20px; // Space from bottom
-            left: 50%; // Center horizontally
-            transform: translateX(-50%); // Center offset
-            text-align: center; // Center text
-            color: var(--primary-color); // Overlay text color
+            position: absolute;
+            bottom: 20px;
+            left: 50%; 
+            transform: translateX(-50%);
+            text-align: center; 
+            color: var(--primary-color); 
 
             .btn {
-                background-color: var(--accent-color); // Button color
-                color: var(--light-color); // Button text color
-                margin: 0.5rem; // Space between buttons
+                background-color: var(--accent-color);
+                color: var(--light-color); 
+                margin: 0.5rem; 
 
                 &:hover {
-                    background-color: var(--primary-color); // Change button color on hover
+                    background-color: var(--primary-color);
                 }
             }
         }
     }
 
     .svg-link2 {
-        position: relative; /* For positioning pseudo-elements */
-        display: inline-block; /* Make sure the link behaves as a block */
-        overflow: hidden; /* Hide overflow for the transition effect */
-        border-radius: 40px; /* Match border-radius of the SVG */
-        transition: background-color 0.2s ease; /* Transition for background color */
+        position: relative; 
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 40px; 
+        transition: background-color 0.2s ease; 
     }
     
     .svg-link2:hover {
-        background-color: var(--accent-color); /* Change background color on hover */
+        background-color: var(--accent-color); 
     }
     
     .svg-link2:hover rect {
-        stroke: none; /* Change the border color to white on hover */
+        stroke: none; 
     }
     
     .svg-link2:hover path {
-        fill: var(--primary-color); /* Change the arrow color to white on hover */
+        fill: var(--primary-color);
     }
 
     .social-media-links-div{
@@ -137,35 +126,27 @@
     }
 
     .svg-link-icon {
-        position: relative; /* For positioning pseudo-elements */
-        display: inline-block; /* Make sure the link behaves as a block */
-        overflow: hidden; /* Hide overflow for the transition effect */
-        transition: fill 1s ease; /* Transition for fill color */
+        position: relative; 
+        display: inline-block;
+        overflow: hidden; 
+        transition: fill 1s ease;
     }
     
     .svg-link-icon:hover path,
     .svg-link-icon:hover rect {
-        fill: var(--accent-color); /* Change the fill color of SVG elements on hover */
+        fill: var(--accent-color); 
     }
     
-    
-
-    // Media Query for Larger Screens
     @include media-md{
-
-        background-color: transparent; // Set background color for desktop view
-        padding-bottom: 85px;
-       
+        background-color: transparent; 
 
         h2 {
-            font-size: 2.6rem; // Larger title size for desktop
             text-align: left;
             margin-top: 0;
             padding-top: 0;
         }
 
         p {
-            font-size: 1.125rem; // Larger subtitle size for desktop
             padding-left: 0.3%;
             text-align: left;
             padding-bottom: 0;
@@ -173,9 +154,9 @@
         }
 
         .card-container {
-            flex-direction: column; // Maintain vertical stacking for cards
+            flex-direction: column;
             .card {
-                width: 100%; // Full width for cards
+                width: 100%; 
                 padding-top: 0;
 
                 h5 {
@@ -219,7 +200,7 @@
         } 
 
         .bg-image {
-            height: 100%; // Increased height for desktop view
+            height: 100%;
             margin-top: 0;
         }
 
@@ -240,6 +221,17 @@
     width: 95%;
     border-radius: 25px;
     max-width: 1800px;
-    margin-top: 60px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.title-subtitle-div{
     margin-bottom: 60px;
+}
+
+.our-coaching-section-subtitle-costum{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

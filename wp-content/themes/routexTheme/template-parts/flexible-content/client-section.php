@@ -19,7 +19,7 @@ if (have_rows('logos')) :
 endif;
 if (has_non_empty_logos($logos)) :
 ?>
-<section class="container">
+<section class="container top-bottom-small">
     <div class="client-carousel">
         <div class="carousel-track">
             <?php foreach ($logos as $logo_image): ?>
