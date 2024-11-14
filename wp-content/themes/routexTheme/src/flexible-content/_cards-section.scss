@@ -40,51 +40,46 @@
     }
 }
 
-/* Card row - Stack cards by default */
 .cardrow {
     display: flex;
-    flex-direction: column; /* Stack cards vertically by default */
+    flex-direction: column; 
     gap: 20px;
     justify-content: center;
     align-items: center;
-    max-width: 1650px; /* Ensures full width on mobile */
+    max-width: 1650px; 
 }
 
-/* Mobile First - Default behavior for small screens */
+
 @include media-sm {
     .cards-wrapper {
-        flex: 1 1 100%; /* Single card per row on mobile */
+        flex: 1 1 100%; 
     }
 }
 
-/* Tablet view (medium screens) */
 @include media-md {
     .cards-wrapper {
-        flex: 1 1 calc(50% - 20px); /* Two cards per row for tablets */
+        flex: 1 1 calc(50% - 20px); 
     }
 }
 
-/* Laptop view (large screens) */
 @include media-lg {
     .cards-wrapper {
-        flex: 1 1 calc(33.33% - 20px); /* Three cards per row for laptops */
+        flex: 1 1 calc(33.33% - 20px); 
     }
 }
 
-/* Desktop view (extra-large screens) */
 @include media-xl {
     .cards-wrapper {
-        flex: 1 1 calc(25% - 20px); /* Four cards per row for desktops */
+        flex: 1 1 calc(25% - 20px); 
     }
 }
 
-/* Card row for larger screens */
 @include media-lg {
     .cardrow {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 20px; /* Space between the cards */
-        justify-content: space-between; /* Ensure even distribution */
+        gap: 20px; 
+        justify-content: space-between; 
     }
 }
 
