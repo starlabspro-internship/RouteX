@@ -5,7 +5,6 @@ $cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
         $cards[] = [
-            'card_number' => get_sub_field('card_number'),
             'card_title' => get_sub_field('card_title'),
             'card_text_' => get_sub_field('card_text_'),
         ];
@@ -13,7 +12,7 @@ if (have_rows('cards')) :
 endif;
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
-<section class="process-overview-section">
+<section class="process-overview-section top-bottom-small">
     <div class="process-overview-section-container top-bottom">
         <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/process-bg.png');"></div>
         <div class="container">
@@ -50,12 +49,10 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                     
                         $extra_class = ($card_index === 2) ? 'process-overview-extra-style' : '';
                         ?>
-                        <?php if ($card['card_number'] || $card['card_title'] || $card['card_text_']) : ?>
+                        <?php if ($card['card_title'] || $card['card_text_']) : ?>
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="process-overview-item <?php echo $extra_class; ?>">
-                                <?php if ($card['card_number']) : ?>
-                                <span class="process-overview-item-number"><?php echo esc_html($card['card_number']); ?></span>
-                                <?php endif; ?>
+                                <span class="process-overview-item-number">0<?php echo esc_html($card_index); ?></span>
                                 <?php if ($card['card_title']) : ?>
                                 <h5><?php echo esc_html($card['card_title']); ?></h5>
                                 <?php endif; ?>

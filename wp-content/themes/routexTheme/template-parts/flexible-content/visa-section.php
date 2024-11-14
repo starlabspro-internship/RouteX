@@ -22,18 +22,22 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
 
 <section class="container text-center visa-section top-bottom-small">
     <?php if ($smalltitle) : ?>
-    <h5 class="visa-small-title">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
-        <?php echo esc_html($smalltitle); ?>
-    </h5>
+        <div class="visa-section-subtitles">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+            <div class="subtitle visa-section-title-subtitle">
+            <?php echo esc_html($smalltitle); ?>
+            </div>
+        </div>
     <?php endif; ?>
 
     <?php if ($title) : ?>
-        <h1 class="visa-title"><?php echo esc_html($title); ?></h1>
+        <div class="visa-section-title">
+            <div class="title visa-section-title-subtitle"><?php echo esc_html($title); ?></div>
+        </div>
     <?php endif; ?>
 
     <?php if (has_non_empty_cards($visa_cards)) : ?>
-    <div class="row">
+    <div class="row visa-section-bottom-layer">
         <?php foreach ($visa_cards as $card) : ?>
             <div class="col-md-6 mb-4 visa-div">
                 <div class="visa-card d-flex flex-wrap">

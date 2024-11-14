@@ -15,7 +15,7 @@ if (have_rows('cards')) :
 endif;
 if ($smalltitle || $title || has_non_empty_cards($cards)) : 
 ?>
-<section class="countries-section">
+<section class="countries-section top-bottom-small">
     <div class="countries-section-container top-bottom">
         <div class="container">
             <div class="countries-section-title-container">
