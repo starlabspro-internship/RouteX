@@ -1202,10 +1202,12 @@ select {
   z-index: 2;
   width: 597px;
   height: 684.83px;
-  background-color: var(--light-color);
 }
-.hero-section .gray-photo.hidden {
-  visibility: hidden;
+.hero-section .gray-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero-section .btn-wrapper {
   display: flex;
@@ -1285,10 +1287,6 @@ select {
     height: 375px;
     top: -90px;
     right: 60px;
-    background-color: var(--light-color);
-  }
-  .hero-section .gray-photo.hidden {
-    visibility: hidden;
   }
   .hero-section .decorative-circle {
     width: 458px;
