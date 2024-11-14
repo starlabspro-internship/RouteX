@@ -1,11 +1,7 @@
-/* Card styles */
 .cards-div {
-    margin-top: 30px;
-    margin-bottom: 30px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 15px;
     display: flex;
     justify-content: center;
 }
@@ -87,8 +83,6 @@
 
 @include media-xxl {
     .cards-div {
-        margin-top: 60px;
-        margin-bottom: 60px;
         min-width: 1475px;
     }
 }

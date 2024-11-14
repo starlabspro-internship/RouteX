@@ -39,7 +39,7 @@
     .cta-button:hover {
         background-color: var(--accent-color);
         color: var(--primary-color);
-        transform: scale(1.02);
+        border: 1px solid transparent;
     }
 
     .img2 {
@@ -58,6 +58,7 @@
     background-color: var(--accent-color);
     color: var(--primary-color);
     padding-top: 0;
+    border:1px solid transparent;
 
     .counter-item {
         h3 {

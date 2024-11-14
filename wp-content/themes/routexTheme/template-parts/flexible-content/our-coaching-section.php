@@ -1,10 +1,8 @@
 <?php
-// ACF Fields
 $background_image = get_sub_field('background_image');
 $small_title = get_sub_field('sub_title');
 $title = get_sub_field('title');
 
-// Cards Repeater Field
 $cards = [];
 if (have_rows('cards')) :
     while (have_rows('cards')) : the_row();
@@ -16,7 +14,6 @@ if (have_rows('cards')) :
     endwhile;
 endif;
 
-// Social Media Card Repeater Field
 $social_media_cards = [];
 if (have_rows('social_media_card')) :
     while (have_rows('social_media_card')) : the_row();
@@ -30,86 +27,89 @@ endif;
 if ($background_image || $small_title || $title || has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)) :
 ?>
 
-<section class="container joindiv" style="background-image: url('<?php echo esc_url($background_image); ?>');">
-    <div class="our-coaching-section container">
-        <?php if ($small_title || $title): ?>
-        <div class="row mb-4 title-subtitle-div">
-            <div class="col-12 text-center">
-                <?php if ($small_title): ?>
-                    <p class="subtitle">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
-                        <?php echo esc_html($small_title); ?>
-                    </p>
-                <?php endif; ?>
-                <?php if ($title): ?>
-                    <h2><?php echo esc_html($title); ?></h2>
-                <?php endif; ?>
+<section class="top-bottom-small">
+    <div class="container joindiv top-bottom">
+        <div class="our-coaching-section container ">
+        <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/coaching-bg-img.png');"></div>
+            <?php if ($small_title || $title): ?>
+            <div class="row mb-4 title-subtitle-div">
+                <div class="col-12 text-center">
+                    <?php if ($small_title): ?>
+                        <p class="subtitle our-coaching-section-subtitle-costum">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+                            <?php echo esc_html($small_title); ?>
+                        </p>
+                    <?php endif; ?>
+                    <?php if ($title): ?>
+                        <h2 class="title"><?php echo esc_html($title); ?></h2>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
-        <?php if (has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)): ?>
-        <div class="row">
-            <?php if (has_non_empty_cards($cards)): ?>
-            <div class="col-lg-8 col-md-7 col-12">
-                <div class="card-container">
-                    <?php foreach ($cards as $card): ?>
-                        <?php if ($card['name'] || $card['position'] || $card['person_link']): ?>
-                            <div class="card mb-3 p-3 border">
-                                <div class="name-position-div">
-                                    <h5><?php echo esc_html($card['name']); ?></h5>
-                                    <p><?php echo esc_html($card['position']); ?></p>
-                                </div>
-                                <div class="d-flex card-person-link">
-                                    <div class="container link-container">
-                                        <?php
-                                            $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-link.svg');
-                                        ?>
-                                        <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
-                                            <span class="svg-icon"><?php echo $svg_icon; ?></span>
-                                        </a>
+            <?php if (has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)): ?>
+            <div class="row">
+                <?php if (has_non_empty_cards($cards)): ?>
+                <div class="col-lg-8 col-md-7 col-12">
+                    <div class="card-container">
+                        <?php foreach ($cards as $card): ?>
+                            <?php if ($card['name'] || $card['position'] || $card['person_link']): ?>
+                                <div class="card mb-3 p-3 border">
+                                    <div class="name-position-div">
+                                        <h5><?php echo esc_html($card['name']); ?></h5>
+                                        <p><?php echo esc_html($card['position']); ?></p>
+                                    </div>
+                                    <div class="d-flex card-person-link">
+                                        <div class="container link-container">
+                                            <?php
+                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-link.svg');
+                                            ?>
+                                            <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
+                                                <span class="svg-icon"><?php echo $svg_icon; ?></span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>  
+                            <?php endif; ?>
+                        <?php endforeach; ?>  
+                    </div>
                 </div>
+                <?php endif; ?>
+
+                <?php if (has_non_empty_cards($social_media_cards)): ?>
+                    <div class="col-lg-4 col-md-5 col-12 d-flex align-items-center justify-content-center flex-column">
+                        <?php foreach ($social_media_cards as $social_card): ?>
+                            <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($social_card['card_background_image']); ?>'); background-size: cover; background-position: center;">
+                                <div class="overlay-content text-center social-media-links-div">
+                                    <?php if (!empty($social_card['links'])): ?>
+                                        <?php $links = $social_card['links']; ?>
+                                        <?php foreach (['twitter', 'facebook', 'instagram', 'linkedin'] as $platform): ?>
+                                            <?php if (!empty($links[$platform])): ?>
+                                                <a style="text-decoration: none;" href="<?php echo esc_url($links[$platform]['url']); ?>" class="social-link" aria-label="<?php echo ucfirst($platform); ?> link">
+        <?php
+        $svg_icons = [
+            'twitter' => file_get_contents(get_template_directory() . '/assets/icons/x.svg'),
+            'facebook' => file_get_contents(get_template_directory() . '/assets/icons/facebook.svg'),
+            'instagram' => file_get_contents(get_template_directory() . '/assets/icons/instagram.svg'),
+            'linkedin' => file_get_contents(get_template_directory() . '/assets/icons/linkedin.svg'),
+        ];
+
+        
+        echo str_replace('<svg', '<svg class="svg-link-icon"', $svg_icons[$platform]);
+        ?>
+    </a>
+
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <?php endif; ?>
-
-            <?php if (has_non_empty_cards($social_media_cards)): ?>
-                <div class="col-lg-4 col-md-5 col-12 d-flex align-items-center justify-content-center flex-column">
-                    <?php foreach ($social_media_cards as $social_card): ?>
-                        <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($social_card['card_background_image']); ?>'); background-size: cover; background-position: center;">
-                            <div class="overlay-content text-center social-media-links-div">
-                                <?php if (!empty($social_card['links'])): ?>
-                                    <?php $links = $social_card['links']; ?>
-                                    <?php foreach (['twitter', 'facebook', 'instagram', 'linkedin'] as $platform): ?>
-                                        <?php if (!empty($links[$platform])): ?>
-                                            <a style="text-decoration: none;" href="<?php echo esc_url($links[$platform]['url']); ?>" class="social-link" aria-label="<?php echo ucfirst($platform); ?> link">
-    <?php
-    $svg_icons = [
-        'twitter' => file_get_contents(get_template_directory() . '/assets/icons/x.svg'),
-        'facebook' => file_get_contents(get_template_directory() . '/assets/icons/facebook.svg'),
-        'instagram' => file_get_contents(get_template_directory() . '/assets/icons/instagram.svg'),
-        'linkedin' => file_get_contents(get_template_directory() . '/assets/icons/linkedin.svg'),
-    ];
-
-    // Output the SVG with the 'svg-link2' class
-    echo str_replace('<svg', '<svg class="svg-link-icon"', $svg_icons[$platform]);
-    ?>
-</a>
-
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
         </div>
-        <?php endif; ?>
     </div>
 </section>
 <?php endif; ?>

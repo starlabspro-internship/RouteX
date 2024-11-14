@@ -1301,14 +1301,10 @@ select {
   }
 }
 
-/* Card styles */
 .cards-div {
-  margin-top: 30px;
-  margin-bottom: 30px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
   display: flex;
   justify-content: center;
 }
@@ -1381,8 +1377,6 @@ select {
 }
 @media (min-width: 1820px) {
   .cards-div {
-    margin-top: 60px;
-    margin-bottom: 60px;
     min-width: 1475px;
   }
 }
@@ -1428,10 +1422,6 @@ select {
 .visa-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-bottom: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .visa-section h1 {
   color: var(--secondary-color);
@@ -1529,10 +1519,6 @@ select {
   .visa-div {
     margin-bottom: 35px;
   }
-  .visa-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
   .visa-section h1 {
     color: var(--secondary-color);
     font-family: var(--primary-font-family);
@@ -1614,6 +1600,29 @@ select {
     padding-right: 0;
   }
 }
+.visa-section-subtitles {
+  gap: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1.4px;
+  display: flex;
+  justify-content: center;
+}
+
+.visa-section-title-subtitle {
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.visa-section-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.visa-section-bottom-layer {
+  margin-top: 60px;
+}
+
 .countries-section-container {
   max-width: 1800px;
   width: 100%;
@@ -2156,7 +2165,7 @@ select {
 .top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
-  transform: scale(1.02);
+  border: 1px solid transparent;
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;
@@ -2174,6 +2183,7 @@ select {
   background-color: var(--accent-color);
   color: var(--primary-color);
   padding-top: 0;
+  border: 1px solid transparent;
 }
 .bottom-counter .counter-item h3 {
   font-weight: var(--bold);
@@ -2398,7 +2408,7 @@ select {
     padding: 60px 60px 0px 60px;
   }
   .testimonial-section .testimonial-text {
-    font-size: 24px;
+    font-size: 30px;
   }
   .testimonial-section .testimonial-section {
     margin-top: 60px;
@@ -2451,23 +2461,15 @@ select {
   }
 }
 
-.our-coaching-section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 32px;
-}
 .our-coaching-section h2 {
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
-  margin-bottom: 16px;
-  font-size: 28px;
   text-align: center;
 }
 .our-coaching-section p {
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
-  font-size: 16px;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 .our-coaching-section .card-container {
   display: flex;
@@ -2583,23 +2585,14 @@ select {
 @media (min-width: 768px) {
   .our-coaching-section {
     background-color: transparent;
-    padding-bottom: 85px;
-  }
-  .our-coaching-section .title-subtitle-div {
-    margin-bottom: 30px;
   }
   .our-coaching-section h2 {
-    font-size: 45px;
     text-align: left;
     margin-top: 0;
     padding-top: 0;
   }
   .our-coaching-section p {
-    font-size: 15px;
-    padding-left: 0.3%;
     text-align: left;
-    padding-bottom: 0;
-    margin-bottom: 0;
   }
   .our-coaching-section .card-container {
     flex-direction: column;
@@ -2657,11 +2650,22 @@ select {
 }
 
 .joindiv {
-  width: 95%;
+  width: 100%;
   border-radius: 25px;
   max-width: 1800px;
-  margin-top: 60px;
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+}
+
+.title-subtitle-div {
   margin-bottom: 60px;
+}
+
+.our-coaching-section-subtitle-costum {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .process-overview-section-container {

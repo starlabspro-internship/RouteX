@@ -1,11 +1,7 @@
 .visa-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-bottom: 40px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    
+
     h1 {
         color: var(--secondary-color);
         font-family: var(--primary-font-family);
@@ -105,9 +101,6 @@
     }
     
     .visa-section {
-        margin-top: 60px;
-        margin-bottom: 60px;
-
         h1 {
             color: var(--secondary-color);
             font-family: var(--primary-font-family);
@@ -198,4 +191,27 @@
         justify-content: right;
         padding-right: 0;
     }
+}
+
+.visa-section-subtitles {
+	gap: 10px;
+	margin-bottom: 10px;
+	letter-spacing: 1.4px;
+	display: flex;
+    justify-content: center;
+}
+
+.visa-section-title-subtitle {
+	color: var(--secondary-color);
+    text-align: center;
+}
+
+.visa-section-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.visa-section-bottom-layer{
+    margin-top: 60px;
 }

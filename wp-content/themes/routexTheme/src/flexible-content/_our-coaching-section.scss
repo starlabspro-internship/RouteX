@@ -1,21 +1,14 @@
 .our-coaching-section {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 32px;
-
     h2 {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family);
-        margin-bottom: 16px;
-        font-size: 28px;
         text-align: center;
     }
 
     p {
         color: var(--secondary-color);
-        font-family: var(--primary-font-family);
-        font-size: 16px;
         text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
     .card-container {
@@ -150,25 +143,15 @@
 
     @include media-md {
         background-color: transparent;
-        padding-bottom: 85px;
-
-        .title-subtitle-div{
-            margin-bottom: 30px;
-        }
 
         h2 {
-            font-size: 45px;
             text-align: left;
             margin-top: 0;
             padding-top: 0;
         }
 
         p {
-            font-size: 15px;
-            padding-left: 0.3%;
             text-align: left;
-            padding-bottom: 0;
-            margin-bottom: 0;
         }
 
         .card-container {
@@ -237,9 +220,20 @@
 }
 
 .joindiv {
-    width: 95%;
+    width: 100%;
     border-radius: 25px;
     max-width: 1800px;
-    margin-top: 60px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.title-subtitle-div{
     margin-bottom: 60px;
+}
+
+.our-coaching-section-subtitle-costum{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
