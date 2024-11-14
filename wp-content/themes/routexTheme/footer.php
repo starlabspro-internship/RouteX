@@ -1,5 +1,5 @@
 </div>
-<footer class="footer__area-common">
+<footer class="footer__area-common" style="background-image: url('<?php echo get_template_directory_uri() . '/assets/icons/Map.svg'; ?>')">
     <div class="footer-top">
         <?php if (have_rows('footer')) : ?>
         <?php while (have_rows('footer')) : the_row(); ?>
@@ -36,7 +36,7 @@
     <div class="footer__bottom1-wrapper">
         <div class="container">
             <div class="row mb-minus-40 footer-wrap">
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-1 wow fadeInLeft animated" data-wow-delay=".2s">
                         <div class="footer__logo-container">
                             <?php if (have_rows('footer')) : ?>
@@ -94,12 +94,9 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__widget footer__widget-item-2 footer3__item-2 wow fadeInLeft animated"
                         data-wow-delay=".3s">
-                        <div class="footer__widget-title footer__widget-title-2">
-                            <h4><?php the_field('services_title', 'option'); ?></h4>
-                        </div>
                         <div class="footer__link">
                             <ul>
                                 <?php
@@ -118,15 +115,12 @@
                                                     while (have_rows('services_links')) {
                                                         the_row();
 
-                                                        $service_icon = get_sub_field('service_icon');
                                                         $service_link_text = get_sub_field('service_link_text');
                                                         $service_link_url = get_sub_field('service_link_url');
 
                                                         echo '<li>';
+                                                        echo '<img src="' . get_template_directory_uri() . '/assets/icons/light-green-checkmark.svg" alt="">';
                                                         echo '<a href="' . esc_url($service_link_url) . '">';
-                                                        if ($service_icon) {
-                                                            echo '<img src="' . esc_url($service_icon) . '" alt="Service Icon">';
-                                                        }
                                                         echo esc_html($service_link_text);
                                                         echo '</a>';
                                                         echo '</li>';
@@ -144,11 +138,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__widget-item-3 wow fadeInLeft animated mt-md-50 mt-sm-40 mt-xs-35"
-                        data-wow-delay=".4s">
-                        <div class="footer__widget-title">
-                            <h4><?php the_field('useful_links_title', 'option'); ?></h4>
-                        </div>
+                    <div class="footer__widget footer__widget-item-3  mt-md-50 mt-sm-40 mt-xs-35">
                         <div class="footer__link">
                             <?php
                             if (have_rows('footer')) {
@@ -166,15 +156,12 @@
                                                 while (have_rows('useful_links')) {
                                                     the_row();
 
-                                                    $link_icon = get_sub_field('link_icon');
                                                     $link_text = get_sub_field('link_text');
                                                     $link_url = get_sub_field('link_url');
 
                                                     echo '<li>';
+                                                    echo '<img src="' . get_template_directory_uri() . '/assets/icons/right-arrow-light-green-without-tale.svg" alt="">';
                                                     echo '<a href="' . esc_url($link_url) . '">';
-                                                    if ($link_icon) {
-                                                        echo '<img src="' . esc_url($link_icon) . '" alt="Link Icon">';
-                                                    }
                                                     echo esc_html($link_text);
                                                     echo '</a>';
                                                     echo '</li>';
@@ -191,15 +178,9 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__widget footer__widget-item-4 wow fadeInLeft animated mt-md-50 mt-sm-40 mt-xs-35"
-                        data-wow-delay=".5s">
-
-                        <div class="footer__widget-title">
-                            <h4><?php the_field('subscribe_title', 'option'); ?></h4>
-                        </div>
+                    <div class="footer__widget footer__widget-item-4 mt-md-50 mt-sm-40 mt-xs-35">
 
                         <div class="footer__subscribe subscribe-2">
-                            <p><?php the_field('subscribe_description', 'option'); ?></p>
 
                             <?php
                             if( have_rows('footer') ) {
@@ -210,10 +191,10 @@
                                             the_row();
                                             
                                             $subscribe_title = get_sub_field('subscribe_title');
-                                             $subscribe_description = get_sub_field('subscribe_description');
+                                            $subscribe_description = get_sub_field('subscribe_description');
                                              
-                                             echo '<p><strong>' . esc_html($subscribe_title) . '</strong></p>';
-                                              echo '<p>' . $subscribe_description . '</p>';
+                                            echo '<p class="footer__subscribe-title"><strong>' . esc_html($subscribe_title) . '</strong></p>';
+                                            echo '<p>' . $subscribe_description . '</p>';
                                             }
                                         }
                                     }
@@ -221,7 +202,7 @@
                                 ?>
 
                             <div class="footer-form">
-                                <form action="#" class="rr-subscribe-form">
+                                <form action="#" class="subscribe-form">
                                     <input class="form-control" type="email" name="email" placeholder="Enter Email"
                                         required>
                                     <input type="hidden" name="action" value="mailchimpsubscribe">
@@ -244,8 +225,8 @@
 
         <div class="footer__bottom-wrapper">
             <div class="container">
-                <div class="footer__bottom">
-                    <div class="footer__copyright wow fadeInLeft animated" data-wow-delay=".6s">
+                <div class="footer__bottom row">
+                    <div class="col-6 footer__copyright">
                         <?php if (have_rows('footer')) : ?>
                         <?php while (have_rows('footer')) : the_row(); ?>
                         <?php if (have_rows('footer_bottom')) : ?>
@@ -259,7 +240,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <div class="footer__copyright-menu">
+                    <div class="col-6 footer__copyright-menu">
                         <ul>
                             <?php if (have_rows('footer')) : ?>
                             <?php while (have_rows('footer')) : the_row(); ?>

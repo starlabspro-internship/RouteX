@@ -88,7 +88,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                             <?php endif; ?>
                                             <?php if ($card['card_link']) : ?>
                                             <a class="recent-blog-item-text-bottom-readmore"  href="<?php echo esc_url($card['card_link']) ?>">Read More 
-                                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-green.svg') ?>" alt="">
+                                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-green.svg') ?>" alt=""> 
                                             </a>
                                             <?php endif; ?>
                                         </div>
