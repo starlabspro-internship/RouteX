@@ -2146,7 +2146,7 @@ select {
   border-radius: 30px;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 13px;
   font-weight: var(--regular);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -2395,7 +2395,7 @@ select {
     padding: 60px 60px 0px 60px;
   }
   .testimonial-section .testimonial-text {
-    font-size: 30px;
+    font-size: 24px;
   }
   .testimonial-section .testimonial-section {
     margin-top: 60px;
