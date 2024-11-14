@@ -895,14 +895,14 @@ select {
   transition: transform 0.3s ease;
 }
 .footer__social a:hover {
-  transform: scale(1.1); /* Slightly enlarges the link on hover */
+  transform: scale(1.1);
 }
 .footer__social a .social_icon {
-  filter: invert(0) brightness(1); /* Default: white icons */
+  filter: invert(0) brightness(1);
   transition: filter 0.3s ease;
 }
 .footer__social a .social_icon:hover {
-  filter: invert(0.5) brightness(1.4); /* Example hover effect */
+  filter: invert(0.5) brightness(1.4);
 }
 
 .footer__widget-title h4 {

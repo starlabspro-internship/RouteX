@@ -1,5 +1,5 @@
-</div>
-<footer class="footer__area-common" style="background-image: url('<?php echo get_template_directory_uri() . '/assets/icons/Map.svg'; ?>')">
+<footer class="footer__area-common"
+    style="background-image: url('<?php echo get_template_directory_uri() . '/assets/icons/Map.svg'; ?>')">
     <div class="footer-top">
         <?php if (have_rows('footer')) : ?>
         <?php while (have_rows('footer')) : the_row(); ?>
@@ -63,7 +63,7 @@
                         <?php while (have_rows('footer_routex')) : the_row(); 
                                         $footer_description = get_sub_field('footer_description'); 
                                     ?>
-                        <p class="footer-description"><?php echo nl2br(esc_html($footer_description)); ?></p>
+                        <p class="footer-description"><?php echo (esc_html($footer_description)); ?></p>
                         <?php endwhile; ?>
                         <?php endif; ?>
                         <?php endwhile; ?>
@@ -265,8 +265,3 @@
             </div>
         </div>
 </footer>
-<?php wp_footer(); ?>
-
-</body>
-
-</html>
