@@ -25,7 +25,8 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                     <?php endif; ?>
                     <div class="btn-wrapper">
                         <?php if ($button_first_sector) : ?>
-                        <a href="<?php echo esc_url($button_first_sector); ?>" class="btn btn-transparent">Read More →</a>
+                        <a href="<?php echo esc_url($button_first_sector); ?>" class="btn btn-transparent">Read More
+                            →</a>
                         <?php endif; ?>
                         <?php if ($videos_button) : ?>
                         <a href="<?php echo esc_url($videos_button); ?>" class="banner-video-button">
@@ -42,8 +43,13 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
             </div>
             <div class="col-md-6">
                 <div class="decorative-circle"></div>
-                <div class="gray-photo" >
-                    <img src="<?php echo esc_url($image_first_sector); ?>" alt="">
+                <?php
+                $image_first_sector = get_sub_field('image_first_sector');
+                ?>
+                <div class="gray-photo <?php echo empty($image_first_sector) ? 'hidden' : ''; ?>">
+                    <?php if (!empty($image_first_sector)): ?>
+                    <img src="<?php echo esc_url($image_first_sector); ?>" alt="Photo">
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
