@@ -1278,10 +1278,15 @@ select {
   }
 }
 
-/* Card styles */
 .cards-div {
   margin-top: 30px;
   margin-bottom: 30px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .card1 {
@@ -1309,43 +1314,40 @@ select {
   color: var(--base-color);
   font-size: 78%;
 }
-.card1 .cardrow {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
-/* Mobile First - Stacked Cards */
 .cardrow {
   display: flex;
-  flex-direction: column; /* Stack cards vertically by default */
-  gap: 20px; /* Space between the cards */
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1680px;
 }
-
-/* Media Query for Desktop - Inline Flex Layout */
 @media (min-width: 768px) {
-  .cards-div {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    min-width: 1475px;
-  }
   .cardrow {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
   }
 }
+
 .cards-wrapper {
-  flex: 1 1 calc(33.33% - 20px); /* Ensure 3 cards in a row with gaps */
+  flex: 1 1 100%;
 }
-
-.cards-wrapper:nth-child(2) {
-  margin-left: auto; /* Push the second row card to the right */
+@media (min-width: 768px) {
+  .cards-wrapper {
+    flex: 1 1 calc(50% - 30px);
+  }
 }
-
-.card1 {
-  margin-top: 0; /* Remove margin-top for cards on desktop */
+@media (min-width: 992px) {
+  .cards-wrapper {
+    flex: 1 1 calc(33.33% - 30px);
+  }
+}
+@media (min-width: 1200px) {
+  .cards-wrapper {
+    flex: 1 1 calc(25% - 30px);
+  }
 }
 
 @keyframes rtl-scroll {
