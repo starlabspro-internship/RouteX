@@ -1189,6 +1189,7 @@ select {
   z-index: 2;
   width: 597px;
   height: 684.83px;
+  background-color: var(--light-color);
 }
 .hero-section .btn-wrapper {
   display: flex;
@@ -1268,6 +1269,7 @@ select {
     height: 375px;
     top: -90px;
     right: 60px;
+    background-color: var(--light-color);
   }
   .hero-section .decorative-circle {
     width: 458px;
