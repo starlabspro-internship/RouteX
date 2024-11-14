@@ -3,8 +3,7 @@
   border-radius: 20px;
   max-width: 1800px;
   height: 800px;
-  margin: 50px auto;
-  padding: 90px 12%;
+  margin: auto;
   color: var(--primary-color);
   position: relative;
   overflow: hidden;
@@ -40,8 +39,8 @@
   }
 
   .left-tower {
-    top: 50%;
-    right: 25%;
+    top: 0;
+    right: 250px;
     transform: translateY(215%) scaleX(-1);
     opacity: 0.5;
     width: 345.33px;
@@ -50,8 +49,8 @@
   }
 
   .right-tower {
-    top: 50%;
-    right: -79%;
+    top: 0;
+    left: 920px;
     transform: translateY(112%);
     opacity: 1;
     width: 345.33px;
@@ -72,8 +71,8 @@
   }
 
   .gray-photo {
-    top: 50%;
-    right: 12.5%;
+    top: 0;
+    right: 30px;
     transform: translateY(-90%);
     z-index: 2;
     width: 597px;
@@ -153,25 +152,25 @@
     padding: 10px;
 
     .hero-content-title {
-      margin-top: 35%;
+      margin-top: 90px;
     }
 
     .right-tower {
-      margin-top: -60%;
-      margin-left: -60%;
+      top: -80px;
+      left: 110px;
     }
 
     .gray-photo {
-      width: 315px;
-      height: 315px;
-      height: auto;
-      margin-bottom: -115px;
-      margin-left: 20px;
+      width: 375px;
+      height: 375px;
+      top: -90px;
+      right: 60px;
     }
     .decorative-circle {
       width: 458px;
       height: 409px;
-      margin-left: -65px;
+      top: 0;
+      right: 0;
     }
   }
 }
