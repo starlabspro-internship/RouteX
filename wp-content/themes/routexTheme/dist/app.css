@@ -208,10 +208,6 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
-p {
-  margin-bottom: 1.5em;
-}
-
 dfn, cite, em, i {
   font-style: italic;
 }
@@ -792,7 +788,6 @@ select {
 }
 .footer__area-common {
   background: var(--secondary-color);
-  background-image: url("/wp-content/themes/routexTheme/assets/icons/Map.svg");
   background-repeat: no-repeat;
   background-position: center 200px;
   background-size: cover;
@@ -804,7 +799,6 @@ select {
 }
 @media (min-width: 768px) {
   .footer__area-common {
-    background-position: center 280px, calc(100% - 50px) 100px;
     background-size: 90%, 40px;
   }
 }
@@ -818,10 +812,11 @@ select {
 }
 .footer__area-common .footer-top .footer-top-left,
 .footer__area-common .footer-top .footer-top-right {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin: 6px;
-  text-align: center;
 }
 .footer__area-common .footer-top .footer-top-left .footer-left-svg,
 .footer__area-common .footer-top .footer-top-left .footer-right-svg,
@@ -865,9 +860,14 @@ select {
   }
 }
 
+.footer__bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
 .footer__bottom1-wrapper {
   margin-top: 20px;
-  text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -875,8 +875,7 @@ select {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 15px;
-  margin-top: 20px;
+  padding: 20px 0;
 }
 
 .footer-description {
@@ -913,6 +912,11 @@ select {
   text-align: left;
 }
 
+.footer__link p {
+  font-size: 22px;
+  line-height: 30px;
+}
+
 .footer__link ul {
   list-style: none;
   padding: 0;
@@ -921,6 +925,9 @@ select {
 .footer__link ul li {
   margin-bottom: 10px;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .footer__link ul li a {
   color: var(--primary-color);
@@ -950,13 +957,12 @@ select {
   justify-content: flex-start;
 }
 .footer-form .form-control {
-  width: 80%;
-  padding: 15px 20px;
-  border-radius: 30px;
+  margin-left: 10px;
   border: none;
   background-color: #222;
   color: var(--primary-color);
-  padding-right: 85px;
+  font-size: small;
+  width: 100%;
 }
 .footer-form .form-control::-moz-placeholder {
   color: var(--primary-color);
@@ -964,10 +970,13 @@ select {
 .footer-form .form-control::placeholder {
   color: var(--primary-color);
 }
+.footer-form .form-control:focus {
+  color: var(--primary-color);
+}
+.footer-form .form-control:focus-visible {
+  outline: none;
+}
 .footer-form .submit {
-  position: relative;
-  left: 60%;
-  top: -50%;
   background-color: var(--accent-color);
   border-radius: 50%;
   padding: 10px;
@@ -977,10 +986,8 @@ select {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .footer-form .submit {
-    right: 12%;
-  }
+.footer-form .submit:hover {
+  cursor: pointer;
 }
 
 .footer__bottom-wrapper {
@@ -995,24 +1002,13 @@ select {
   min-height: 90px;
 }
 
-.footer__copyright {
-  text-align: center;
-  font-size: 0.9rem;
-  position: relative;
-  top: 0;
-}
-@media (min-width: 768px) {
-  .footer__copyright {
-    text-align: left;
-    top: 45px;
-  }
+.footer__copyright p {
+  margin: 0;
 }
 
 .footer__copyright-menu {
-  text-align: center;
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: end;
 }
 .footer__copyright-menu ul {
   list-style: none;
@@ -1029,11 +1025,28 @@ select {
 .footer__copyright-menu ul li a:hover {
   color: var(--accent-color);
 }
-@media (min-width: 768px) {
-  .footer__copyright-menu {
-    text-align: right;
-    justify-content: flex-end;
-  }
+
+.footer-logo-text {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.footer-wrap {
+  align-items: start;
+}
+
+.footer__subscribe-title {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 30px;
+  width: 100%;
 }
 
 /* Border Radius */
@@ -1311,16 +1324,19 @@ select {
 .card1 .cardic {
   align-self: left;
   margin-left: 0;
+  width: 100px;
+  height: 100px;
 }
 .card1 .card-title {
   color: var(--secondary-color);
   font-weight: var(--bold);
   margin-bottom: 3%;
   margin-top: 7%;
+  font-size: 22px;
 }
 .card1 .card-text {
   color: var(--base-color);
-  font-size: 78%;
+  font-size: 16px;
 }
 
 .cardrow {
@@ -1329,7 +1345,7 @@ select {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  max-width: 1650px;
+  max-width: 1800px;
 }
 
 @media (min-width: 576px) {
@@ -2210,9 +2226,6 @@ select {
   .circle {
     margin-left: 0;
   }
-  .cta-container {
-    padding-left: 1.4%;
-  }
   .cta-content-div {
     height: auto;
   }
@@ -2275,12 +2288,11 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5%;
+  padding: 0px 60px 40px 60px;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial,
-.testimonial-section .testimonial-buttons .next-testimonial {
-  width: 50px;
-  height: 50px;
+.testimonial-section .testimonial-buttons .button-testimonial {
+  width: 60px;
+  height: 60px;
   border: 1px solid var(--light-color);
   border-radius: 50%;
   background-color: var(--primary-color);
@@ -2288,14 +2300,12 @@ select {
   position: relative;
   overflow: hidden;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial:hover,
-.testimonial-section .testimonial-buttons .next-testimonial:hover {
+.testimonial-section .testimonial-buttons .button-testimonial:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   cursor: pointer;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial img,
-.testimonial-section .testimonial-buttons .next-testimonial img {
+.testimonial-section .testimonial-buttons .button-testimonial img {
   width: 15px;
   height: 15px;
   position: absolute;
@@ -2303,30 +2313,26 @@ select {
   left: 35%;
   transition: opacity 0.3s ease;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial img.default-img,
-.testimonial-section .testimonial-buttons .next-testimonial img.default-img {
+.testimonial-section .testimonial-buttons .button-testimonial img.default-img {
   opacity: 1;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial img.hover-img,
-.testimonial-section .testimonial-buttons .next-testimonial img.hover-img {
+.testimonial-section .testimonial-buttons .button-testimonial img.hover-img {
   opacity: 0;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial:hover img.default-img,
-.testimonial-section .testimonial-buttons .next-testimonial:hover img.default-img {
+.testimonial-section .testimonial-buttons .button-testimonial:hover img.default-img {
   opacity: 0;
 }
-.testimonial-section .testimonial-buttons .prev-testimonial:hover img.hover-img,
-.testimonial-section .testimonial-buttons .next-testimonial:hover img.hover-img {
+.testimonial-section .testimonial-buttons .button-testimonial:hover img.hover-img {
   opacity: 1;
 }
-.testimonial-section .testimonial-card {
-  padding: 10%;
-  border: 1px solid var(--light-color);
-  margin-top: 5%;
-  border-radius: 20px;
-  transition: 0.3s;
+.testimonial-section .testimonial-right {
   background-color: var(--accent-color);
-  width: 100%;
+  border-radius: 20px;
+  height: auto;
+  margin-top: 40px;
+}
+.testimonial-section .testimonial-content {
+  padding: 30px 30px 0px 30px;
 }
 .testimonial-section .testimonial-left {
   background-size: cover;
@@ -2334,6 +2340,9 @@ select {
   background-repeat: no-repeat;
   height: 400px;
   border-radius: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
 }
 .testimonial-section .testimonial-icon {
   display: flex;
@@ -2341,6 +2350,9 @@ select {
 .testimonial-section .testimonial-icon .author-div {
   width: 70%;
   padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .testimonial-section .testimonial-icon .author-name {
   margin: 0;
@@ -2359,8 +2371,8 @@ select {
   color: var(--primary-color);
 }
 .testimonial-section .testimonial-icon img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border: 1px solid var(--accent-color);
   border-radius: 50%;
 }
@@ -2368,42 +2380,71 @@ select {
   margin-top: 0;
   padding-top: 0;
   font-weight: var(--thin);
-  font-size: 120%;
+  font-size: 20px;
   color: var(--primary-color);
 }
 @media (min-width: 768px) {
+  .testimonial-section .testimonial__content-button-border::before {
+    width: 370px;
+    right: 225px;
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #fff;
+  }
+  .testimonial-section .testimonial-content {
+    padding: 60px 60px 0px 60px;
+  }
+  .testimonial-section .testimonial-text {
+    font-size: 30px;
+  }
   .testimonial-section .testimonial-section {
     margin-top: 60px;
     margin-bottom: 60px;
   }
   .testimonial-section .testimonial-card {
     min-height: inherit;
-    margin-top: 0;
-    padding-bottom: 40px;
   }
   .testimonial-section .testimonial-left {
-    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
   }
   .testimonial-section .buttons-wrapper {
-    width: 30%;
-    padding-left: 4%;
+    padding-left: 10px;
+    display: flex;
+    gap: 10px;
   }
   .testimonial-section .next-testimonial {
     margin-left: 5%;
   }
   .testimonial-section .testimonial-buttons {
-    align-items: left;
-    justify-content: left;
-    padding-left: 0;
-    width: 100%;
+    gap: 20px;
+    align-items: center;
+    justify-content: end;
   }
-  .testimonial-section .separator {
-    width: 100%;
-    height: 2px; /* Set a height to make it visible */
-    background-color: var(--light-color); /* Set a contrasting color */
-    margin: 0; /* Center it */
-    justify-self: left;
-    padding: 0;
+}
+@media (min-width: 992px) {
+  .testimonial-section .testimonial__content-button-border::before {
+    width: 250px;
+    right: 225px;
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #fff;
+  }
+  .testimonial-section .testimonial-right {
+    margin-top: 0;
+  }
+  .testimonial-section .testimonial-left {
+    height: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .testimonial-section .testimonial__content-button-border::before {
+    width: 370px;
+    right: 225px;
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #fff;
   }
 }
 
