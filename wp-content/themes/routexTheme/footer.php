@@ -1,3 +1,4 @@
+</div>
 <footer class="footer__area-common"
     style="background-image: url('<?php echo get_template_directory_uri() . '/assets/icons/Map.svg'; ?>')">
     <div class="footer-top">
@@ -265,3 +266,8 @@
             </div>
         </div>
 </footer>
+<?php wp_footer(); ?>
+
+</body>
+
+</html>
