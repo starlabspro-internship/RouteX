@@ -1191,6 +1191,9 @@ select {
   height: 684.83px;
   background-color: var(--light-color);
 }
+.hero-section .gray-photo.hidden {
+  visibility: hidden;
+}
 .hero-section .btn-wrapper {
   display: flex;
   align-items: center;
@@ -1270,6 +1273,9 @@ select {
     top: -90px;
     right: 60px;
     background-color: var(--light-color);
+  }
+  .hero-section .gray-photo.hidden {
+    visibility: hidden;
   }
   .hero-section .decorative-circle {
     width: 458px;

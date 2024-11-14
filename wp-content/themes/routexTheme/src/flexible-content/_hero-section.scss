@@ -78,6 +78,10 @@
     width: 597px;
     height: 684.83px;
     background-color: var(--light-color);
+
+    &.hidden {
+      visibility: hidden;
+    }
   }
 
   .btn-wrapper {
@@ -167,6 +171,9 @@
       top: -90px;
       right: 60px;
       background-color: var(--light-color);
+      &.hidden {
+        visibility: hidden;
+      }
     }
     .decorative-circle {
       width: 458px;
