@@ -30,11 +30,9 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                         <?php endif; ?>
                         <?php if ($videos_button) : ?>
                         <a href="<?php echo esc_url($videos_button); ?>" class="banner-video-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="12" fill="rgba(0, 77, 64, 0.9)" />
-                                <polygon points="9,6 17,12 9,18" fill="#ffffff" />
-                            </svg>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/play_button.svg"
+                                alt="Video Icon">
+                        </a>
                         </a>
                         <a href="<?php echo esc_url($videos_button); ?>" class="video-text">Watch Our Videos</a>
                         <?php endif; ?>
