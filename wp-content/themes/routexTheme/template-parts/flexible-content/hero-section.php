@@ -25,8 +25,11 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                     <?php endif; ?>
                     <div class="btn-wrapper">
                         <?php if ($button_first_sector) : ?>
-                        <a href="<?php echo esc_url($button_first_sector); ?>" class="btn btn-transparent">Read More
-                            →</a>
+                        <a href="<?php echo esc_url($button_first_sector); ?>" class="btn btn-transparent">
+                            Read More&nbsp;
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg"
+                                alt="Right Arrow Icon">
+                        </a>
                         <?php endif; ?>
                         <?php if ($videos_button) : ?>
                         <a href="<?php echo esc_url($videos_button); ?>" class="banner-video-button">
