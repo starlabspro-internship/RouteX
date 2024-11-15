@@ -1152,6 +1152,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 12px;
 }
 .hero-section .hero-content .hero-content-title {
   font-family: var(--primary-font-family);
@@ -1279,7 +1280,7 @@ select {
 @media (min-width: 768px) {
   .hero-section .hero-content {
     position: absolute;
-    top: -90px;
+    top: -95px;
     right: 0px;
   }
   .hero-section .hero-content .hero-content-title {
@@ -1287,6 +1288,7 @@ select {
     margin-top: -10%;
     right: 75px;
     position: relative;
+    transform: scaleY(1.1);
   }
   .hero-section .hero-content .btn-wrapper {
     right: 75px;
