@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 12px;
 
     .hero-content-title {
       font-family: var(--primary-font-family);
@@ -162,13 +163,14 @@
   @include media-md {
     .hero-content {
       position: absolute;
-      top: -90px;
+      top: -95px;
       right: 0px;
       .hero-content-title {
         font-size: 65px;
         margin-top: -10%;
         right: 75px;
         position: relative;
+        transform: scaleY(1.1);
       }
       .btn-wrapper {
         right: 75px;
