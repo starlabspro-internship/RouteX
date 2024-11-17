@@ -18,8 +18,8 @@ if (have_rows('testimonial_card')) {
 if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
-<section class="testimonial-section top-bottom-small">
-    <div class="container cta-container ">
+<section class="container testimonial-section top-bottom-small">
+    <div class="container">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
             <div class="col-lg-5 testimonial-left" style="background-image: url('<?php echo $testimonial_left_image; ?>');"></div>
@@ -61,6 +61,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                 
                     <div class="testimonial-buttons text-center d-flex">
                         <div class="testimonial__content-button-border"></div>
+                        <div class="container buttons-wrapper"> 
                         <button class="button-testimonial" aria-label="Previous testimonial">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
@@ -69,6 +70,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
                         </button>
+                                                </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
+.cta-container{
+    max-width: 1290px;
+}
 
 .ctadiv {
-    border: 1px solid var(--light-color);
     border-radius: 20px;
     padding: 20px;
     display: block;
@@ -12,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: center;
+    text-align: left;
     background-color: var(--primary-color);
 
     .title2 {
@@ -32,14 +34,14 @@
         text-decoration: none;
         display: inline-block;
         font-size: 13px;
-        font-weight: var(--regular);
+        font-weight: var(--bold);
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .cta-button:hover {
         background-color: var(--accent-color);
         color: var(--primary-color);
-        border: 1px solid transparent;
+        transform: scale(1.02);
     }
 
     .img2 {
@@ -58,7 +60,6 @@
     background-color: var(--accent-color);
     color: var(--primary-color);
     padding-top: 0;
-    border:1px solid transparent;
 
     .counter-item {
         h3 {
@@ -76,8 +77,8 @@
 }
 
 .imagediv {
-    padding: 0;
-    max-width: 93%;
+    padding: 0 15px 0 15px;
+    max-width: 430px;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: center;
@@ -93,9 +94,6 @@
     align-items: center;
 }
 
-.circle {
-    margin-left: 38%;
-}
 
 .right-image {
     width: 100%;
@@ -118,6 +116,7 @@
 
     .circle {
         margin-left: 0;
+        padding: 2px;
     }
 
     .cta-content-div {
@@ -169,11 +168,17 @@
         justify-content: space-between;
         text-align: left;
         flex-direction: row;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .counter-item h3 {
         font-size: 500px;
+    }
+
+    .imagediv {
+        padding: 0;
+        padding-left: 18px;
+        padding-right: 10px;
     }
 }

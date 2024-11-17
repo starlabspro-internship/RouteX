@@ -1320,11 +1320,13 @@ select {
 }
 
 .cards-div {
-  width: 100%;
+  width: 94%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .card1 {
@@ -1347,8 +1349,8 @@ select {
 .card1 .card-title {
   color: var(--secondary-color);
   font-weight: var(--bold);
-  margin-bottom: 3%;
-  margin-top: 7%;
+  margin-bottom: 15px;
+  margin-top: 25px;
   font-size: 22px;
 }
 .card1 .card-text {
@@ -1362,7 +1364,8 @@ select {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  max-width: 1800px;
+  max-width: 1830px;
+  padding: 0;
 }
 
 @media (min-width: 576px) {
@@ -1381,21 +1384,31 @@ select {
   }
 }
 @media (min-width: 1200px) {
+  .cards-div {
+    width: 100%;
+  }
   .cards-wrapper {
     flex: 1 1 calc(25% - 20px);
   }
 }
 @media (min-width: 992px) {
+  .cards-div {
+    width: 100%;
+  }
   .cardrow {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 0px;
     justify-content: space-between;
   }
 }
 @media (min-width: 1820px) {
   .cards-div {
+    width: 100%;
     min-width: 1475px;
+  }
+  .cardrow {
+    gap: 0px;
   }
 }
 @keyframes rtl-scroll {
@@ -1440,17 +1453,22 @@ select {
 .visa-section {
   display: flex;
   flex-direction: column;
+  max-width: 1290px;
 }
 .visa-section h1 {
-  color: var(--secondary-color);
+  color: var(--accent-color);
   font-family: var(--primary-font-family);
   font-size: 35px;
   text-align: center;
   padding-bottom: 0;
 }
-.visa-section h5 {
+.visa-section h2 {
   color: var(--secondary-color);
+}
+.visa-section h5 {
+  color: var(--base-color);
   font-family: var(--primary-font-family);
+  font-weight: var(--thin);
   font-size: 20px;
   text-align: center;
   padding: 0;
@@ -1467,7 +1485,7 @@ select {
   transition: transform 0.2s;
   width: 100%;
   height: auto;
-  margin-bottom: 10%;
+  margin-bottom: 30px;
 }
 
 .visa-image {
@@ -1496,6 +1514,7 @@ select {
 .card-bottom-layout {
   display: flex;
   width: 100%;
+  padding-top: 15px;
   padding-bottom: 0;
   align-items: center;
   justify-content: center;
@@ -1538,21 +1557,18 @@ select {
     margin-bottom: 35px;
   }
   .visa-section h1 {
-    color: var(--secondary-color);
-    font-family: var(--primary-font-family);
     font-size: 50px;
-    text-align: center;
+    text-align: left;
     padding-bottom: 0;
     margin-top: 0;
     padding-top: 0;
   }
   .visa-section h5 {
-    color: var(--secondary-color);
-    font-family: var(--primary-font-family);
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     padding: 0;
     margin: 0;
+    margin-bottom: 25px;
   }
   .visa-card {
     min-width: 0;
@@ -1591,7 +1607,7 @@ select {
     min-height: 0;
     width: 55%;
     flex: 1;
-    padding-left: 5%;
+    padding-left: 30px;
     text-align: left;
     padding-bottom: 0;
   }
@@ -2146,8 +2162,11 @@ select {
   gap: 15px;
 }
 
+.cta-container {
+  max-width: 1290px;
+}
+
 .ctadiv {
-  border: 1px solid var(--light-color);
   border-radius: 20px;
   padding: 20px;
   display: block;
@@ -2159,7 +2178,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: center;
+  text-align: left;
   background-color: var(--primary-color);
 }
 .top-right-section .title2 {
@@ -2177,13 +2196,13 @@ select {
   text-decoration: none;
   display: inline-block;
   font-size: 13px;
-  font-weight: var(--regular);
+  font-weight: var(--bold);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
-  border: 1px solid transparent;
+  transform: scale(1.02);
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;
@@ -2201,7 +2220,6 @@ select {
   background-color: var(--accent-color);
   color: var(--primary-color);
   padding-top: 0;
-  border: 1px solid transparent;
 }
 .bottom-counter .counter-item h3 {
   font-weight: var(--bold);
@@ -2215,8 +2233,8 @@ select {
 }
 
 .imagediv {
-  padding: 0;
-  max-width: 93%;
+  padding: 0 15px 0 15px;
+  max-width: 430px;
   margin: 0 auto 20px auto;
   display: flex;
   justify-content: center;
@@ -2230,10 +2248,6 @@ select {
 
 .left-content {
   align-items: center;
-}
-
-.circle {
-  margin-left: 38%;
 }
 
 .right-image {
@@ -2256,6 +2270,7 @@ select {
   }
   .circle {
     margin-left: 0;
+    padding: 2px;
   }
   .cta-content-div {
     height: auto;
@@ -2301,18 +2316,28 @@ select {
     justify-content: space-between;
     text-align: left;
     flex-direction: row;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   .counter-item h3 {
     font-size: 500px;
   }
+  .imagediv {
+    padding: 0;
+    padding-left: 18px;
+    padding-right: 10px;
+  }
 }
 .testimonial-section {
-  max-width: 100%;
+  max-width: 1290px;
   width: 100%;
   margin: 0 auto;
   color: var(--secondary-color);
+}
+.testimonial-section .buttons-wrapper {
+  margin-top: 25px;
+  margin-left: 40px;
+  gap: 10px;
 }
 .testimonial-section .testimonial-buttons {
   gap: 10px;
@@ -2324,7 +2349,6 @@ select {
 .testimonial-section .testimonial-buttons .button-testimonial {
   width: 60px;
   height: 60px;
-  border: 1px solid var(--light-color);
   border-radius: 50%;
   background-color: var(--primary-color);
   transition: background-color 0.3s, border-color 0.3s;
@@ -2371,23 +2395,25 @@ select {
   background-repeat: no-repeat;
   height: 400px;
   border-radius: 20px;
-  max-width: 500px;
+  max-width: 443px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .testimonial-section .testimonial-icon {
   display: flex;
 }
 .testimonial-section .testimonial-icon .author-div {
   width: 70%;
-  padding-left: 2%;
+  padding-left: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .testimonial-section .testimonial-icon .author-name {
   margin: 0;
-  margin-left: 2%;
+  margin-left: 5px;
   font-family: var(--primary-font-family);
   font-weight: var(--bold);
   font-size: 120%;
@@ -2398,13 +2424,13 @@ select {
   margin-left: 2%;
   font-family: var(--primary-font-family);
   font-weight: var(--thin);
-  font-size: 70%;
+  font-size: 90%;
+  padding-top: 8px;
   color: var(--primary-color);
 }
 .testimonial-section .testimonial-icon img {
   width: 70px;
   height: 70px;
-  border: 1px solid var(--accent-color);
   border-radius: 50%;
 }
 .testimonial-section .testimonial-text {
@@ -2415,6 +2441,9 @@ select {
   color: var(--primary-color);
 }
 @media (min-width: 768px) {
+  .testimonial-section .testimonial-section {
+    max-width: 40px;
+  }
   .testimonial-section .testimonial__content-button-border::before {
     width: 370px;
     right: 225px;
@@ -2427,6 +2456,7 @@ select {
   }
   .testimonial-section .testimonial-text {
     font-size: 30px;
+    font-weight: var(--thin);
   }
   .testimonial-section .testimonial-section {
     margin-top: 60px;
@@ -2436,22 +2466,23 @@ select {
     min-height: inherit;
   }
   .testimonial-section .testimonial-left {
-    max-width: 500px;
+    max-width: 442px;
     margin: 0 auto;
     width: 100%;
   }
   .testimonial-section .buttons-wrapper {
-    padding-left: 10px;
+    margin-top: 0;
+    margin-left: 380px;
     display: flex;
-    gap: 10px;
-  }
-  .testimonial-section .next-testimonial {
-    margin-left: 5%;
+    gap: 20px;
   }
   .testimonial-section .testimonial-buttons {
+    margin-left: 10px;
+  }
+  .testimonial-section .testimonial-buttons {
+    margin-top: 30px;
     gap: 20px;
     align-items: center;
-    justify-content: end;
   }
 }
 @media (min-width: 992px) {
@@ -2468,6 +2499,9 @@ select {
   .testimonial-section .testimonial-left {
     height: auto;
   }
+  .testimonial-section .author-name {
+    margin-left: 5px;
+  }
 }
 @media (min-width: 1200px) {
   .testimonial-section .testimonial__content-button-border::before {
@@ -2483,7 +2517,7 @@ select {
   color: var(--secondary-color);
   text-align: center;
 }
-.our-coaching-section p {
+.our-coaching-section .subtitle {
   color: var(--secondary-color);
   text-align: center;
   padding: 0;
@@ -2507,7 +2541,7 @@ select {
 }
 .our-coaching-section .card-container .card .name-position-div {
   flex: 1;
-  padding-left: 3%;
+  padding-left: 20px;
 }
 .our-coaching-section .card-container .card .name-position-div h5 {
   color: var(--secondary-color);
@@ -2521,10 +2555,9 @@ select {
 .our-coaching-section .card-container .card .name-position-div p {
   color: var(--base-color);
   font-family: var(--primary-font-family);
-  margin-bottom: 8px;
   font-size: 14px;
   text-align: left;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 .our-coaching-section .card-container .card .person-link {
   display: flex;
@@ -2545,7 +2578,7 @@ select {
   height: 400px;
   display: flex;
   border-radius: 25px;
-  margin-top: 5%;
+  margin-top: 35px;
 }
 .our-coaching-section .bg-image .overlay-content {
   position: absolute;
@@ -2570,13 +2603,13 @@ select {
   border-radius: 40px;
   transition: background-color 0.2s ease;
 }
-.our-coaching-section .svg-link2:hover {
-  background-color: var(--accent-color);
+.our-coaching-section .svg-link2 path {
+  transition: fill 0.3s ease;
 }
-.our-coaching-section .svg-link2:hover rect {
-  stroke: none;
+.our-coaching-section .svg-link2:hover #lis1 {
+  fill: var(--accent-color);
 }
-.our-coaching-section .svg-link2:hover path {
+.our-coaching-section .svg-link2:hover #lis2 {
   fill: var(--primary-color);
 }
 .our-coaching-section .social-media-links-div {
@@ -2584,11 +2617,11 @@ select {
   width: 60%;
   height: auto;
   border-radius: 25px;
-  padding: 2%;
+  padding: 10px;
   padding-bottom: 0;
 }
 .our-coaching-section .social-media-links-div a {
-  padding: 6%;
+  padding: 10px;
 }
 .our-coaching-section .svg-link-icon {
   position: relative;
@@ -2604,12 +2637,15 @@ select {
   .our-coaching-section {
     background-color: transparent;
   }
+  .our-coaching-section .process-overview-bg-img {
+    opacity: 0.1;
+  }
   .our-coaching-section h2 {
     text-align: left;
-    margin-top: 0;
+    margin-top: 25px;
     padding-top: 0;
   }
-  .our-coaching-section p {
+  .our-coaching-section .our-coaching-section-subtitle-costum {
     text-align: left;
   }
   .our-coaching-section .card-container {
@@ -2620,14 +2656,11 @@ select {
     padding-top: 0;
   }
   .our-coaching-section .card-container .card h5 {
-    padding-top: 0;
-  }
-  .our-coaching-section .card-container .card p {
-    padding-bottom: 2%;
+    margin-top: 10px;
   }
   .our-coaching-section .name-position-div {
     padding: 0;
-    padding-left: 3%;
+    padding-left: 20px;
     margin-bottom: 0;
     margin: 0;
     text-align: left;
@@ -2642,7 +2675,7 @@ select {
     padding-left: 0;
   }
   .our-coaching-section .link-container {
-    margin-top: 18%;
+    margin-top: 25px;
     margin-left: 0;
     padding-left: 0;
   }
@@ -2659,11 +2692,11 @@ select {
     width: 45%;
     height: auto;
     border-radius: 25px;
-    padding: 2%;
+    padding: 8px;
     padding-bottom: 0;
   }
   .our-coaching-section .social-media-links-div a {
-    padding: 5%;
+    padding: 7px;
   }
 }
 
@@ -2681,7 +2714,6 @@ select {
 }
 
 .our-coaching-section-subtitle-costum {
-  display: flex;
   align-items: center;
   gap: 10px;
 }
