@@ -18,7 +18,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
 ?>
 <section class="container cta-container top-bottom-small">
     <div class="row">
-        <div class="col-md-4 ctadiv imagediv col-12">
+        <div class="col-md-4 imagediv col-12">
             <?php if ($left_image) : ?>
                 <img src="<?php echo esc_url($left_image); ?>" class="img-fluid" alt="Left Image" />
             <?php else : ?>

@@ -62,7 +62,7 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                                     <div class="d-flex card-person-link">
                                         <div class="container link-container">
                                             <?php
-                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-link.svg');
+                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
                                             ?>
                                             <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
                                                 <span class="svg-icon"><?php echo $svg_icon; ?></span>
