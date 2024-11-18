@@ -1,6 +1,6 @@
 .hero-section {
   background-color: var(--secondary-color);
-  border-radius: 50px;
+  border-radius: 0;
   max-width: 1800px;
   height: 800px;
   margin: auto;
@@ -10,6 +10,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include media-xxxl{
+    border-radius: 50px;
+  }
+
 
   .hero-content {
     position: relative;
