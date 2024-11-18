@@ -11,10 +11,9 @@
   align-items: center;
   justify-content: space-between;
 
-  @include media-xxxl{
+  @include media-xxxl {
     border-radius: 50px;
   }
-
 
   .hero-content {
     position: relative;
@@ -179,7 +178,7 @@
     }
     .right-tower {
       top: 70px;
-      left: 760px;
+      left: 775px;
       width: 400px;
       height: 500px;
     }
