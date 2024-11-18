@@ -28,7 +28,7 @@
     }
 
     .cta-button-container{
-
+        display: inline;
         a {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -55,6 +55,7 @@
         }
 
         &:hover {
+
             a {
                 &.default-img {
                     display: none;
