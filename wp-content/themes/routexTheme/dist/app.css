@@ -1959,11 +1959,13 @@ select {
   }
   .card-bottom-layout {
     max-height: 50px;
+    padding-top: 0;
     padding: 0;
     justify-content: space-between;
   }
   .link-container,
   .visa-icon-container {
+    max-height: 50px;
     width: 50%;
     display: flex;
   }
