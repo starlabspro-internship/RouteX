@@ -1,8 +1,9 @@
 .visa-section {
     display: flex;
     flex-direction: column;
-    	max-width: 1290px;
-
+    max-width: 1290px;
+    margin: 0 auto;
+    width: 100%;
 
     h1 {
         color: var(--accent-color);

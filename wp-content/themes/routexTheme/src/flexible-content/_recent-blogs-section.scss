@@ -35,7 +35,7 @@
 	height: 60px;
 	border: 1px solid var(--light-color);
 	border-radius: 50%;
-	background-color: transparent;
+	background-color: var(--extra-color);
 	transition: 0.3s;
 	&:hover {
 		border: 1px solid var(--accent-color);
@@ -78,8 +78,6 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
-	background-color: #D9D9D9;
-	border: 1px solid transparent;
 }
 .recent_blogs-item-media-img-title {
 	background: var(--primary-color);
@@ -144,9 +142,7 @@
 			width: 100%;
 			border-top-left-radius: 20px;
 			border-top-right-radius: 20px;
-			background-color: #D9D9D9;
 			height: 100%;
-			border: 1px solid transparent;
 		}
 	}
 }
@@ -178,10 +174,10 @@
 .recent-blog-item-text-bottom {
 	a {
 		color: var(--secondary-color);
-		font-weight: var(--bold);
-		line-height: 24px;
-		font-size: 15px;
-		gap: 6px;
+		font-weight: var(--semibold);
+		line-height: 30px;
+		font-size: 14px;
+		gap: 10px;
 		text-decoration: none;
 		h4 {
 			font-size: 21px;

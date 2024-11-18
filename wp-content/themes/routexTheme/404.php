@@ -1,60 +1,52 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package routexTheme
- */
-
 get_header();
+
+$error_page = get_field("404", "options");
+$error_message = $error_page['error_message'] ?? '';
+$error_description = $error_page['error_description'] ?? '';
+$error_404_image = $error_page['404_image'] ?? '';
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-404">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'routextheme' ); ?></h1>
-			</header><!-- .page-header -->
+		<?php 
+			echo top_banner();
+		?>
+		<section class="section-404 top-bottom-small">
+				<div class="title-404-container">
+					<div class="title title-404">
+						<?php echo esc_html($error_message); ?>
+					</div>
+				</div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'routextheme' ); ?></p>
+				<div class="textarea-404-container">
+					<div class="textarea-404">
+						<?php echo esc_html($error_description); ?>
+					</div>
+				</div>
 
-					<?php
-					get_search_form();
+				<div class="search-form-404-container">
+					<form action="<?php echo esc_url(home_url('/search.php')); ?>" method="get" class="search-form-404">
+						<input type="text" name="text" placeholder="Search Here"
+							required>
+						<button>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/search.svg" alt="Search icon">
+						</button>
+					</form>
+				</div>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+				<div class="backToHome-404-container">
+					<a href="<?php echo esc_url(home_url('/')); ?>">
+						<button class="backToHome-404">Back to Home</button>
+					</a>
+				</div>
+				
+				<div class="image-404-container">
+					<img src="<?php echo esc_url($error_404_image)?>" alt="404 Image"/>
+				</div>
+		</section>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'routextheme' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$routextheme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'routextheme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$routextheme_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_footer();

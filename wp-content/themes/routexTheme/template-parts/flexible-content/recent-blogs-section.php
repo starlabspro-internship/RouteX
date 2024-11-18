@@ -18,92 +18,90 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
 <section class="recent-blogs-section top-bottom-small">
     <div class="recent-blogs-section-container ">
-        <div class="container">
-            <div class="recent-blogs-section-title-container">
-                <?php if ($title || $small_title) : ?>
-                <div class="recent-blogs-section-titles">
-                    <?php if ($small_title) : ?>
-                    <div class="recent-blogs-section-subtitles">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
-                            <div class="subtitle recent-blogs-subtitle">
-                                <?php
-                                    echo esc_html($small_title);
-                                ?>
-                            </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if ($title) : ?>
-                    <div class="title recent-blogs-title">
-                        <?php
-                            echo esc_html($title);
-                        ?>
-                    </div>
-                    <?php endif; ?>
+        <div class="recent-blogs-section-title-container">
+            <?php if ($title || $small_title) : ?>
+            <div class="recent-blogs-section-titles">
+                <?php if ($small_title) : ?>
+                <div class="recent-blogs-section-subtitles">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
+                        <div class="subtitle recent-blogs-subtitle">
+                            <?php
+                                echo esc_html($small_title);
+                            ?>
+                        </div>
                 </div>
                 <?php endif; ?>
-                <div class="recent-blogs-section-buttons">
-                    <button class="recent-blogs-section-button" aria-label="Previous slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
-                    </button>
-                    <button class="recent-blogs-section-button" aria-label="Next slide"> 
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
-                    </button>
+                <?php if ($title) : ?>
+                <div class="title recent-blogs-title">
+                    <?php
+                        echo esc_html($title);
+                    ?>
                 </div>
+                <?php endif; ?>
             </div>
+            <?php endif; ?>
+            <div class="recent-blogs-section-buttons">
+                <button class="recent-blogs-section-button" aria-label="Previous slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
+                </button>
+                <button class="recent-blogs-section-button" aria-label="Next slide"> 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
+                </button>
+            </div>
+        </div>
 
-            <?php if (has_non_empty_cards($cards)) : ?>
-            <div class="">
-                <div class="swiper recent-blogs-section-swiper">
-                    <div class="swiper-wrapper">   
-                        <?php foreach ($cards as $card) : ?>
-                            <div class="swiper-slide">
-                                <div class="recent-blog-item-slide-inner">
-                                    <?php if ($card['card_background']) : ?>
-                                    <div class="recent-blog-item-media">
-                                        <a href="<?php echo esc_url($card['card_link']) ?>">
-                                            <img src="<?php echo esc_url($card['card_background']) ?>" alt="images not found">
-                                        </a>
+        <?php if (has_non_empty_cards($cards)) : ?>
+        <div >
+            <div class="swiper recent-blogs-section-swiper">
+                <div class="swiper-wrapper">   
+                    <?php foreach ($cards as $card) : ?>
+                        <div class="swiper-slide">
+                            <div class="recent-blog-item-slide-inner">
+                                <?php if ($card['card_background']) : ?>
+                                <div class="recent-blog-item-media">
+                                    <a href="<?php echo esc_url($card['card_link']) ?>">
+                                        <img src="<?php echo esc_url($card['card_background']) ?>" alt="images not found">
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+                                <div class="recent-blog-item-text">
+                                    <?php if ($card['card_date'] || $card['card_creator']) : ?>
+                                    <div class="recent-blog-item-text-meta">
+                                        <?php if ($card['card_date']) : ?>
+                                        <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt=""><?php echo esc_html($card['card_date']) ?></a></span>
+                                        <?php endif; ?>
+                                        <?php if ($card['card_creator']) : ?>
+                                        <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="">By <?php echo esc_html($card['card_creator']) ?></a></span>
+                                        <?php endif; ?>
                                     </div>
                                     <?php endif; ?>
-                                    <div class="recent-blog-item-text">
-                                        <?php if ($card['card_date'] || $card['card_creator']) : ?>
-                                        <div class="recent-blog-item-text-meta">
-                                            <?php if ($card['card_date']) : ?>
-                                            <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt=""><?php echo esc_html($card['card_date']) ?></a></span>
-                                            <?php endif; ?>
-                                            <?php if ($card['card_creator']) : ?>
-                                            <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="">By <?php echo esc_html($card['card_creator']) ?></a></span>
-                                            <?php endif; ?>
-                                        </div>
+                                    <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
+                                    <div class="recent-blog-item-text-bottom">
+                                        <?php if ($card['card_title']) : ?>
+                                        <a href="<?php echo esc_url($card['card_link']) ?>"><h4><?php echo esc_html($card['card_title']) ?></h4></a>
                                         <?php endif; ?>
-                                        <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
-                                        <div class="recent-blog-item-text-bottom">
-                                            <?php if ($card['card_title']) : ?>
-                                            <a href="<?php echo esc_url($card['card_link']) ?>"><h4><?php echo esc_html($card['card_title']) ?></h4></a>
-                                            <?php endif; ?>
-                                            <?php if ($card['card_text']) : ?>
-                                            <p><?php echo esc_html($card['card_text']) ?></p>
-                                            <?php endif; ?>
-                                            <?php if ($card['card_link']) : ?>
-                                            <a class="recent-blog-item-text-bottom-readmore"  href="<?php echo esc_url($card['card_link']) ?>">Read More 
-                                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-green.svg') ?>" alt=""> 
-                                            </a>
-                                            <?php endif; ?>
-                                        </div>
+                                        <?php if ($card['card_text']) : ?>
+                                        <p><?php echo esc_html($card['card_text']) ?></p>
+                                        <?php endif; ?>
+                                        <?php if ($card['card_link']) : ?>
+                                        <a class="recent-blog-item-text-bottom-readmore"  href="<?php echo esc_url($card['card_link']) ?>">Read More 
+                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-bigger-tale-green.svg') ?>" alt=""> 
+                                        </a>
                                         <?php endif; ?>
                                     </div>
-                                </div> 
-                            
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div> 
+                        
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-            </div>  
-            <?php endif; ?>               
-        </div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>  
+        <?php endif; ?>               
     </div>
 
     <script>

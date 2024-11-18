@@ -18,8 +18,8 @@ if (have_rows('testimonial_card')) {
 if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
-<section class="container testimonial-section top-bottom-small">
-    <div class="container">
+<section class="testimonial-section top-bottom-small">
+    <div class="testimonial-section-container">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
             <div class="col-lg-5 testimonial-left" style="background-image: url('<?php echo $testimonial_left_image; ?>');"></div>

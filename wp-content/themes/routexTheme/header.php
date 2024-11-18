@@ -11,7 +11,7 @@
 
 // Fetch ACF field values
 $header_logo = get_field('header_logo', 'options');
-
+$company_name = get_field('company_name', 'options');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -37,42 +37,45 @@ $header_logo = get_field('header_logo', 'options');
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
 
-	<header id="masthead" class="site-header">
-        <div class="header-container">
-            <div class="site-branding">
-                <?php the_custom_logo(); ?>
-            </div>          
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
-            <nav id="site-navigation" class="main-navigation">
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    )
-                );
-                ?>
-            </nav>
-            <div class="button-div">
-            <a href="#" style="color: white;" class="appointment-button">Get An Appointment ➜</a>
+        <header id="masthead" class="site-header">
+            <div class="header-container">
+                <div class="site-branding">
+                    <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
+                    <div><?php echo esc_html($company_name); ?></div>
+                </div>          
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
+                <nav id="site-navigation" class="main-navigation">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu',
+                        )
+                    );
+                    ?>
+                </nav>
+                <div class="button-div">
+                <a href="#" style="color: white;" class="appointment-button">Get An Appointment
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg" alt="Right arrow" />
+                </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <script> 
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mainNavigation = document.querySelector('.main-navigation');
+        <script> 
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mainNavigation = document.querySelector('.main-navigation');
 
-            if (menuToggle && mainNavigation) {
-                menuToggle.addEventListener('click', function() {
-                    mainNavigation.classList.toggle('active');
+                if (menuToggle && mainNavigation) {
+                    menuToggle.addEventListener('click', function() {
+                        mainNavigation.classList.toggle('active');
 
-                    const expanded = mainNavigation.classList.contains('active');
-                    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                });
-            }
-        });
-    </script>
+                        const expanded = mainNavigation.classList.contains('active');
+                        menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    });
+                }
+            });
+        </script>
 
-    <div id="content" class="site-content">
+        <div id="content" class="site-content">

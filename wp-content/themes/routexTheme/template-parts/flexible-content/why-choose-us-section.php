@@ -9,10 +9,9 @@ function has_content_in_layout() {
 
             if (get_row_layout() == 'left_layout') :
                 $first_photo_third_sector = get_sub_field('image_1');
-                $second_photo_third_sector = get_sub_field('image_2');
                 $experience_text_third_sector = get_sub_field('experience_text');
                 $third_photo_third_sector = get_sub_field('image_3');
-                if ($first_photo_third_sector || $second_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
+                if ($first_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
                     $has_content = true;
                 endif;
             endif;
@@ -44,17 +43,15 @@ if (has_content_in_layout() || $phone_number) :
     ?>
         <section class="choose-us-section top-bottom-small">
             <div class="choose-us-section-container ">
-                <div class="container">
                     <div class="row">
     <?php
     while (have_rows('why_choose_us')) : the_row();
     
         if (get_row_layout() == 'left_layout') :
             $first_photo_third_sector = get_sub_field('image_1');
-            $second_photo_third_sector = get_sub_field('image_2');
             $experience_text_third_sector = get_sub_field('experience_text');
             $third_photo_third_sector = get_sub_field('image_3');
-            if ($first_photo_third_sector || $second_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
+            if ($first_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
             ?>
             <div class="col-xl-6">
                 <div class="choose-us-media">
@@ -67,11 +64,9 @@ if (has_content_in_layout() || $phone_number) :
                             </div>
                         </div>
                         <?php endif; ?>
-                        <?php if ($second_photo_third_sector) : ?>
                         <div class="choose-us-media-thumb-circle">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="">
                         </div>
-                        <?php endif; ?>
                     </div>
                     <div class="choose-us-media-img">
                         <?php if ($experience_text_third_sector) : ?>
@@ -180,10 +175,10 @@ if (has_content_in_layout() || $phone_number) :
                     <?php if ($link_url) : ?>
                     <div class="choose-us-button-btn">
                         <a href="<?php echo esc_url($link_url); ?>" class="default-img">
-                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-green.svg" alt="">
+                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="">
                         </a>
                         <a href="<?php echo esc_url($link_url); ?>" class="hover-img">
-                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg" alt="">
+                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="">
                         </a>
                     </div>
                     <?php endif; ?>
@@ -207,7 +202,6 @@ if (has_content_in_layout() || $phone_number) :
         endif;
     endwhile; 
     ?>
-                </div>
                 </div>
             </div>
         </section>

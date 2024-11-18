@@ -1015,8 +1015,6 @@ textarea {
 
 .main-navigation #primary-menu a {
     text-decoration: none; /* Remove underline */
-    color: var(--dark-green); /* Text color */
-    /* font-weight: var(--plus-jakarta-sans-bold); Font weight */
     transition: color 0.3s; /* Transition effect */
 }
 

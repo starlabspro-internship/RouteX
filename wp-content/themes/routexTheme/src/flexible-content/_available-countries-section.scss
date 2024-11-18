@@ -31,8 +31,6 @@
 	align-items: center;
 }
 .available-countries-section-button {
-	width: 156px;
-	height: 60px;
 	border-radius: 30px;
 	background-color: var(--accent-color);
 	color: var(--primary-color);
@@ -41,8 +39,8 @@
 	padding: 15px 30px;
 	align-items: center;
 	gap: 10px;
-	margin-bottom: 0;
 	font-size: 14px;
+	line-height: 30px;
 	font-weight: var(--semibold);
 	text-decoration: none;
 	&:visited {
@@ -61,6 +59,8 @@
 	margin-bottom: 30px;
 }
 .available-countries-item-icon {
+	display: flex;
+	align-items: center;
 	img {
 		width: 70px;
 		height: 70px;
@@ -87,6 +87,17 @@
 			display: flex;
 			align-items: center;
 			gap: 15px;
+			margin-bottom: 10px;
 		}
+
+		li:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@include media-xl{
+	.available-countries-item{
+		margin-bottom: 0;
 	}
 }

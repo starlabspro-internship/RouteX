@@ -20,7 +20,7 @@ endif;
 if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
 ?>
 
-<section class="container text-center visa-section top-bottom-small">
+<section class="text-center visa-section top-bottom-small">
     <?php if ($smalltitle) : ?>
         <div class="visa-section-subtitles">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
