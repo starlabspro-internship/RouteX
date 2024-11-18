@@ -219,14 +219,12 @@ function my_acf_json_load_point($paths) {
 }
 
 class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
-    // Start Level
     function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"submenu\">\n"; // Customize as needed
+        $output .= "\n$indent<ul class=\"submenu\">\n";
     }
 
-    // Start Element
-    function start_el( &$output, $item, $depth = 0, $args = null, $current_object_id = 0 ) { // Updated method signature
+    function start_el( &$output, $item, $depth = 0, $args = null, $current_object_id = 0 ) {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
@@ -239,17 +237,33 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= '<a href="' . esc_url( $item->url ) . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
     }
 
-    // End Element
-    function end_el( &$output, $item, $depth = 0, $args = null ) {
-        $output .= "</li>\n";
-    }
-
-    // End Level
     function end_lvl( &$output, $depth = 0, $args = null ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n"; // Closing the submenu
+        $output .= "$indent</ul>\n";
     }
 }
+
+function custom_nav_menu_styles() {
+    $image_url = esc_url(get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg');
+    
+    $custom_css = "
+        #primary-menu li a::after {
+            content: '';
+            margin-left: 5px;
+            width: 9px;
+            height: 7px;
+            background-image: url('{$image_url}');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    ";
+    
+    wp_add_inline_style('style', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'custom_nav_menu_styles');
 
 if(function_exists('acf_add_options_page')){
 	acf_add_options_page(
@@ -292,4 +306,57 @@ if(function_exists('acf_add_options_page')){
 			'parent_slug' => 'theme-settings'
 		)
 	);
+}
+
+function has_non_empty_cards($cards) {
+    foreach ($cards as $card) {
+        foreach ($card as $index => $value) {
+            if ($index === 'card_bullet_points') {
+                if (has_non_empty_values($value)) {
+                    return true;
+                }
+            } elseif (!empty($value)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function has_non_empty_values($array) {
+    foreach ($array as $item) {
+        if (!empty($item['bullet_point_text'])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function top_banner() {
+    ob_start();
+
+	if(is_home() || is_front_page()){
+		return;
+	}else{
+		if (is_404()) {
+			$error_page = get_field("404", "options");
+			$title = $error_page['title'] ?? '';
+		} else {
+			$title = get_the_title();
+		}
+	}
+   
+    ?>
+	
+    <div class="top-banner">
+		<div class="container">
+        	<h1 class="banner-title"><?php echo esc_html($title); ?></h1>
+		</div>
+    </div>
+	
+    <?php
+
+    $output = ob_get_clean();
+
+    return $output;
 }

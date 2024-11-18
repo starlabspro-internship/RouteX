@@ -1,14 +1,30 @@
 .site-header {
     background-color: var(--contrast-color);
+    display: flex;
+    justify-content: center;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 16px 32px;
+    padding: 16px 0;
     justify-content: space-between;
     flex-direction: column;
+    max-width: 1800px;
+}
+
+.site-branding{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-branding div{
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: var(--bold);
+    color: var(--secondary-color);
 }
 
 .site-branding img {
@@ -46,7 +62,7 @@
 }
 
 .main-navigation a {
-    padding: 16px;
+    padding: 0 10px;
     text-align: center;
     font-size: 10px;
     display: block;
@@ -76,20 +92,18 @@
     display: block;
     text-align: center;
     color: var(--secondary-color);
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: var(--bold);
+    line-height: 26px;
     text-decoration: none;
-    font-weight: bold;
     transition: background-color 0.3s;
     width: 100%;
+    letter-spacing: 1.4px;
 }
+
 
 .main-navigation a:hover {
     color: var(--accent-color);
-}
-
-.header-container {
-    flex-direction: column;
-    padding: 16px;
 }
 
 .menu-toggle {
@@ -110,12 +124,15 @@
     color: var(--light-color);
     padding: 15px 30px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     text-decoration: none;
-    display: inline-block;
-    font-size: 10.8px;
-    font-weight: var(--regular);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: var(--semibold);
     transition: background-color 0.3s ease, color 0.3s ease;
+    gap: 10px;
 }
 
 .appointment-button:hover {
@@ -125,11 +142,9 @@
 
 @include media-md {
     .header-container {
+        padding: 20px 0;
         flex-direction: row;
-        padding: 16px;
         justify-content: center;
-        justify-self: center;
-        max-width: 2000px;
     }
 
     .main-navigation {
@@ -143,7 +158,6 @@
     }
 
     .main-navigation a {
-        padding: 8px 16px;
         text-align: left;
         width: auto;
     }
@@ -168,11 +182,7 @@
     
     #primary-menu li a {
         text-align: center;
-        color: var(--secondary-color);
-        font-size: 14px;
-        font-weight: bold;
         transition: 0.4s, color 0.4s;
-        padding: 10px 20px;
         display: inline-block;
     }
     
@@ -186,5 +196,13 @@
 
     .button-div {
         margin-top: 0;
+    }
+}
+
+@include media-xl {
+    .header-container {
+        padding: 30px 0;
+        flex-direction: row;
+        justify-content: center;
     }
 }

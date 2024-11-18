@@ -1,29 +1,7 @@
 <?php
 get_header();
 
-function has_non_empty_cards($cards) {
-    foreach ($cards as $card) {
-        foreach ($card as $index => $value) {
-            if ($index === 'card_bullet_points') {
-                if (has_non_empty_values($value)) {
-                    return true;
-                }
-            } elseif (!empty($value)) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-function has_non_empty_values($array) {
-    foreach ($array as $item) {
-        if (!empty($item['bullet_point_text'])) {
-            return true;
-        }
-    }
-    return false;
-}
+echo top_banner();
 
 if (have_rows('sections')) :
     ?>

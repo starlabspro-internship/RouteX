@@ -14,7 +14,6 @@ html {
 }
 body {
 	margin: 0;
-	background: var(--contrast-color);
 }
 main {
 	display: block;
@@ -307,17 +306,16 @@ select {
 		}
 		a {
 			text-decoration: none;
-			color: var(--dark);
 			font-weight: var(--bold);
 			transition: color 0.3s;
 			&:hover {
-				color: var(--accent);
+				color: var(--accent-color);
 			}
 		}
 		.sub-menu {
 			display: none;
-			background-color: var(--light);
-			border: 1px solid var(--light);
+			background-color: var(--light-color);
+			border: 1px solid var(--light-color);
 			padding: 0.5rem;
 			li {
 				margin: 0;
@@ -326,7 +324,7 @@ select {
 					color: var(--dark);
 					text-decoration: none;
 					&:hover {
-						color: var(--accent);
+						color: var(--accent-color);
 					}
 				}
 			}
@@ -348,7 +346,11 @@ select {
         display: none;
     }
 }
- .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+
+.site-main{
+	background-color: var(--contrast-color);
+}
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 .comment-navigation .nav-links, .posts-navigation .nav-links, .post-navigation .nav-links {

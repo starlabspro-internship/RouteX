@@ -16,7 +16,7 @@ if (have_rows('bottom_counter')) :
 endif;
 if ($left_image || $icon || $top_title || $top_text || $button || $right_image || has_non_empty_cards($bottom_counters)) : 
 ?>
-<section class="container cta-container top-bottom-small">
+<section class="cta-container top-bottom-small">
     <div class="row">
         <div class="col-md-4 imagediv col-12">
             <?php if ($left_image) : ?>

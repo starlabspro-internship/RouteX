@@ -27,9 +27,9 @@ endif;
 if ($background_image || $small_title || $title || has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)) :
 ?>
 
-<section class="top-bottom-small">
-    <div class="container joindiv top-bottom">
-        <div class="our-coaching-section container ">
+<section class="our-coaching-section">
+    <div class="our-coaching-section-container top-bottom">
+
         <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/coaching-bg-img.png');"></div>
             <?php if ($small_title || $title): ?>
             <div class="row mb-4 title-subtitle-div">
@@ -62,7 +62,7 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                                     <div class="d-flex card-person-link">
                                         <div class="container link-container">
                                             <?php
-                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
+                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-green.svg');
                                             ?>
                                             <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
                                                 <span class="svg-icon"><?php echo $svg_icon; ?></span>
@@ -109,7 +109,6 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                 <?php endif; ?>
             </div>
             <?php endif; ?>
-        </div>
     </div>
 </section>
 <?php endif; ?>

@@ -1,12 +1,18 @@
-.process-overview-section-container {
+.process-overview-section{
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
 	max-width: 1800px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 40px auto;
 	border-radius: 0;
 	position: relative;
 	z-index: 1;
+}
+
+.process-overview-section-container {
+	max-width: 1290px;
+	width: 100%;
+	margin: 0 auto;
 }
 .process-overview-title {
 	width: 100%;
@@ -29,13 +35,14 @@
 .process-overview-item {
 	background: var(--primary-color);
 	padding: 30px 40px;
-	box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
 	border-radius: 20px;
+
 	h5 {
 		color: var(--secondary-color);
 		font-weight: var(--bold);
 		line-height: 30px;
-		font-size: 21px;
+		font-size: 22px;
 		margin-bottom: 20px;
 		margin-top: 10px;
 	}
@@ -78,8 +85,8 @@
 }
 
 
-@include media-xxl {
-    .process-overview-section-container {
+@include media-xxxl {
+    .process-overview-section{
 	  	border-radius: 50px;
     }
 }
@@ -87,5 +94,11 @@
 @include media-lg{
     .process-overview-extra-style{
         margin-top: 40px;
+    }
+}
+
+@include media-md{
+    .process-overview-section{
+        margin: 60px auto;
     }
 }

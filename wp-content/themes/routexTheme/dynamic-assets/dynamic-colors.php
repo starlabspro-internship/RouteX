@@ -1,10 +1,10 @@
 <?php
 // elona
-require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
+// require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' 
 //engjell 
-  // require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
+// require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
 //leka
-// require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
 
 header("Content-type: text/css");
 
@@ -21,6 +21,7 @@ $accent_color = esc_attr($brand_colors['accent']);
 $negatives_color = esc_attr($brand_colors['negatives']);
 $neutrals_color = esc_attr($brand_colors['neutrals']);
 $positives_color = esc_attr($brand_colors['positives']);
+$extra_color = esc_attr($brand_colors['extra_color']);
 
 ?>
 
@@ -35,4 +36,5 @@ $positives_color = esc_attr($brand_colors['positives']);
 --negatives-color: <?php echo $negatives_color; ?>;
 --neutrals-color: <?php echo $neutrals_color; ?>;
 --positives-color: <?php echo $positives_color; ?>;
+--extra-color: <?php echo $extra_color; ?>;
 }
