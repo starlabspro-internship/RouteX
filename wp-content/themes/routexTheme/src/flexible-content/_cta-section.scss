@@ -97,6 +97,7 @@
     padding: 60px 60px;
     border-radius: 20px;
     margin-bottom: 20px;
+    gap: 40px;
 
     .counter-item {
         h3 {
@@ -206,9 +207,7 @@
         align-items: flex-start;
         justify-content: space-between;
         text-align: left;
-        flex-direction: row;
-        
-        
+        flex-direction: row;        
     }
 
     .counter-item h3 {
