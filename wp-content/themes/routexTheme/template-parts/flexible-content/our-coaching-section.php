@@ -29,19 +29,20 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
 
 <section class="our-coaching-section">
     <div class="our-coaching-section-container top-bottom">
-
-        <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/coaching-bg-img.png');"></div>
+        <div class="our-coaching-bg-img"></div>
             <?php if ($small_title || $title): ?>
-            <div class="row mb-4 title-subtitle-div">
-                <div class="col-12 text-center">
+            <div class="row title-subtitle-div">
+                <div class="col-12">
                     <?php if ($small_title): ?>
-                        <p class="subtitle our-coaching-section-subtitle-costum">
+                        <div class="our-coaching-section-subtitle">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
-                            <?php echo esc_html($small_title); ?>
-                        </p>
+                            <div class="subtitle our-coaching-section-subtitle-costum">
+                                <?php echo esc_html($small_title); ?>
+                            </div>
+                        </div>
                     <?php endif; ?>
                     <?php if ($title): ?>
-                        <h2 class="title"><?php echo esc_html($title); ?></h2>
+                        <div class="title"><?php echo esc_html($title); ?></div>
                     <?php endif; ?>
                 </div>
             </div>

@@ -976,25 +976,28 @@ select {
     justify-content: flex-start;
   }
 }
-.footer__social .footer__widget {
+
+.footer__widget {
   max-width: 323px;
 }
-.footer__social .footer__link p {
+
+.footer__link p {
   font-size: 22px;
   line-height: 30px;
 }
-.footer__social .footer__link ul {
+
+.footer__link ul {
   padding: 0;
   margin: 0;
   display: grid;
   grid-gap: 10px;
 }
-.footer__social .footer__link ul li {
+.footer__link ul li {
   list-style: none;
   display: flex;
   align-items: flex-start;
 }
-.footer__social .footer__link ul li a {
+.footer__link ul li a {
   color: var(--primary-color);
   text-decoration: none;
   display: flex;
@@ -1004,19 +1007,21 @@ select {
   font-size: 16px;
   line-height: 30px;
 }
-.footer__social .footer__link ul li a:hover {
+.footer__link ul li a:hover {
   color: var(--accent-color);
 }
-.footer__social .footer3__item-2 {
+
+.footer3__item-2 {
   margin-left: -25px;
 }
-.footer__social .footer-form {
+
+.footer-form {
   position: relative;
   margin-top: 30px;
   display: flex;
   justify-content: flex-start;
 }
-.footer__social .footer-form .form-control {
+.footer-form .form-control {
   margin-left: 20px;
   border: none;
   background-color: var(--dark-color);
@@ -1026,29 +1031,30 @@ select {
   width: 80%;
   padding: 17px 0;
 }
-.footer__social .footer-form .form-control::-moz-placeholder {
+.footer-form .form-control::-moz-placeholder {
   color: var(--primary-color);
 }
-.footer__social .footer-form .form-control::placeholder {
+.footer-form .form-control::placeholder {
   color: var(--primary-color);
 }
-.footer__social .footer-form .form-control:focus {
+.footer-form .form-control:focus {
   color: var(--primary-color);
 }
-.footer__social .footer-form .form-control:focus-visible {
+.footer-form .form-control:focus-visible {
   outline: none;
 }
-.footer__social .footer-form .submit {
+.footer-form .submit {
   background-color: var(--accent-color);
   border-radius: 50%;
   width: 60px;
   height: 60px;
   border: none;
 }
-.footer__social .footer-form .submit:hover {
+.footer-form .submit:hover {
   cursor: pointer;
 }
-.footer__social .footer__bottom-wrapper {
+
+.footer__bottom-wrapper {
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.3);
@@ -1062,30 +1068,33 @@ select {
   opacity: 80%;
   font-weight: var(--regular);
 }
-.footer__social .footer__bottom-wrapper-container {
+
+.footer__bottom-wrapper-container {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
 }
-.footer__social .footer__copyright p {
+
+.footer__copyright p {
   margin: 0;
 }
-.footer__social .footer__copyright-menu {
+
+.footer__copyright-menu {
   display: flex;
   justify-content: end;
 }
-.footer__social .footer__copyright-menu ul {
+.footer__copyright-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   gap: 39px;
 }
-.footer__social .footer__copyright-menu ul li a {
+.footer__copyright-menu ul li a {
   color: var(--primary-color);
   text-decoration: none;
 }
-.footer__social .footer__copyright-menu ul li a:hover {
+.footer__copyright-menu ul li a:hover {
   color: var(--accent-color);
 }
 
@@ -1176,6 +1185,7 @@ select {
   font-size: 14px;
   color: var(--primary-color);
   text-transform: uppercase;
+  letter-spacing: 1.4px;
 }
 
 .button {
@@ -2463,22 +2473,42 @@ select {
 .top-right-section p {
   color: var(--base-color);
 }
-.top-right-section .cta-button {
+.top-right-section .cta-button-container a {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding: 15px 30px;
   border: 1px solid var(--light-color);
   border-radius: 30px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: var(--bold);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: var(--semibold);
+  transition: 0.3s;
+  gap: 10px;
 }
-.top-right-section .cta-button:hover {
+.top-right-section .cta-button-container a:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
-  transform: scale(1.02);
+  border: 1px solid transparent;
+}
+.top-right-section .cta-button-container a.hover-img {
+  display: none;
+}
+.top-right-section .cta-button-container:hover a.default-img {
+  display: none;
+}
+.top-right-section .cta-button-container:hover a.hover-img {
+  font-weight: var(--semibold);
+  line-height: 30px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+  text-decoration: none;
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;
@@ -2495,17 +2525,22 @@ select {
   text-align: center;
   background-color: var(--accent-color);
   color: var(--primary-color);
-  padding-top: 0;
+  padding: 60px 60px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 .bottom-counter .counter-item h3 {
   font-weight: var(--bold);
-  font-size: 240%;
+  font-size: 50px;
+  margin-top: 0;
   margin-bottom: 5px;
+  line-height: 60px;
 }
 .bottom-counter .counter-item p {
-  font-weight: var(--thin);
-  font-size: 90%;
-  margin-top: 0;
+  font-weight: var(--regular);
+  font-size: 16px;
+  margin: 0;
+  line-height: 30px;
 }
 
 .imagediv {
@@ -2591,8 +2626,6 @@ select {
     justify-content: space-between;
     text-align: left;
     flex-direction: row;
-    padding-left: 50px;
-    padding-right: 50px;
   }
   .counter-item h3 {
     font-size: 500px;
@@ -2910,9 +2943,6 @@ select {
   .our-coaching-section-container {
     background-color: transparent;
   }
-  .our-coaching-section-container .process-overview-bg-img {
-    opacity: 0.1;
-  }
   .our-coaching-section-container h2 {
     text-align: left;
     margin-top: 25px;
@@ -2993,13 +3023,38 @@ select {
     border-radius: 50px;
   }
 }
+.our-coaching-bg-img {
+  background-image: url("http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/coaching-bg-img.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.1;
+  border-radius: 50px;
+}
+
 .title-subtitle-div {
   margin-bottom: 60px;
+}
+
+.title-subtitle-div .title {
+  color: var(--secondary-color);
 }
 
 .our-coaching-section-subtitle-costum {
   align-items: center;
   gap: 10px;
+}
+
+.our-coaching-section-subtitle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .process-overview-section {
@@ -3073,6 +3128,7 @@ select {
 }
 
 .process-overview-bg-img {
+  background-image: url("http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/process-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

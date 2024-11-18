@@ -44,7 +44,14 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                     <?php endif; ?>
 
                     <?php if ($button) : ?>
-                        <a href="<?php echo esc_url($button); ?>" class="cta-button">Contact us ➜</a>
+                        <div class="cta-button-container">
+                        <a href="<?php echo esc_url($button); ?>" class="default-img">Contact us 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="right-arrow-bigger-tale-green">
+                        </a>
+                        <a href="<?php echo esc_url($button); ?>" class="hover-img">Contact us 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="right-arrow-white-bigger-tale">
+                        </a>
+                        </div>
                     <?php endif; ?>
                 </div>
 
@@ -54,7 +61,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
             </div>
 
             <?php if (has_non_empty_cards($bottom_counters)) : ?>
-                <div class="bottom-counter ctadiv">
+                <div class="bottom-counter">
                     <?php foreach ($bottom_counters as $counter) : ?>
                         <?php if ($counter['numbers'] || $counter['title']) : ?>
                             <div class="counter-item">
