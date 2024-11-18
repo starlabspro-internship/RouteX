@@ -150,7 +150,6 @@
 
     @include media-md {
         background-color: transparent;
-        .process-overview-bg-img{opacity: 0.1;}
 
         h2 {
             text-align: left;
@@ -247,11 +246,36 @@
     }
 }
 
+.our-coaching-bg-img {
+	background-image: url('http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/coaching-bg-img.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0.1;
+	border-radius: 50px;
+}
+
 .title-subtitle-div{
     margin-bottom: 60px;
+}
+
+.title-subtitle-div .title{
+    color: var(--secondary-color);
 }
 
 .our-coaching-section-subtitle-costum{
     align-items: center;
     gap: 10px;
+}
+
+.our-coaching-section-subtitle{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }

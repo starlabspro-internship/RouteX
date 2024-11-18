@@ -14,7 +14,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
 <section class="process-overview-section">
     <div class="process-overview-section-container top-bottom">
-        <div class="process-overview-bg-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/process-bg.png');"></div>
+        <div class="process-overview-bg-img"></div>
         <div class="row">
             <?php if ($small_title || $title) : ?>
             <div class="process-overview-section-titles">
