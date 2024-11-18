@@ -811,7 +811,7 @@ select {
 
 .footer__area-common {
   background: var(--secondary-color);
-  background-image: url("http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/Map.png");
+  background-image: url("/RouteX/wp-content/themes/routexTheme/assets/img/Map.png");
   position: relative;
   z-index: 1;
   background-size: cover;
@@ -2549,6 +2549,9 @@ select {
 .top-right-section p {
   color: var(--base-color);
 }
+.top-right-section .cta-button-container {
+  display: inline;
+}
 .top-right-section .cta-button-container a {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -2903,8 +2906,7 @@ select {
   background-color: var(--primary-color);
   border: 1px solid var(--light-color);
   border-radius: 15px;
-  padding: 16px;
-  padding-top: 0;
+  padding: 0 36px 16px 36px;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -2912,21 +2914,22 @@ select {
 }
 .our-coaching-section-container .card-container .card .name-position-div {
   flex: 1;
-  padding-left: 20px;
 }
 .our-coaching-section-container .card-container .card .name-position-div h5 {
   color: var(--secondary-color);
-  font-family: var(--primary-font-family);
   margin-bottom: 8px;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: var(--bold);
+  line-height: 30px;
   text-align: left;
   margin-top: 0;
   padding-top: 32px;
 }
 .our-coaching-section-container .card-container .card .name-position-div p {
   color: var(--base-color);
-  font-family: var(--primary-font-family);
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: var(--regular);
   text-align: left;
   margin-bottom: 16px;
 }
@@ -2934,7 +2937,6 @@ select {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-top: 23px;
 }
 .our-coaching-section-container .card-container .card .person-link a {
   color: var(--accent-color);
@@ -3021,14 +3023,12 @@ select {
   }
   .our-coaching-section-container .card-container .card {
     width: 100%;
-    padding-top: 0;
   }
   .our-coaching-section-container .card-container .card h5 {
     margin-top: 10px;
   }
   .our-coaching-section-container .name-position-div {
     padding: 0;
-    padding-left: 20px;
     margin-bottom: 0;
     margin: 0;
     text-align: left;
@@ -3049,7 +3049,6 @@ select {
   }
   .our-coaching-section-container .person-link {
     padding: 0;
-    margin-bottom: 20px;
   }
   .our-coaching-section-container .bg-image {
     height: 100%;
@@ -3089,7 +3088,6 @@ select {
   }
 }
 .our-coaching-bg-img {
-  background-image: url("http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/coaching-bg-img.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3193,7 +3191,6 @@ select {
 }
 
 .process-overview-bg-img {
-  background-image: url("http://localhost:8008/RouteX/wp-content/themes/routexTheme/assets/img/process-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -48,6 +48,4 @@ wp-config.php
 #/wp-content/themes
 /wp-content/themes/routextheme/
 
-/wp-content/themes/routexTheme/dynamic-assets/
-
 node_modules/
