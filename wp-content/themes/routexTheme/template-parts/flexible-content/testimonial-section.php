@@ -63,14 +63,14 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                         <div class="testimonial__content-button-border"></div>
                         <div class="container buttons-wrapper"> 
                         <button class="button-testimonial" aria-label="Previous testimonial">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="left-arrow" class="hover-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="left-arrow-green" class="default-img">
                         </button>
                         <button class="button-testimonial" aria-label="Next testimonial">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="right-arrow" class="hover-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="right-arrow-green" class="default-img">
                         </button>
-                                                </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,8 +6,10 @@
 
     .buttons-wrapper{
         margin-top: 25px;
-        margin-left: 40px;
+        display: flex;
         gap: 10px;
+        justify-content: end;
+        padding: 0;
     }
 
     .testimonial-buttons {
@@ -23,8 +25,10 @@
             border-radius: 50%;
             background-color: var(--primary-color);
             transition: background-color 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &:hover {
                 border-color: var(--secondary-color);
@@ -35,26 +39,23 @@
             img {
                 width: 15px;
                 height: 15px;
-                position: absolute;
-                top: 35%;
-                left: 35%;
                 transition: opacity 0.3s ease;
 
                 &.default-img {
-                    opacity: 1;
+                    display: inline-flex;
                 }
 
                 &.hover-img {
-                    opacity: 0;
+                    display: none;
                 }
             }
 
             &:hover img.default-img {
-                opacity: 0;
+                display: none;
             }
 
             &:hover img.hover-img {
-                opacity: 1;
+                display: inline-flex;
             }
         }
     }
@@ -97,20 +98,20 @@
         .author-name {
             margin: 0;
             margin-left: 5px;
-            font-family: var(--primary-font-family);
             font-weight: var(--bold);
-            font-size: 120%;
+            font-size: 22px;
+            line-height: 30px;
             color: var(--primary-color);
         }
 
         .author-position {
             margin: 0;
-            margin-left: 2%;
-            font-family: var(--primary-font-family);
-            font-weight: var(--thin);
-            font-size: 90%;
+            margin-left: 5px;
+            font-weight: var(--regular);
+            font-size: 16px;
             padding-top: 8px;
             color: var(--primary-color);
+            line-height: 30px;
         }
     }
 
@@ -123,9 +124,11 @@
     .testimonial-text {
         margin-top: 0;
         padding-top: 0;
-        font-weight: var(--thin);
+        font-weight: var(--regular);
         font-size: 20px;
         color: var(--primary-color);
+        line-height: 50px;
+        margin-bottom: 40px;
     }
 
     @include media-md {
@@ -135,10 +138,9 @@
 
         .testimonial__content-button-border::before {
             width: 370px;
-            right: 225px;
             content: "";
             position: absolute;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid var(--primary-color);
         }
 
         .testimonial-content {
@@ -147,7 +149,6 @@
 
         .testimonial-text {
             font-size: 30px;
-            font-weight: var(--thin);
         }
 
         .testimonial-section {
@@ -165,17 +166,11 @@
 
         .buttons-wrapper {
             margin-top: 0;
-            margin-left: 380px;
-            display: flex;
             gap: 20px;
         }
 
-        .testimonial-buttons{
-            margin-left: 10px;
-        }
-
         .testimonial-buttons {
-            margin-top: 30px;
+            margin-top: 40px;
             gap: 20px;
             align-items: center;
         }
@@ -184,10 +179,6 @@
     @include media-lg {
         .testimonial__content-button-border::before {
             width: 250px;
-            right: 225px;
-            content: "";
-            position: absolute;
-            border-bottom: 1px solid #fff;
         }
 
         .testimonial-right {
@@ -205,11 +196,7 @@
 
     @include media-xl {
         .testimonial__content-button-border::before {
-            width: 370px;
-            right: 225px;
-            content: "";
-            position: absolute;
-            border-bottom: 1px solid #fff;
+            width: 58%;
         }
     }
 }

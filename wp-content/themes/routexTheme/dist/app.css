@@ -2639,8 +2639,10 @@ select {
 }
 .testimonial-section-container .buttons-wrapper {
   margin-top: 25px;
-  margin-left: 40px;
+  display: flex;
   gap: 10px;
+  justify-content: end;
+  padding: 0;
 }
 .testimonial-section-container .testimonial-buttons {
   gap: 10px;
@@ -2655,8 +2657,10 @@ select {
   border-radius: 50%;
   background-color: var(--primary-color);
   transition: background-color 0.3s, border-color 0.3s;
-  position: relative;
-  overflow: hidden;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial:hover {
   border-color: var(--secondary-color);
@@ -2666,22 +2670,19 @@ select {
 .testimonial-section-container .testimonial-buttons .button-testimonial img {
   width: 15px;
   height: 15px;
-  position: absolute;
-  top: 35%;
-  left: 35%;
   transition: opacity 0.3s ease;
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial img.default-img {
-  opacity: 1;
+  display: inline-flex;
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial img.hover-img {
-  opacity: 0;
+  display: none;
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial:hover img.default-img {
-  opacity: 0;
+  display: none;
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial:hover img.hover-img {
-  opacity: 1;
+  display: inline-flex;
 }
 .testimonial-section-container .testimonial-right {
   background-color: var(--accent-color);
@@ -2717,19 +2718,19 @@ select {
 .testimonial-section-container .testimonial-icon .author-name {
   margin: 0;
   margin-left: 5px;
-  font-family: var(--primary-font-family);
   font-weight: var(--bold);
-  font-size: 120%;
+  font-size: 22px;
+  line-height: 30px;
   color: var(--primary-color);
 }
 .testimonial-section-container .testimonial-icon .author-position {
   margin: 0;
-  margin-left: 2%;
-  font-family: var(--primary-font-family);
-  font-weight: var(--thin);
-  font-size: 90%;
+  margin-left: 5px;
+  font-weight: var(--regular);
+  font-size: 16px;
   padding-top: 8px;
   color: var(--primary-color);
+  line-height: 30px;
 }
 .testimonial-section-container .testimonial-icon img {
   width: 70px;
@@ -2739,9 +2740,11 @@ select {
 .testimonial-section-container .testimonial-text {
   margin-top: 0;
   padding-top: 0;
-  font-weight: var(--thin);
+  font-weight: var(--regular);
   font-size: 20px;
   color: var(--primary-color);
+  line-height: 50px;
+  margin-bottom: 40px;
 }
 @media (min-width: 768px) {
   .testimonial-section-container .testimonial-section {
@@ -2749,17 +2752,15 @@ select {
   }
   .testimonial-section-container .testimonial__content-button-border::before {
     width: 370px;
-    right: 225px;
     content: "";
     position: absolute;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--primary-color);
   }
   .testimonial-section-container .testimonial-content {
     padding: 60px 60px 0px 60px;
   }
   .testimonial-section-container .testimonial-text {
     font-size: 30px;
-    font-weight: var(--thin);
   }
   .testimonial-section-container .testimonial-section {
     margin-top: 60px;
@@ -2773,15 +2774,10 @@ select {
   }
   .testimonial-section-container .buttons-wrapper {
     margin-top: 0;
-    margin-left: 380px;
-    display: flex;
     gap: 20px;
   }
   .testimonial-section-container .testimonial-buttons {
-    margin-left: 10px;
-  }
-  .testimonial-section-container .testimonial-buttons {
-    margin-top: 30px;
+    margin-top: 40px;
     gap: 20px;
     align-items: center;
   }
@@ -2789,10 +2785,6 @@ select {
 @media (min-width: 992px) {
   .testimonial-section-container .testimonial__content-button-border::before {
     width: 250px;
-    right: 225px;
-    content: "";
-    position: absolute;
-    border-bottom: 1px solid #fff;
   }
   .testimonial-section-container .testimonial-right {
     margin-top: 0;
@@ -2806,11 +2798,7 @@ select {
 }
 @media (min-width: 1200px) {
   .testimonial-section-container .testimonial__content-button-border::before {
-    width: 370px;
-    right: 225px;
-    content: "";
-    position: absolute;
-    border-bottom: 1px solid #fff;
+    width: 58%;
   }
 }
 
