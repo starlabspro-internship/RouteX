@@ -61,7 +61,7 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                                         <p><?php echo esc_html($card['position']); ?></p>
                                     </div>
                                     <div class="d-flex card-person-link">
-                                        <div class="container link-container">
+                                        <div class="link-container">
                                             <?php
                                                 $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
                                             ?>
