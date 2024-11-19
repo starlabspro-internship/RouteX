@@ -57,6 +57,7 @@
                 display: flex;
                 align-items: center;
                 margin-left: auto;
+                margin-top: 30px;
 
                 a {
                     color: var(--accent-color);
@@ -198,6 +199,8 @@
         }
 
         .person-link {
+            margin-top: 0;
+            margin-bottom: 30px;
             padding: 0;
         }
 
