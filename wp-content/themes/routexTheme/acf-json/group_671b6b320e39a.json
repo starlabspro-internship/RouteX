@@ -39,26 +39,6 @@
             "layout": "table",
             "sub_fields": [
                 {
-                    "key": "field_671a5d0423c72",
-                    "label": "Phone Number",
-                    "name": "phone_number",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "(307)555-0133",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
                     "key": "field_671a5d3923c73",
                     "label": "Email",
                     "name": "email",
@@ -96,6 +76,69 @@
                     "rows": "",
                     "placeholder": "6391 Elgin St. Celina, Delaware 10299",
                     "new_lines": ""
+                },
+                {
+                    "key": "field_673c9df60bb4d",
+                    "label": "Phone Information",
+                    "name": "phone_information",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_673c9e0c0bb4e",
+                            "label": "Phone Icon",
+                            "name": "phone_icon",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_671a5d0423c72",
+                            "label": "Phone Number",
+                            "name": "phone_number",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "(307)555-0133",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -370,5 +413,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731667511
+    "modified": 1732025889
 }
