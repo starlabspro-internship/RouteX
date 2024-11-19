@@ -37,6 +37,11 @@
 	flex-wrap: wrap;
 	column-gap: 10px;
 }
+
+.choose-us-item-icon img {
+	width: 30px;
+	height: 30px;
+}
 .choose-us-item-content {
 	display: flex;
 	align-items: center;
@@ -93,6 +98,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 20px;
+		object-fit: cover;
 	}
 }
 .choose-us-media-thumb-circle {
@@ -138,6 +144,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 20px;
+		object-fit: cover;
 	}
 }
 .choose-us-content-description {
@@ -217,6 +224,12 @@
 	height: 55px;
 	border-radius: 50%;
 }
+
+.choose-us-button-text-icon img{
+	width: 16px;
+	height: 16px;
+}
+
 .choose-us-button-text-number {
 	h6 {
 		color: var(--secondary-color);

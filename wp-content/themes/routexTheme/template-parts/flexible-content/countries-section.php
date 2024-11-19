@@ -76,9 +76,11 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                             </div>
                                             <?php endif; ?>
                                             <?php if ($card['card_background']) : ?>
-                                            <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div>
+                                            <div class="countries-swiper-slide-single-img" >
+                                                <img src="<?php echo esc_url($card['card_background']); ?>" alt="">
+                                            </div>
                                             <?php endif; ?>
-                                            <div class="bg-overlay"></div>
+                                            
                                             <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
                                             <div class="countries-swiper-slide-single-content">
                                                 <?php if ($card['card_title']) : ?>
@@ -122,7 +124,9 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                 </div>
                                 <?php endif; ?>
                                 <?php if ($card['card_background']) : ?>
-                                <div class="countries-swiper-slide-single-img" style="background-image: url(<?php echo esc_url($card['card_background']); ?>);"></div>
+                                <div class="countries-swiper-slide-single-img">
+                                    <img src="<?php echo esc_url($card['card_background']); ?>" alt="">
+                                </div>
                                 <?php endif; ?>
                                 <div class="bg-overlay"></div>
                                 <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>

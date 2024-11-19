@@ -1,6 +1,8 @@
 <?php
 $contact_information = get_field('contact_information', 'options');
-$phone_number = $contact_information['phone_number'] ?? null;   
+$phone_information = $contact_information['phone_information'] ?? null;   
+$phone_number = $phone_information['phone_number'] ?? null;  
+$phone_icon = $phone_information['phone_icon'] ?? null;  
 
 function has_content_in_layout() {
     $has_content = false;
@@ -185,7 +187,7 @@ if (has_content_in_layout() || $phone_number) :
                     <?php if ($phone_number) : ?>
                     <div class="choose-us-button-text">
                         <div class="choose-us-button-text-icon">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/icons/telephone.svg" alt="">
+                            <img src="<?php echo esc_url($phone_icon); ?>" alt="">
                         </div>
                         <div class="choose-us-button-text-number">
                             <h6>Need help?</h6>

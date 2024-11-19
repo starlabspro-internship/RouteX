@@ -104,21 +104,18 @@
 		height: 100%;
 		border-radius: 50%;
 		border: 1px solid var(--accent-color);
+		object-fit: cover;
 	}
 }
-.countries-swiper-slide-single-img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-attachment: scroll;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	z-index: 1;
+.countries-swiper-slide-single-img{
 	max-height: 422px;
+}
+.countries-swiper-slide-single-img img{
+	object-fit: cover;
+	height: 422px;
 	border-radius: 20px;
+	max-width: 710px;
+  	width: 100%;
 }
 .countries-swiper-slide-single-content {
 	background: var(--accent-color);
@@ -185,7 +182,6 @@
 
 @include media-sm {
     .countries-swiper-slide-single-content {
-      bottom: 15px;
       width: calc(100% - 65px);
     }
 }
@@ -197,7 +193,6 @@
 
     .countries-swiper-slide-single-content {
         width: calc(100% - 24px);
-        bottom: 15px;
         overflow: hidden;
         -webkit-transform: perspective(400px) rotateX(40deg) scaleY(0.7);
         -ms-transform: perspective(400px) rotateX(40deg) scaleY(0.7);
