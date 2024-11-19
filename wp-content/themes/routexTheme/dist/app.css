@@ -622,6 +622,7 @@ select {
   padding: 16px 0;
   flex-direction: row;
   max-width: 1800px;
+  justify-content: space-between;
 }
 
 .site-branding {
@@ -721,7 +722,7 @@ select {
 }
 
 .menu-toggle {
-  margin-left: 10px;
+  margin-right: 6px;
   font-size: 11px;
   padding: 3% 5%;
   border-radius: 25px;
@@ -748,6 +749,9 @@ select {
   font-weight: var(--semibold);
   transition: background-color 0.3s ease, color 0.3s ease;
   gap: 10px;
+}
+.appointment-button img {
+  display: none;
 }
 
 .appointment-button:hover {
@@ -783,6 +787,9 @@ select {
     order: 3;
     margin-left: auto;
     margin-top: 0;
+  }
+  .button-div img {
+    display: flex;
   }
   .menu-toggle {
     display: none;
