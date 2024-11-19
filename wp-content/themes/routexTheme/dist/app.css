@@ -628,7 +628,6 @@ select {
 .site-branding {
   display: flex;
   align-items: center;
-  gap: 10px;
   order: 1;
 }
 
@@ -737,7 +736,8 @@ select {
   background-color: var(--accent-color);
   color: var(--light-color);
   margin-top: 0;
-  padding: 15px 30px;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 50px;
   border: none;
   border-radius: 30px;
@@ -749,9 +749,6 @@ select {
   font-weight: var(--semibold);
   transition: background-color 0.3s ease, color 0.3s ease;
   gap: 10px;
-}
-.appointment-button img {
-  display: none;
 }
 
 .appointment-button:hover {
@@ -809,7 +806,13 @@ select {
     transition: 0.4s, color 0.4s;
   }
   .appointment-button {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 14px;
     margin-top: 0;
+    font-weight: var(--thin);
   }
 }
 @media (min-width: 1200px) {
