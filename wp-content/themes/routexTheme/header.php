@@ -11,6 +11,7 @@
 
 // Fetch ACF field values
 $header_logo = get_field('header_logo', 'options');
+$appointment_link = get_field('appointment_link', 'options');
 $company_name = get_field('company_name', 'options');
 ?>
 <!doctype html>
@@ -42,9 +43,8 @@ $company_name = get_field('company_name', 'options');
                 <div class="site-branding">
                     <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
                     <div><?php echo esc_html($company_name); ?></div>
-                </div>          
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
-                <nav id="site-navigation" class="main-navigation">
+                </div>                          
+                <nav id="site-navigation" class="main-navigation">                
                     <?php
                     wp_nav_menu(
                         array(
@@ -53,9 +53,10 @@ $company_name = get_field('company_name', 'options');
                         )
                     );
                     ?>
-                </nav>
+                </nav>                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
+
                 <div class="button-div">
-                <a href="#" style="color: white;" class="appointment-button">Get An Appointment
+                <a href="<?php echo esc_url($appointment_link); ?>" style="color: white;" class="appointment-button">Get An Appointment
                     <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg" alt="Right arrow" />
                 </a>
                 </div>
@@ -78,4 +79,3 @@ $company_name = get_field('company_name', 'options');
             });
         </script>
 
-        <div id="content" class="site-content">

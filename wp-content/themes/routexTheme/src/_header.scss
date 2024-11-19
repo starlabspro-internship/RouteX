@@ -5,22 +5,23 @@
 }
 
 .header-container {
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     padding: 16px 0;
-    justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 1800px;
 }
 
-.site-branding{
+.site-branding {
     display: flex;
     align-items: center;
     gap: 10px;
+    order: 1;
 }
 
-.site-branding div{
+.site-branding div {
     font-size: 32px;
     line-height: 40px;
     font-weight: var(--bold);
@@ -33,11 +34,12 @@
 }
 
 .menu-toggle {
+    order: 3;
     display: block;
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: none;
-    padding: 8px 16px;
+    padding: 8px;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
@@ -51,37 +53,40 @@
 .main-navigation {
     display: none;
     flex-direction: column;
-    align-items: center;
-    background-color: var(--contrast-color);
+    position: absolute; 
+    top: 100%; 
+    left: 0;
     width: 100%;
+    background-color: var(--contrast-color);
+    z-index: 10;
+    padding: 16px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .main-navigation.active {
-    display: flex;
-    flex-direction: column;
+    display: flex; 
 }
 
 .main-navigation a {
     padding: 0 10px;
-    text-align: center;
-    font-size: 10px;
-    display: block;
+    text-align: left;
+    font-size: 15px;
+    font-weight: var(--bold);
+    line-height: 26px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: background-color 0.3s;
 }
 
-.main-navigation #primary-menu li {
-    margin: 0;
-}
-
-.menu-menu-1-container {
-    width: 100%;
+.main-navigation a:hover {
+    color: var(--accent-color);
 }
 
 #primary-menu {
     display: flex;
     flex-direction: column;
-    width: 100%;
     text-align: center;
-    justify-content: stretch;
+    width: 100%;
 }
 
 #primary-menu li {
@@ -90,45 +95,45 @@
 
 #primary-menu li a {
     display: block;
-    text-align: center;
+    text-align: left;
     color: var(--secondary-color);
     font-size: 15px;
     font-weight: var(--bold);
-    line-height: 26px;
+    line-height: 56px;
     text-decoration: none;
     transition: background-color 0.3s;
     width: 100%;
     letter-spacing: 1.4px;
 }
 
-
 .main-navigation a:hover {
     color: var(--accent-color);
 }
 
 .menu-toggle {
-    margin-top: 16px;
-    order: 1;
-    font-size: 15px;
+    margin-left: 10px;
+    font-size: 11px;
     padding: 3% 5%;
     border-radius: 25px;
+    height: 50px;
 }
 
 .button-div {
     order: 2;
-    margin-top: 16px;
 }
 
 .appointment-button {
     background-color: var(--accent-color);
     color: var(--light-color);
+    margin-top: 0;
     padding: 15px 30px;
+    height: 50px;
     border: none;
     border-radius: 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 9px;
     line-height: 30px;
     font-weight: var(--semibold);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -142,67 +147,65 @@
 
 @include media-md {
     .header-container {
+        justify-content: space-between;
         padding: 20px 0;
-        flex-direction: row;
-        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .site-branding {
+        order: 1;
     }
 
     .main-navigation {
+        order: 2;
         display: flex;
-        flex-direction: row;
         justify-content: center;
+        flex: 2;
+        margin: 0;
+        background-color: var(--contrast-color);
+        box-shadow: none;
+        position: relative; 
+        top: 0; 
+        left: 0;
+        width: 0;
+        z-index: 0;
+        padding: 16px 0;
+    }
+
+    .button-div {
+        order: 3;
+        margin-left: auto;
+        margin-top: 0;
     }
 
     .menu-toggle {
         display: none;
     }
 
-    .main-navigation a {
-        text-align: left;
-        width: auto;
-    }
-
-    .button-div {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
     #primary-menu {
         display: flex;
         flex-direction: row;
-        width: auto;
         justify-content: center;
+        margin: 0;
     }
-    
+
     #primary-menu li {
         width: auto;
-        margin: 0 16px;
     }
-    
+
     #primary-menu li a {
+        display: block;
         text-align: center;
         transition: 0.4s, color 0.4s;
-        display: inline-block;
-    }
-    
-    #primary-menu li:hover {
-        color: var(--accent-color);
     }
 
     .appointment-button {
-        margin-top: 0;
-    }
-
-    .button-div {
         margin-top: 0;
     }
 }
 
 @include media-xl {
     .header-container {
-        padding: 30px 0;
-        flex-direction: row;
-        justify-content: center;
+        padding: 15px 0;
     }
 }
