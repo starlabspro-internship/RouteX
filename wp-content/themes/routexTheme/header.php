@@ -66,7 +66,7 @@ $company_name = get_field('company_name', 'options');
         <script> 
             document.addEventListener('DOMContentLoaded', function() {
                 const menuToggle = document.querySelector('.menu-toggle');
-                const mainNavigation = document.querySelector('.main-navigation');
+                const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
 
                 if (menuToggle && mainNavigation) {
                     menuToggle.addEventListener('click', function() {
