@@ -11,12 +11,12 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-		<?php 
-			echo top_banner();
-		?>
+	<?php 
+		echo top_banner();
+	?>
     <div class="container single-post-container">
         <div class="row single-post-row">
-            <div class="single-post-content">
+            <div class="single-post-content col-12">
                 <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post(); ?>
@@ -29,11 +29,11 @@ get_header();
 
                             <div class="single-post-meta">
                                 <span class="meta-item">
-                                    <i class="bi bi-person"></i> <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/user-icon-green.svg" class="img-fluid" alt="Passport Icon">
+                                    <i class="bi bi-person"></i> <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/user-icon-green.svg" class="img-fluid" alt="User Icon">
 									By <?php the_author(); ?>
                                 </span>
                                 <span class="meta-item">
-                                    <i class="bi bi-calendar"></i> <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/calendar-icon-green.svg" class="img-fluid" alt="Passport Icon">
+                                    <i class="bi bi-calendar"></i> <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/calendar-icon-green.svg" class="img-fluid" alt="Calendar Icon">
 									<?php the_date(); ?>
                                 </span>
                             </div>

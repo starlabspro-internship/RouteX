@@ -1,35 +1,35 @@
 .single-post-container {
     .single-post-row {
-        max-width: 95%;
-        justify-content: center;
-        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
 
         .single-post-content {
-            max-width: 900px;
-            margin: 0 auto; // Center align the content
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
 
             .single-post-thumbnail {
                 margin-bottom: 24px;
 
                 img {
-                    width: 100%; // Force image to take full width of its parent
-                    max-width: 900px; // Ensure it doesn't exceed content width
+                    width: 100%;
+                    max-width: 100%;
                     border-radius: 20px;
-                    display: block; // Remove extra spacing caused by inline-block
-                    margin: 0 auto; // Center image horizontally if extra space exists
+                    display: block;
+                    margin: 0 auto;
                 }
             }
 
             .single-post-meta {
-                display: flex; 
-                justify-content: center; 
+                display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 16px; 
+                gap: 16px;
                 margin-bottom: 24px;
 
                 .meta-item {
                     color: var(--dark-color);
-                    display: flex; 
+                    display: flex;
                     align-items: center;
                     font-size: 16px;
 
@@ -80,7 +80,6 @@
 
                 .single-post-thumbnail img {
                     width: 100%;
-                    max-width: 900px; // Maintain consistent width with the content
                 }
 
                 .single-post-meta {
