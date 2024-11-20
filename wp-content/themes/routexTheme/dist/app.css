@@ -361,9 +361,6 @@ select {
   justify-content: center;
   text-transform: uppercase;
 }
-.main-navigation #primary-menu li {
-  margin: 0 1rem;
-}
 .main-navigation #primary-menu li:hover > .sub-menu {
   display: block;
 }

@@ -1009,9 +1009,6 @@ textarea {
 }
 
 /* Menu Item Styles */
-.main-navigation #primary-menu li {
-    margin: 0 1rem; /* Spacing between menu items */
-}
 
 .main-navigation #primary-menu a {
     text-decoration: none; /* Remove underline */
