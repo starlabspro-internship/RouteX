@@ -1,4 +1,10 @@
 .site-header {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.home-header{
     background-color: var(--contrast-color);
     display: flex;
     justify-content: center;
@@ -57,6 +63,19 @@
     top: 100%; 
     left: 0;
     width: 100%;
+    background-color: var(--primary-color);
+    z-index: 10;
+    padding: 16px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.home-navigation{
+    display: none;
+    flex-direction: column;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    width: 100%;
     background-color: var(--contrast-color);
     z-index: 10;
     padding: 16px 0;
@@ -64,6 +83,10 @@
 }
 
 .main-navigation.active {
+    display: flex; 
+}
+
+.home-navigation.active {
     display: flex; 
 }
 
@@ -78,7 +101,22 @@
     transition: background-color 0.3s;
 }
 
+.home-navigation a {
+    padding: 0 10px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: var(--bold);
+    line-height: 26px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: background-color 0.3s;
+}
+
 .main-navigation a:hover {
+    color: var(--accent-color);
+}
+
+.home-navigation a:hover {
     color: var(--accent-color);
 }
 
@@ -87,10 +125,19 @@
     flex-direction: column;
     text-align: center;
     width: 100%;
+    text-transform: uppercase;
+}
+
+#primary-menu ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #primary-menu li {
     width: 100%;
+    margin: 0;
 }
 
 #primary-menu li a {
@@ -104,10 +151,6 @@
     transition: background-color 0.3s;
     width: 100%;
     letter-spacing: 1.4px;
-}
-
-.main-navigation a:hover {
-    color: var(--accent-color);
 }
 
 .menu-toggle {
@@ -124,7 +167,7 @@
 
 .appointment-button {
     background-color: var(--accent-color);
-    color: var(--light-color);
+    color: var(--primary-color);
     margin-top: 0;
     padding-left: 15px;
     padding-right: 15px;
@@ -146,6 +189,10 @@
     color: var(--primary-color);
 }
 
+.appointment-button:visited {
+    color: var(--primary-color);
+}
+
 @include media-md {
     .header-container {
         justify-content: space-between;
@@ -163,7 +210,21 @@
         justify-content: center;
         flex: 2;
         margin: 0;
-        background-color: var(--contrast-color);
+        box-shadow: none;
+        position: relative; 
+        top: 0; 
+        left: 0;
+        width: 0;
+        z-index: 0;
+        padding: 16px 0;
+    }
+
+    .home-navigation {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        flex: 2;
+        margin: 0;
         box-shadow: none;
         position: relative; 
         top: 0; 

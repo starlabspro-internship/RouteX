@@ -38,13 +38,13 @@ $company_name = get_field('company_name', 'options');
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
 
-        <header id="masthead" class="site-header">
+        <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? 'home-header' : 'site-header'; ?>">
             <div class="header-container">
                 <div class="site-branding">
                     <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
                     <div><?php echo esc_html($company_name); ?></div>
                 </div>                          
-                <nav id="site-navigation" class="main-navigation">                
+                <nav id="site-navigation" class="<?php echo (is_home() || is_front_page()) ? 'home-navigation' : 'main-navigation'; ?>">                
                     <?php
                     wp_nav_menu(
                         array(
@@ -56,7 +56,7 @@ $company_name = get_field('company_name', 'options');
                 </nav>                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
 
                 <div class="button-div">
-                <a href="<?php echo esc_url($appointment_link); ?>" style="color: white;" class="appointment-button">Get An Appointment
+                <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
                     <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg" alt="Right arrow" />
                 </a>
                 </div>

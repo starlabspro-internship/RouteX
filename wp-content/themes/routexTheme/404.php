@@ -25,15 +25,7 @@ $error_404_image = $error_page['404_image'] ?? '';
 					</div>
 				</div>
 
-				<div class="search-form-404-container">
-					<form action="<?php echo esc_url(home_url('/search.php')); ?>" method="get" class="search-form-404">
-						<input type="text" name="text" placeholder="Search Here"
-							required>
-						<button>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/search.svg" alt="Search icon">
-						</button>
-					</form>
-				</div>
+				<?php get_search_form(); ?>
 
 				<div class="backToHome-404-container">
 					<a href="<?php echo esc_url(home_url('/')); ?>">
