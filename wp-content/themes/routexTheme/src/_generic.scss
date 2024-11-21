@@ -350,9 +350,15 @@ select {
 }
 
 .site-main{
+	background-color: var(--primary-color);
+}
+.site-home{
 	background-color: var(--contrast-color);
 }
 .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+	margin: 0 0 1.5em;
+}
+.site-home .comment-navigation, .site-home .posts-navigation, .site-home .post-navigation {
 	margin: 0 0 1.5em;
 }
 .comment-navigation .nav-links, .posts-navigation .nav-links, .post-navigation .nav-links {
@@ -368,15 +374,21 @@ select {
 .sticky {
 	display: block;
 }
-.post, .page {
+.page {
 	margin: 0 0 1.5em;
+}
+.post{
+	max-width: 1290px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 40px 0;
 }
 .updated {
 	&:not(.published) {
 		display: none;
 	}
 }
-.page-content, .entry-content, .entry-summary {
+.page-content, .entry-summary {
 	margin: 1.5em 0 0;
 }
 .page-links {

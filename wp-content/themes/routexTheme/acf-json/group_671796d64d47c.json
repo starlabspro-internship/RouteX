@@ -929,31 +929,6 @@
                             "min": "",
                             "max": "",
                             "button_label": "Add Row"
-                        },
-                        {
-                            "key": "field_672a3fa77ee36",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "preview_size": "medium"
                         }
                     ],
                     "min": "",
@@ -2273,5 +2248,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731875423
+    "modified": 1732108554
 }

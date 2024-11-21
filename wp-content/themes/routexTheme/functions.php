@@ -356,7 +356,9 @@ function top_banner() {
 		if (is_404()) {
 			$error_page = get_field("404", "options");
 			$title = $error_page['title'] ?? '';
-		} else {
+		} elseif(is_archive()) {
+			$title = single_cat_title('', false);
+		} else{
 			$title = get_the_title();
 		}
 	}
@@ -403,3 +405,5 @@ function register_countries_post_type() {
     register_post_type('countries', $args);
 }
 add_action('init', 'register_countries_post_type');
+
+add_image_size('blog-large', 850, 416, true);
