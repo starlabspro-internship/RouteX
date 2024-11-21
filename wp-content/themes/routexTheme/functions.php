@@ -362,16 +362,44 @@ function top_banner() {
 	}
    
     ?>
-	
-    <div class="top-banner">
-		<div class="container">
-        	<h1 class="banner-title"><?php echo esc_html($title); ?></h1>
-		</div>
+
+<div class="top-banner">
+    <div class="container">
+        <h1 class="banner-title"><?php echo esc_html($title); ?></h1>
     </div>
-	
-    <?php
+</div>
+
+<?php
 
     $output = ob_get_clean();
 
     return $output;
 }
+function register_countries_post_type() {
+    $labels = array(
+        'name'               => __('Countries', 'routexTheme'),
+        'singular_name'      => __('Country', 'routexTheme'),
+        'menu_name'          => __('Countries', 'routexTheme'),
+        'all_items'          => __('All Countries', 'routexTheme'),
+        'add_new_item'       => __('Add New Country', 'routexTheme'),
+        'edit_item'          => __('Edit Country', 'routexTheme'),
+        'view_item'          => __('View Country', 'routexTheme'),
+        'search_items'       => __('Search Countries', 'routexTheme'),
+        'not_found'          => __('No Countries Found', 'routexTheme'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'countries'),
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'menu_icon'          => 'dashicons-location-alt',
+        'show_in_rest'       => true,
+		'can_export'         => true,
+        'menu_position'      => 2,
+    );
+
+    register_post_type('countries', $args);
+}
+add_action('init', 'register_countries_post_type');
