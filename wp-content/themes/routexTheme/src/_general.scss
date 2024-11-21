@@ -117,6 +117,12 @@ $button-border-radius: 20px;
     margin-bottom: 40px;
 }
 
+@include media-md {
+    .top-banner {
+        margin-bottom: 60px;
+    }
+}
+
 @include media-xxxl {
     .top-banner {
       border-radius: 50px;

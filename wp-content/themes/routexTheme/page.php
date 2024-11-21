@@ -5,7 +5,7 @@ echo top_banner();
 
 if (have_rows('sections')) :
     ?>
-    <main id="primary" class="site-main">
+    <main id="primary" class="<?php echo (is_home() || is_front_page()) ? 'site-home' : 'site-main'; ?>">
     <?php
     while (have_rows('sections')) : the_row();
 
