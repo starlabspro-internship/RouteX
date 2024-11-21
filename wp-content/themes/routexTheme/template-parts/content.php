@@ -9,26 +9,36 @@
 
 ?>
 
+<?php
+/**
+ * Template part for displaying posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package routexTheme
+ */
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<img src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
+		<img class="thumbnail-img" src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
 
-		<?php
-
-		if ( 'post' === get_post_type() ) :
-			?>
+		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php
 				$fname = get_the_author_meta('nickname');
+				$user_icon = is_singular() ? 'user-icon-green.svg' : 'user-icon.svg';
+				$date_icon = is_singular() ? 'date-icon-green.svg' : 'date-icon.svg';
 				?>
 
-				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/user-icon.svg" alt="user-icon" />By <?php echo $fname ?></p>
+				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo $user_icon; ?>" alt="user-icon" />By <?php echo $fname; ?></p>
 
 				<?php
-				$date =  get_the_date('F j, Y')
+				$date = get_the_date('F j, Y');
 				?>
 
-				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/date-icon.svg" alt="date-icon" /><?php echo $date ?></p>
+				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo $date_icon; ?>" alt="date-icon" /><?php echo $date; ?></p>
 			</div>
 		<?php endif; 
 
@@ -79,3 +89,4 @@
 		<?php //routextheme_entry_footer(); ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->
+
