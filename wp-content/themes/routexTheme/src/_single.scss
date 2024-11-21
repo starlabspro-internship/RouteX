@@ -1,15 +1,21 @@
+body.single .entry-header{
+    max-width: 1200px; 
+}
+
 body.single .entry-header .thumbnail-img {
     width: 100%;
     max-width: 100%;
-    max-width: 850px; 
     margin: 0 auto; 
     display: block; 
 }
 
-
+body.single .entry-content{
+    max-width: 1200px; 
+}
 
 body.single .entry-title {
     color: var(--secondary-color);
+    max-width: 1200px; 
 }
 
 body.single .post{
