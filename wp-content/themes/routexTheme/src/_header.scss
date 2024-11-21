@@ -126,6 +126,9 @@
     text-align: center;
     width: 100%;
     text-transform: uppercase;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #primary-menu ul{
@@ -151,6 +154,10 @@
     transition: background-color 0.3s;
     width: 100%;
     letter-spacing: 1.4px;
+}
+
+#primary-menu li a:hover{
+    color: var(--accent-color);
 }
 
 .menu-toggle {
