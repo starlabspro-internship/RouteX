@@ -9,17 +9,6 @@
 
 ?>
 
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package routexTheme
- */
-
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<img class="thumbnail-img" src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
@@ -55,7 +44,6 @@
 			the_content(
 				sprintf(
 					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'routextheme' ),
 						array(
 							'span' => array(

@@ -1,10 +1,8 @@
 <?php
-// Define ACF fields at the top
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
 $visa_cards = [];
 
-// Store visa card data if available
 if (have_rows('visa_cards')) :
     while (have_rows('visa_cards')) : the_row();
         $visa_cards[] = [
@@ -41,13 +39,11 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
         <?php foreach ($visa_cards as $card) : ?>
             <div class="col-md-6 mb-4 visa-div">
                 <div class="visa-card d-flex flex-wrap">
-                    <!-- Visa Card Image -->
                     <?php if ($card['image']) : ?>
                     <div class="visa-image col-5">
                             <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
                     </div>
                     <?php endif; ?>
-                    <!-- Visa Card Content -->
                     <?php if ($card['icon'] || $card['link'] || $card['text'] || $card['title']) : ?>
                     <div class="visa-content col-7">
                         <?php if ($card['title']) : ?>
@@ -58,10 +54,8 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                             <h5><?php echo esc_html($card['text']); ?></h5>
                         <?php endif; ?>
 
-                        <!-- Card Bottom Layout -->
                         <?php if ($card['icon'] || $card['link']) : ?>
                         <div class="d-flex card-bottom-layout">
-                            <!-- Link SVG Icon -->
                             <?php if ($card['link']) : ?>
                             <div class="container link-container">
                                 <a href="<?php echo esc_url($card['link']); ?>">
@@ -73,7 +67,6 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                             </div>
                             <?php endif; ?>
 
-                            <!-- Additional SVG Icon -->
                             <?php if ($card['icon']) : ?>
                             <div class="container visa-icon-container">
                                 <?php 
