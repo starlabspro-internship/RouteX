@@ -12,7 +12,7 @@ if (have_rows('cards')) :
 endif;
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
-<section class="process-overview-section">
+<section class="<?php echo (is_home() || is_front_page()) ? 'process-overview-section-home' : 'process-overview-section'; ?>">
     <div class="process-overview-section-container top-bottom">
         <div class="process-overview-bg-img"></div>
         <div class="row">

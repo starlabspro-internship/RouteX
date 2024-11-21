@@ -460,7 +460,7 @@ select {
   display: none;
 }
 
-.page-content, .entry-summary {
+.page-content {
   margin: 1.5em 0 0;
 }
 
@@ -946,7 +946,7 @@ select {
   padding: 0 20px;
 }
 @media (min-width: 1400px) {
-  .footer__area-common .footer-top .footer-top {
+  .footer__area-common .footer-top {
     padding: 0 0;
   }
 }
@@ -1076,9 +1076,6 @@ select {
     align-items: center;
     gap: 10px;
     padding: 25px 0;
-  }
-  .container {
-    padding: 60px 0;
   }
   .footer-description {
     text-align: left;
@@ -1434,6 +1431,24 @@ select {
   border-radius: 0;
   background-color: var(--secondary-color);
   margin-bottom: 40px;
+  position: relative;
+}
+
+.top-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.top-banner .container {
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -1569,6 +1584,7 @@ select {
     text-align: left;
   }
 }
+
 .entry-header {
   max-width: 850px;
   width: 100%;
@@ -1714,37 +1730,6 @@ select {
   border: 2px solid var(--accent-color);
 }
 
-.site-404 {
-  background-color: var(--primary-color);
-}
-
-.section-404 {
-  width: 100%;
-}
-
-.title-404-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.title-404 {
-  color: var(--secondary-color);
-  max-width: 807px;
-}
-
-.textarea-404-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 30px auto 40px auto;
-}
-
-.textarea-404 {
-  color: var(--base-color);
-  max-width: 720px;
-}
-
 .search-form-404-container {
   display: flex;
   justify-content: center;
@@ -1783,6 +1768,54 @@ select {
 .search-form-404 button:hover {
   cursor: pointer;
   background-color: var(--secondary-color);
+}
+
+.search .entry-summary {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: var(--regular);
+  max-width: 850px;
+  color: var(--base-color);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search .page-header {
+  max-width: 850px;
+  color: var(--secondary-color);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.site-404 {
+  background-color: var(--primary-color);
+}
+
+.section-404 {
+  width: 100%;
+}
+
+.title-404-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-404 {
+  color: var(--secondary-color);
+  max-width: 807px;
+}
+
+.textarea-404-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px auto 40px auto;
+}
+
+.textarea-404 {
+  color: var(--base-color);
+  max-width: 720px;
 }
 
 .backToHome-404-container {
@@ -3443,7 +3476,7 @@ select {
   width: 100%;
   border-radius: 0;
   max-width: 1800px;
-  background-color: var(--primary-color);
+  background-color: var(--contrast-color);
   position: relative;
   z-index: 1;
   margin: 40px auto;
@@ -3456,6 +3489,26 @@ select {
 }
 @media (min-width: 1820px) {
   .our-coaching-section {
+    border-radius: 50px;
+  }
+}
+.our-coaching-section-home {
+  width: 100%;
+  border-radius: 0;
+  max-width: 1800px;
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+  margin: 40px auto;
+}
+
+@media (min-width: 768px) {
+  .our-coaching-section-home {
+    margin: 60px auto;
+  }
+}
+@media (min-width: 1820px) {
+  .our-coaching-section-home {
     border-radius: 50px;
   }
 }
@@ -3493,6 +3546,17 @@ select {
 }
 
 .process-overview-section {
+  background-color: var(--contrast-color);
+  color: var(--secondary-color);
+  max-width: 1800px;
+  width: 100%;
+  margin: 40px auto;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.process-overview-section-home {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   max-width: 1800px;
@@ -3590,6 +3654,9 @@ select {
   .process-overview-section {
     border-radius: 50px;
   }
+  .process-overview-section-home {
+    border-radius: 50px;
+  }
 }
 @media (min-width: 992px) {
   .process-overview-extra-style {
@@ -3598,6 +3665,9 @@ select {
 }
 @media (min-width: 768px) {
   .process-overview-section {
+    margin: 60px auto;
+  }
+  .process-overview-section-home {
     margin: 60px auto;
   }
 }
@@ -3896,7 +3966,6 @@ select {
 .choose-us-media {
   display: flex;
   gap: 30px;
-  max-width: 580px;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
