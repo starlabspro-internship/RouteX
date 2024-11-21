@@ -27,7 +27,7 @@ endif;
 if ($background_image || $small_title || $title || has_non_empty_cards($cards) || has_non_empty_cards($social_media_cards)) :
 ?>
 
-<section class="our-coaching-section">
+<section class="<?php echo (is_home() || is_front_page()) ? 'our-coaching-section-home' : 'our-coaching-section'; ?>">
     <div class="our-coaching-section-container top-bottom">
         <div class="our-coaching-bg-img"></div>
             <?php if ($small_title || $title): ?>

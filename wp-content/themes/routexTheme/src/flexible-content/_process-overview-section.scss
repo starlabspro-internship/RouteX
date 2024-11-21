@@ -1,4 +1,15 @@
 .process-overview-section{
+	background-color: var(--contrast-color);
+	color: var(--secondary-color);
+	max-width: 1800px;
+	width: 100%;
+	margin: 40px auto;
+	border-radius: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.process-overview-section-home{
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
 	max-width: 1800px;
@@ -89,6 +100,10 @@
     .process-overview-section{
 	  	border-radius: 50px;
     }
+
+	.process-overview-section-home{
+		border-radius: 50px;
+  }
 }
 
 @include media-lg{
@@ -99,6 +114,10 @@
 
 @include media-md{
     .process-overview-section{
+        margin: 60px auto;
+    }
+
+	.process-overview-section-home{
         margin: 60px auto;
     }
 }

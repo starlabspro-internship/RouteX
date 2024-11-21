@@ -77,4 +77,3 @@
 		<?php //routextheme_entry_footer(); ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->
-

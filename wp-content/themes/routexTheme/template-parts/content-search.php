@@ -11,25 +11,39 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			routextheme_posted_on();
-			routextheme_posted_by();
+		<img src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
+
+		<?php
+		if ( 'post' === get_post_type() ) :
 			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			<div class="entry-meta">
 
-	<?php routextheme_post_thumbnail(); ?>
+				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/user-icon.svg" alt="user-icon" />By <?php the_author(); ?></p>
+
+				<?php
+				$date =  get_the_date('F j, Y')
+				?>
+
+				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/date-icon.svg" alt="date-icon" /><?php echo $date ?></p>
+			</div>
+		<?php endif; 
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		?>
+	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
+	<?php
+	if ( !is_singular() ) : ?>
+		<div class="entry-button">
+			<a class="entry-button-link" href="<?= esc_url( get_permalink() ) ?>" rel="bookmark"><button>Learn More <img src="<?= get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="date-icon" /></button></a>
+		</div>
+	<?php endif; ?>
+
 	<footer class="entry-footer">
-		<?php routextheme_entry_footer(); ?>
+		<?php //routextheme_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

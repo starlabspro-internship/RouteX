@@ -30,7 +30,29 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			global $wp_query;
+
+			$big = 999999999;
+
+			$pagination_links = paginate_links( array(
+				'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'  => '?paged=%#%',
+				'current' => max( 1, get_query_var( 'paged' ) ),
+				'total'   => $wp_query->max_num_pages,
+				'type'    => 'array',
+				'prev_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/left-arrow-green-noTail.svg" alt="left-arrow-green-noTale" />',
+    			'next_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/right-arrow-green-noTail.svg" alt="right-arrow-green-noTale" />',
+			) );
+
+			if ( !empty( $pagination_links ) ) {
+				echo '<div class="custom-pagination">';
+				echo '<div class="custom-pagination-container">';
+				foreach ( $pagination_links as $link ) {
+					echo '<div class="page-item">' . $link . '</div>';
+				}
+				echo '</div>';
+				echo '</div>';
+			};
 
 		else :
 

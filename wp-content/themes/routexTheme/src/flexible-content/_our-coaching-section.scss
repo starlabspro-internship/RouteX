@@ -227,7 +227,7 @@
     width: 100%;
     border-radius: 0;
     max-width: 1800px;
-    background-color: var(--primary-color);
+    background-color: var(--contrast-color);
     position: relative;
     z-index: 1;
     margin: 40px auto;
@@ -241,6 +241,28 @@
 
 @include media-xxxl{
     .our-coaching-section {
+        border-radius: 50px;
+    }
+}
+
+.our-coaching-section-home {
+    width: 100%;
+    border-radius: 0;
+    max-width: 1800px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    margin: 40px auto;
+}
+
+@include media-md{
+    .our-coaching-section-home {
+        margin: 60px auto;
+    }
+}
+
+@include media-xxxl{
+    .our-coaching-section-home {
         border-radius: 50px;
     }
 }
