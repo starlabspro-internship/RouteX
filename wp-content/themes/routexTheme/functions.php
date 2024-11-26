@@ -262,17 +262,17 @@ function custom_nav_menu_styles() {
 			background-image: url('{$image_2_url}');	
 		}
 
-        #primary-menu li a::after {
-            content: '';
-            margin-left: 5px;
-            width: 9px;
-            height: 7px;
-            background-image: url('{$image_url}');
-            background-size: contain;
-            background-repeat: no-repeat;
-            display: inline-block;
-            vertical-align: middle;
-        }
+        // #primary-menu li a::after {
+        //     content: '';
+        //     margin-left: 5px;
+        //     width: 9px;
+        //     height: 7px;
+        //     background-image: url('{$image_url}');
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     display: inline-block;
+        //     vertical-align: middle;
+        // }
     ";
     
     wp_add_inline_style('style', $custom_css);
