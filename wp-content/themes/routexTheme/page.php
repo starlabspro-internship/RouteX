@@ -11,12 +11,17 @@ if (have_rows('sections')) :
 
         // Banner Section
         if (get_row_layout() == 'banner') :
-            get_template_part('template-parts/flexible-content/hero-section'); //
+            get_template_part('template-parts/flexible-content/hero-section'); 
+        endif;
+
+        // Questions Section
+        if (get_row_layout() == 'questions') :
+            get_template_part('template-parts/flexible-content/questions-section');
         endif;
         
         // Cards Section
         if (get_row_layout() == 'cards') :
-            get_template_part('template-parts/flexible-content/cards-section'); 
+            get_template_part('template-parts/flexible-content/cards-section');
         endif;
         
         // Why Choose Us Section
@@ -26,7 +31,7 @@ if (have_rows('sections')) :
         
         // Client Section
         if (get_row_layout() == 'logos') :
-            get_template_part('template-parts/flexible-content/client-section'); // 
+            get_template_part('template-parts/flexible-content/client-section'); 
         endif;
         
         // Countries Section

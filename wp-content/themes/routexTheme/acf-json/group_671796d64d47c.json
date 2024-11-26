@@ -104,6 +104,81 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67461a08ca76e": {
+                    "key": "layout_67461a08ca76e",
+                    "name": "questions",
+                    "label": "Questions",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67461c28ca76f",
+                            "label": "Questions Repeater",
+                            "name": "questions_repeater",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 12,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67461c4dca770",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67461c28ca76f"
+                                },
+                                {
+                                    "key": "field_67461c5cca771",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67461c28ca76f"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_672e3b90b35e9": {
                     "key": "layout_672e3b90b35e9",
                     "name": "cards",
@@ -2248,5 +2323,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732108554
+    "modified": 1732661753
 }
