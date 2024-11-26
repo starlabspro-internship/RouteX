@@ -350,33 +350,41 @@ function has_non_empty_values($array) {
 function top_banner() {
     ob_start();
 
-	if(is_home() || is_front_page()){
-		return;
-	}else{
-		if (is_404()) {
-			$error_page = get_field("404", "options");
-			$title = $error_page['title'] ?? '';
-		} elseif(is_archive()) {
-			$title = single_cat_title('', false);
-		} else{
-			$title = get_the_title();
-		}
-	}
-   
+    if (is_home() || is_front_page()) {
+        return; 
+    } else {
+        if (is_404()) {
+            $error_page = get_field("404", "options");
+            $title = $error_page['title'] ?? 'Page Not Found'; 
+        } elseif (is_archive()) {
+            $title = get_the_archive_title();
+
+            if (is_category()) {
+                $title = single_cat_title('', false); 
+            }
+
+            $title = str_replace('Archives: ', '', $title); 
+            $title = wp_strip_all_tags($title); 
+        } elseif (is_singular()) {
+            $title = get_the_title(); 
+        }
+    }
     ?>
 
-<div class="top-banner">
-    <div class="container">
-        <h1 class="banner-title"><?php echo esc_html($title); ?></h1>
+    <div class="top-banner">
+        <div class="container">
+            <h1 class="banner-title"><?php echo esc_html($title); ?></h1> 
+        </div>
     </div>
-</div>
 
-<?php
-
-    $output = ob_get_clean();
-
-    return $output;
+    <?php
+    return ob_get_clean(); 
 }
+
+
+
+
+
 function register_countries_post_type() {
     $labels = array(
         'name'               => __('Countries', 'routexTheme'),
@@ -407,3 +415,40 @@ function register_countries_post_type() {
 add_action('init', 'register_countries_post_type');
 
 add_image_size('blog-large', 850, 416, true);
+
+function register_stories_post_type() {
+    $labels = array(
+        'name'               => 'Stories',
+        'singular_name'      => 'Story',
+        'menu_name'          => 'Stories',
+        'name_admin_bar'     => 'Story',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Story',
+        'new_item'           => 'New Story',
+        'edit_item'          => 'Edit Story',
+        'view_item'          => 'View Story',
+        'all_items'          => 'All Stories',
+        'search_items'       => 'Search Stories',
+        'not_found'          => 'No Stories found.',
+        'not_found_in_trash' => 'No Stories found in Trash.',
+        'parent_item_colon'  => 'Parent Story:',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-book',
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'has_archive'        => true,  // Ensure the archive is enabled
+        'rewrite'            => array(
+            'slug'       => 'stories', 
+            'with_front' => false,
+        ),
+        'query_var'          => true,
+        'show_in_rest'       => true, // Enable Gutenberg support if needed
+    );
+
+    register_post_type('stories', $args);
+}
+add_action('init', 'register_stories_post_type');

@@ -42,6 +42,26 @@
                 "id": ""
             },
             "return_format": "url"
+        },
+        {
+            "key": "field_6745d8adbc32c",
+            "label": "Bordered Header",
+            "name": "bordered_header",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 0
         }
     ],
     "location": [
@@ -62,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732025223
+    "modified": 1732630730
 }

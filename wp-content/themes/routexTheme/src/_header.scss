@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-.home-header{
+.home-header {
     background-color: var(--contrast-color);
     display: flex;
     justify-content: center;
@@ -19,6 +19,12 @@
     flex-direction: row;
     max-width: 1800px;
     justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .site-branding {
@@ -69,7 +75,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.home-navigation{
+.home-navigation {
     display: none;
     flex-direction: column;
     position: absolute; 
@@ -82,15 +88,11 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.main-navigation.active {
+.main-navigation.active, .home-navigation.active {
     display: flex; 
 }
 
-.home-navigation.active {
-    display: flex; 
-}
-
-.main-navigation a {
+.main-navigation a, .home-navigation a {
     padding: 0 10px;
     text-align: left;
     font-size: 15px;
@@ -101,22 +103,7 @@
     transition: background-color 0.3s;
 }
 
-.home-navigation a {
-    padding: 0 10px;
-    text-align: left;
-    font-size: 15px;
-    font-weight: var(--bold);
-    line-height: 26px;
-    text-decoration: none;
-    color: var(--secondary-color);
-    transition: background-color 0.3s;
-}
-
-.main-navigation a:hover {
-    color: var(--accent-color);
-}
-
-.home-navigation a:hover {
+.main-navigation a:hover, .home-navigation a:hover {
     color: var(--accent-color);
 }
 
@@ -131,7 +118,7 @@
     margin: 0;
 }
 
-#primary-menu ul{
+#primary-menu ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -156,7 +143,7 @@
     letter-spacing: 1.4px;
 }
 
-#primary-menu li a:hover{
+#primary-menu li a:hover {
     color: var(--accent-color);
 }
 
@@ -202,11 +189,16 @@
 
 @include media-md {
     .header-container {
+        margin-left: 0;
+        margin-right: 0;
         justify-content: space-between;
-        padding: 20px 0;
         flex-wrap: nowrap;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
-
+    
     .site-branding {
         order: 1;
     }
@@ -246,7 +238,7 @@
         margin-left: auto;
         margin-top: 0;
 
-        img{
+        img {
             display: flex;
         }
     }
