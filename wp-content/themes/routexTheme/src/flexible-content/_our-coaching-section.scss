@@ -1,25 +1,40 @@
+
+.our-coaching-section {
+    width: 100%;
+    border-radius: 0;
+    max-width: 1800px;
+    background-color: var(--contrast-color);
+    position: relative;
+    z-index: 1;
+    margin: 40px auto;
+}
+.our-coaching-section-home {
+    width: 100%;
+    border-radius: 0;
+    max-width: 1800px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    margin: 40px auto;
+}
 .our-coaching-section-container {
     max-width: 1290px;
 	width: 100%;
 	margin: 0 auto;
-
     h2 {
         color: var(--secondary-color);
         text-align: center;
     }
-
     .subtitle {
         color: var(--secondary-color);
         text-align: center;
         padding: 0;
         margin: 0;
     }
-
     .card-container {
         display: flex;
         flex-direction: column;
         gap: 16px;
-
         .card {
             background-color: var(--primary-color);
             border: 1px solid var(--light-color);
@@ -29,7 +44,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             .name-position-div {
                 flex: 1;
                 h5 {
@@ -52,7 +66,6 @@
                     margin-bottom: 16px;
                 }
             }
-
             .person-link {
                 display: flex;
                 align-items: center;
@@ -71,8 +84,6 @@
             }
         }
     }
-
-
     .bg-image {
         position: relative;
         height: 400px;
@@ -99,29 +110,24 @@
             }
         }
     }
-
     .svg-link2 {
         position: relative;
         display: inline-block;
         overflow: hidden;
         border-radius: 40px;
-        transition: background-color 0.2s ease; 
-    }
-    
-    .svg-link2 path {
-        transition: fill 0.3s ease; 
-    }
-    
-    .svg-link2:hover #lis1 {
-        fill: var(--accent-color);
-    }
-    
-    .svg-link2:hover #lis2 {
-        fill: var(--primary-color); 
-    }
-    
-
-
+        transition: background-color 0.2s ease;
+        path {
+            transition: fill 0.3s ease;
+        }
+        &:hover {
+            #lis1 {
+                fill: var(--accent-color);
+            }
+            #lis2 {
+                fill: var(--primary-color);
+            }
+        }
+    }    
     .social-media-links-div {
         background-color: var(--primary-color);
         width: 60%;
@@ -133,21 +139,16 @@
             padding: 10px;
         }
     }
-
     .svg-link-icon {
         position: relative;
         display: inline-block;
         overflow: hidden;
         transition: fill 1s ease;
     }
-
     .svg-link-icon:hover path,
     .svg-link-icon:hover rect {
         fill: var(--accent-color);
     }
-    
-    
-
     @include media-md {
         background-color: transparent;
 
@@ -222,51 +223,6 @@
         }
     }
 }
-
-.our-coaching-section {
-    width: 100%;
-    border-radius: 0;
-    max-width: 1800px;
-    background-color: var(--contrast-color);
-    position: relative;
-    z-index: 1;
-    margin: 40px auto;
-}
-
-@include media-md{
-    .our-coaching-section {
-        margin: 60px auto;
-    }
-}
-
-@include media-xxxl{
-    .our-coaching-section {
-        border-radius: 50px;
-    }
-}
-
-.our-coaching-section-home {
-    width: 100%;
-    border-radius: 0;
-    max-width: 1800px;
-    background-color: var(--primary-color);
-    position: relative;
-    z-index: 1;
-    margin: 40px auto;
-}
-
-@include media-md{
-    .our-coaching-section-home {
-        margin: 60px auto;
-    }
-}
-
-@include media-xxxl{
-    .our-coaching-section-home {
-        border-radius: 50px;
-    }
-}
-
 .our-coaching-bg-img {
 	background-position: center;
 	background-size: cover;
@@ -280,22 +236,34 @@
 	opacity: 0.1;
 	border-radius: 50px;
 }
-
-.title-subtitle-div{
-    margin-bottom: 60px;
+.title-subtitle-div {
+	margin-bottom: 60px;
+	.title {
+		color: var(--secondary-color);
+	}
 }
-
-.title-subtitle-div .title{
-    color: var(--secondary-color);
-}
-
 .our-coaching-section-subtitle-costum{
     align-items: center;
     gap: 10px;
 }
-
 .our-coaching-section-subtitle{
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+}
+@include media-md{
+    .our-coaching-section {
+        margin: 60px auto;
+    }
+    .our-coaching-section-home {
+        margin: 60px auto;
+    }
+}
+@include media-xxxl{
+    .our-coaching-section {
+        border-radius: 50px;
+    }
+    .our-coaching-section-home {
+        border-radius: 50px;
+    }
 }

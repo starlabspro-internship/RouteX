@@ -330,9 +330,22 @@ function has_non_empty_cards($cards) {
                 if (has_non_empty_values($value)) {
                     return true;
                 }
-            } elseif (!empty($value)) {
+			} elseif (!empty($value)) {
                 return true;
-            }
+            } 
+        }
+    }
+    return false;
+}
+
+function has_non_empty_text($cards) {
+    foreach ($cards as $card) {
+        if (!empty($card['service_link_text'])) {
+            return true;
+        } elseif (!empty($card['link_text'])) {
+            return true;
+        } elseif (!empty($card['menu_link_text'])) {
+            return true;
         }
     }
     return false;
