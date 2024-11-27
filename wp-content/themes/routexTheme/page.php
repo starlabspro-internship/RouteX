@@ -5,7 +5,7 @@ echo top_banner();
 
 if (have_rows('sections')) :
     ?>
-    <main id="primary" class="<?php echo (is_home() || is_front_page()) ? 'site-home' : 'site-main'; ?>">
+<main id="primary" class="<?php echo (is_home() || is_front_page()) ? 'site-home' : 'site-main'; ?>">
     <?php
     while (have_rows('sections')) : the_row();
 
@@ -79,9 +79,14 @@ if (have_rows('sections')) :
             get_template_part('template-parts/flexible-content/recent-blogs-section'); 
         endif;
 
+        // Team Section
+        if (get_row_layout() == 'team') :
+            get_template_part('template-parts/flexible-content/team-section'); 
+        endif;
+
     endwhile; 
 ?>
-    </main>
+</main>
 <?php
     endif;
 get_footer();
