@@ -218,30 +218,42 @@ function my_acf_json_load_point($paths) {
     return $paths;
 }
 
-class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+// Custom Walker Class to add SVG arrow to items with submenus
+class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
+    // Start level (add arrow for items with submenus)
     function start_lvl( &$output, $depth = 0, $args = null ) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"submenu\">\n";
+        $id = $args->menu_id;
+        $classes = isset( $args->classes ) ? join( ' ', (array) $args->classes ) : '';
+        $classes = 'sub-menu ' . $classes;
+        
+        // Add an arrow SVG for items with children
+        if ($depth === 0) {
+            $output .= '<ul class="' . esc_attr($classes) . '">';
+        }
     }
 
-    function start_el( &$output, $item, $depth = 0, $args = null, $current_object_id = 0 ) {
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-        $classes[] = 'menu-item-' . $item->ID;
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+    // Start the menu item (add arrow inside the <a> tag)
+    function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+        $classes = join( ' ', apply_filters( 'nav_menu_css_class', (array) $item->classes, $item ) );
+        $classes = 'menu-item ' . $classes;
 
-        $output .= $indent . '<li' . $id . $class_names . '>';
-        $output .= '<a href="' . esc_url( $item->url ) . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
-    }
+        // Add the SVG arrow for items with children
+        $class_names = join( ' ', apply_filters( 'nav_menu_item_id', array( 'menu-item-'. $item->ID ), $item ) );
+        $id = 'menu-item-'. $item->ID;
 
-    function end_lvl( &$output, $depth = 0, $args = null ) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n";
+        // Check if the menu item has children
+        $arrow = '';
+        if (in_array('menu-item-has-children', $item->classes)) {
+            $arrow = '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Right arrow" class="submenu-arrow" />';
+        }
+
+        // Output the item with the arrow
+        $output .= '<li id="' . esc_attr($id) . '" class="' . esc_attr($classes) . '">';
+        $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title) . $arrow . '</a>';
     }
 }
+
 
 function custom_nav_menu_styles() {
     $image_url = esc_url(get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg');
@@ -279,6 +291,9 @@ function custom_nav_menu_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'custom_nav_menu_styles');
+
+
+
 
 if(function_exists('acf_add_options_page')){
 	acf_add_options_page(

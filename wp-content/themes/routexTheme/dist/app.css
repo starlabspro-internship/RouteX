@@ -332,15 +332,12 @@ select {
   display: flex;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
   top: 100%;
-  left: -999em;
   z-index: 99999;
 }
 .main-navigation ul ul ul {
-  left: -999em;
   top: 0;
 }
 .main-navigation ul ul a {
@@ -374,13 +371,9 @@ select {
 }
 .main-navigation #primary-menu .sub-menu {
   display: none;
-  background-color: var(--light-color);
-  border: 1px solid var(--light-color);
-  padding: 0.5rem;
 }
 .main-navigation #primary-menu .sub-menu li {
   margin: 0;
-  padding: 0.5rem 0;
 }
 .main-navigation #primary-menu .sub-menu li a {
   color: var(--dark);
@@ -628,12 +621,16 @@ select {
   background-color: var(--primary-color);
   display: flex;
   justify-content: center;
+  z-index: 1000;
+  position: relative;
 }
 
 .home-header {
   background-color: var(--contrast-color);
   display: flex;
   justify-content: center;
+  z-index: 1000;
+  position: relative;
 }
 
 .header-container {
@@ -651,6 +648,7 @@ select {
   padding-right: 15px;
   margin-left: 5px;
   margin-right: 5px;
+  z-index: 1000;
 }
 
 .site-branding {
@@ -658,12 +656,14 @@ select {
   align-items: center;
   order: 1;
 }
+
 .site-branding div {
   font-size: 32px;
   line-height: 40px;
   font-weight: var(--bold);
   color: var(--secondary-color);
 }
+
 .site-branding img {
   max-width: 150px;
   height: auto;
@@ -681,11 +681,13 @@ select {
   font-weight: bold;
   transition: background-color 0.3s;
 }
+
 .menu-toggle:hover {
   background-color: var(--secondary-color);
 }
 
-.main-navigation {
+.main-navigation,
+.home-navigation {
   display: none;
   flex-direction: column;
   position: absolute;
@@ -697,10 +699,53 @@ select {
   padding: 16px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.main-navigation.active {
+
+#primary-menu .menu-item-has-children > .sub-menu {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+}
+
+#primary-menu .menu-item-has-children.active > .sub-menu {
+  display: block;
+}
+
+#primary-menu .menu-item-has-children {
+  position: relative;
+}
+
+#primary-menu .menu-item-has-children > .sub-menu > li > a {
+  color: var(--secondary-color);
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  line-height: 25px;
+}
+
+#primary-menu .menu-item-has-children img {
+  margin-top: 15px;
+}
+
+.submenu-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  padding-top: 6px;
+  transition: transform 0.3s ease;
+}
+
+#primary-menu .menu-item-has-children.active > a .submenu-arrow {
+  transform: rotate(90deg);
+  padding-top: 10px;
+}
+
+.main-navigation.active,
+.home-navigation.active {
   display: flex;
 }
-.main-navigation a {
+
+.main-navigation a,
+.home-navigation a {
   padding: 0 10px;
   text-align: left;
   font-size: 15px;
@@ -709,40 +754,12 @@ select {
   text-decoration: none;
   color: var(--secondary-color);
   transition: background-color 0.3s;
-}
-.main-navigation a:hover {
-  color: var(--accent-color);
-}
-
-.home-navigation {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: var(--contrast-color);
-  z-index: 10;
-  padding: 16px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  text-align: center;
 }
 
-.main-navigation.active, .home-navigation.active {
-  display: flex;
-}
-
-.main-navigation a, .home-navigation a {
-  padding: 0 10px;
-  text-align: left;
-  font-size: 15px;
-  font-weight: var(--bold);
-  line-height: 26px;
-  text-decoration: none;
-  color: var(--secondary-color);
-  transition: background-color 0.3s;
-}
-
-.main-navigation a:hover, .home-navigation a:hover {
+.main-navigation a:hover,
+.home-navigation a:hover {
   color: var(--accent-color);
 }
 
@@ -756,16 +773,19 @@ select {
   padding: 0;
   margin: 0;
 }
+
 #primary-menu ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 #primary-menu li {
   width: 100%;
   margin: 0;
 }
+
 #primary-menu li a {
   display: block;
   text-align: left;
@@ -778,6 +798,7 @@ select {
   width: 100%;
   letter-spacing: 1.4px;
 }
+
 #primary-menu li a:hover {
   color: var(--accent-color);
 }
@@ -812,10 +833,12 @@ select {
   transition: background-color 0.3s ease, color 0.3s ease;
   gap: 10px;
 }
+
 .appointment-button:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
+
 .appointment-button:visited {
   color: var(--primary-color);
 }
@@ -872,6 +895,27 @@ select {
   }
   .menu-toggle {
     display: none;
+  }
+  #primary-menu .menu-item-has-children > .sub-menu {
+    display: none;
+  }
+  #primary-menu .menu-item-has-children.active > .sub-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 10px;
+    z-index: 10000;
+    border-radius: 5px;
+    border: transparent;
+    padding-left: 10px;
+    line-height: 2px;
+  }
+  .sub-menu a {
+    line-height: 10px;
+  }
+  #primary-menu .menu-item-has-children.active > .sub-menu a:hover {
+    color: var(--accent-color);
   }
   #primary-menu {
     display: flex;
