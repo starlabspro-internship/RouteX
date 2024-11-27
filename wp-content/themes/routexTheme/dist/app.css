@@ -4423,6 +4423,11 @@ body.single .entry-title {
   position: absolute;
   right: 10px;
   bottom: 35px;
+  transition: all 0.3s ease;
+}
+
+.social-toggle:hover {
+  transform: scale(1.1);
 }
 
 .member-info-wrapper {
@@ -4459,7 +4464,7 @@ body.single .entry-title {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  bottom: 110px;
+  bottom: 115px;
   right: 35px;
   width: 36px;
   height: 160px;
@@ -4471,7 +4476,7 @@ body.single .entry-title {
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
-  gap: 25px; /* Positive value for spacing icons */
+  gap: 25px;
 }
 
 .social-links-wrapper {
@@ -4484,7 +4489,7 @@ body.single .entry-title {
   height: 100%;
 }
 
-.team-member:hover .social-icons {
+.social-toggle:hover + .social-icons {
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
