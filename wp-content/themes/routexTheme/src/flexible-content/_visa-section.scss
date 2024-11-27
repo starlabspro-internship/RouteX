@@ -27,7 +27,6 @@
         margin: 0;
     }
 }
-
 .visa-card {
     display: flex;
     flex-direction: column;
@@ -40,29 +39,25 @@
     height: auto;
     margin-bottom: 30px;
 }
-
 .visa-image {
-    min-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    border-radius: 25px;
-    padding-top: 5px;
+	min-width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+	border-radius: 25px;
+	padding-top: 5px;
+	img {
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+		border-radius: 20px;
+	}
 }
-
-.visa-image img {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
 .visa-content {
     min-width: 100%;
     text-align: center;
 }
-
 .card-bottom-layout {
     display: flex;
     width: 100%;
@@ -71,37 +66,50 @@
     align-items: center;
     justify-content: center;
 }
-
 .link-container,
 .visa-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
-
 .svg-link {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 19px;
-    transition: background-color 0.2s ease;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 19px;
+	transition: background-color 0.2s ease;
+	&:hover {
+		background-color: var(--accent-color);
+		rect {
+			stroke: none;
+		}
+		path {
+			fill: var(--primary-color);
+		}
+	}
+	&:focus {
+		outline: none;
+	}
 }
-
-.svg-link:hover {
-    background-color: var(--accent-color);
+.visa-section-subtitles {
+	gap: 10px;
+	margin-bottom: 10px;
+	letter-spacing: 1.4px;
+	display: flex;
+    justify-content: center;
 }
-
-.svg-link:hover rect {
-    stroke: none;
+.visa-section-title-subtitle {
+	color: var(--secondary-color);
+    text-align: center;
 }
-
-.svg-link:hover path {
-    fill: var(--primary-color);
+.visa-section-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
-.svg-link:focus {
-    outline: none;
+.visa-section-bottom-layer{
+    margin-top: 60px;
 }
 
 @include media-md {
@@ -109,7 +117,6 @@
         margin-bottom: 35px;
         height: auto;
     }
-    
     .visa-section {
         h1 {
             font-size: 50px;
@@ -127,7 +134,6 @@
             margin-bottom: 25px;
         }
     }
-    
     .visa-card {
         min-width: 0;
         min-height: 0;
@@ -140,7 +146,6 @@
         margin-bottom: 0;
         padding-bottom: 8px;
     }
-    
     .visa-image {
         min-width: 0;
         min-height: 0;
@@ -153,18 +158,16 @@
         display: flex;
         justify-content: center;
         border-radius: 25px;
-    }
-    
-    .visa-image img {
-        min-width: 0;
-        width: 100%;
-        height: auto;
-        min-height: 250px;
-        max-height: 250px;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    
+        img {
+            min-width: 0;
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }    
     .visa-content {
         min-width: 0;
         min-height: 0;
@@ -174,57 +177,29 @@
         text-align: left;
         padding-bottom: 0;
     }
-    
     .visa-card-title,
     .visa-small-title,
     .visa-title {
         text-align: left;
     }
-
     .card-bottom-layout {
         max-height: 50px;
         padding-top: 0;
         padding: 0;
         justify-content: space-between;
     }
-
     .link-container,
     .visa-icon-container {
         max-height: 50px;
         width: 50%;
         display: flex;
     }
-
     .link-container {
         justify-content: left;
         padding-left: 0;
     }
-
     .visa-icon-container {
         justify-content: right;
         padding-right: 0;
     }
-}
-
-.visa-section-subtitles {
-	gap: 10px;
-	margin-bottom: 10px;
-	letter-spacing: 1.4px;
-	display: flex;
-    justify-content: center;
-}
-
-.visa-section-title-subtitle {
-	color: var(--secondary-color);
-    text-align: center;
-}
-
-.visa-section-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.visa-section-bottom-layer{
-    margin-top: 60px;
 }

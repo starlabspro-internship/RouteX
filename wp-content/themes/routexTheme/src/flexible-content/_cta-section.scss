@@ -3,7 +3,6 @@
     margin: 0 auto;
     width: 100%;
 }
-
 .ctadiv {
     border-radius: 20px;
     padding: 20px;
@@ -11,7 +10,6 @@
     margin-bottom: 20px;
     font-family: var(--primary-font-family);
 }
-
 .top-right-section {
     display: flex;
     flex-direction: column;
@@ -76,10 +74,6 @@
         }
     }
 
-    
-
-    
-
     .img2 {
         border-radius: 20px 20px 20px 0;
         padding-top: 10px;
@@ -87,7 +81,6 @@
         object-fit: cover;
     }
 }
-
 .bottom-counter {
     display: flex;
     flex-direction: column;
@@ -117,26 +110,21 @@
         }
     }
 }
-
 .imagediv {
-    max-width: 440px;
-    margin: 0 0 20px 0;
-    display: flex;
-    justify-content: center;
+	max-width: 440px;
+	margin: 0 0 20px 0;
+	display: flex;
+	justify-content: center;
+	img {
+		border-radius: 20px;
+		max-width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
 }
-
-.imagediv img {
-    border-radius: 20px;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
 .left-content {
     align-items: center;
 }
-
-
 .right-image {
     width: 100%;
     height: auto;
@@ -150,21 +138,21 @@
     margin-top: 5%;
     border-radius: 20px;
 }
-
+.icon{
+    width: 45px;
+    height: 45px;
+}
 @include media-md {
     .ctadiv {
         display: flex;
     }
-
     .circle {
         margin-left: 0;
         padding: 2px;
     }
-
     .cta-content-div {
         height: auto;
     }
-
     .top-right-section {
         display: flex;
         flex-direction: row;
@@ -173,7 +161,6 @@
         padding: 0;
         height: auto;
     }
-
     .left-content {
         flex: 1;
         text-align: left;
@@ -181,7 +168,6 @@
         padding: 35px;
         padding-left: 45px;
     }
-
     .right-image {
         width: 30%;
         background-size: cover;
@@ -192,33 +178,26 @@
         padding: 0;
         margin-top: 0;
         position: relative;
-    }
-
-    .right-image::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 35px solid var(--primary-color);
-        border-top: 200px solid transparent;
-    }
-
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 35px solid var(--primary-color);
+            border-top: 200px solid transparent;
+        }
+    }    
     .bottom-counter {
         align-items: flex-start;
         justify-content: space-between;
         text-align: left;
         flex-direction: row;        
     }
-
-    .counter-item h3 {
-        font-size: 500px;
-    }
-
-}
-
-.icon{
-    width: 45px;
-    height: 45px;
+    .counter-item {
+        h3 {
+            font-size: 500px;
+        }
+    }    
 }

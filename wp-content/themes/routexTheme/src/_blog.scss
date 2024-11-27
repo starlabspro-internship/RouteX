@@ -1,40 +1,113 @@
-.entry-header{
-    max-width: 850px;
-    width: 100%;
-    margin: 0 auto;
+.entry-header {
+	max-width: 850px;
+	width: 100%;
+	margin: 0 auto;
+	img {
+		border-radius: 20px;
+	}
 }
-
-.entry-header img{
-    border-radius: 20px;
-}
-.entry-meta{
+.entry-meta {
 	display: flex;
 	align-items: center;
 	gap: 20px;
+	img {
+		margin-right: 5px;
+		border-radius: 0px;
+	}
 }
-
-.entry-meta img{
-	margin-right: 5px;
-    border-radius: 0px;
-}
-
-.entry-title{
+.entry-title {
 	font-weight: var(--bold);
 	font-size: 28px;
-    line-height: 38px;
+	line-height: 38px;
 	color: var(--dark-color);
 	margin-bottom: 0;
 	max-width: 850px;
-    margin-top: 0;
+	margin-top: 0;
+	a {
+		text-decoration: none;
+		color: var(--dark-color);
+		&:visited {
+			color: var(--dark-color);
+		}
+	}
 }
-
-.entry-title a{
+.entry-content {
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: var(--regular);
+	max-width: 850px;
+	color: var(--base-color);
+	margin: 0 auto;
+	width: 100%;
+}
+.entry-button {
+	max-width: 850px;
+	padding-top: 20px;
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	button {
+		padding: 15px 30px;
+		color: var(--primary-color);
+		border: none;
+		background-color: var(--accent-color);
+		border-radius: 30px;
+		font-size: 14px;
+		line-height: 30px;
+		font-weight: var(--semibold);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		&:hover {
+			background-color: var(--secondary-color);
+			cursor: pointer;
+		}
+	}
+}
+.entry-button-link {
+	color: var(--primary-color);
 	text-decoration: none;
-	color: var(--dark-color);
+	&:visited {
+		color: var(--primary-color);
+		text-decoration: none;
+	}
 }
-
-.entry-title a:visited{
-	color: var(--dark-color);
+.custom-pagination {
+	max-width: 1290px;
+	margin: 40px auto;
+	width: 100%;
+}
+.custom-pagination-container {
+	max-width: 850px;
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+.page-item {
+	.page-numbers {
+		display: flex;
+		min-width: 60px;
+		min-height: 60px;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--light-color);
+		border-radius: 5px;
+		text-align: center;
+		color: var(--secondary-color);
+		font-size: 22px;
+		font-weight: var(--bold);
+		line-height: 30px;
+		text-decoration: none;
+		&:hover {
+			border: 2px solid var(--accent-color);
+			cursor: pointer;
+		}
+	}
+	.current {
+		border: 2px solid var(--accent-color);
+	}
 }
 
 @include media-md{
@@ -56,92 +129,4 @@
         font-size: 50px;
         line-height: 60px;
     }
-}
-
-.entry-content{
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: var(--regular);
-    max-width: 850px;
-    color: var(--base-color);
-    margin: 0 auto;
-    width: 100%;
-}
-
-.entry-button{
-    max-width: 850px;
-    padding-top: 20px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-}
-
-.entry-button-link{
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.entry-button-link:visited{
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-
-.entry-button button{
-    padding: 15px 30px;
-    color: var(--primary-color);
-    border: none;
-    background-color: var(--accent-color);
-    border-radius: 30px;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: var(--semibold);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.entry-button button:hover{
-    background-color: var(--secondary-color);
-    cursor: pointer;
-}
-
-.custom-pagination {
-    max-width: 1290px;
-    margin: 40px auto;
-    width:100%;
-}
-
-.custom-pagination-container{
-    max-width: 850px;
-    margin: 0 auto;
-    width:100%;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.page-item .page-numbers{
-    display: flex;
-    min-width: 60px;
-    min-height: 60px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    text-align: center;
-    color: var(--secondary-color);
-    font-size: 22px;
-    font-weight: var(--bold);
-    line-height: 30px;
-    text-decoration: none;
-}
-
-.page-item .page-numbers:hover {
-    border: 2px solid var(--accent-color);
-    cursor: pointer;
-}
-
-.page-item .current {
-    border: 2px solid var(--accent-color);
 }
