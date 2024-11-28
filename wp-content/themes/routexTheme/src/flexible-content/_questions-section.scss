@@ -28,7 +28,6 @@
 			justify-content: space-between;
 			align-items: center;
 			gap: 30px;
-			transition: 0.3s;
 			&:hover {
 				cursor: pointer;
 			}
@@ -63,6 +62,7 @@
 	font-weight: var(--semibold);
 	color: var(--secondary-color);
 	text-align: left;
+	margin: 0;
 }
 @include media-md{
     .questions-section{
