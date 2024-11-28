@@ -394,9 +394,49 @@ function top_banner() {
     return ob_get_clean(); 
 }
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+add_filter('wpcf7_form_elements', function ($form) {
+    $icon_email = get_template_directory_uri() . '/assets/icons/paper-airplane-darkgreen.svg';
+    $icon_phone = get_template_directory_uri() . '/assets/icons/telephone-darkgreen.svg';
+    $icon_address = get_template_directory_uri() . '/assets/icons/location-pin-darkgreen.svg';
+    $icon_message = get_template_directory_uri() . '/assets/icons/mail-darkgreen.svg';
+
+    $form = preg_replace(
+        '/(<input[^>]*name="your-email"[^>]*>)/',
+        '<span class="inline-field-wrapper">$1<div class="inline-fields-icon"><img src="' . $icon_email . '" alt="email icon" class="input-icon"></div></span>',
+        $form
+    );
+    
+    $form = preg_replace(
+        '/(<input[^>]*name="your-phone"[^>]*>)/',
+        '<span class="inline-field-wrapper">$1<div class="inline-fields-icon"><img src="' . $icon_phone . '" alt="phone icon" class="input-icon"></div></span>',
+        $form
+    );
+
+    $form = preg_replace(
+        '/(<input[^>]*name="your-address"[^>]*>)/',
+        '<span class="inline-field-wrapper">$1<div class="inline-fields-icon"><img src="' . $icon_address . '" alt="address icon" class="input-icon"></div></span>',
+        $form
+    );
+
+    $form = preg_replace(
+        '/(<textarea[^>]*name="your-message"[^>]*>)(.*?)(<\/textarea>)/s',
+        '<span class="inline-field-wrapper">$1$2$3<div class="inline-fields-icon"><img src="' . $icon_message . '" alt="message icon" class="input-icon"></div></span>',
+        $form
+    );
+
+    return $form;
+});
 
 
-
+function contact_form() {
+    $content = get_the_content(); 
+    
+    $content = apply_filters('the_content', $content); 
+    
+    return do_shortcode($content); 
+}
 
 function register_countries_post_type() {
     $labels = array(

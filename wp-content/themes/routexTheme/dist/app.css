@@ -726,12 +726,10 @@ select {
   padding: 16px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.main-navigation.active, .home-navigation.active {
+.home-navigation.active {
   display: flex;
 }
-
-.main-navigation a, .home-navigation a {
+.home-navigation a {
   padding: 0 10px;
   text-align: left;
   font-size: 15px;
@@ -741,8 +739,7 @@ select {
   color: var(--secondary-color);
   transition: background-color 0.3s;
 }
-
-.main-navigation a:hover, .home-navigation a:hover {
+.home-navigation a:hover {
   color: var(--accent-color);
 }
 
@@ -4270,7 +4267,6 @@ body.single .entry-title {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  transition: 0.3s;
 }
 .questions-item-container h2 button:hover {
   cursor: pointer;
@@ -4304,6 +4300,7 @@ body.single .entry-title {
   font-weight: var(--semibold);
   color: var(--secondary-color);
   text-align: left;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -4459,5 +4456,128 @@ body.single .entry-title {
   .team-members .team-member {
     flex: 0 1 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
+  }
+}
+.contact-form-section-container {
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  color: var(--secondary-color);
+}
+
+.contact-form-section {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form-section-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+}
+
+.contact-form-section-title-container {
+  margin-top: 40px;
+}
+
+.contact-form-section-subtitles {
+  gap: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1.4px;
+  display: flex;
+}
+
+.contact-form-subtitle {
+  color: var(--secondary-color);
+}
+
+.contact-form-title {
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+}
+
+.wpcf7 {
+  display: flex;
+  justify-content: center;
+  background-color: var(--contrast-color);
+  border-radius: 20px;
+  padding: 40px;
+}
+.wpcf7 .wpcf7-form {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.wpcf7 label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: var(--regular);
+}
+.wpcf7 .inline-field-wrapper {
+  display: flex;
+  border: 1px solid var(--light-color);
+  border-radius: 30px;
+  background: var(--primary-color);
+}
+.wpcf7 input {
+  font-size: 16px;
+  line-height: 30px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 15px 5px 15px 20px;
+  color: var(--secondary-color);
+  border: none;
+  font-weight: var(--regular);
+}
+.wpcf7 input:focus-visible {
+  outline: none;
+}
+.wpcf7 textarea {
+  font-size: 16px;
+  line-height: 30px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 15px 5px 15px 20px;
+  color: var(--secondary-color);
+  border: none;
+  resize: none;
+  height: 130px;
+  font-weight: var(--regular);
+}
+.wpcf7 textarea:focus-visible {
+  outline: none;
+}
+.wpcf7 .wpcf7-submit {
+  width: 100%;
+  background-color: var(--accent-color);
+  border: none;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: var(--semibold);
+  color: var(--primary-color);
+}
+.wpcf7 .wpcf7-submit:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+}
+.wpcf7 .wpcf7-spinner {
+  display: none;
+}
+.wpcf7 .inline-fields-icon {
+  display: flex;
+  align-items: start;
+  padding-top: 23px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1200px) {
+  .contact-form-section-title-container {
+    margin-top: 0;
   }
 }
