@@ -4628,6 +4628,7 @@ body.single .entry-title {
   line-height: 30px;
   font-weight: var(--semibold);
   color: var(--primary-color);
+  padding: 15px 5px 15px 0px;
 }
 .wpcf7 .wpcf7-submit:hover {
   cursor: pointer;
@@ -4641,6 +4642,16 @@ body.single .entry-title {
   align-items: start;
   padding-top: 23px;
   padding-right: 20px;
+}
+.wpcf7 .wpcf7-response-output {
+  text-align: center;
+}
+.wpcf7 form.invalid .wpcf7-response-output {
+  border: none;
+  color: var(--negatives-color);
+}
+.wpcf7 form.sent .wpcf7-response-output {
+  border: none;
 }
 
 @media (min-width: 1200px) {

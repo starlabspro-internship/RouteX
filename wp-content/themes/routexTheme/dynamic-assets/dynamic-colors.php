@@ -1,16 +1,15 @@
 <?php
-// elona
-// require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
-//engjell 
-   require_once( $_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php' );
-//leka
-//require_once( $_SERVER['DOCUMENT_ROOT'] . '/RouteX/wp-load.php' );
+
+if (!defined('ABSPATH')) {
+  define('ABSPATH', dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/');
+}
+
+require_once(ABSPATH . '/wp-load.php');
 
 header("Content-type: text/css");
 
-// Fetch ACF field values
 $brand_colors = get_field('brand_colors', 'options');
-// Sanitize each color
+
 $primary_color = esc_attr($brand_colors['primary']);
 $secondary_color = esc_attr($brand_colors['secondary']);
 $base_color = esc_attr($brand_colors['base']);

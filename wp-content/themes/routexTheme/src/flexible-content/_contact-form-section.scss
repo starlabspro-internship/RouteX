@@ -94,6 +94,7 @@
         line-height: 30px;
         font-weight: var(--semibold);
         color: var(--primary-color);
+        padding: 15px 5px 15px 0px;
         &:hover{
             cursor: pointer;
             background-color: var(--secondary-color);
@@ -107,6 +108,16 @@
         align-items: start;
         padding-top: 23px;
         padding-right: 20px;
+    }
+    .wpcf7-response-output{
+        text-align: center;
+    }
+    form.invalid .wpcf7-response-output{
+        border: none;
+        color: var(--negatives-color);
+    }
+    form.sent .wpcf7-response-output{
+        border: none;
     }
 }
 @include media-xl{
