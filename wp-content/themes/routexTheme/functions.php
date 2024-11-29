@@ -218,80 +218,84 @@ function my_acf_json_load_point($paths) {
     return $paths;
 }
 
-
-// Custom Walker Class to add SVG arrow to items with submenus
 class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
-    // Start level (add arrow for items with submenus)
+    // Start level (open a submenu container)
     function start_lvl( &$output, $depth = 0, $args = null ) {
-        $id = $args->menu_id;
-        $classes = isset( $args->classes ) ? join( ' ', (array) $args->classes ) : '';
-        $classes = 'sub-menu ' . $classes;
-        
-        // Add an arrow SVG for items with children
-        if ($depth === 0) {
-            $output .= '<ul class="' . esc_attr($classes) . '">';
-        }
+        $indent = str_repeat("\t", $depth);
+        $classes = 'sub-menu';
+        $class_names = esc_attr($classes);
+
+        // Open the submenu container
+        $output .= "\n$indent<ul class=\"$class_names\">\n";
     }
 
-    // Start the menu item (add arrow inside the <a> tag)
+    // End level (close the submenu container)
+    function end_lvl( &$output, $depth = 0, $args = null ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
+    }
+
+    // Start an element (add classes and icons for items with children)
     function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
-        $classes = join( ' ', apply_filters( 'nav_menu_css_class', (array) $item->classes, $item ) );
-        $classes = 'menu-item ' . $classes;
+        $indent = ( $depth ) ? str_repeat("\t", $depth ) : '';
 
-        // Add the SVG arrow for items with children
-        $class_names = join( ' ', apply_filters( 'nav_menu_item_id', array( 'menu-item-'. $item->ID ), $item ) );
-        $id = 'menu-item-'. $item->ID;
+        // Add the item's classes
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
 
-        // Check if the menu item has children
-        $arrow = '';
-        if (in_array('menu-item-has-children', $item->classes)) {
-            $arrow = '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Right arrow" class="submenu-arrow" />';
+        // Check if the item has children
+        $has_children = in_array('menu-item-has-children', $classes);
+        if ($has_children) {
+            $classes[] = 'has-children'; // Custom class for styling
         }
 
-        // Output the item with the arrow
-        $output .= '<li id="' . esc_attr($id) . '" class="' . esc_attr($classes) . '">';
-        $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title) . $arrow . '</a>';
+        // Generate the class attribute
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+        // Generate the ID attribute
+        $id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
+        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+
+        // Open the menu item
+        $output .= $indent . '<li' . $id . $class_names .'>';
+
+        // Add link attributes
+        $atts = array();
+        $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
+        $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
+        $atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
+        $atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+
+        // Build the link attributes string
+        $attributes = '';
+        foreach ( $atts as $attr => $value ) {
+            if ( ! empty( $value ) ) {
+                $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+                $attributes .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
+
+        // Add the SVG arrow if the item has children
+        $arrow = $has_children ? '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Arrow" class="submenu-arrow" />' : '';
+
+        // Generate the item content
+        $item_output = $args->before;
+        $item_output .= '<a'. $attributes .'>';
+        $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+        $item_output .= $arrow;
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+
+        // Append the item content to the output
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+
+    // End an element (close the menu item)
+    function end_el( &$output, $item, $depth = 0, $args = null ) {
+        $output .= "</li>\n";
     }
 }
-
-
-function custom_nav_menu_styles() {
-    $image_url = esc_url(get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg');
-	$image_2_url = esc_url(get_template_directory_uri() . '/assets/img/coaching-bg-img.png');
-    $image_3_url = esc_url(get_template_directory_uri() . '/assets/img/process-bg.png');
-	$image_4_url = esc_url(get_template_directory_uri() . '/assets/img/Map.png');
-
-    $custom_css = "
-		.footer__area-common {
-			background-image: url('{$image_4_url}');
-		}
-
-		.process-overview-bg-img {
-			background-image: url('{$image_3_url}');
-		}
-
-		.our-coaching-bg-img {
-			background-image: url('{$image_2_url}');	
-		}
-
-        // #primary-menu li a::after {
-        //     content: '';
-        //     margin-left: 5px;
-        //     width: 9px;
-        //     height: 7px;
-        //     background-image: url('{$image_url}');
-        //     background-size: contain;
-        //     background-repeat: no-repeat;
-        //     display: inline-block;
-        //     vertical-align: middle;
-        // }
-    ";
-    
-    wp_add_inline_style('style', $custom_css);
-}
-
-add_action('wp_enqueue_scripts', 'custom_nav_menu_styles');
-
 
 
 

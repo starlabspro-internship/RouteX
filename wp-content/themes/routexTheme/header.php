@@ -96,37 +96,47 @@ $bordered_header = get_field('bordered_header', 'options');
 
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
+    
+    if (menuToggle && mainNavigation) {
+        menuToggle.addEventListener('click', function() {
+            mainNavigation.classList.toggle('active');
+            const expanded = mainNavigation.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             
-            if (menuToggle && mainNavigation) {
-                menuToggle.addEventListener('click', function() {
-                    mainNavigation.classList.toggle('active');
-                    const expanded = mainNavigation.classList.contains('active');
-                    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                    
-                    const headerContainer = document.querySelector('.header-container');
-                    headerContainer.classList.toggle('menu-active', expanded);
-                });
-            }
-            
-            const menuItems = document.querySelectorAll('.menu-item-has-children');
-            menuItems.forEach(function(menuItem) {
-                const submenu = menuItem.querySelector('.sub-menu');
-
-                if (submenu) {
-                    menuItem.addEventListener('mouseenter', function() {
-                        menuItem.classList.add('active');
-                        submenu.classList.add('active');
-                    });
-
-                    menuItem.addEventListener('mouseleave', function() {
-                        menuItem.classList.remove('active');
-                        submenu.classList.remove('active');
-                    });
-                }
-            });
+            const headerContainer = document.querySelector('.header-container');
+            headerContainer.classList.toggle('menu-active', expanded);
         });
+    }
+    
+    const menuItems = document.querySelectorAll('.menu-item-has-children');
+    menuItems.forEach(function(menuItem) {
+        const submenu = menuItem.querySelector('.sub-menu');
+        const arrow = menuItem.querySelector('.submenu-arrow'); // Select the SVG arrow
+        
+        if (submenu && arrow) {
+            arrow.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the click from bubbling up
+                menuItem.classList.toggle('active'); // Toggle the 'active' class on the parent menu item
+            });
+        }
+
+        // Optional: Handling mouse events for desktop or non-mobile views
+        if (window.innerWidth > 768) {
+            menuItem.addEventListener('mouseenter', function() {
+                menuItem.classList.add('active');
+                submenu.classList.add('active');
+            });
+
+            menuItem.addEventListener('mouseleave', function() {
+                menuItem.classList.remove('active');
+                submenu.classList.remove('active');
+            });
+        }
+    });
+});
+
         </script>
     </div>
 </body>

@@ -708,6 +708,12 @@ select {
 
 #primary-menu .menu-item-has-children.active > .sub-menu {
   display: block;
+  width: 100%;
+}
+
+#primary-menu .menu-item-has-children.active > .sub-menu .menu-item-has-children.active > .sub-menu {
+  display: block;
+  width: 100%;
 }
 
 #primary-menu .menu-item-has-children {
@@ -735,8 +741,7 @@ select {
 }
 
 #primary-menu .menu-item-has-children.active > a .submenu-arrow {
-  transform: rotate(90deg);
-  padding-top: 10px;
+  transform: rotate(180deg);
 }
 
 .main-navigation.active,
@@ -896,9 +901,11 @@ select {
   .menu-toggle {
     display: none;
   }
+  /* Initially hide submenus */
   #primary-menu .menu-item-has-children > .sub-menu {
     display: none;
   }
+  /* Display the submenu when the parent menu item is active or hovered */
   #primary-menu .menu-item-has-children.active > .sub-menu {
     display: block;
     position: absolute;
@@ -910,6 +917,32 @@ select {
     border: transparent;
     padding-left: 10px;
     line-height: 2px;
+  }
+  /* Display the sub-submenu (third-level) */
+  #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children.active > .sub-menu {
+    display: block;
+    position: absolute;
+    left: 100%; /* Adjust position to be to the right of the parent */
+    top: 0; /* Align to the top of the parent submenu */
+    padding: 10px;
+    z-index: 10005;
+    border-radius: 5px;
+    border: transparent;
+    padding-left: 10px;
+    line-height: 2px;
+    margin-left: 0; /* Remove unnecessary margin */
+  }
+  /* Optional: Hover states */
+  #primary-menu .menu-item-has-children:hover > .sub-menu {
+    display: block; /* Ensure the submenu stays visible when hovering over the parent */
+  }
+  /* Ensure sub-submenu is visible when hovering over its parent */
+  #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children:hover > .sub-menu {
+    display: block;
+  }
+  /* Fix any z-index issues that might cause disappearing submenus */
+  #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children.active > .sub-menu {
+    z-index: 10005;
   }
   .sub-menu a {
     line-height: 10px;
