@@ -113,16 +113,15 @@ $bordered_header = get_field('bordered_header', 'options');
     const menuItems = document.querySelectorAll('.menu-item-has-children');
     menuItems.forEach(function(menuItem) {
         const submenu = menuItem.querySelector('.sub-menu');
-        const arrow = menuItem.querySelector('.submenu-arrow'); // Select the SVG arrow
+        const arrow = menuItem.querySelector('.submenu-arrow'); 
         
         if (submenu && arrow) {
             arrow.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent the click from bubbling up
-                menuItem.classList.toggle('active'); // Toggle the 'active' class on the parent menu item
+                e.stopPropagation(); 
+                menuItem.classList.toggle('active'); 
             });
         }
 
-        // Optional: Handling mouse events for desktop or non-mobile views
         if (window.innerWidth > 768) {
             menuItem.addEventListener('mouseenter', function() {
                 menuItem.classList.add('active');
