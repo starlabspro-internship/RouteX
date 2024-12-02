@@ -95,46 +95,48 @@ $bordered_header = get_field('bordered_header', 'options');
         </header>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
     
     if (menuToggle && mainNavigation) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             mainNavigation.classList.toggle('active');
             const expanded = mainNavigation.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            
+
             const headerContainer = document.querySelector('.header-container');
             headerContainer.classList.toggle('menu-active', expanded);
         });
     }
-    
+
     const menuItems = document.querySelectorAll('.menu-item-has-children');
-    menuItems.forEach(function(menuItem) {
+    menuItems.forEach(function (menuItem) {
         const submenu = menuItem.querySelector('.sub-menu');
-        const arrow = menuItem.querySelector('.submenu-arrow'); 
-        
+        const arrow = menuItem.querySelector('.submenu-arrow');
+
         if (submenu && arrow) {
-            arrow.addEventListener('click', function(e) {
-                e.stopPropagation(); 
-                menuItem.classList.toggle('active'); 
+            arrow.addEventListener('click', function (e) {
+                e.preventDefault();
+                menuItem.classList.toggle('active');
+                submenu.style.display = menuItem.classList.contains('active') ? 'block' : 'none';
             });
         }
 
         if (window.innerWidth > 768) {
-            menuItem.addEventListener('mouseenter', function() {
+            menuItem.addEventListener('mouseenter', function () {
                 menuItem.classList.add('active');
-                submenu.classList.add('active');
+                submenu.style.display = 'block';
             });
 
-            menuItem.addEventListener('mouseleave', function() {
+            menuItem.addEventListener('mouseleave', function () {
                 menuItem.classList.remove('active');
-                submenu.classList.remove('active');
+                submenu.style.display = 'none';
             });
         }
     });
 });
+
 
         </script>
     </div>

@@ -3,26 +3,6 @@
     "title": "Story Details",
     "fields": [
         {
-            "key": "field_6744825125049",
-            "label": "Story Excerpt",
-            "name": "story_excerpt",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6744826e2504a",
             "label": "Person Story Icon",
             "name": "person_story_icon",
@@ -166,5 +146,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732629115
+    "modified": 1733150671
 }

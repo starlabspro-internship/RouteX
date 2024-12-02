@@ -295,9 +295,6 @@ select {
 		text-transform: uppercase;
 		li {
 			&:hover {
-				& > .sub-menu {
-					display: block;
-				}
 			}
 		}
 		a {

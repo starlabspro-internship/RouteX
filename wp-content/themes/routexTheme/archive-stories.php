@@ -27,7 +27,6 @@ get_header();
                 $counter++;
 
                 // Fetch custom fields for the story
-                $story_excerpt = get_field('story_excerpt'); 
                 $person_story_icon = get_field('person_story_icon'); 
                 $person_story_name = get_field('person_story_name');
                 $person_story_position = get_field('person_story_position');
@@ -49,8 +48,9 @@ get_header();
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation" class="mb-3">
 
                             <p class="story-text mb-3">
-                                <?php echo wp_trim_words($story_excerpt, 40, '...'); ?>
+                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                             </p>
+
 
                             <div class="story-card-details">
                                 <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon mb-3">
