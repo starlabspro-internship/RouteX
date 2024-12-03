@@ -1,6 +1,15 @@
-<?php 
+<?php
 $team_small_title = get_sub_field('team_small_title');
 $team_title = get_sub_field('team_title');
+
+function has_team_content() {
+    $has_content = false;
+    if (get_sub_field('team_small_title') || get_sub_field('team_title') || have_rows('team_members')) {
+        $has_content = true;
+    }
+    return $has_content;
+}
+if (has_team_content()) :
 ?>
 
 <section class="text-center team-section">
@@ -17,14 +26,12 @@ $team_title = get_sub_field('team_title');
     <?php if (have_rows('team_members')) : ?>
     <div class="row team-members">
         <?php while (have_rows('team_members')) : the_row(); ?>
-
         <?php
-        $profile_image = get_sub_field('profile_image');
-        $name = get_sub_field('name');
-        $position = get_sub_field('position');
-        $team_member_id = uniqid('team_member_'); 
-        ?>
-
+            $profile_image = get_sub_field('profile_image');
+            $name = get_sub_field('name');
+            $position = get_sub_field('position');
+            $team_member_id = uniqid('team_member_');
+            ?>
         <div class="col-md-4 team-member">
             <?php if ($profile_image) : ?>
             <img src="<?php echo esc_url($profile_image['url']); ?>" alt="<?php echo esc_attr($name); ?>"
@@ -76,27 +83,7 @@ $team_title = get_sub_field('team_title');
             </div>
         </div>
         <?php endwhile; ?>
+        <?php endif; ?>
     </div>
     <?php endif; ?>
 </section>
-
-
-
-<script>
-document.querySelectorAll('.social-toggle').forEach(button => {
-    button.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-target');
-        const socialIcons = document.querySelector(targetId);
-
-        document.querySelectorAll('.social-icons').forEach(panel => {
-            if (panel !== socialIcons) {
-                panel.classList.remove('show');
-            }
-        });
-
-        if (socialIcons) {
-            socialIcons.classList.toggle('show');
-        }
-    });
-});
-</script>
