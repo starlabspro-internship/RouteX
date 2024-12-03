@@ -1,14 +1,20 @@
 .story-archive-container {
-    max-width: 1200px;
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+}
+.story-card-contaiener{
+    margin: 15px 0;
+    min-height: 555px;
 }
 
 .story-card {
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 40px;
-    margin-top: 15px;
+    padding-top: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 100%; 
+    min-height: 555px; 
 
     &.card-primary {
         background-color: var(--primary-color);
@@ -24,20 +30,16 @@
     }
 }
 
-
-
 .story-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 .story-text {
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 50px;
     color: var(--base-color);
-}
-
-.story-rows {
-    margin-bottom: 30px;
+    font-weight: var(--regular);
 }
 
 .story-card-details {
@@ -62,11 +64,16 @@
         .story-card-person-name {
             margin: 2px;
             font-size: 22px;
+            line-height: 30px;
+            font-weight: var(--bold);
         }
 
         .story-card-person-position {
             margin: 2px;
             color: var(--secondary-color);
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: var(--regular);
         }
     }
 }
@@ -97,4 +104,9 @@
 
 .story-card-link:hover {
     color: var(--secondary-color); 
+}
+.story-archive-custom-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(630px, 1fr));
+    gap: 1.5rem;
 }

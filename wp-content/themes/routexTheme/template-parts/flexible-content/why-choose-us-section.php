@@ -132,44 +132,46 @@ if (has_content_in_layout() || $phone_number) :
                 </p>
                 <?php endif; ?>
                 <?php if (has_non_empty_cards($cards)) : ?>
-                <div class="choose-us-cards row">
-                <?php foreach ($cards as $card) : ?>
-                    <div class="col-sm">
-                        <div class="choose-us-item">
-                            <?php if ($card['card_icon'] || $card['card_title']) : ?>
-                            <div class="choose-us-item-content">
-                                <?php if ($card['card_icon']) : ?>
-                                <div class="choose-us-item-icon">
-                                    <img src="<?php echo esc_url($card['card_icon']) ?>" alt="">
+                <div class="choose-us-cards">
+                    <div class="row">
+                    <?php foreach ($cards as $card) : ?>
+                        <div class="col-sm">
+                            <div class="choose-us-item">
+                                <?php if ($card['card_icon'] || $card['card_title']) : ?>
+                                <div class="choose-us-item-content">
+                                    <?php if ($card['card_icon']) : ?>
+                                    <div class="choose-us-item-icon">
+                                        <img src="<?php echo esc_url($card['card_icon']) ?>" alt="">
+                                    </div>
+                                    <?php endif; ?>
+
+                                    <?php if ($card['card_title']) : ?>
+                                    <h3><?php echo esc_html($card['card_title']) ?></h3>
+                                    <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
-
-                                <?php if ($card['card_title']) : ?>
-                                <h3><?php echo esc_html($card['card_title']) ?></h3>
+                                <?php if ($card['card_bullet_points']) : ?>
+                                <div class="choose-us-item-content-list">
+                                    <ul>
+                                        <?php
+                                            foreach ($card['card_bullet_points'] as $point) :
+                                                $card_text = $point['bullet_point_text'];
+                                                if (!empty($card_text)) : ?>
+                                                <li>
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="">
+                                                    <?php echo esc_html($card_text) ?>
+                                                </li>
+                                                <?php
+                                                endif;
+                                            endforeach;
+                                        ?>
+                                    </ul>
+                                </div>
                                 <?php endif; ?>
                             </div>
-                            <?php endif; ?>
-                            <?php if ($card['card_bullet_points']) : ?>
-                            <div class="choose-us-item-content-list">
-                                <ul>
-                                    <?php
-                                        foreach ($card['card_bullet_points'] as $point) :
-                                            $card_text = $point['bullet_point_text'];
-                                            if (!empty($card_text)) : ?>
-                                            <li>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="">
-                                                <?php echo esc_html($card_text) ?>
-                                            </li>
-                                            <?php
-                                            endif;
-                                        endforeach;
-                                    ?>
-                                </ul>
-                            </div>
-                            <?php endif; ?>
                         </div>
+                    <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
                 <?php if ($link_url || $phone_number) : ?>

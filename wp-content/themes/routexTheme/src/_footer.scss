@@ -128,12 +128,6 @@
     }
   }
 }
-.footer__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 .footer__logo-container {
   display: flex;
   align-items: center;
@@ -381,9 +375,6 @@
   }
   .footer__copyright p{
     padding: 0 0;
-  }
-  .footer__bottom {
-    flex-direction: row;
   }
   .footer__copyright-menu {
     display: flex;

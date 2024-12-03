@@ -10,14 +10,13 @@ get_header();
         echo top_banner();
     ?>
 
-<div class="container my-5 story-archive-container">
+<div class="story-archive-container top-bottom-small">
     <div class="row">
         <?php
-        // WP_Query to fetch the custom post type 'stories'
         $args = array(
-            'post_type'      => 'stories', // Correct post type here
-            'posts_per_page' => 6, // Number of posts per page
-            'paged'          => get_query_var('paged') ? get_query_var('paged') : 1, // Pagination
+            'post_type'      => 'stories',
+            'posts_per_page' => 6,
+            'paged'          => get_query_var('paged') ? get_query_var('paged') : 1,
         );
         $story_query = new WP_Query($args);
 
@@ -26,41 +25,41 @@ get_header();
             while ($story_query->have_posts()) : $story_query->the_post();
                 $counter++;
 
-                // Fetch custom fields for the story
                 $story_excerpt = get_field('story_excerpt'); 
                 $person_story_icon = get_field('person_story_icon'); 
                 $person_story_name = get_field('person_story_name');
                 $person_story_position = get_field('person_story_position');
         ?>
-                <div class="col-md-6 mb-4 story-rows">
-                    <?php
-                    // Determine card class based on counter value
-                    if ($counter === 1 || $counter === 4 || $counter === 5) {
-                        $card_class = 'primary';
-                    } elseif ($counter === 2 || $counter === 3 || $counter === 6 || $counter === 7) {
-                        $card_class = 'contrast';
-                    } else {
-                        $card_class = ($counter % 2 === 0) ? 'contrast' : 'primary';
-                    }
-                    ?>
-                    <a href="<?php the_permalink(); ?>" class="story-card-link">
-                        <div class="card story-card p-4 text-center card-<?php echo $card_class; ?>">
+                <div class="col-md-6">
+                        <?php
+                        if ($counter === 1 || $counter === 4 || $counter === 5) {
+                            $card_class = 'primary';
+                        } elseif ($counter === 2 || $counter === 3 || $counter === 6 || $counter === 7) {
+                            $card_class = 'contrast';
+                        } else {
+                            $card_class = ($counter % 2 === 0) ? 'contrast' : 'primary';
+                        }
+                        ?>
+                        <div class="story-card-contaiener">
+                        <a href="<?php the_permalink(); ?>" class="story-card-link">
+                            <div class="story-card card-<?php echo $card_class; ?>">
 
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation" class="mb-3">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation" class="mb-3">
 
-                            <p class="story-text mb-3">
-                                <?php echo wp_trim_words($story_excerpt, 40, '...'); ?>
-                            </p>
+                                <p class="story-text mb-3">
+                                    <?php echo wp_trim_words($story_excerpt, 40, '...'); ?>
+                                </p>
 
-                            <div class="story-card-details">
-                                <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon mb-3">
-                                <div class="story-card-person">
-                                    <p class="story-card-person-name"><strong><?php echo esc_html($person_story_name); ?></strong></p>
-                                    <p class="story-card-person-position"><?php echo esc_html($person_story_position); ?></p>
+                                <div class="story-card-details">
+                                    <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon mb-3">
+                                    <div class="story-card-person">
+                                        <p class="story-card-person-name"><strong><?php echo esc_html($person_story_name); ?></strong></p>
+                                        <p class="story-card-person-position"><?php echo esc_html($person_story_position); ?></p>
+                                    </div>
                                 </div>
                             </div>
+                        </a>
                         </div>
-                    </a>
                 </div>
         <?php
             endwhile;

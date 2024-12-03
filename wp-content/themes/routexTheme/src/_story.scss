@@ -1,7 +1,7 @@
 .story-single-section {
-    padding: 50px 0;
-    max-width: 1800px;
-    align-self: center;
+    max-width: 1290px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .story-background-image {
@@ -22,8 +22,9 @@
 }
 
 .story-title{
-    font-size: 38px;
     color: var(--secondary-color);
+    margin-bottom: 30px;
+    margin-top: 0;
 }
 
 .story-single-section  p {
@@ -96,27 +97,24 @@
 .read-more-button:hover {
     background-color: var(--primary-color);
 }
-
 .read-more-button:visited {
     color: var(--secondary-color);
 }
-
-
 .story-image-div{
-    margin-top: 30px;
-    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     svg{
         width: 328px;
         height: 402px;
     }
 }
-
-
-
+.story-content-p{
+    margin-top: 30px;
+}
 @include media-md {
     .story-image-div {
-      margin-top: 40px;
-      margin-left: 0;
       svg {
         width: 478px;
         height: 542px;

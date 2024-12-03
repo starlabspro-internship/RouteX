@@ -507,3 +507,39 @@ function register_stories_post_type() {
     register_post_type('stories', $args);
 }
 add_action('init', 'register_stories_post_type');
+
+function custom_styles() {
+    $image_url = esc_url(get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg');
+	$image_2_url = esc_url(get_template_directory_uri() . '/assets/img/coaching-bg-img.png');
+    $image_3_url = esc_url(get_template_directory_uri() . '/assets/img/process-bg.png');
+	$image_4_url = esc_url(get_template_directory_uri() . '/assets/img/Map.png');
+
+    $custom_css = "
+		.footer__area-common {
+			background-image: url('{$image_4_url}');
+		}
+
+		.process-overview-bg-img {
+			background-image: url('{$image_3_url}');
+		}
+
+		.our-coaching-bg-img {
+			background-image: url('{$image_2_url}');	
+		}
+
+        // #primary-menu li a::after {
+        //     content: '';
+        //     margin-left: 5px;
+        //     width: 9px;
+        //     height: 7px;
+        //     background-image: url('{$image_url}');
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     display: inline-block;
+        //     vertical-align: middle;
+        // }
+    ";
+    
+    wp_add_inline_style('style', $custom_css);
+}
+add_action('wp_enqueue_scripts', 'custom_styles');

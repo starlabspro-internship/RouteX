@@ -46,6 +46,7 @@
 	padding: 30px 40px;
 	box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
 	border-radius: 20px;
+	margin-bottom: 30px;
 	h5 {
 		color: var(--secondary-color);
 		font-weight: var(--bold);
@@ -100,6 +101,9 @@
   }
 }
 @include media-lg{
+	.process-overview-item{
+		margin-bottom: 0;
+	}
     .process-overview-extra-style{
         margin-top: 40px;
     }

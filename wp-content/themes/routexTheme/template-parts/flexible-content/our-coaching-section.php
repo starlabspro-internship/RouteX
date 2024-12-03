@@ -31,20 +31,18 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
     <div class="our-coaching-section-container top-bottom">
         <div class="our-coaching-bg-img"></div>
             <?php if ($small_title || $title): ?>
-            <div class="row title-subtitle-div">
-                <div class="col-12">
-                    <?php if ($small_title): ?>
-                        <div class="our-coaching-section-subtitle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
-                            <div class="subtitle our-coaching-section-subtitle-costum">
-                                <?php echo esc_html($small_title); ?>
-                            </div>
+            <div class="title-subtitle-div">
+                <?php if ($small_title): ?>
+                    <div class="our-coaching-section-subtitle">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+                        <div class="subtitle our-coaching-section-subtitle-costum">
+                            <?php echo esc_html($small_title); ?>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($title): ?>
-                        <div class="title"><?php echo esc_html($title); ?></div>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($title): ?>
+                    <div class="title"><?php echo esc_html($title); ?></div>
+                <?php endif; ?> 
             </div>
             <?php endif; ?>
 
@@ -55,12 +53,12 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                     <div class="card-container">
                         <?php foreach ($cards as $card): ?>
                             <?php if ($card['name'] || $card['position'] || $card['person_link']): ?>
-                                <div class="card mb-3 p-3 border">
+                                <div class="card">
                                     <div class="name-position-div">
                                         <h5><?php echo esc_html($card['name']); ?></h5>
                                         <p><?php echo esc_html($card['position']); ?></p>
                                     </div>
-                                    <div class="d-flex card-person-link">
+                                    <div class="card-person-link">
                                         <div class="link-container">
                                             <?php
                                                 $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
@@ -78,7 +76,7 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                 <?php endif; ?>
 
                 <?php if (has_non_empty_cards($social_media_cards)): ?>
-                    <div class="col-lg-4 col-md-5 col-12 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-4 col-md-5 col-12 align-items-center justify-content-center flex-column">
                         <?php foreach ($social_media_cards as $social_card): ?>
                             <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($social_card['card_background_image']); ?>'); background-size: cover; background-position: center;">
                                 <div class="overlay-content text-center social-media-links-div">
