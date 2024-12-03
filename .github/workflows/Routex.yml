@@ -1,38 +1,25 @@
-name: Deploy WordPress
+name: Deploy to WordPress
 
 on:
   push:
     branches:
-      - main  # Trigger deployment on pushes to the main branch
+      - main  # Change to your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.8.1
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Deploy to Server
-      env:
-        SERVER_IP: ${{ secrets.SERVER_IP }}          # Add server IP in repository secrets
-        SERVER_USER: ${{ secrets.SERVER_USER }}      # Add server username in repository secrets
-        WORDPRESS_DIR: /var/www/wordpress            # Path to your WordPress directory on the server
       run: |
-        echo "Starting deployment to $SERVER_IP"
-        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
-          set -e  # Exit on any error
-          cd $WORDPRESS_DIR
-          echo "Pulling latest changes..."
-          git fetch origin main
-          git reset --hard origin/main
-          echo "Adjusting permissions..."
-          chown -R www-data:www-data $WORDPRESS_DIR
-          chmod -R 755 $WORDPRESS_DIR
-          echo "Deployment complete!"
-        EOF
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H your-server-ip >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      run: |
+        rsync -avz --delete ./wordpress/ your-username@your-server-ip:/var/www/wordpress
