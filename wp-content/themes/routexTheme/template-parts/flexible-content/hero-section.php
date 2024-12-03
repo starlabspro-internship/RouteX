@@ -1,4 +1,4 @@
-<?php
+<?php 
 $text_area_first_sector = get_sub_field('text_area_first_sector');
 $button_first_sector = get_sub_field('button_first_sector');
 $videos_button = get_sub_field('videos_button');
@@ -16,8 +16,9 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner-right-towor.png"
                 alt="Decorative Tower">
         </div>
+        <div class="decorative-circle"></div>
 
-        <div class="row align-items-center">
+        <div class="row align-items-center" id="banner-content">
             <div class="col-md-6">
                 <div class="hero-content">
                     <?php if ($text_area_first_sector) : ?>
@@ -36,14 +37,12 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/play_button.svg"
                                 alt="Video Icon">
                         </a>
-                        </a>
                         <a href="<?php echo esc_url($videos_button); ?>" class="video-text">Watch Our Videos</a>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="decorative-circle"></div>
+            <div class="col-md-6" id="banner-right-content">
                 <div class="gray-photo">
                     <?php if (!empty($image_first_sector)): ?>
                     <img src="<?php echo esc_url($image_first_sector); ?>" alt="Photo">
