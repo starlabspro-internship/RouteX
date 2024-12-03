@@ -3,21 +3,22 @@ name: Deploy to WordPress
 on:
   push:
     branches:
-      - main 
+      - main  # Change to your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to server
-        run: |
-         ssh -v -o StrictHostKeyChecking=no root@23.88.98.228 'cd /var/www/Routex && git pull origin main'
+    - name: Deploy to server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOST: 23.88.98.228
+        USER: root
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        scp -i private_key -r ./wordpress/* $USER@$HOST:/var/www/wordpress
