@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
     - name: Set up SSH
@@ -19,9 +19,20 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Deploy to Server
+      env:
+        SERVER_IP: ${{ secrets.SERVER_IP }}          # Add server IP in repository secrets
+        SERVER_USER: ${{ secrets.SERVER_USER }}      # Add server username in repository secrets
+        WORDPRESS_DIR: /var/www/wordpress            # Path to your WordPress directory on the server
       run: |
-        ssh -o StrictHostKeyChecking=no root@23.88.98.228 << 'EOF'
-        cd /var/www/wordpress
-        git pull origin main
-        chown -R www-data:www-data /var/www/wordpress
+        echo "Starting deployment to $SERVER_IP"
+        ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
+          set -e  # Exit on any error
+          cd $WORDPRESS_DIR
+          echo "Pulling latest changes..."
+          git fetch origin main
+          git reset --hard origin/main
+          echo "Adjusting permissions..."
+          chown -R www-data:www-data $WORDPRESS_DIR
+          chmod -R 755 $WORDPRESS_DIR
+          echo "Deployment complete!"
         EOF
