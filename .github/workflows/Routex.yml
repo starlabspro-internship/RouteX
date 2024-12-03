@@ -1,25 +1,27 @@
-name: Deploy to WordPress
+name: Deploy WordPress
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger deployment on pushes to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H your-server-ip >> ~/.ssh/known_hosts
+      uses: webfactory/ssh-agent@v0.8.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy to server
+    - name: Deploy to Server
       run: |
-        rsync -avz --delete ./wordpress/ root@23.88.98.228:/var/www/wordpress
+        ssh -o StrictHostKeyChecking=no root@23.88.98.228 << 'EOF'
+        cd /var/www/wordpress
+        git pull origin main
+        chown -R www-data:www-data /var/www/wordpress
+        EOF
