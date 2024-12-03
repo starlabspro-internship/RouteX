@@ -1,79 +1,94 @@
 <?php
 $header_logo = get_field('header_logo', 'options');
-$appointment_link = get_field('appointment_link', 'options');
+$header_logo_link = get_field('header_logo_link', 'options');
 $company_name = get_field('company_name', 'options');
+$company_name_link = get_field('company_name_link', 'options');
 $bordered_header = get_field('bordered_header', 'options');
 ?>
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
     <?php if(get_field('dark_mode', 'options')): ?>
-        <style>
-            body {
-                background: #000 !important;
-            }
-        </style>
+    <style>
+    body {
+        background: #000 !important;
+    }
+    </style>
     <?php endif; ?>
     <style>
-    .header-container {
+    .header-container,
+        {
         margin-top: 20px;
         margin-bottom: 20px;
-        border-radius: <?php echo $bordered_header ? '50px' : '0'; ?>;
-        background-color: <?php echo $bordered_header
-            ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)')
-            : ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)'); ?>;
+        border-radius: <?php echo $bordered_header ? '50px': '0';
+        ?>;
+        background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
+        ?>;
     }
 
     .home-navigation,
     .main-navigation {
-        border-radius: <?php echo $bordered_header ? '30px' : '0'; ?>;
+        border-radius: <?php echo $bordered_header ? '30px': '0';
+        ?>;
         padding-left: 20px;
-        background-color: <?php echo $bordered_header
-            ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)')
-            : ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)'); ?>;
+        background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
+        ?>;
     }
 
     .sub-menu {
         padding-left: 20px;
-        background-color: <?php echo $bordered_header
-            ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)')
-            : ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)'); ?>;
+        background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
+        ?>;
     }
 
-    <?php if ($bordered_header): ?>
-        .header-container.menu-active {
-            border-radius: 35px 35px 0 0;
-        }
-        .header-container.menu-active .home-navigation,
-        .header-container.menu-active .main-navigation {
-            border-radius: 0 0 35px 35px;
-        }
-    <?php else: ?>
-        .header-container.menu-active,
-        .header-container.menu-active .home-navigation,
-        .header-container.menu-active .main-navigation {
-            border-radius: 0;
-        }
-    <?php endif; ?>
-</style>
+    .site-branding a {
+        text-decoration: none;
+    }
+
+    <?php if ($bordered_header): ?>.header-container.menu-active {
+        border-radius: 35px 35px 0 0;
+    }
+
+    .header-container.menu-active .home-navigation,
+    .header-container.menu-active .main-navigation {
+        border-radius: 0 0 35px 35px;
+    }
+
+    <?php else: ?>.header-container.menu-active,
+    .header-container.menu-active .home-navigation,
+    .header-container.menu-active .main-navigation {
+        border-radius: 0;
+    }
+
+    <?php endif;
+    ?>
+    </style>
 
 </head>
+
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="page" class="site">
-        <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
+        <a class="skip-link screen-reader-text"
+            href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
         <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? 'home-header' : 'site-header'; ?>">
             <div class="header-container">
                 <div class="site-branding">
-                    <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
-                    <div><?php echo esc_html($company_name); ?></div>
+                    <a href="<?php echo esc_url($header_logo_link); ?>">
+                        <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
+                    </a>
+                    <a href="<?php echo esc_url($company_name_link); ?>">
+                        <div><?php echo esc_html($company_name); ?></div>
+                    </a>
                 </div>
-                <nav id="site-navigation" class="<?php echo (is_home() || is_front_page()) ? 'home-navigation' : 'main-navigation'; ?>">
+                <nav id="site-navigation"
+                    class="<?php echo (is_home() || is_front_page()) ? 'home-navigation' : 'main-navigation'; ?>">
                     <?php
                     wp_nav_menu(
                         array(
@@ -85,60 +100,62 @@ $bordered_header = get_field('bordered_header', 'options');
                     );
                     ?>
                 </nav>
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
+                <button class="menu-toggle" aria-controls="primary-menu"
+                    aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
                 <div class="button-div">
                     <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg" alt="Right arrow" />
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg"
+                            alt="Right arrow" />
                     </a>
                 </div>
             </div>
         </header>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
-    
-    if (menuToggle && mainNavigation) {
-        menuToggle.addEventListener('click', function () {
-            mainNavigation.classList.toggle('active');
-            const expanded = mainNavigation.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNavigation = document.querySelector('.main-navigation, .home-navigation');
 
-            const headerContainer = document.querySelector('.header-container');
-            headerContainer.classList.toggle('menu-active', expanded);
+            if (menuToggle && mainNavigation) {
+                menuToggle.addEventListener('click', function() {
+                    mainNavigation.classList.toggle('active');
+                    const expanded = mainNavigation.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+
+                    const headerContainer = document.querySelector('.header-container');
+                    headerContainer.classList.toggle('menu-active', expanded);
+                });
+            }
+
+            const menuItems = document.querySelectorAll('.menu-item-has-children');
+            menuItems.forEach(function(menuItem) {
+                const submenu = menuItem.querySelector('.sub-menu');
+                const arrow = menuItem.querySelector('.submenu-arrow');
+
+                if (submenu && arrow) {
+                    arrow.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        menuItem.classList.toggle('active');
+                        submenu.style.display = menuItem.classList.contains('active') ?
+                            'block' : 'none';
+                    });
+                }
+
+                if (window.innerWidth > 768) {
+                    menuItem.addEventListener('mouseenter', function() {
+                        menuItem.classList.add('active');
+                        submenu.style.display = 'block';
+                    });
+
+                    menuItem.addEventListener('mouseleave', function() {
+                        menuItem.classList.remove('active');
+                        submenu.style.display = 'none';
+                    });
+                }
+            });
         });
-    }
-
-    const menuItems = document.querySelectorAll('.menu-item-has-children');
-    menuItems.forEach(function (menuItem) {
-        const submenu = menuItem.querySelector('.sub-menu');
-        const arrow = menuItem.querySelector('.submenu-arrow');
-
-        if (submenu && arrow) {
-            arrow.addEventListener('click', function (e) {
-                e.preventDefault();
-                menuItem.classList.toggle('active');
-                submenu.style.display = menuItem.classList.contains('active') ? 'block' : 'none';
-            });
-        }
-
-        if (window.innerWidth > 768) {
-            menuItem.addEventListener('mouseenter', function () {
-                menuItem.classList.add('active');
-                submenu.style.display = 'block';
-            });
-
-            menuItem.addEventListener('mouseleave', function () {
-                menuItem.classList.remove('active');
-                submenu.style.display = 'none';
-            });
-        }
-    });
-});
-
-
         </script>
     </div>
 </body>
+
 </html>
