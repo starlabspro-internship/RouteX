@@ -3,7 +3,7 @@ name: Auto Deploy WordPress on Merge or Push to Main
 on:
   push:
     branches:
-      - main  # Adjust to your deployment branch
+      - main  # Trigger on pushing to main branch
 
 jobs:
   deploy:
@@ -25,14 +25,13 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
 
-    # Step 3: Get the latest commit hash from Git and set the version number
-    - name: Set GITHUB_DEPLOYMENT_SLUG version in wp-config.php
+    # Step 3: Get latest commit hash and set the version number
+    - name: Set Version Number in wp-config.php
       run: |
-        # Get the latest commit hash and set it as version
         VERSION=$(git rev-parse --short HEAD)  # Get short version of the commit hash
         echo "Setting GITHUB_DEPLOYMENT_SLUG to $VERSION"
         
-        # Update the wp-config.php file with the new version
+        # Update the wp-config.php file with the new version number
         ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
           cd /var/www/RouteX || exit  # Change to your WordPress directory
           sed -i "s/define( 'GITHUB_DEPLOYMENT_SLUG', .*/define( 'GITHUB_DEPLOYMENT_SLUG', '$VERSION' );/" wp-config.php  # Replace the old version with the new one
@@ -42,22 +41,30 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
 
-    # Step 4: Deploy to the Server
+    # Step 4: Deploy to the Server (Pull the latest changes and deploy)
     - name: Deploy to Server
       run: |
         ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
           cd /var/www/RouteX || exit  # Change to your WordPress directory
           git pull origin main  # Pull the latest changes from the GitHub repository
-          wp cache flush  # Optionally flush the cache (if using caching plugins in WordPress)
-          sudo systemctl restart nginx  # Restart Nginx to apply changes (or use Apache)
+          
+          # Optionally flush the cache if the environment variable for cache flushing is set to true
+          if [ "${{ secrets.FLUSH_CACHE }}" == "true" ]; then
+            wp cache flush  # Clear the cache (if using a WordPress caching plugin)
+            echo "Cache has been flushed."
+          fi
+          
+          # Restart Nginx if necessary
+          sudo systemctl restart nginx
           exit
         EOF
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
+        FLUSH_CACHE: ${{ secrets.FLUSH_CACHE }}  # Passing the variable to check if cache should be flushed
 
-    # Optional Step 5: Push Changes Back to GitHub (if necessary)
-    - name: Push Changes Back to GitHub
+    # Optional Step 5: Push Changes Back to GitHub
+    - name: Push Changes Back to GitHub (if necessary)
       run: |
         ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
           cd /var/www/RouteX || exit  # Change to your WordPress directory
@@ -71,4 +78,3 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
-
