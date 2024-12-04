@@ -1,5 +1,13 @@
 #!/bin/bash
+
+# Navigate to the WordPress directory (adjust as necessary)
 cd /var/www/RouteX || exit
-git pull origin main  # Pull the latest changes from GitHub
-wp cache flush  # Clear WordPress cache (optional)
-sudo systemctl restart nginx  # Restart Nginx or Apache
+
+# Pull the latest changes from GitHub
+git pull origin main
+
+# Flush WordPress cache as the 'www-data' user (or the user your server runs as)
+sudo -u www-data wp cache flush
+
+# Restart Nginx to apply changes
+sudo systemctl restart nginx
