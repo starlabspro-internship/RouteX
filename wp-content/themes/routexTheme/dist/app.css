@@ -652,6 +652,7 @@ select {
   display: flex;
   align-items: center;
   order: 1;
+  gap: 10px;
 }
 
 .site-branding div {
@@ -664,6 +665,12 @@ select {
 .site-branding img {
   max-width: 150px;
   height: auto;
+}
+
+.site-branding a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .menu-toggle {

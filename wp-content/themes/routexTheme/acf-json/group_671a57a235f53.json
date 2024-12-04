@@ -64,8 +64,8 @@
             "ui": 0
         },
         {
-            "key": "field_674f04d7c85a1",
-            "label": "header_logo_link",
+            "key": "field_67505a1b2c845",
+            "label": "Header Logo Link",
             "name": "header_logo_link",
             "aria-label": "",
             "type": "url",
@@ -81,8 +81,8 @@
             "placeholder": ""
         },
         {
-            "key": "field_674f04e8c85a2",
-            "label": "company_name_link",
+            "key": "field_67505a362c846",
+            "label": "Company Name Link",
             "name": "company_name_link",
             "aria-label": "",
             "type": "url",
@@ -116,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733231866
+    "modified": 1733319244
 }

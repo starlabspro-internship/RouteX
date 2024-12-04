@@ -4,6 +4,7 @@ $header_logo_link = get_field('header_logo_link', 'options');
 $company_name = get_field('company_name', 'options');
 $company_name_link = get_field('company_name_link', 'options');
 $bordered_header = get_field('bordered_header', 'options');
+$appointment_link = get_field('appointment_link', 'options');
 ?>
 
 <!doctype html>
@@ -45,10 +46,6 @@ $bordered_header = get_field('bordered_header', 'options');
         padding-left: 20px;
         background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
         ?>;
-    }
-
-    .site-branding a {
-        text-decoration: none;
     }
 
     <?php if ($bordered_header): ?>.header-container.menu-active {
