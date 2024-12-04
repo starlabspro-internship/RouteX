@@ -3,7 +3,7 @@ name: Auto Deploy WordPress on Merge or Push to Main
 on:
   push:
     branches:
-      - main  # Trigger when pushing to the main branch
+      - main  # Trigger when pushing to main branch
   pull_request:
     branches:
       - main  # Trigger when a pull request is merged into main
@@ -24,14 +24,9 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts  # Add the server's SSH fingerprint to known hosts
-
-      # Step 3: Debugging SSH Connection (Check if SSH key and connection are working)
-      - name: Debug SSH Connection
-        run: |
-          echo "Attempting to SSH into the server..."
-          ssh -v -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} 'echo "Connected!"'  # Verbose SSH connection for debugging
-
-      # Step 4: Pull the latest code to the server (auto-pull)
+          ssh-agent bash -c "ssh-add ~/.ssh/id_rsa; echo \$SSH_AUTH_SOCK"  # Explicitly add the private key to the SSH agent
+          
+      # Step 3: Pull the latest code on the server (auto-pull)
       - name: Pull latest code on the server
         run: |
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
@@ -44,7 +39,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
 
-      # Step 5: Push any changes back to GitHub (if necessary)
+      # Step 4: Push any changes back to GitHub (if necessary)
       - name: Push changes from server back to GitHub
         run: |
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
@@ -58,3 +53,4 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
+
