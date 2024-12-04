@@ -2082,8 +2082,8 @@ body.single .entry-title {
   z-index: 2;
 }
 .hero-section .decorative-icon.left-tower {
-  top: 22%;
-  left: 60%;
+  top: 160px;
+  left: 250px;
   transform: scaleX(-1);
   opacity: 0.5;
 }
@@ -2099,8 +2099,8 @@ body.single .entry-title {
   height: 460px;
   position: absolute;
   z-index: 1;
-  top: 160%;
-  left: 28%;
+  top: 300px;
+  left: 120px;
   background-color: #91ff00;
   border-radius: 50%;
   opacity: 0.6;
@@ -2250,14 +2250,14 @@ body.single .entry-title {
   }
   .hero-section .decorative-icon.left-tower {
     display: block;
-    top: 32%;
-    left: -3%;
+    top: 230px;
+    left: -50px;
     transform: scaleX(-1);
     opacity: 0.2;
   }
   .hero-section .decorative-icon.right-tower {
-    top: 43%;
-    left: 68%;
+    top: 340px;
+    left: 1230px;
     right: 0%;
     opacity: 1;
     height: 370px;
@@ -2268,8 +2268,8 @@ body.single .entry-title {
     height: 460px;
     position: absolute;
     z-index: 1;
-    top: -47%;
-    left: 60%;
+    top: -360px;
+    left: 1100px;
     background-color: #91ff00;
     border-radius: 50%;
     opacity: 0.6;
@@ -2277,7 +2277,6 @@ body.single .entry-title {
     pointer-events: none;
     right: 0;
     bottom: 0;
-    overflow: hidden;
   }
   .hero-section #banner-content {
     height: 800px;
