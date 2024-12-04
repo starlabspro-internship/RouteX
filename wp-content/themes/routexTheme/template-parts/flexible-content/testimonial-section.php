@@ -19,7 +19,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
 <section class="testimonial-section top-bottom-small">
-    <div class="testimonial-section-container container-fluid">
+    <div class="testimonial-section-container">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
             <div class="col-lg-5">
@@ -82,15 +82,6 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
         </div>
     </div>
     <script>
-        window.addEventListener('load', () => {
-            const col1 = document.querySelector('.col-lg-5');
-            const col2 = document.querySelector('.testimonial-right');
-            
-            if (col1 && col2) {
-                col1.style.height = `${col2.offsetHeight}px`;
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper('.testimonial-swiper', {
                 loop: true,

@@ -3416,15 +3416,19 @@ body.single .entry-title {
   padding: 30px 30px 0px 30px;
 }
 .testimonial-section-container .testimonial-left {
-  min-height: 645px;
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 .testimonial-section-container .testimonial-left img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover; /* Ensure the image fits without distortion */
+     object-fit: cover;
   border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .testimonial-section-container .testimonial-icon {
   display: flex;

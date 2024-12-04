@@ -20,16 +20,6 @@ endif;
 if (has_non_empty_logos($logos)) :
 ?>
 <section class="top-bottom-small">
-    <!-- <div class="client-carousel">
-        <div class="carousel-track">
-            <?php foreach ($logos as $logo_image): ?>
-                <img src="<?php echo $logo_image; ?>" 
-                     alt="" 
-                     class="img-fluid client-img">
-            <?php endforeach; ?>
-        </div>
-    </div> -->
-
     <div class="swiper-container client-carousel-swiper">
         <div class="swiper-wrapper">
             <?php $logos_to_display = array_merge($logos, $logos);

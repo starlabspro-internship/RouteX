@@ -69,14 +69,18 @@
         padding: 30px 30px 0px 30px;
     }
     .testimonial-left {
-        min-height: 645px;
         height: 100%;
+        overflow: hidden;
+        position: relative;
 
         img{
             height: 100%;
             width: 100%;
-            object-fit: cover; /* Ensure the image fits without distortion */
+            object-fit: cover;
             border-radius: 20px; 
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     .testimonial-icon {
