@@ -7,9 +7,9 @@
   color: var(--primary-color);
   border-radius: 0;
   z-index: 0;
-  overflow: hidden; /* Ensure elements are contained within the section */
+  overflow: hidden;
   padding-top: 5px;
-  padding-bottom: 40px; /* From the mobile query */
+  padding-bottom: 40px;
 
   .hero-content {
     position: relative;
@@ -21,7 +21,7 @@
     justify-content: center;
     gap: 20px;
     width: 100%;
-    margin-top: 20px; /* From the mobile query */
+    margin-top: 20px;
 
     .hero-content-title {
       font-family: var(--primary-font-family);
@@ -64,7 +64,6 @@
     opacity: 0.6;
     transform: translateY(170%);
     pointer-events: none;
-    /* Ensure the circle stays within the bounds */
     right: 0;
     bottom: 0;
   }
@@ -162,20 +161,20 @@
 
   .hero-section {
     height: auto;
-    border-radius: 40px; /* From the mobile query */
+    border-radius: 40px;
   }
 
   .decorative-circle {
-    width: 300px; /* From the mobile query */
-    height: 300px; /* From the mobile query */
-    top: 0px; /* From the mobile query */
+    width: 300px;
+    height: 300px;
+    top: 0px;
     opacity: 0.6;
     z-index: -1;
     position: absolute;
   }
 
   .gray-photo {
-    height: 400px; /* From the mobile query */
+    height: 400px;
   }
 
   #banner-right-content {
@@ -183,7 +182,7 @@
     flex-direction: column;
     justify-content: center;
     height: auto;
-    padding-top: 30px; /* From the mobile query */
+    padding-top: 30px;
   }
 }
 
@@ -209,7 +208,7 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      margin-top: 20px; /* From the mobile query */
+      margin-top: 20px;
 
       .hero-content-title {
         font-family: var(--primary-font-family);
@@ -254,9 +253,9 @@
       border-radius: 50%;
       opacity: 0.6;
       transform: translateY(170%);
-      pointer-events: none; /* Make sure circle doesn't interfere with clicks */
+      pointer-events: none;
       right: 0;
-      bottom: 0; /* Ensure the circle stays within the bounds */
+      bottom: 0;
       overflow: hidden;
     }
 
