@@ -3,7 +3,7 @@ name: Auto Deploy WordPress on Merge or Push to Main
 on:
   push:
     branches:
-      - main  # Trigger when pushing to main branch
+      - main  # Trigger when pushing to the main branch
   pull_request:
     branches:
       - main  # Trigger when a pull request is merged into main
@@ -23,8 +23,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-          
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts  # Add the server's SSH fingerprint to known hosts
+
       # Step 3: Pull the latest code to the server (auto-pull)
       - name: Pull latest code on the server
         run: |
