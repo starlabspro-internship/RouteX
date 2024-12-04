@@ -22,7 +22,7 @@ $bordered_header = get_field('bordered_header', 'options');
     </style>
     <?php endif; ?>
     <style>
-    .header-container,
+    .header-container
         {
         margin-top: 20px;
         margin-bottom: 20px;
