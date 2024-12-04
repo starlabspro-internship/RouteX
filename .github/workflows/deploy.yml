@@ -29,7 +29,7 @@ jobs:
       # Step 3: Pull the latest code on the server (auto-pull)
       - name: Pull latest code on the server
         run: |
-          ssh -i ~/.ssh/id_rsa.pub root@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
             cd /var/www/RouteX || exit
             git pull origin main  # Pull latest changes from GitHub
             wp cache flush  # Flush WordPress cache (optional)
