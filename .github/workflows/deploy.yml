@@ -28,7 +28,7 @@ jobs:
           ssh root@23.88.98.228 << 'EOF'
             cd /var/www/RouteX || exit
             git pull origin main  # Pull the latest changes from GitHub
-            wp cache flush  # Clear WordPress cache (optional)
+            wp cache flush  # Clear WordPress cache (optional, make sure wp-cli is installed)
             sudo systemctl restart nginx  # Restart Nginx to apply changes
           EOF
         env:
@@ -39,8 +39,8 @@ jobs:
         run: |
           ssh root@23.88.98.228 << 'EOF'
             cd /var/www/RouteX || exit
-            git config --global user.name "arlindbikliqi1"  # Set commit user name
-            git config --global user.email "arlinndbikliqi@hotmail.com"  # Set commit user email
+            git config --global user.name "arlindbikliqi1"  # Set commit username
+            git config --global user.email "arlinndbikliqi@hotmail.com"  # Set commit email
             git add .  # Stage all changes made to the server
             git commit -m "Automated commit from server changes" || echo "No changes to commit"  # Commit if there are changes
             git push origin main  # Push changes to GitHub
