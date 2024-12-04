@@ -3,18 +3,16 @@ name: Auto Deploy WordPress and Sync Changes
 on:
   push:
     branches:
-      - main  # Trigger the workflow when pushing to the main branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up SSH key for server access
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
@@ -22,7 +20,6 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 23.88.98.228 >> ~/.ssh/known_hosts  # Use your actual server IP
 
-      # Step 3: Pull the latest code from GitHub to your server
       - name: Pull latest code to server
         run: |
           ssh root@23.88.98.228 << 'EOF'
