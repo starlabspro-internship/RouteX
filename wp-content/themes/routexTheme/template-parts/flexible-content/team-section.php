@@ -24,15 +24,17 @@ if (has_team_content()) :
     <?php endif; ?>
 
     <?php if (have_rows('team_members')) : ?>
-    <div class="row team-members">
+    <div class="row justify-content-center">
         <?php while (have_rows('team_members')) : the_row(); ?>
         <?php
-            $profile_image = get_sub_field('profile_image');
-            $name = get_sub_field('name');
-            $position = get_sub_field('position');
-            $team_member_id = uniqid('team_member_');
-            ?>
-        <div class="col-md-4 team-member">
+        $profile_image = get_sub_field('profile_image');
+        $name = get_sub_field('name');
+        $position = get_sub_field('position');
+        $team_member_id = uniqid('team_member_'); 
+        ?>
+
+        <div class="col-md-4">
+            <div class="team-member">
             <?php if ($profile_image) : ?>
             <img src="<?php echo esc_url($profile_image['url']); ?>" alt="<?php echo esc_attr($name); ?>"
                 class="img-fluid team-member-image">
@@ -80,6 +82,7 @@ if (has_team_content()) :
                     </div>
                 </div>
                 <?php endif; ?>
+            </div>
             </div>
         </div>
         <?php endwhile; ?>

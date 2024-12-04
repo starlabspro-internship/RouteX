@@ -183,28 +183,31 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
     <?php if ($footer_copyright || has_non_empty_text($footer_menu_links)) : ?>
     <div class="footer__bottom-wrapper">
         <div class="footer__bottom-wrapper-container">
-            <div class="footer__bottom row">
-
+            <div class="row"> 
                 <?php if ($footer_copyright) : ?>
-                <div class="col-6 footer__copyright">
-                    <p><?php echo esc_html($footer_copyright); ?></p>
+                <div class="col-md-6">
+                    <div class="footer__copyright">
+                        <p><?php echo esc_html($footer_copyright); ?></p>
+                    </div>
                 </div>
                 <?php endif; ?>
-
+    
                 <?php if (has_non_empty_text($footer_menu_links)) : ?>
-                <div class="col-6 footer__copyright-menu">
-                    <ul>
-                        <?php foreach ($footer_menu_links as $menu_links) : ?>
-                            <?php if ($menu_links['menu_link_text']) : ?>
-                            <li>
-                                <a href="<?php echo esc_url($menu_links['menu_link_url']); ?>" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <?php echo esc_html($menu_links['menu_link_text']); ?>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </ul>
+                <div class="col-md-6">
+                    <div class="footer__copyright-menu">
+                        <ul>
+                            <?php foreach ($footer_menu_links as $menu_links) : ?>
+                                <?php if ($menu_links['menu_link_text']) : ?>
+                                <li>
+                                    <a href="<?php echo esc_url($menu_links['menu_link_url']); ?>" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <?php echo esc_html($menu_links['menu_link_text']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
                 <?php endif; ?>
             </div>

@@ -23,6 +23,7 @@
 	border: 1px solid var(--light-color);
 	padding: 30px;
 	border-radius: 20px;
+	margin-bottom: 30px;
 }
 .choose-us-item-icon {
 	border: 1px solid var(--accent-color);
@@ -245,8 +246,7 @@
 	}
 }
 .choose-us-cards {
-	padding: 40px 0 40px 0;
-	gap: 30px;
+	margin: 40px 0 40px 0;
 }
 @include media-xl{
     .choose-us-section-title-container{
@@ -257,7 +257,7 @@
     }
 }
 @include media-sm{
-    .choose-us-cards{
-        gap:0;
-    }
+	.choose-us-item {
+		margin-bottom: 0;
+	}
 }

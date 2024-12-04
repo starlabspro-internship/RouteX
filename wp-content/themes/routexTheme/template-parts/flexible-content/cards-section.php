@@ -16,7 +16,7 @@ if (have_rows('card_repeater')) :
     <div class="row cardrow ">
         <?php foreach ($cards as $card) : ?>
             <?php if ($card['card_icon'] || $card['card_title'] || $card['card_text']) : ?>
-                <div class="col-md-4 cards-wrapper">
+                <div class="col-lg-4">
                     <div class="card card1">
                         <div class="card-body">
                             <div class="circle cardic">

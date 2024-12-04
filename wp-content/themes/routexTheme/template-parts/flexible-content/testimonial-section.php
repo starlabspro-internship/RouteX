@@ -19,13 +19,17 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
 <section class="testimonial-section top-bottom-small">
-    <div class="testimonial-section-container">
+    <div class="testimonial-section-container container-fluid">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
-            <div class="col-lg-5 testimonial-left" style="background-image: url('<?php echo $testimonial_left_image; ?>');"></div>
+            <div class="col-lg-5">
+                <div class="testimonial-left">
+                    <img src="<?php echo esc_url($testimonial_left_image); ?>"/>
+                </div>
+            </div>
             <?php endif; ?>
             <?php if (has_non_empty_cards($testimonial_cards)): ?>
-            <div class="col-lg-7  d-flex flex-column justify-content-center">
+            <div class="col-lg-7 flex-column justify-content-center">
                 <div class="testimonial-right">
                     <div class="swiper testimonial-swiper testimonial-cards">
                         <div class="swiper-wrapper">
@@ -59,7 +63,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                         </div>
                     </div>
                 
-                    <div class="testimonial-buttons text-center d-flex">
+                    <div class="testimonial-buttons text-center">
                         <div class="testimonial__content-button-border"></div>
                         <div class="container buttons-wrapper"> 
                         <button class="button-testimonial" aria-label="Previous testimonial">
@@ -78,6 +82,15 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
         </div>
     </div>
     <script>
+        window.addEventListener('load', () => {
+            const col1 = document.querySelector('.col-lg-5');
+            const col2 = document.querySelector('.testimonial-right');
+            
+            if (col1 && col2) {
+                col1.style.height = `${col2.offsetHeight}px`;
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper('.testimonial-swiper', {
                 loop: true,

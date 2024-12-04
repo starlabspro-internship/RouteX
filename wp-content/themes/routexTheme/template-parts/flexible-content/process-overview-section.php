@@ -41,7 +41,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
             <?php endif; ?>
         </div>
         <?php if (has_non_empty_cards($cards)) : ?>
-        <div class="process-overview-item-container row">
+        <div class="row">
             <?php
                 $card_index = 1;
                 foreach ($cards as $card) {
