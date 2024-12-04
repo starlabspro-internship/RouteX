@@ -1,0 +1,53 @@
+.site-404{
+    background-color: var(--primary-color);
+}
+.section-404{
+    width: 100%;
+}
+.title-404-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.title-404{
+    color: var(--secondary-color);
+    max-width: 807px;
+}
+.textarea-404-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin:30px auto 40px auto;
+}
+.textarea-404{
+    color: var(--base-color);
+    max-width: 720px;
+}
+.backToHome-404-container{
+    display: flex;
+    justify-content: center;
+    margin:60px auto;
+}
+.backToHome-404 {
+	padding: 15px 30px;
+	background-color: var(--accent-color);
+	border: none;
+	border-radius: 30px;
+	color: var(--primary-color);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 30px;
+	transition: 0.3s;
+	&:hover {
+		cursor: pointer;
+		background-color: var(--secondary-color);
+	}
+}
+.image-404-container {
+	display: flex;
+	justify-content: center;
+	img {
+		max-width: 1290px;
+		width: 100%;
+	}
+}

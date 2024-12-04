@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
@@ -49,3 +50,16 @@ wp-config.php
 /wp-content/themes/routextheme/
 
 node_modules/
+=======
+# Ignore uploads directory (can be huge and is often not needed in version control)
+uploads/
+
+# Ignore cache, logs, and temp files
+cache/
+logs/
+*.log
+
+# Ignore any other non-essential files or folders
+*.sql
+*.bak
+>>>>>>> b8c6a49 (Arlind Commit)
