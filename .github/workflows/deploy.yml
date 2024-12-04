@@ -1,0 +1,49 @@
+name: Auto Deploy WordPress and Sync Changes
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow when pushing to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up SSH key for server access
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 23.88.98.228 >> ~/.ssh/known_hosts  # Use your actual server IP
+
+      # Step 3: Pull the latest code from GitHub to your server
+      - name: Pull latest code to server
+        run: |
+          ssh root@23.88.98.228 << 'EOF'
+            cd /var/www/RouteX || exit
+            git pull origin main  # Pull the latest changes from GitHub
+            wp cache flush  # Clear WordPress cache (optional)
+            sudo systemctl restart nginx  # Restart Nginx to apply changes
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 4: Push changes (if any) from the server to GitHub
+      - name: Push changes from server to GitHub (if there are any)
+        run: |
+          ssh root@23.88.98.228 << 'EOF'
+            cd /var/www/RouteX || exit
+            git config --global user.name "arlindbikliqi1"  # Set commit user name
+            git config --global user.email "arlinndbikliqi@hotmail.com"  # Set commit user email
+            git add .  # Stage all changes made to the server
+            git commit -m "Automated commit from server changes" || echo "No changes to commit"  # Commit if there are changes
+            git push origin main  # Push changes to GitHub
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
