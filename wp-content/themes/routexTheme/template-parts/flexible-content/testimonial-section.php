@@ -19,6 +19,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
 ?>
 
 <section class="testimonial-section top-bottom-small">
+    Hello
     <div class="testimonial-section-container">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
