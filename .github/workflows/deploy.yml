@@ -3,54 +3,54 @@ name: Auto Deploy WordPress on Merge or Push to Main
 on:
   push:
     branches:
-      - main  # Trigger when pushing to main branch
-  pull_request:
-    branches:
-      - main  # Trigger when a pull request is merged into main
+      - main  # Adjust to your deployment branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v2
+    # Step 1: Checkout Code from the Repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      # Step 2: Set up SSH for accessing the server
-      - name: Set up SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts  # Add the server's SSH fingerprint to known hosts
-          ssh-agent bash -c "ssh-add ~/.ssh/id_rsa; echo \$SSH_AUTH_SOCK"  # Explicitly add the private key to the SSH agent
-          
-      # Step 3: Pull the latest code on the server (auto-pull)
-      - name: Pull latest code on the server
-        run: |
-          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /var/www/RouteX || exit
-            git pull origin main  # Pull latest changes from GitHub
-            wp cache flush  # Flush WordPress cache (optional)
-            sudo systemctl restart nginx  # Restart Nginx to apply changes (optional)
-          EOF
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SERVER_IP: ${{ secrets.SERVER_IP }}
+    # Step 2: Set up SSH with private key
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa  # Use your private key stored in GitHub Secrets
+        chmod 600 ~/.ssh/id_rsa
+        echo -e "Host ${{ secrets.SERVER_IP }}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
 
-      # Step 4: Push any changes back to GitHub (if necessary)
-      - name: Push changes from server back to GitHub
-        run: |
-          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /var/www/RouteX || exit
-            git config --global user.name "GitHub Actions"  # Set commit username
-            git config --global user.email "actions@github.com"  # Set commit email
-            git add .  # Stage all changes made to the server
-            git commit -m "Automated commit from server changes" || echo "No changes to commit"  # Commit if changes exist
-            git push origin main  # Push changes to GitHub
-          EOF
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SERVER_IP: ${{ secrets.SERVER_IP }}
+    # Step 3: Deploy to the Server
+    - name: Deploy to Server
+      run: |
+        ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
+          cd /var/www/RouteX || exit  # Change this to your WordPress directory
+          git pull origin main  # Pull the latest changes from the GitHub repository
+          wp cache flush  # Optionally flush the cache (if using caching plugins in WordPress)
+          sudo systemctl restart nginx  # Restart Nginx (or Apache if you're using Apache)
+          exit
+        EOF
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
 
+    # Optional Step 4: If you want to commit changes from the server back to GitHub
+    - name: Push Changes Back to GitHub
+      run: |
+        ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
+          cd /var/www/RouteX || exit  # Change this to your WordPress directory
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .  # Stage all changes made to the server
+          git commit -m "Automated commit from server changes" || echo "No changes to commit"
+          git push origin main  # Push changes to GitHub if necessary
+          exit
+        EOF
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SERVER_IP: ${{ secrets.SERVER_IP }}
