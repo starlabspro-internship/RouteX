@@ -1,37 +1,54 @@
-name: Auto Deploy on Merge
+name: Auto Deploy WordPress on Merge or Push to Main
 
 on:
   push:
     branches:
-      - main  # Trigger on merges to the main branch
-    # You can use the "types" field to limit this to merges
-    types:
-      - merged
+      - main  # Trigger when pushing to main branch
+  pull_request:
+    branches:
+      - main  # Trigger when a pull request is merged into main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code from the repository
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up SSH keys to connect to your server
-      - name: Set up SSH
+      # Step 2: Set up SSH for accessing the server
+      - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H your_server_ip >> ~/.ssh/known_hosts
-
-      # Step 3: Deploy the changes
-      - name: Deploy to server
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          
+      # Step 3: Pull the latest code to the server (auto-pull)
+      - name: Pull latest code on the server
         run: |
-          ssh user@your_server_ip << 'EOF'
+          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
             cd /var/www/RouteX || exit
-            git pull origin main  # Pull the latest changes from the repository
-            sudo systemctl restart nginx  # Restart Nginx to apply the changes
+            git pull origin main  # Pull latest changes from GitHub
+            wp cache flush  # Flush WordPress cache (optional)
+            sudo systemctl restart nginx  # Restart Nginx to apply changes (optional)
           EOF
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+
+      # Step 4: Push any changes back to GitHub (if necessary)
+      - name: Push changes from server back to GitHub
+        run: |
+          ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
+            cd /var/www/RouteX || exit
+            git config --global user.name "GitHub Actions"  # Set commit username
+            git config --global user.email "actions@github.com"  # Set commit email
+            git add .  # Stage all changes made to the server
+            git commit -m "Automated commit from server changes" || echo "No changes to commit"  # Commit if changes exist
+            git push origin main  # Push changes to GitHub
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
