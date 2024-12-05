@@ -4,7 +4,7 @@ $cards = [];
 if (have_rows('card_repeater')) :
     while (have_rows('card_repeater')) : the_row();
         $cards[] = [
-            'card_icon' => get_sub_field('card_icon'),
+            'card_icon' => get_sub_field('card_icon'), // This should be an image ID if using ACF's image field
             'card_title' => get_sub_field('card_title'),
             'card_text' => get_sub_field('card_text'),
         ];
@@ -13,7 +13,7 @@ if (have_rows('card_repeater')) :
     if (has_non_empty_cards($cards)) :
 ?>
 <section class="container cards-div top-bottom-small">
-    <div class="row cardrow ">
+    <div class="row cardrow">
         <?php foreach ($cards as $card) : ?>
             <?php if ($card['card_icon'] || $card['card_title'] || $card['card_text']) : ?>
                 <div class="col-lg-4">
@@ -21,7 +21,11 @@ if (have_rows('card_repeater')) :
                         <div class="card-body">
                             <div class="circle cardic">
                                 <?php if ($card['card_icon']) : ?>
-                                    <img src="<?php echo esc_url($card['card_icon']); ?>" alt="Icon" class="card-icon">
+                                    <?php 
+                                    // Get the correct image URL
+                                    $icon_url = is_array($card['card_icon']) ? $card['card_icon']['url'] : $card['card_icon'];
+                                    ?>
+                                    <img src="<?php echo esc_url($icon_url); ?>" alt="Icon" class="card-icon">
                                 <?php endif; ?>
                             </div>
                             <?php if ($card['card_title']) : ?>
