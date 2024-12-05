@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '2.0.3' );
+	define( '_S_VERSION', '1.0.3' );
 }
 
 /**
@@ -150,16 +150,16 @@ function routextheme_scripts() {
 	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
-	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], '_S_VERSION', 'all');
+	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], _S_VERSION, 'all');
     wp_enqueue_style('style');
 
 	wp_enqueue_script('jquery');
 
-	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], '_S_VERSION', true);
+	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], _S_VERSION, true);
     wp_enqueue_script('app');
 
 	// Enqueue dynamic colors CSS
-	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], '_S_VERSION', 'all');
+	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], _S_VERSION, 'all');
     wp_enqueue_style('dynamic-colors');
 
 	wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
