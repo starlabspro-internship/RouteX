@@ -25,21 +25,24 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
 
-        # Step 3: Get latest commit hash and set the version number
-    - name: Set Version Number in wp-config.php
-      run: |
-        VERSION=$(git rev-parse --short HEAD)  # Get short version of the commit hash
-        echo "Setting GITHUB_DEPLOYMENT_SLUG to $VERSION"
+      - name: Get commit ID
+  id: get_commit_id
+  run: echo "VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-        # Update the wp-config.php file with the new version number
-        ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
-          cd /var/www/RouteX || exit  # Change to your WordPress directory
-          sed -i "s/define( 'GITHUB_DEPLOYMENT_SLUG', '.*' );/define( 'GITHUB_DEPLOYMENT_SLUG', '$VERSION' );/" wp-config.php  # Correctly update the version
-          exit
-        EOF
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SERVER_IP: ${{ secrets.SERVER_IP }}
+- name: Update wp-config.php with commit version
+  run: |
+    ssh -i ~/.ssh/id_rsa root@*** << EOF
+      cd /var/www/RouteX || exit
+      # Verify wp-config.php exists
+      if [ ! -f wp-config.php ]; then
+        echo "Error: wp-config.php not found"
+        exit 1
+      fi
+      # Update version in wp-config.php
+      sed -i "s/define( 'GITHUB_DEPLOYMENT_SLUG', .*/define( 'GITHUB_DEPLOYMENT_SLUG', '${{ env.VERSION }}' );/" wp-config.php
+      echo "Version updated: $VERSION"
+    EOF
+
 
 
     # Step 4: Deploy to the Server (Pull the latest changes and deploy)
