@@ -151,8 +151,8 @@ function routextheme_scripts() {
 
 	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-    
-    define( 'GITHUB_DEPLOYMENT_SLUG', '1.0.0' );
+
+
 
     if ( defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
         $VERSION = GITHUB_DEPLOYMENT_SLUG;
