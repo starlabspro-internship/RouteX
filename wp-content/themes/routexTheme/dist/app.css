@@ -1943,6 +1943,10 @@ body.single .entry-title {
     padding-left: 5px;
   }
 }
+.grecaptcha-badge {
+  z-index: 1;
+}
+
 .story-archive-container {
   max-width: 1290px;
   width: 100%;
