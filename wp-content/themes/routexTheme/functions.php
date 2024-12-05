@@ -140,6 +140,11 @@ add_action( 'widgets_init', 'routextheme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function routextheme_scripts() {
+    if ( defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
+        $VERSION = GITHUB_DEPLOYMENT_SLUG;
+    } else {
+        $VERSION = '1.0.0'; // Fallback version
+    }
 
 	// Enqueue Bootstrap Grid CSS from CDN
     wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');
@@ -150,26 +155,18 @@ function routextheme_scripts() {
 	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 
 	// // Enqueue theme navigation script
-	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-
-
-
-    if ( defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
-        $VERSION = GITHUB_DEPLOYMENT_SLUG;
-    } else {
-        $VERSION = '1.0.0'; // Fallback version
-    }
+	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $VERSION, true);
 
 	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], $VERSION, 'all');
     wp_enqueue_style('style');
 
 	wp_enqueue_script('jquery');
 
-	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], _S_VERSION, true);
+	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], $VERSION, true);
     wp_enqueue_script('app');
 
 	// Enqueue dynamic colors CSS
-	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], _S_VERSION, 'all');
+	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], $VERSION, 'all');
     wp_enqueue_style('dynamic-colors');
 
 	wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
