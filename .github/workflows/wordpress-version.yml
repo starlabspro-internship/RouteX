@@ -22,15 +22,19 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo -e "Host ${{ secrets.SERVER_IP }}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
-- name: Update Version in wp-config.php
+      # Step 3: Update Version in wp-config.php
+      - name: Update Version in wp-config.php
         run: |
-    set -e
-    VERSION=$(git rev-parse --short HEAD)
-    echo "Setting GITHUB_DEPLOYMENT_SLUG to $VERSION"
-    ssh -v -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << 'EOF'
-      set -x
-      cd /var/www/RouteX || exit
-      grep "GITHUB_DEPLOYMENT_SLUG" wp-config.php || echo "No matching lines found"
-      sed -i "s/define( 'GITHUB_DEPLOYMENT_SLUG', .*/define( 'GITHUB_DEPLOYMENT_SLUG', '$VERSION' );/" wp-config.php
-      grep "GITHUB_DEPLOYMENT_SLUG" wp-config.php
-    EOF
+          set -e
+          VERSION=$(git rev-parse --short HEAD)
+          echo "Setting GITHUB_DEPLOYMENT_SLUG to $VERSION"
+          ssh -v -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
+            set -x
+            cd /var/www/RouteX || exit
+            if grep -q "GITHUB_DEPLOYMENT_SLUG" wp-config.php; then
+              sed -i "s/define( 'GITHUB_DEPLOYMENT_SLUG', .*/define( 'GITHUB_DEPLOYMENT_SLUG', '$VERSION' );/" wp-config.php
+            else
+              echo "define( 'GITHUB_DEPLOYMENT_SLUG', '$VERSION' );" >> wp-config.php
+            fi
+            grep "GITHUB_DEPLOYMENT_SLUG" wp-config.php
+          EOF
