@@ -1,0 +1,124 @@
+.countries-archive-section {
+
+    .continents-list {
+        list-style: none; 
+        padding: 20px;
+        margin-top: 28px;
+        border-radius: 20px;
+        border: 2px var(--light-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow here */
+        margin-left: 0;
+    
+        .list-group-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            a {
+                color: var(--secondary-color); /* Set link color */
+                text-decoration: none; /* Remove underlines */
+                font-size: 22px;
+                font-weight: var(--bold);
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                
+                &:visited {
+                    color: var(--secondary-color); /* Keep the link color the same after visiting */
+                }
+
+                &:hover {
+                    color: var(--accent-color); /* Hover effect with accent color */
+                }
+
+                .continent-text {
+                    flex-grow: 1; /* Ensure the text part takes all available space */
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .continent-icon {
+                    width: 8px;
+                    height: 12px;
+                }
+            }
+
+            &.active {
+                a {               
+                    color: var(--accent-color); /* Active state color */
+                }
+            }
+        }
+
+        hr {
+            width: 325px;
+        }
+    }
+
+    .country-card {
+        border: 1px solid var(--light-color);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        align-items: center;
+        width: 350px;
+        height: 100px;
+        margin-top: 30px;
+
+        &:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+
+            .card-title {
+                color: var(--secondary-color);
+                margin-left: 20px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        flex-direction: column; /* Stack items vertically if needed */
+        margin: auto; /* Center within the parent container */
+    }
+
+    .no-countries-text{
+        text-align: center;
+        width: 100%;
+        font-size: 26px;
+        color: var(--secondary-color);
+    }
+
+} 
+
+@include media-md{
+    .countries-archive-section {
+        .continents-list{
+        hr {
+            width: 285px;
+        }
+    }
+    }
+}

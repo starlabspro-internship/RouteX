@@ -1,0 +1,66 @@
+.continents-list {
+    list-style: none; 
+    padding: 20px;
+    margin-top: 28px;
+    border-radius: 20px;
+    border: 2px var(--light-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow here */
+    margin-left: 0;
+
+    .list-group-item {
+        padding: 15px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        a {
+            color: var(--secondary-color); /* Set link color */
+            text-decoration: none; /* Remove underlines */
+            font-size: 22px;
+            font-weight: var(--bold);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            
+            &:visited {
+                color: var(--secondary-color); /* Keep the link color the same after visiting */
+            }
+
+            &:hover {
+                color: var(--accent-color); /* Hover effect with accent color */
+            }
+
+            .continent-text {
+                flex-grow: 1; /* Ensure the text part takes all available space */
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .continent-icon {
+                width: 8px;
+                height: 12px;
+            }
+        }
+
+        &.active {
+            a {               
+                color: var(--accent-color); /* Active state color */
+            }
+        }
+    }
+
+    hr {
+        width: 325px;
+    }
+}
+
+@include media-md{
+    .continents-list{
+        hr {
+            width: 285px;
+        }
+    }
+}
