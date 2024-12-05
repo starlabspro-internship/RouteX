@@ -12,9 +12,6 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.3' );
 }
 
-var_dump(GITHUB_DEPLOYMENT_SLUG);
-
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
