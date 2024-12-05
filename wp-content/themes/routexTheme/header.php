@@ -107,6 +107,14 @@ $appointment_link = get_field('appointment_link', 'options');
                     </a>
                 </div>
             </div>
+            <?php 
+                if (defined('GITHUB_DEPLOYMENT_SLUG')) {
+                    $theme_version = GITHUB_DEPLOYMENT_SLUG;
+                } else {
+                    $theme_version = '1.0.3'; // Default version
+                }
+                var_dump($theme_version);
+            ?>
         </header>
 
         <script>
