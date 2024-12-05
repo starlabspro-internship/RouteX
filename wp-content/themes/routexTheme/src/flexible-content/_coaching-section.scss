@@ -119,9 +119,11 @@
 	align-items: center;
 	background: var(--primary-color);
 	border: none;
+	padding: 10px;
+	border-radius: 20px;
 	&:hover {
 		cursor: pointer;
-		img {
+		a{
 			&.default-img {
 				display: none;
 			}
@@ -132,7 +134,10 @@
 			}
 		}
 	}
-	img {
+	a{
+		padding: 17px;
+		border: 1px solid var(--light-color);
+		border-radius: 20px;
 		&.hover-img {
 			display: none;
 		}
@@ -140,9 +145,4 @@
 }
 .coaching-item_thumb {
 	height: 324px;
-}
-.coaching__item-media-img-title-button-image {
-	padding: 17px;
-	border: 1px solid var(--light-color);
-	border-radius: 20px;
 }

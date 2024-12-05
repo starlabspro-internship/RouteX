@@ -178,7 +178,6 @@ if (has_content_in_layout() || $phone_number) :
                 <div class="choose-us-button">
                     <?php if ($link_url) : ?>
                     <div class="choose-us-button-btn">
-                        HELLO
                         <a href="<?php echo esc_url($link_url); ?>" class="default-img">
                             Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="">
                         </a>

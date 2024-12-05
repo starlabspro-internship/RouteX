@@ -60,7 +60,7 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                             <?php if ($card['icon'] || $card['link']) : ?>
                             <div class="card-bottom-layout">
                                 <?php if ($card['link']) : ?>
-                                <div class="container link-container">
+                                <div class="link-container">
                                     <a href="<?php echo esc_url($card['link']); ?>">
                                         <svg class="svg-link" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect x="0.5" y="0.539062" width="59" height="59" rx="19.5" stroke="#83CD20" />
