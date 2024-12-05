@@ -12,6 +12,12 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.3' );
 }
 
+if ( ! defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
+    define( 'GITHUB_DEPLOYMENT_SLUG', '112624' );
+}
+
+var_dump(GITHUB_DEPLOYMENT_SLUG);
+var_dump($GITHUB_DEPLOYMENT_SLUG);
 
 
 /**
