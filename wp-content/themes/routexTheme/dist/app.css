@@ -4314,6 +4314,9 @@ body.single .entry-title {
   flex-wrap: wrap;
 }
 
+.choose-us-button-btn {
+  border-radius: 30px;
+}
 .choose-us-button-btn a {
   color: var(--secondary-color);
   font-weight: var(--semibold);
