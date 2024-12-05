@@ -107,7 +107,9 @@ $appointment_link = get_field('appointment_link', 'options');
                     </a>
                 </div>
             </div>
-            <?php var_dump($GITHUB_DEPLOYMENT_SLUG); ?>
+            <?php var_dump($GITHUB_DEPLOYMENT_SLUG); 
+                var_dump(GITHUB_DEPLOYMENT_SLUG);
+            ?>
         </header>
 
         <script>
