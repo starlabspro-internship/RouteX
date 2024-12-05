@@ -37,6 +37,11 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
+define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
+
+
+define('GITHUB_DEPLOYMENT_SLUG', '');
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -100,4 +105,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-define('GITHUB_DEPLOYMENT_SLUG', '');
