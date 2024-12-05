@@ -42,7 +42,7 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                     </div>
                 </div>
             </div>
-            <div class="col-md-6" id="banner-right-content">
+            <div class="col-md-6">
                 <div class="gray-photo">
                     <?php if (!empty($image_first_sector)): ?>
                     <img src="<?php echo esc_url($image_first_sector); ?>" alt="Photo">
