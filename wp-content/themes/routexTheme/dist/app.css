@@ -1552,6 +1552,10 @@ select {
     padding: 60px 0;
   }
 }
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 body.single .entry-header {
   max-width: 1200px;
 }
