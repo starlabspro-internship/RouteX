@@ -107,13 +107,6 @@ $appointment_link = get_field('appointment_link', 'options');
                     </a>
                 </div>
             </div>
-            <?php 
-            if ( ! defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
-                    define( 'GITHUB_DEPLOYMENT_SLUG', '112624' );
-                }
-
-                var_dump(GITHUB_DEPLOYMENT_SLUG);
-            ?>
         </header>
 
         <script>
