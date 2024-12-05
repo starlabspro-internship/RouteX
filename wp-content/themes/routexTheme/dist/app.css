@@ -1643,6 +1643,7 @@ body.single .entry-title {
 .entry-button-link {
   color: var(--primary-color);
   text-decoration: none;
+  border-radius: 30px;
 }
 .entry-button-link:visited {
   color: var(--primary-color);
@@ -2037,6 +2038,7 @@ body.single .entry-title {
   line-height: 50px;
   color: var(--base-color);
   font-weight: var(--regular);
+  word-break: break-word;
 }
 
 .story-card-details {
@@ -3201,7 +3203,6 @@ body.single .entry-title {
   align-items: center;
   background: var(--primary-color);
   border: none;
-  padding: 10px;
   border-radius: 20px;
 }
 .coaching__item-media-img-title-button:hover {
@@ -3211,14 +3212,18 @@ body.single .entry-title {
   display: none;
 }
 .coaching__item-media-img-title-button:hover a.hover-img {
-  display: inline;
+  display: flex;
   border: 1px solid var(--accent-color);
   background-color: var(--accent-color);
 }
 .coaching__item-media-img-title-button a {
-  padding: 17px;
   border: 1px solid var(--light-color);
   border-radius: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .coaching__item-media-img-title-button a.hover-img {
   display: none;
@@ -3745,7 +3750,7 @@ body.single .entry-title {
   background-color: var(--primary-color);
   border: 1px solid var(--light-color);
   border-radius: 15px;
-  padding: 0 36px 16px 36px;
+  padding: 16px 36px;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -3756,13 +3761,12 @@ body.single .entry-title {
 }
 .our-coaching-section-container .card-container .card .name-position-div h5 {
   color: var(--secondary-color);
-  margin-bottom: 8px;
   font-size: 22px;
   font-weight: var(--bold);
   line-height: 30px;
   text-align: left;
-  margin-top: 0;
-  padding-top: 32px;
+  margin: 15px 0;
+  padding: 0;
 }
 .our-coaching-section-container .card-container .card .name-position-div p {
   color: var(--base-color);
@@ -3770,20 +3774,23 @@ body.single .entry-title {
   line-height: 30px;
   font-weight: var(--regular);
   text-align: left;
-  margin-bottom: 16px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+.our-coaching-section-container .card-container .card .card-person-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .our-coaching-section-container .card-container .card .person-link {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-top: 30px;
-}
-.our-coaching-section-container .card-container .card .person-link a {
   color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  border-radius: 50%;
 }
-.our-coaching-section-container .card-container .card .person-link a:hover {
+.our-coaching-section-container .card-container .card .person-link:hover {
   color: var(--primary-color);
 }
 .our-coaching-section-container .bg-image {
@@ -3881,16 +3888,6 @@ body.single .entry-title {
   .our-coaching-section-container .card-person-link {
     margin-left: 0;
     padding-left: 0;
-  }
-  .our-coaching-section-container .link-container {
-    margin-top: 25px;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .our-coaching-section-container .person-link {
-    margin-top: 0;
-    margin-bottom: 30px;
-    padding: 0;
   }
   .our-coaching-section-container .bg-image {
     height: 100%;
@@ -4694,14 +4691,16 @@ body.single .entry-title {
 
 .social-toggle {
   background-color: var(--primary-color);
-  border: var(--primary-color);
+  border: 1px solid var(--accent-color);
   transition: all 0.3s ease;
   cursor: pointer;
   padding: 0;
-  padding-top: 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
 }
 .social-toggle:hover {
-  transform: scale(1.1);
+  border: 1px solid var(--accent-color);
 }
 
 .social-links-container {
@@ -4709,6 +4708,15 @@ body.single .entry-title {
   height: 70px;
   display: flex;
   align-items: end;
+  justify-content: center;
+  border-radius: 50%;
+}
+.social-links-container:hover {
+  cursor: pointer;
+}
+.social-links-container:hover .social-icons {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .social-icons {
@@ -4729,12 +4737,6 @@ body.single .entry-title {
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
   gap: 25px;
-}
-
-.social-toggle:hover + .social-icons,
-.social-icons:hover {
-  opacity: 1;
-  pointer-events: all;
 }
 
 .member-info-wrapper {

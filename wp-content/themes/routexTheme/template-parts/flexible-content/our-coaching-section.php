@@ -59,14 +59,12 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                                         <p><?php echo esc_html($card['position']); ?></p>
                                     </div>
                                     <div class="card-person-link">
-                                        <div class="link-container">
-                                            <?php
-                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
-                                            ?>
-                                            <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
-                                                <span class="svg-icon"><?php echo $svg_icon; ?></span>
-                                            </a>
-                                        </div>
+                                        <?php
+                                            $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
+                                        ?>
+                                        <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
+                                            <?php echo $svg_icon; ?>
+                                        </a>
                                     </div>
                                 </div>
                             <?php endif; ?>

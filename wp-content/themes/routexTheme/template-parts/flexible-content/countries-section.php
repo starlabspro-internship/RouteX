@@ -109,7 +109,6 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                     </div>
                 </div>
             </div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
         <div class="countries-section-slider-2">
             <div class="swiper countries-section-swiper">

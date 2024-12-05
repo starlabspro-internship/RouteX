@@ -99,7 +99,6 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                     <?php endforeach; ?>
                 </div>
             </div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>  
         <?php endif; ?>               
     </div>
