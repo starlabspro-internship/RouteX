@@ -76,7 +76,7 @@ $appointment_link = get_field('appointment_link', 'options');
             href="#primary"><?php esc_html_e( 'Skip to content', 'routextheme' ); ?></a>
         <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? 'home-header' : 'site-header'; ?>">
             <div class="header-container">
-                <div class="site-branding">
+                <div class="site-branding hello">
                     <a href="<?php echo esc_url($header_logo_link); ?>">
                         <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
                     </a>
