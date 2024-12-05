@@ -100,4 +100,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-define('GITHUB_DEPLOYMENT_SLUG', 'f2af9bc');
+define('GITHUB_DEPLOYMENT_SLUG', '');
