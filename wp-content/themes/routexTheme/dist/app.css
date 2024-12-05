@@ -2479,10 +2479,14 @@ body.single .entry-title {
     border-radius: 50px;
     transition: background-color 0.3s, color 0.3s;
     text-decoration: none;
+    font-size: 16px;
   }
   .hero-section .btn-wrapper .btn-transparent:hover {
     background-color: var(--light-color);
     color: var(--secondary-color);
+  }
+  .hero-section .btn-wrapper .video-text {
+    font-size: 16px;
   }
   .hero-section .btn-wrapper .banner-video-button {
     width: 50px;

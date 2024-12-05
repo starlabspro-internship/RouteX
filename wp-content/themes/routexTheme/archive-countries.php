@@ -1,10 +1,14 @@
 <?php
+/**
+ * Template Name: Countries Archive Page
+ */
+
 get_header();
 
 $continents = [
-    'Africa',
-    'Asia',
     'Europe',
+    'Asia',
+    'Africa',
     'North America',
     'South America',
     'Australia',
