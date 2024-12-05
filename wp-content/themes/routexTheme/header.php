@@ -64,6 +64,7 @@ $appointment_link = get_field('appointment_link', 'options');
     }
 
     <?php endif;
+    
     ?>
     </style>
 
@@ -106,6 +107,7 @@ $appointment_link = get_field('appointment_link', 'options');
                     </a>
                 </div>
             </div>
+            <?php var_dump($GITHUB_DEPLOYMENT_SLUG); ?>
         </header>
 
         <script>
