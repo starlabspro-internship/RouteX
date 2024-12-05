@@ -26,9 +26,9 @@ echo top_banner();
         <!-- Sidebar -->
         <div class="col-lg-4">
             <div class="sidebar">
+                
                 <ul class="continents-list list-group">
                     <?php 
-                    // Ensure $continents and $current_continent are defined or fetched appropriately
                     $continents = ['Africa', 'Asia', 'Europe', 'North America', 'South America', 'Australia'];
                     $current_continent = isset($_GET['continent']) ? sanitize_text_field($_GET['continent']) : '';
 
