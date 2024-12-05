@@ -25,42 +25,42 @@ get_header();
             while ($story_query->have_posts()) : $story_query->the_post();
                 $counter++;
 
-                // Fetch custom fields for the story
                 $person_story_icon = get_field('person_story_icon'); 
                 $person_story_name = get_field('person_story_name');
                 $person_story_position = get_field('person_story_position');
         ?>
-                <div class="col-md-6">
-                        <?php
-                        if ($counter === 1 || $counter === 4 || $counter === 5) {
-                            $card_class = 'primary';
-                        } elseif ($counter === 2 || $counter === 3 || $counter === 6 || $counter === 7) {
-                            $card_class = 'contrast';
-                        } else {
-                            $card_class = ($counter % 2 === 0) ? 'contrast' : 'primary';
-                        }
-                        ?>
-                        <div class="story-card-contaiener">
-                        <a href="<?php the_permalink(); ?>" class="story-card-link">
-                            <div class="story-card card-<?php echo $card_class; ?>">
+            <div class="col-md-6">
+                <?php
+                if ($counter === 1 || $counter === 4 || $counter === 5) {
+                    $card_class = 'primary';
+                } elseif ($counter === 2 || $counter === 3 || $counter === 6 || $counter === 7) {
+                    $card_class = 'contrast';
+                } else {
+                    $card_class = ($counter % 2 === 0) ? 'contrast' : 'primary';
+                }
+                ?>
+                <div class="story-card-contaiener">
+                    <a href="<?php the_permalink(); ?>" class="story-card-link">
+                        <div class="story-card card-<?php echo $card_class; ?>">
 
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation" class="mb-3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation">
 
-                            <p class="story-text mb-3">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                            </p>
+                        <p class="story-text">
+                            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                        </p>
+                        
 
-
-                            <div class="story-card-details">
-                                <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon mb-3">
-                                <div class="story-card-person">
-                                    <p class="story-card-person-name"><strong><?php echo esc_html($person_story_name); ?></strong></p>
-                                    <p class="story-card-person-position"><?php echo esc_html($person_story_position); ?></p>
-                                </div>
+                        <div class="story-card-details">
+                            <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon">
+                            <div class="story-card-person">
+                                <p class="story-card-person-name"><strong><?php echo esc_html($person_story_name); ?></strong></p>
+                                <p class="story-card-person-position"><?php echo esc_html($person_story_position); ?></p>
                             </div>
-                        </a>
                         </div>
+                        </div>
+                    </a>
                 </div>
+            </div>
         <?php
             endwhile;
         else :

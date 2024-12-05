@@ -27,7 +27,7 @@ function has_content_in_layout() {
 
 if (has_content_in_layout()) :
     ?>
-        <section class="top-bottom-small">
+        <section class="top-bottom-small recaptcha-display">
             <div class="contact-form-section-container">
                 <div class="row">
     <?php

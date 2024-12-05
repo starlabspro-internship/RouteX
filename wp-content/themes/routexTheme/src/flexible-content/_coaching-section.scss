@@ -119,7 +119,6 @@
 	align-items: center;
 	background: var(--primary-color);
 	border: none;
-	padding: 10px;
 	border-radius: 20px;
 	&:hover {
 		cursor: pointer;
@@ -128,16 +127,20 @@
 				display: none;
 			}
 			&.hover-img {
-				display: inline;
+				display: flex;
 				border: 1px solid var(--accent-color);
 				background-color: var(--accent-color);
 			}
 		}
 	}
 	a{
-		padding: 17px;
 		border: 1px solid var(--light-color);
 		border-radius: 20px;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&.hover-img {
 			display: none;
 		}

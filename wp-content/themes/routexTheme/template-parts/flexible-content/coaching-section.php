@@ -81,15 +81,13 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                     </div>
                                     <?php endif; ?> 
                                     <?php if ($card['card_link']) : ?>
-                                    <div>
-                                        <button class="coaching__item-media-img-title-button">
-                                            <a class="hover-img" href="<?php echo esc_url($card['card_link']); ?>">
-                                                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="button-upright-arrow-white"> -->
-                                            </a>
-                                            <a class="default-img" href="<?php echo esc_url($card['card_link']); ?>">
-                                                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="button-upright-arrow"> -->
-                                            </a>
-                                        </button>
+                                    <div class="coaching__item-media-img-title-button">
+                                        <a class="hover-img" href="<?php echo esc_url($card['card_link']); ?>">
+                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="button-upright-arrow-white">
+                                        </a>
+                                        <a class="default-img" href="<?php echo esc_url($card['card_link']); ?>">
+                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="button-upright-arrow">
+                                        </a>
                                     </div>
                                     <?php endif; ?> 
                                 </div>
@@ -101,7 +99,6 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                 ?>
                 </div>
             </div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>    
         <?php endif; ?>             
     </div>

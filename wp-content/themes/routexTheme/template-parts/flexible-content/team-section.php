@@ -54,12 +54,7 @@ if (has_team_content()) :
                 <?php if (have_rows('social_links')) : ?>
                 <div class="social-links-container">
                     <button class="social-toggle" data-target="#<?php echo esc_attr($team_member_id); ?>">
-                        <?php
-                        $svg_file = get_template_directory() . '/assets/icons/green_think.svg';
-                        if (file_exists($svg_file)) {
-                            echo file_get_contents($svg_file);
-                        }
-                        ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/team-icon.svg" />
                     </button>
                     <div class="social-icons" id="<?php echo esc_attr($team_member_id); ?>">
 
