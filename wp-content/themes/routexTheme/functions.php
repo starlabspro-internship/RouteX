@@ -12,6 +12,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.3' );
 }
 
+
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -149,8 +151,16 @@ function routextheme_scripts() {
 
 	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    
+    define( 'GITHUB_DEPLOYMENT_SLUG', '1.0.0' );
 
-	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], _S_VERSION, 'all');
+    if ( defined( 'GITHUB_DEPLOYMENT_SLUG' ) ) {
+        $VERSION = GITHUB_DEPLOYMENT_SLUG;
+    } else {
+        $VERSION = '1.0.0'; // Fallback version
+    }
+
+	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], $VERSION, 'all');
     wp_enqueue_style('style');
 
 	wp_enqueue_script('jquery');
