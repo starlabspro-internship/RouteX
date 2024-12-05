@@ -25,7 +25,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
 
-        # Step 3: Get latest commit hash and set the version number
+    # Step 3: Get latest commit hash and set the version number
     - name: Set Version Number in wp-config.php
       run: |
         VERSION=$(git rev-parse --short HEAD)  # Get short version of the commit hash
@@ -40,6 +40,8 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SERVER_IP: ${{ secrets.SERVER_IP }}
+
+
 
 
     # Step 4: Deploy to the Server (Pull the latest changes and deploy)

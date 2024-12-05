@@ -13,6 +13,7 @@ if (have_rows('card_repeater')) :
 ?>
 <section class="container cards-div top-bottom-small">
     <div class="row cardrow">
+    <div class="row cardrow">
         <?php foreach ($cards as $card) : ?>
             <?php if ($card['card_icon'] || $card['card_title'] || $card['card_text']) : ?>
                 <div class="col-lg-4">
@@ -43,3 +44,4 @@ if (have_rows('card_repeater')) :
     endif; 
 endif;
 ?>
+

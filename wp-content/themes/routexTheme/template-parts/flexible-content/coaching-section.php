@@ -81,14 +81,16 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                     </div>
                                     <?php endif; ?> 
                                     <?php if ($card['card_link']) : ?>
-                                    <button class="coaching__item-media-img-title-button">
-                                        <a href="<?php echo esc_url($card['card_link']); ?>">
-                                            <img class="coaching__item-media-img-title-button-image hover-img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="">
-                                        </a>
-                                        <a href="<?php echo esc_url($card['card_link']); ?>">
-                                            <img class="coaching__item-media-img-title-button-image default-img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="">
-                                        </a>
-                                    </button>
+                                    <div>
+                                        <button class="coaching__item-media-img-title-button">
+                                            <a class="hover-img" href="<?php echo esc_url($card['card_link']); ?>">
+                                                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="button-upright-arrow-white"> -->
+                                            </a>
+                                            <a class="default-img" href="<?php echo esc_url($card['card_link']); ?>">
+                                                <!-- <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="button-upright-arrow"> -->
+                                            </a>
+                                        </button>
+                                    </div>
                                     <?php endif; ?> 
                                 </div>
                                 <?php endif; ?>
