@@ -17,7 +17,6 @@
 <?php endif; ?>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const wrapper = document.querySelector(".line-section-wrapper");
@@ -54,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
                     wrapper.scrollLeft = 0;
                 }
+                requestAnimationFrame(autoScroll);
             }
         };
 

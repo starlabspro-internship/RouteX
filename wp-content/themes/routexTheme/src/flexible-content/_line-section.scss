@@ -32,13 +32,13 @@
 
 @include media-sm {
   .line-item img {
-    height: 30px;
+    height: 40px;
   }
 }
 
 @include media-md {
   .line-item img {
-    height: 40px;
+    height: 50px;
   }
 }
 
@@ -53,3 +53,8 @@
     height: 60px;
   }
 }
+// @include media-xxl {
+//   .line-item img {
+//     height: 60px;
+//   }
+// }

@@ -4960,12 +4960,12 @@ body.single .entry-title {
 
 @media (min-width: 576px) {
   .line-item img {
-    height: 30px;
+    height: 40px;
   }
 }
 @media (min-width: 768px) {
   .line-item img {
-    height: 40px;
+    height: 50px;
   }
 }
 @media (min-width: 992px) {
