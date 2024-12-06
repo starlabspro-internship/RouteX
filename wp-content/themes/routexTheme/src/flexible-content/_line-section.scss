@@ -1,0 +1,55 @@
+.line-section {
+  background-color: var(--accent-color);
+  padding: 28px;
+  height: 105px;
+  overflow: hidden;
+}
+
+.line-section-wrapper {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.line-section-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.line-item {
+  flex: 0 0 auto;
+}
+
+.line-item img {
+  height: 50px;
+  object-fit: contain;
+}
+
+@include media-sm {
+  .line-item img {
+    height: 30px;
+  }
+}
+
+@include media-md {
+  .line-item img {
+    height: 40px;
+  }
+}
+
+@include media-lg {
+  .line-item img {
+    height: 50px;
+  }
+}
+
+@include media-xl {
+  .line-item img {
+    height: 60px;
+  }
+}
