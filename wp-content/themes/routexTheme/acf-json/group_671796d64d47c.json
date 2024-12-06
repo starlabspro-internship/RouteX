@@ -2583,6 +2583,65 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6751926d5b0b3": {
+                    "key": "layout_6751926d5b0b3",
+                    "name": "lines",
+                    "label": "Lines",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_675192725b0b4",
+                            "label": "Lines",
+                            "name": "lines",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_675192815b0b5",
+                                    "label": "Line",
+                                    "name": "line_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_675192725b0b4"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -2608,5 +2667,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732748981
+    "modified": 1733400222
 }

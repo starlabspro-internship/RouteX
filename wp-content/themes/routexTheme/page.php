@@ -73,6 +73,10 @@ if (have_rows('sections')) :
             get_template_part('template-parts/flexible-content/team-section'); 
         endif;
 
+        if (get_row_layout() == 'lines') :
+            get_template_part('template-parts/flexible-content/line-section'); 
+        endif;
+
     endwhile; 
 ?>
 </main>
