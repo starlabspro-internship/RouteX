@@ -22,35 +22,36 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
-      # Step 3: Get Latest Commit Hash and Set the Version Number in wp-config.php
-      - name: Set Version Number in wp-config.php
+      # Step 3: Get Latest Commit Hash and Update wp-config.php
+      - name: Update GITHUB_DEPLOYMENT_SLUG in wp-config.php
         run: |
           VERSION=$(git rev-parse --short HEAD)  # Get short version of the commit hash
           echo "Setting GITHUB_DEPLOYMENT_SLUG to $VERSION"
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
             cd /var/www/RouteX || exit  # Change to your WordPress directory
-            sed -i "s/define('GITHUB_DEPLOYMENT_SLUG', '');/define('GITHUB_DEPLOYMENT_SLUG', '${VERSION}');/" wp-config.php
+            # Update the slug in wp-config.php, replacing any existing value
+            sed -i "s/define('GITHUB_DEPLOYMENT_SLUG', '[^']*');/define('GITHUB_DEPLOYMENT_SLUG', '${VERSION}');/" wp-config.php
           EOF
 
-      # Step 4: Deploy to the Server
+      # Step 4: Pull Latest Changes and Deploy to the Server
       - name: Deploy to Server
         run: |
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
             cd /var/www/RouteX || exit  # Change to your WordPress directory
             git pull origin main  # Pull the latest changes from the GitHub repository
-            
+
             # Optionally flush the cache if FLUSH_CACHE is set to true
             if [ "${{ secrets.FLUSH_CACHE }}" == "true" ]; then
               wp cache flush  # Clear the cache (if using a WordPress caching plugin)
               echo "Cache has been flushed."
             fi
 
-            # Restart Nginx
+            # Restart Nginx to apply any configuration changes
             sudo systemctl restart nginx
           EOF
 
-      # Optional Step 5: Push Changes Back to GitHub
-      - name: Push Changes Back to GitHub (if necessary)
+      # Optional Step 5: Push Changes Back to GitHub (if necessary)
+      - name: Push Changes Back to GitHub
         run: |
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
             cd /var/www/RouteX || exit  # Change to your WordPress directory
