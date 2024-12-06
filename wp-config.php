@@ -41,7 +41,7 @@ define( 'DB_COLLATE', '' );
 define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
 define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
 
-define('GITHUB_DEPLOYMENT_SLUG', '325475b');
+define('GITHUB_DEPLOYMENT_SLUG', 'd5b6328');
 
 /**#@+
  * Authentication unique keys and salts.
