@@ -39,19 +39,18 @@ jobs:
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
             cd /var/www/RouteX || exit  # Change to your WordPress directory
             git pull origin main  # Pull the latest changes from the GitHub repository
-
             # Optionally flush the cache if FLUSH_CACHE is set to true
             if [ "${{ secrets.FLUSH_CACHE }}" == "true" ]; then
               wp cache flush  # Clear the cache (if using a WordPress caching plugin)
               echo "Cache has been flushed."
             fi
-
             # Restart Nginx to apply any configuration changes
             sudo systemctl restart nginx
           EOF
 
-      # Optional Step 5: Push Changes Back to GitHub (if necessary)
-      - name: Push Changes Back to GitHub
+      # Optional Step 5: Push Changes Back to GitHub (only if necessary)
+      - name: Push Changes Back to GitHub (optional)
+        if: github.event.head_commit.message == 'manual commit'
         run: |
           ssh -i ~/.ssh/id_rsa root@${{ secrets.SERVER_IP }} << EOF
             cd /var/www/RouteX || exit  # Change to your WordPress directory
