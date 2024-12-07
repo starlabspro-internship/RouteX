@@ -1692,10 +1692,182 @@ body.single .entry-title {
   border: 2px solid var(--accent-color);
 }
 
+.sidebar .sidebar-card-title {
+  color: var(--secondary-color);
+  font-weight: var(--bold);
+  font-size: 22px;
+  border-bottom: 1px solid var(--light-color);
+  padding-bottom: 10px;
+}
+.sidebar .sidebar-card {
+  margin-top: 40px;
+  padding: 25px;
+  padding-top: 5px;
+  border-radius: 20px;
+  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.2);
+}
+.sidebar .sidebar-card form {
+  border: 1px solid var(--light-color);
+  border-radius: 40px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .sidebar-card form .search-field {
+  width: 100%;
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--dark-color);
+  font-size: 16px;
+  font-weight: var(--regular);
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.sidebar .sidebar-card form .search-field::-moz-placeholder {
+  color: var(--light-color);
+}
+.sidebar .sidebar-card form .search-field::placeholder {
+  color: var(--light-color);
+}
+.sidebar .sidebar-card form .search-submit {
+  color: none;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  margin-right: 20px;
+}
+.sidebar .popular-post {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.sidebar .popular-post .popular-post-thumbnail {
+  flex: 0 0 80px;
+  height: 80px;
+  margin-right: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.sidebar .popular-post .popular-post-thumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.sidebar .popular-post .popular-post-info {
+  flex-grow: 1;
+  padding-top: 0;
+  margin-top: 0;
+}
+.sidebar .popular-post .popular-post-info .popular-post-date {
+  font-size: 16px;
+  color: var(--base-color);
+  margin: 0;
+  display: flex;
+  gap: 7px;
+}
+.sidebar .popular-post .popular-post-info .popular-post-title {
+  font-size: 18px;
+  font-weight: var(--bold);
+  color: var(--secondary-color);
+  margin: 5px 0 0;
+}
+.sidebar .popular-post-link {
+  text-decoration: none; /* Remove link styling */
+  color: inherit; /* Inherit text color from the parent elements */
+}
+.sidebar .popular-post {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform, box-shadow, and background-color */
+  /* Hover effect */
+}
+.sidebar .popular-post .popular-post-thumbnail {
+  flex: 0 0 80px;
+  height: 80px;
+  margin-right: 12px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.sidebar .popular-post .popular-post-thumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.sidebar .popular-post .popular-post-info {
+  flex-grow: 1;
+  padding-top: 0;
+  margin-top: 0;
+}
+.sidebar .popular-post .popular-post-info .popular-post-date {
+  font-size: 16px;
+  color: var(--base-color);
+  margin: 0;
+  display: flex;
+  gap: 7px;
+}
+.sidebar .popular-post .popular-post-info .popular-post-title {
+  font-size: 18px;
+  font-weight: var(--bold);
+  color: var(--secondary-color);
+  margin: 5px 0 0;
+}
+.sidebar .popular-post:hover {
+  transform: translateY(-5px); /* Lift the card on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  background-color: var(--contrast-color); /* Change background color on hover */
+}
+.sidebar .category-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.sidebar .category-list li {
+  margin-bottom: 10px;
+}
+.sidebar .category-list a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: var(--regular);
+}
+.sidebar .category-list a:hover {
+  color: var(--accent-color);
+}
+.sidebar .tag-link {
+  text-decoration: none; /* Remove the underline from the link */
+  color: var(--base-color); /* Set the text color to the base color */
+  border: 1px solid var(--light-color); /* Add a 1px solid border with a light color */
+  padding: 5px 10px; /* Add some padding for spacing */
+  margin: 5px; /* Add margin between the tags */
+  border-radius: 20px; /* Round the corners of the border */
+  display: inline-block; /* Ensure the tags are displayed inline */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+.sidebar .tag-link:hover {
+  background-color: var(--accent-color); /* Change the background color on hover */
+  color: var(--contrast-color); /* Change the text color on hover */
+  border-color: var(--contrast-color); /* Change border color on hover */
+}
+
 @media (min-width: 768px) {
   .entry-title {
     font-size: 35px;
     line-height: 45px;
+  }
+  .popular-posts {
+    flex-direction: column;
+    gap: 15px;
   }
 }
 @media (min-width: 992px) {
@@ -1703,11 +1875,19 @@ body.single .entry-title {
     font-size: 40px;
     line-height: 50px;
   }
+  .popular-posts {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 @media (min-width: 1200px) {
   .entry-title {
     font-size: 50px;
     line-height: 60px;
+  }
+  .popular-posts {
+    flex-direction: row;
+    gap: 30px;
   }
 }
 .search-form-404-container {
@@ -1954,7 +2134,7 @@ body.single .entry-title {
   margin-top: 28px;
   border-radius: 20px;
   border: 2px var(--light-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow here */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 0;
 }
 .continents-list .list-group-item {
@@ -1966,8 +2146,8 @@ body.single .entry-title {
   align-items: center;
 }
 .continents-list .list-group-item a {
-  color: var(--secondary-color); /* Set link color */
-  text-decoration: none; /* Remove underlines */
+  color: var(--secondary-color);
+  text-decoration: none;
   font-size: 22px;
   font-weight: var(--bold);
   display: flex;
@@ -1976,13 +2156,13 @@ body.single .entry-title {
   align-items: center;
 }
 .continents-list .list-group-item a:visited {
-  color: var(--secondary-color); /* Keep the link color the same after visiting */
+  color: var(--secondary-color);
 }
 .continents-list .list-group-item a:hover {
-  color: var(--accent-color); /* Hover effect with accent color */
+  color: var(--accent-color);
 }
 .continents-list .list-group-item a .continent-text {
-  flex-grow: 1; /* Ensure the text part takes all available space */
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
 }
@@ -1991,10 +2171,57 @@ body.single .entry-title {
   height: 12px;
 }
 .continents-list .list-group-item.active a {
-  color: var(--accent-color); /* Active state color */
+  color: var(--accent-color);
 }
 .continents-list hr {
   width: 325px;
+}
+
+.contact-card {
+  margin-top: 20px;
+}
+.contact-card .card-header {
+  background-color: var(--contrast-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 20px 20px 0 0;
+}
+.contact-card .card-body {
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 35px;
+  border: 1px solid var(--light-color);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+}
+.contact-card .contact-item {
+  display: flex;
+  align-items: center;
+}
+.contact-card .contact-item i {
+  color: red;
+  margin-right: 10px;
+  align-items: center;
+}
+.contact-card .contact-item p {
+  color: var(--secondary-color);
+  padding-left: 10px;
+}
+.contact-card .contact-link {
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: var(--bold);
+}
+.contact-card .contact-link img {
+  padding-left: 6px;
 }
 
 @media (min-width: 768px) {

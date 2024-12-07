@@ -5,14 +5,11 @@ echo top_banner();
 
 <div class="container py-5">
     <div class="row">
-        <!-- Main Content -->
         <div class="col-lg-8">
             <div class="country-single">
-                <!-- Post Title -->
                 <h1 class="country-title text-center mb-4">
                     <?php the_title(); ?>
                 </h1>
-                <!-- Post Content -->
                 <div class="country-content">
                     <?php
                     while (have_posts()) : the_post();
@@ -23,17 +20,66 @@ echo top_banner();
             </div>
         </div>
 
-        <!-- Sidebar -->
         <div class="col-lg-4">
             <div class="sidebar">
-                
+                <?php
+                $contact_information = get_field('contact_information', 'options');
+                $phone_information = $contact_information['phone_information'] ?? null;   
+                $phone_number = $phone_information['phone_number'] ?? null;  
+                $phone_icon = $phone_information['phone_icon'] ?? null;  
+
+                $address = $contact_information['address'] ?? null;
+                $email = $contact_information['email'] ?? null;
+
+                if ($phone_number || $address || $email) :
+                ?>
+                    <div class="contact-card">
+                        <div class="card-header">
+                            <h3>Plan Your Trip Now</h3>
+                        </div>
+                        <div class="card-body">
+                            <?php if ($phone_number) : ?>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/phone-icon.svg'); ?>" alt="button-upright-arrow">
+                                    <p><?php echo esc_attr($phone_number); ?></p>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($email) : ?>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/mail-icon.svg'); ?>" alt="button-upright-arrow">
+                                    <p><?php echo esc_attr($email); ?></p>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($address) : ?>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/location-icon.svg'); ?>" alt="button-upright-arrow">
+                                    <p><?php echo esc_attr($address); ?></p>
+                                </div>
+                            <?php endif; ?>
+
+                            <a href="wordpress/?page_id=798" class="contact-link">
+                                Contact Us
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="button-upright-arrow">
+                            </a>
+                        </div>
+                    </div>
+                <?php
+                endif;
+                ?>
+
                 <ul class="continents-list list-group">
                     <?php 
                     $continents = ['Africa', 'Asia', 'Europe', 'North America', 'South America', 'Australia'];
                     $current_continent = isset($_GET['continent']) ? sanitize_text_field($_GET['continent']) : '';
 
                     foreach ($continents as $index => $continent) : ?>
-                        <li class="list-group-item <?php echo $current_continent === $continent ? 'active' : ''; ?>">
+                                            <style> .continent-li{ border-bottom: 1px solid var(--light-color);} </style>
+                        <li class="list-group-item continent-li <?php echo $current_continent === $continent ? 'active' : ''; ?>">
                             <a href="<?php echo add_query_arg('continent', $continent, get_post_type_archive_link('countries')); ?>" class="continent-link">
                                 <?php echo esc_html($continent); ?>
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="continent-icon">
@@ -42,14 +88,17 @@ echo top_banner();
                             </a>
                         </li>
                         <?php if ($index < count($continents) - 1): ?>
-                            <hr>
+                        <style> .continent-li{ border-bottom:none } </style>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
+
             </div>
         </div>
+
     </div>
 </div>
 
 <?php
 get_footer();
+?>

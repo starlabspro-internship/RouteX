@@ -11,18 +11,29 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+			<?php 
+				echo top_banner();
+			?>
 
-	<?php 
-		echo top_banner();
-	?>
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<div class="container">
+				<div class="row">
+					<!-- Main Content (col-md-8) -->
+					<div class="col-12 col-md-8">
+								
+									<?php
+									while ( have_posts() ) :
+										the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+										get_template_part( 'template-parts/content', get_post_type() );
 
-		endwhile; 
-		?>
+									endwhile; 
+									?>
+					</div>
+
+						<?php get_template_part('blog-sidebar'); ?>
+						
+					</div>
+			</div>
 
 	</main><!-- #main -->
 
