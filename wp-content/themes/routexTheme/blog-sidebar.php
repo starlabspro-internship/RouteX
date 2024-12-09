@@ -1,11 +1,13 @@
+ <!-- Sidebar Section (col-md-4) -->
  <div class="col-12 col-md-4">
                 <div class="sidebar">
+                    <!-- Search Card -->
                     <div class="card sidebar-card">
                         <div class="card-header">
                             <h3 class="sidebar-card-title">Search Here</h3>
                         </div>
                         <div class="card-body">
-                            <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('?s=')); ?>">
+                            <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('?s=teksti')); ?>">
                                 <input type="text" class="search-field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
                                 <button type="submit" class="search-submit">  
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/search-green.svg" alt="right-arrow-bigger-tale-green">
@@ -14,6 +16,7 @@
                         </div>
                     </div>
 
+                    <!-- Popular Posts Card -->
 						<div class="card sidebar-card">
 							<div class="card-header">
 								<h3 class="sidebar-card-title">Popular Posts</h3>
@@ -53,6 +56,7 @@
 						</div>
 
 
+                    <!-- Categories Card -->
                     <div class="card sidebar-card">
                         <div class="card-header">
                             <h3 class="sidebar-card-title">Categories</h3>
@@ -69,6 +73,7 @@
                         </div>
                     </div>
 
+                    <!-- Popular Tags Card -->
                     <div class="card sidebar-card">
                         <div class="card-header">
                             <h3 class="sidebar-card-title">Popular Tags</h3>
@@ -87,4 +92,4 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><!-- .col-md-4 -->
