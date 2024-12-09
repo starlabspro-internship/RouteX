@@ -2247,6 +2247,10 @@ body.single .entry-title {
     width: 285px;
   }
 }
+.stories {
+  padding: 40px 0;
+}
+
 .story-archive-container {
   max-width: 1290px;
   width: 100%;
