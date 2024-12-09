@@ -811,6 +811,7 @@ select {
 #primary-menu li {
   width: 100%;
   margin: 0;
+  padding-left: 10px;
 }
 
 #primary-menu li a {
@@ -884,7 +885,7 @@ select {
   #primary-menu .menu-item-has-children > .sub-menu {
     display: none;
   }
-  #primary-menu .menu-item-has-children.active > .sub-menu {
+  #primary-menu .menu-item-has-children:hover > .sub-menu {
     display: block;
     position: absolute;
     left: 0;
@@ -906,29 +907,20 @@ select {
     top: 0;
     padding: 10px;
     z-index: 10005;
-    border-radius: 5px;
     border: transparent;
     padding-left: 10px;
     line-height: 2px;
     width: 100%;
   }
-  #primary-menu .menu-item-has-children.active > .sub-menu .menu-item-has-children.active > .sub-menu {
-    display: block;
-    width: 100%;
-  }
-  #primary-menu .menu-item-has-children:hover > .sub-menu {
-    display: block;
-  }
+  #primary-menu .menu-item-has-children:hover > .sub-menu,
   #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children:hover > .sub-menu {
     display: block;
-  }
-  #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children.active > .sub-menu {
-    z-index: 10005;
+    border-radius: 5px;
   }
   .sub-menu a {
     line-height: 10px;
   }
-  #primary-menu .menu-item-has-children.active > .sub-menu a:hover {
+  #primary-menu .menu-item-has-children:hover > .sub-menu a:hover {
     color: var(--accent-color);
   }
   #primary-menu {
@@ -939,6 +931,7 @@ select {
   }
   #primary-menu li {
     width: auto;
+    padding-left: 0;
   }
   #primary-menu li a {
     display: block;
@@ -1721,7 +1714,7 @@ body.single .entry-title {
   padding: 25px;
   padding-top: 5px;
   border-radius: 20px;
-  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
 }
 .sidebar .sidebar-card form {
   border: 1px solid var(--light-color);
@@ -1796,8 +1789,8 @@ body.single .entry-title {
   margin: 5px 0 0;
 }
 .sidebar .popular-post-link {
-  text-decoration: none; /* Remove link styling */
-  color: inherit; /* Inherit text color from the parent elements */
+  text-decoration: none;
+  color: inherit;
 }
 .sidebar .popular-post {
   display: flex;
@@ -1805,8 +1798,7 @@ body.single .entry-title {
   margin-bottom: 20px;
   padding: 12px;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform, box-shadow, and background-color */
-  /* Hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .sidebar .popular-post .popular-post-thumbnail {
   flex: 0 0 80px;
@@ -1840,11 +1832,6 @@ body.single .entry-title {
   color: var(--secondary-color);
   margin: 5px 0 0;
 }
-.sidebar .popular-post:hover {
-  transform: translateY(-5px); /* Lift the card on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-  background-color: var(--contrast-color); /* Change background color on hover */
-}
 .sidebar .category-list {
   list-style-type: none;
   padding-left: 0;
@@ -1862,19 +1849,19 @@ body.single .entry-title {
   color: var(--accent-color);
 }
 .sidebar .tag-link {
-  text-decoration: none; /* Remove the underline from the link */
-  color: var(--base-color); /* Set the text color to the base color */
-  border: 1px solid var(--light-color); /* Add a 1px solid border with a light color */
-  padding: 5px 10px; /* Add some padding for spacing */
-  margin: 5px; /* Add margin between the tags */
-  border-radius: 20px; /* Round the corners of the border */
-  display: inline-block; /* Ensure the tags are displayed inline */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-decoration: none;
+  color: var(--base-color);
+  border: 1px solid var(--light-color);
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 .sidebar .tag-link:hover {
-  background-color: var(--accent-color); /* Change the background color on hover */
-  color: var(--contrast-color); /* Change the text color on hover */
-  border-color: var(--contrast-color); /* Change border color on hover */
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--contrast-color);
 }
 
 @media (min-width: 768px) {
