@@ -896,6 +896,7 @@ select {
     border: transparent;
     padding-left: 10px;
     line-height: 2px;
+    width: 170px;
   }
   #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children {
     position: relative;
@@ -904,13 +905,13 @@ select {
     display: none;
     position: absolute;
     left: 100%;
-    top: 0;
+    top: 20%;
     padding: 10px;
     z-index: 10005;
     border: transparent;
     padding-left: 10px;
     line-height: 2px;
-    width: 100%;
+    width: 200px;
   }
   #primary-menu .menu-item-has-children:hover > .sub-menu,
   #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children:hover > .sub-menu {
