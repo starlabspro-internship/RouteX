@@ -276,16 +276,13 @@
 	  
 	
 	  }
-	  
 	  .category-list {
 		list-style-type: none; 
 		padding-left: 0; 
 		margin-left: 0;
-	  
 		li {
 		  margin-bottom: 10px; 
 		}
-	  
 		a {
 		  text-decoration: none; 
 		  color: var(--secondary-color); 
@@ -296,7 +293,6 @@
 		  }
 		}
 	  }	  
-
 	  .tag-link {
 		text-decoration: none; 
 		color: var(--base-color);
@@ -313,45 +309,32 @@
 			border-color: var(--contrast-color); 
 		}
 	}
-	
-	  
   }
-  
-
-
-
-
-
 @include media-md {
   .entry-title {
     font-size: 35px;
     line-height: 45px;
   }
-
   .popular-posts {
     flex-direction: column;
     gap: 15px;
   }
 }
-
 @include media-lg {
   .entry-title {
     font-size: 40px;
     line-height: 50px;
   }
-
   .popular-posts {
     flex-direction: row;
     gap: 20px;
   }
 }
-
 @include media-xl {
   .entry-title {
     font-size: 50px;
     line-height: 60px;
   }
-
   .popular-posts {
     flex-direction: row;
     gap: 30px;

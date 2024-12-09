@@ -1196,7 +1196,6 @@ select {
   justify-content: flex-start;
 }
 .footer-form .form-control {
-  margin-left: 20px;
   border: none;
   background-color: var(--dark-color);
   color: var(--primary-color);
@@ -1204,6 +1203,8 @@ select {
   font-weight: var(--regular);
   width: 85%;
   padding: 17px 0;
+  padding-left: 20px;
+  border-radius: 30px;
 }
 .footer-form .form-control::-moz-placeholder {
   color: var(--primary-color);
@@ -1217,14 +1218,14 @@ select {
 .footer-form .form-control:focus-visible {
   outline: none;
 }
-.footer-form .submit {
+.footer-form .subscribe-submit {
   background-color: var(--accent-color);
   border-radius: 50%;
   width: 60px;
   height: 60px;
   border: none;
 }
-.footer-form .submit:hover {
+.footer-form .subscribe-submit:hover {
   cursor: pointer;
 }
 
@@ -1298,7 +1299,7 @@ select {
   line-height: 30px;
 }
 
-.subscribe-form {
+.mc4wp-form-fields {
   display: flex;
   align-items: center;
   background-color: var(--dark-color);
@@ -1322,7 +1323,7 @@ select {
   margin-bottom: 35px;
 }
 
-.footer__widget-item-4 p {
+.footer__widget-item-4 .footer__widget-item-4-description {
   font-weight: var(--regular);
   line-height: 30px;
   font-size: 16px;
@@ -1332,6 +1333,18 @@ select {
 .footer__logo-icon {
   width: 40px;
   height: 33px;
+}
+
+.mc4wp-alert {
+  text-align: center;
+}
+
+.mc4wp-success {
+  color: var(--accent-color);
+}
+
+.mc4wp-error {
+  color: var(--negatives-color);
 }
 
 @media (min-width: 768px) {
@@ -2350,7 +2363,7 @@ body.single .entry-title {
   margin-top: 28px;
   border-radius: 20px;
   border: 2px var(--light-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow here */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 0;
 }
 .countries-archive-section .continents-list .list-group-item {
@@ -2362,8 +2375,8 @@ body.single .entry-title {
   align-items: center;
 }
 .countries-archive-section .continents-list .list-group-item a {
-  color: var(--secondary-color); /* Set link color */
-  text-decoration: none; /* Remove underlines */
+  color: var(--secondary-color);
+  text-decoration: none;
   font-size: 22px;
   font-weight: var(--bold);
   display: flex;
@@ -2372,13 +2385,13 @@ body.single .entry-title {
   align-items: center;
 }
 .countries-archive-section .continents-list .list-group-item a:visited {
-  color: var(--secondary-color); /* Keep the link color the same after visiting */
+  color: var(--secondary-color);
 }
 .countries-archive-section .continents-list .list-group-item a:hover {
-  color: var(--accent-color); /* Hover effect with accent color */
+  color: var(--accent-color);
 }
 .countries-archive-section .continents-list .list-group-item a .continent-text {
-  flex-grow: 1; /* Ensure the text part takes all available space */
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
 }
@@ -2387,7 +2400,7 @@ body.single .entry-title {
   height: 12px;
 }
 .countries-archive-section .continents-list .list-group-item.active a {
-  color: var(--accent-color); /* Active state color */
+  color: var(--accent-color);
 }
 .countries-archive-section .continents-list hr {
   width: 325px;
@@ -2426,11 +2439,11 @@ body.single .entry-title {
 .countries-archive-section .card-link {
   text-decoration: none;
   color: inherit;
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  flex-direction: column; /* Stack items vertically if needed */
-  margin: auto; /* Center within the parent container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
 }
 .countries-archive-section .no-countries-text {
   text-align: center;
@@ -3551,10 +3564,10 @@ body.single .entry-title {
   border: 1px solid var(--light-color);
   border-radius: 20px;
   margin-bottom: 30px;
-  text-decoration: none; /* Remove underlines */
-  color: inherit; /* Inherit text color */
-  display: block; /* Ensure entire card is clickable */
-  transition: box-shadow 0.3s, transform 0.3s; /* Hover effect */
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 .available-countries-item:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

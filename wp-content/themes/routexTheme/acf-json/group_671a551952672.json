@@ -521,6 +521,26 @@
                     "rows": "",
                     "placeholder": "",
                     "new_lines": ""
+                },
+                {
+                    "key": "field_67570c91f8e80",
+                    "label": "Subscription Form",
+                    "name": "subscription_form",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ]
         },
@@ -671,5 +691,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733752328
+    "modified": 1733758174
 }
