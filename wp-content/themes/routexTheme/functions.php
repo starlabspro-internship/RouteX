@@ -526,38 +526,45 @@ function enqueue_google_maps_api() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_maps_api');
 
+
+
+
+
 function custom_styles() {
-    $image_url = esc_url(get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg');
-	$image_2_url = esc_url(get_template_directory_uri() . '/assets/img/coaching-bg-img.png');
+    $image_2_url = esc_url(get_template_directory_uri() . '/assets/img/coaching-bg-img.png');
     $image_3_url = esc_url(get_template_directory_uri() . '/assets/img/process-bg.png');
-	$image_4_url = esc_url(get_template_directory_uri() . '/assets/img/Map.png');
+    $world_map_url = esc_url(get_template_directory_uri() . '/assets/img/Map.png');
+    $vector_lines_url = esc_url(get_template_directory_uri() . '/assets/img/footer-bg-2.png');
+
+    $footer_bg_option = get_field('footer_background_image', 'option');
+
+    $footer_bg_image = '';
+    $additional_styles = '';
+
+    if ($footer_bg_option === 'World Map') {
+        $footer_bg_image = "background-image: url('{$world_map_url}');";
+        $additional_styles = "background-size: auto;";
+    } elseif ($footer_bg_option === 'Vector Lines') {
+        $footer_bg_image = "background-image: url('{$vector_lines_url}');";
+        $additional_styles = "background-size: cover; background-position: center; background-repeat: no-repeat;";
+    }
 
     $custom_css = "
-		.footer__area-common {
-			background-image: url('{$image_4_url}');
-		}
+        .footer__area-common {
+            {$footer_bg_image}
+            width: 100%;
+            {$additional_styles}
+        }
 
-		.process-overview-bg-img {
-			background-image: url('{$image_3_url}');
-		}
+        .process-overview-bg-img {
+            background-image: url('{$image_3_url}');
+        }
 
-		.our-coaching-bg-img {
-			background-image: url('{$image_2_url}');	
-		}
-
-        // #primary-menu li a::after {
-        //     content: '';
-        //     margin-left: 5px;
-        //     width: 9px;
-        //     height: 7px;
-        //     background-image: url('{$image_url}');
-        //     background-size: contain;
-        //     background-repeat: no-repeat;
-        //     display: inline-block;
-        //     vertical-align: middle;
-        // }
+        .our-coaching-bg-img {
+            background-image: url('{$image_2_url}');  
+        }
     ";
-    
+
     wp_add_inline_style('style', $custom_css);
 }
 add_action('wp_enqueue_scripts', 'custom_styles');
