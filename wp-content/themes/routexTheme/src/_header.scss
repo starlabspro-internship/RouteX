@@ -302,6 +302,14 @@
         display: block;
         border-radius: 5px;
         width: 100%;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        padding: 10px;
+        z-index: 10005;
+        border: transparent;
+        padding-left: 10px;
+        line-height: 2px;
     }
 
     .sub-menu a {
