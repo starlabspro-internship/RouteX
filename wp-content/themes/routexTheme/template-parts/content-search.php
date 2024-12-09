@@ -8,7 +8,7 @@
  */
 
 ?>
-
+<?php if (get_post_type() !== 'page' ) : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
@@ -47,3 +47,4 @@
 		<?php //routextheme_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+<?php endif; ?>
