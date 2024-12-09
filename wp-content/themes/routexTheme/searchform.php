@@ -1,5 +1,5 @@
 <div class="search-form-404-container">
-	<form action="/RouteX" method="get" class="search-form-404">
+	<form action="<?php echo esc_url(home_url('?s=teksti')); ?>" role="search" method="get" class="search-form-404">
 		<input type="text" name="s" placeholder="Search Here" value="<?php the_search_query(); ?>"
 		required>
 		<button type="submit">
