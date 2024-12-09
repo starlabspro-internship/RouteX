@@ -192,6 +192,7 @@
 #primary-menu li {
     width: 100%;
     margin: 0;
+    padding-left: 10px;
 }
 
 #primary-menu li a {
@@ -251,6 +252,7 @@
     .site-branding div {
         font-size: 32px;
     }
+
     .header-container {
         margin-left: 0;
         margin-right: 0;
@@ -262,13 +264,11 @@
         padding-right: 15px !important;
     }
 
-    
-    
     #primary-menu .menu-item-has-children > .sub-menu {
         display: none;
     }
-    
-    #primary-menu .menu-item-has-children.active > .sub-menu {
+
+    #primary-menu .menu-item-has-children:hover > .sub-menu {
         display: block;
         position: absolute;
         left: 0;
@@ -280,11 +280,11 @@
         padding-left: 10px;
         line-height: 2px;
     }
-    
+
     #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children {
         position: relative;
     }
-    
+
     #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children > .sub-menu {
         display: none;
         position: absolute;
@@ -292,36 +292,23 @@
         top: 0;
         padding: 10px;
         z-index: 10005;
-        border-radius: 5px;
         border: transparent;
         padding-left: 10px;
         line-height: 2px;
         width: 100%;
     }
-    
-    #primary-menu .menu-item-has-children.active > .sub-menu .menu-item-has-children.active > .sub-menu {
+
+    #primary-menu .menu-item-has-children:hover > .sub-menu .menu-item-has-children:hover > .sub-menu {
         display: block;
+        border-radius: 5px;
         width: 100%;
     }
-    
-    #primary-menu .menu-item-has-children:hover > .sub-menu {
-        display: block;
-    }
-    
-    #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children:hover > .sub-menu {
-        display: block;
-    }
-    
-    #primary-menu .menu-item-has-children > .sub-menu .menu-item-has-children.active > .sub-menu {
-        z-index: 10005;
-    }
-    
 
-    .sub-menu a{
+    .sub-menu a {
         line-height: 10px;
     }
 
-    #primary-menu .menu-item-has-children.active > .sub-menu a:hover {
+    #primary-menu .menu-item-has-children:hover > .sub-menu a:hover {
         color: var(--accent-color);    
     }
 
@@ -334,6 +321,7 @@
 
     #primary-menu li {
         width: auto;
+        padding-left: 0;
     }
 
     #primary-menu li a {
@@ -350,6 +338,7 @@
         font-weight: var(--thin);
     }
 }
+
 @include media-lg {
     .site-branding {
         order: 1;

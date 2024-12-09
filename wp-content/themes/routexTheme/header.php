@@ -139,17 +139,6 @@ $appointment_link = get_field('appointment_link', 'options');
                     });
                 }
 
-                if (window.innerWidth > 768) {
-                    menuItem.addEventListener('mouseenter', function() {
-                        menuItem.classList.add('active');
-                        submenu.style.display = 'block';
-                    });
-
-                    menuItem.addEventListener('mouseleave', function() {
-                        menuItem.classList.remove('active');
-                        submenu.style.display = 'none';
-                    });
-                }
             });
         });
         </script>
