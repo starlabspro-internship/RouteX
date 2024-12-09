@@ -30,7 +30,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
 
         <div class="col-md-8 col-12">
             <div class="top-right-section ctadiv ">
-                <div class="col-md-8 col-12 ">
+                <div class="col-sm-8 col-12">
                     <div  class="left-content">
                         <?php if ($icon) : ?>
                             <div class="circle">
@@ -62,7 +62,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 </div>
 
                 <?php if ($right_image) : ?>
-                    <div class="col-md-4 col-12">
+                    <div class="col-sm-4 col-12">
                         <div class="right-image">
                             <img src="<?php echo esc_url($right_image); ?>" alt=""/>
                         </div>

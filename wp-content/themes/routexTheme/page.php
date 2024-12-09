@@ -3,6 +3,10 @@ get_header();
 
 echo top_banner();
 
+global $post;
+
+ob_start(); 
+
 if (have_rows('sections')) :
     ?>
 <main id="primary" class="<?php echo (is_home() || is_front_page()) ? 'site-home' : 'site-main'; ?>">
@@ -81,6 +85,15 @@ if (have_rows('sections')) :
 ?>
 </main>
 <?php
-    endif;
+endif;
+
+$page_content = ob_get_clean();
+
+if (has_shortcode($post->post_content, 'contact-form-7')) {
+    echo '<script>document.body.classList.add("recaptcha-display");</script>';
+}
+
+echo $page_content;
+
 get_footer();
 ?>

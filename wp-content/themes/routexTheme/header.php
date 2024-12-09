@@ -37,7 +37,6 @@ $appointment_link = get_field('appointment_link', 'options');
     .main-navigation {
         border-radius: <?php echo $bordered_header ? '30px': '0';
         ?>;
-        padding-left: 20px;
         background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
         ?>;
     }
@@ -98,8 +97,9 @@ $appointment_link = get_field('appointment_link', 'options');
                     );
                     ?>
                 </nav>
-                <button class="menu-toggle" aria-controls="primary-menu"
-                    aria-expanded="false"><?php esc_html_e('Menu', 'routextheme'); ?></button>
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/menu-svgrepo-com.svg" alt="">
+                </button>
                 <div class="button-div">
                     <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
                         <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg"
@@ -107,14 +107,6 @@ $appointment_link = get_field('appointment_link', 'options');
                     </a>
                 </div>
             </div>
-            <?php 
-                if (defined('GITHUB_DEPLOYMENT_SLUG')) {
-                    $theme_version = GITHUB_DEPLOYMENT_SLUG;
-                } else {
-                    $theme_version = '1.0.3'; // Default version
-                }
-                var_dump($theme_version);
-            ?>
         </header>
 
         <script>

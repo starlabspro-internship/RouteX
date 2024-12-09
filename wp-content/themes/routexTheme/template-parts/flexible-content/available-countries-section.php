@@ -1,11 +1,11 @@
 <?php
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
-$button = get_post_type_archive_link('countries'); // Get the archive link for 'countries'
+$button = get_post_type_archive_link('countries');
 
 $countries_query = new WP_Query([
     'post_type'      => 'countries',
-    'posts_per_page' => 4, // Limit to 4 posts
+    'posts_per_page' => 4,
 ]);
 
 $countries = [];
@@ -14,8 +14,8 @@ if ($countries_query->have_posts()) :
         $countries[] = [
             'title' => get_the_title(),
             'icon'  => get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'),
-            'link'  => get_permalink(), // Link to the single page
-            'bullet_points' => get_field('bullet_point_texts'), // Get the ACF repeater field for bullet points
+            'link'  => get_permalink(),
+            'bullet_points' => get_field('bullet_point_texts'),
         ];
     endwhile;
     wp_reset_postdata(); 

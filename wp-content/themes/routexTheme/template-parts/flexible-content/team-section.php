@@ -12,7 +12,7 @@ function has_team_content() {
 if (has_team_content()) :
 ?>
 
-<section class="text-center team-section">
+<section class="team-section top-bottom-small">
     <?php if ($team_small_title) : ?>
     <div class="team-section-subtitle">
         <h5><?php echo esc_html($team_small_title); ?></h5>
@@ -33,11 +33,11 @@ if (has_team_content()) :
         $team_member_id = uniqid('team_member_'); 
         ?>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4">
             <div class="team-member">
             <?php if ($profile_image) : ?>
             <img src="<?php echo esc_url($profile_image['url']); ?>" alt="<?php echo esc_attr($name); ?>"
-                class="img-fluid team-member-image">
+                class="team-member-image">
             <?php endif; ?>
 
             <div class="member-info-wrapper">

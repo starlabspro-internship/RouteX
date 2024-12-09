@@ -65,7 +65,7 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                 
                     <div class="testimonial-buttons text-center">
                         <div class="testimonial__content-button-border"></div>
-                        <div class="container buttons-wrapper"> 
+                        <div class="buttons-wrapper"> 
                         <button class="button-testimonial" aria-label="Previous testimonial">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="left-arrow" class="hover-img">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="left-arrow-green" class="default-img">

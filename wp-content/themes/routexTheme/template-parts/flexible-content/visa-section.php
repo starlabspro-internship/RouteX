@@ -71,7 +71,7 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                                 <?php endif; ?>
 
                                 <?php if ($card['icon']) : ?>
-                                <div class="container visa-icon-container">
+                                <div class="visa-icon-container">
                                     <?php 
                                         $icon_content = file_get_contents($card['icon']);
                                         echo $icon_content; 

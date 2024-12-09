@@ -41,8 +41,10 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
             <?php if ($left_support_message) : ?>
             <div class="footer-top-left">
                 <?php if ($left_support_img) : ?>
-                <div class="footer-left-svg">
-                    <img src="<?php echo esc_url($left_support_img); ?>" alt="left_support_img">
+                <div>
+                    <div class="footer-left-svg">
+                        <img src="<?php echo esc_url($left_support_img); ?>" alt="left_support_img">
+                    </div>
                 </div>
                 <?php endif; ?>
                 <h3><?php echo esc_html($left_support_message); ?></h3>
@@ -56,8 +58,10 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
             <?php if ($right_support_message) : ?>
             <div class="footer-top-right">
                 <?php if ($right_support_img) : ?>
-                <div class="footer-right-svg">
-                    <img src="<?php echo esc_url($right_support_img); ?>" alt="right_support_img">
+                <div>
+                    <div class="footer-right-svg">
+                        <img src="<?php echo esc_url($right_support_img); ?>" alt="right_support_img">
+                    </div>
                 </div>
                 <?php endif; ?>
                 <h3><?php echo esc_html($right_support_message); ?></h3>
@@ -69,7 +73,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
     
     <?php if ($footer_logo_image || $footer_logo_text || $footer_description || has_non_empty_cards($footer_social_links) || $services_title || has_non_empty_text($services_links) || $useful_links_title || has_non_empty_text($useful_links) || $subscribe_title || $subscribe_description) : ?>
     <div class="footer-mid-container">
-        <div class="row mb-minus-40 footer-wrap">
+        <div class="row">
             <?php if ($footer_logo_image || $footer_logo_text || $footer_description || has_non_empty_cards($footer_social_links)) : ?>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="footer__widget">

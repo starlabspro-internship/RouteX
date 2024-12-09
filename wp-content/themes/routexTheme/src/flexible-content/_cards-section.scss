@@ -1,11 +1,7 @@
 .cards-div {
-    width: 94%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
+    max-width: 1800px;
+	width: 100%;
+    margin: 0 auto;
 }
 .card1 {
 	background-color: var(--contrast-color);
@@ -66,9 +62,6 @@
     }
 }
 @include media-xl {
-    .cards-div {
-        width: 100%;
-    }
     .cards-wrapper {
         flex: 1 1 calc(25% - 20px); 
     }
@@ -77,9 +70,6 @@
     .cards-wrapper {
         flex: 1 1 calc(33.33% - 20px); 
     }
-    .cards-div {
-        width: 100%;
-    }
     .cardrow {
         flex-direction: row;
         flex-wrap: wrap;
@@ -87,12 +77,18 @@
         justify-content: space-between; 
     }
 }
-@include media-xxxl {
+@include media-xxl {
     .cards-div {
-        width: 100%;
-        min-width: 1475px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
+}
+@include media-xxxl {
     .cardrow {
         gap: 0px;
+    }
+    .cards-div {
+        padding-right: 0;
+        padding-left: 0;
     }
 }

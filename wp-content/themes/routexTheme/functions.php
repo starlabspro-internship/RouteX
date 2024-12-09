@@ -141,18 +141,14 @@ function routextheme_scripts() {
     if (defined('GITHUB_DEPLOYMENT_SLUG')) {
         $theme_version = GITHUB_DEPLOYMENT_SLUG;
     } else {
-        $theme_version = '1.0.3'; // Default version
+        $theme_version = '1.0.3';
     }
 
-	// Enqueue Bootstrap Grid CSS from CDN
     wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');
 	
-   
-	// Enqueue Swiper CSS and JS
 	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 
-	// // Enqueue theme navigation script
 	wp_enqueue_script('routextheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $theme_version, true);
 
 	wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], $theme_version, 'all');
@@ -163,13 +159,10 @@ function routextheme_scripts() {
 	wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], $theme_version, true);
     wp_enqueue_script('app');
 
-	// Enqueue dynamic colors CSS
 	wp_register_style('dynamic-colors', get_template_directory_uri() . '/dynamic-assets/dynamic-colors.php', [], $theme_version, 'all');
     wp_enqueue_style('dynamic-colors');
 
 	wp_enqueue_style('dynamic-fonts', get_template_directory_uri() . '/dynamic-assets/dynamic-fonts.php');
-
-    wp_enqueue_script('my-recaptcha-script', get_template_directory_uri() . '/js/recaptcha.js', array(), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'routextheme_scripts');
 
@@ -208,7 +201,6 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts', 1);
 
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 function my_acf_json_save_point($path) {
-    // Update the path to save the JSON file in your theme folder
     $path = get_stylesheet_directory() . '/acf-json';
     return $path;
 }
@@ -243,7 +235,7 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
         $has_children = in_array('menu-item-has-children', $classes);
         if ($has_children) {
-            $classes[] = 'has-children'; // Custom class for styling
+            $classes[] = 'has-children';
         }
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
@@ -284,8 +276,6 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
         $output .= "</li>\n";
     }
 }
-
-
 
 if(function_exists('acf_add_options_page')){
 	acf_add_options_page(
