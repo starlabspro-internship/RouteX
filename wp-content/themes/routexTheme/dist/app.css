@@ -2357,6 +2357,10 @@ body.single .entry-title {
   gap: 1.5rem;
 }
 
+.countries {
+  padding: 40px 0;
+}
+
 .countries-archive-section .continents-list {
   list-style: none;
   padding: 20px;
