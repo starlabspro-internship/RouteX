@@ -23,7 +23,8 @@ $useful_links = $useful['useful_links'] ?? null;
 
 $subscribe = get_field('subscribe', 'options');
 $subscribe_title = $subscribe['subscribe_title'] ?? null;  
-$subscribe_description = $subscribe['subscribe_description'] ?? null; 
+$subscribe_description = $subscribe['subscribe_description'] ?? null;
+$subscription_form = $subscribe['subscription_form'] ?? null;
 
 $footer_bottom = get_field('footer_bottom', 'options');
 $footer_copyright = $footer_bottom['footer_copyright'] ?? null;  
@@ -166,16 +167,11 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                     <?php endif; ?>
 
                     <?php if ($subscribe_description): ?>
-                    <p><?php echo esc_html( $subscribe_description) ?></p>
+                    <p class="footer__widget-item-4-description"><?php echo esc_html( $subscribe_description) ?></p>
                     <?php endif; ?>
 
                     <div class="footer-form">
-                        <form action="#" class="subscribe-form">
-                            <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
-                            <button class="submit">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Ticket.svg" alt="Ticket">
-                            </button>
-                        </form>
+                        <?php echo do_shortcode( $subscription_form ); ?>
                     </div>
                 </div>
             </div>

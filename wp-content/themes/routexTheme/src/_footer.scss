@@ -192,7 +192,6 @@
     justify-content: flex-start;
   
     .form-control {
-      margin-left: 20px;
       border: none;
       background-color: var(--dark-color);
       color: var(--primary-color);
@@ -200,7 +199,8 @@
       font-weight: var(--regular);
       width: 85%;
       padding: 17px 0;
-      
+      padding-left: 20px;
+      border-radius: 30px;
   
       &::placeholder {
         color: var(--primary-color);
@@ -215,7 +215,7 @@
       }
     }
   
-    .submit {
+    .subscribe-submit {
       background-color: var(--accent-color);
       border-radius: 50%;
       width: 60px;
@@ -294,7 +294,7 @@
     font-size: 22px;
     line-height: 30px;
   }
-  .subscribe-form {
+  .mc4wp-form-fields {
     display: flex;
     align-items: center;
     background-color: var(--dark-color);
@@ -316,7 +316,7 @@
     margin-bottom: 35px;
   }
   .footer__widget-item-4 {
-      p {
+      .footer__widget-item-4-description {
           font-weight: var(--regular);
           line-height: 30px;
           font-size: 16px;
@@ -327,6 +327,16 @@
     width: 40px;
     height: 33px;
   }
+  .mc4wp-alert{
+    text-align: center;
+  }
+  .mc4wp-success{
+    color: var(--accent-color);
+  }
+  .mc4wp-error{
+    color: var(--negatives-color);
+  }
+  
   @include media-md{
     .footer__logo-container {
       display: flex;

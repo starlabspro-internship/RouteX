@@ -6,7 +6,7 @@
         margin-top: 28px;
         border-radius: 20px;
         border: 2px var(--light-color);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow here */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-left: 0;
     
         .list-group-item {
@@ -18,8 +18,8 @@
             align-items: center;
             
             a {
-                color: var(--secondary-color); /* Set link color */
-                text-decoration: none; /* Remove underlines */
+                color: var(--secondary-color);
+                text-decoration: none;
                 font-size: 22px;
                 font-weight: var(--bold);
                 display: flex;
@@ -28,15 +28,15 @@
                 align-items: center;
                 
                 &:visited {
-                    color: var(--secondary-color); /* Keep the link color the same after visiting */
+                    color: var(--secondary-color);
                 }
 
                 &:hover {
-                    color: var(--accent-color); /* Hover effect with accent color */
+                    color: var(--accent-color);
                 }
 
                 .continent-text {
-                    flex-grow: 1; /* Ensure the text part takes all available space */
+                    flex-grow: 1;
                     display: flex;
                     justify-content: space-between;
                 }
@@ -49,7 +49,7 @@
 
             &.active {
                 a {               
-                    color: var(--accent-color); /* Active state color */
+                    color: var(--accent-color);
                 }
             }
         }
@@ -97,11 +97,11 @@
     .card-link {
         text-decoration: none;
         color: inherit;
-        display: flex; /* Use flexbox for alignment */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        flex-direction: column; /* Stack items vertically if needed */
-        margin: auto; /* Center within the parent container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
     }
 
     .no-countries-text{

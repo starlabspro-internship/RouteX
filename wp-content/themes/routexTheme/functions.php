@@ -533,6 +533,7 @@ function custom_styles() {
 	$image_4_url = esc_url(get_template_directory_uri() . '/assets/img/Map.png');
 
     $custom_css = "
+
 		.footer__area-common {
 			background-image: url('{$image_4_url}');
 		}
@@ -561,3 +562,19 @@ function custom_styles() {
     wp_add_inline_style('style', $custom_css);
 }
 add_action('wp_enqueue_scripts', 'custom_styles');
+
+function set_mailchimp_img_src() {
+    $image_url = esc_url(get_template_directory_uri() . '/assets/icons/Ticket.svg');
+
+    echo "
+        <script type='text/javascript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                var imgElement = document.querySelector('.subscribe-submit img');
+                if (imgElement) {
+                    imgElement.src = '{$image_url}';
+                }
+            });
+        </script>
+    ";
+}
+add_action('wp_footer', 'set_mailchimp_img_src');
