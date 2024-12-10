@@ -10,6 +10,8 @@
     "sass-loader": "^16.0.2"
   },
   "scripts": {
+    "dev": "npx mix",  
+    "prod": "npx mix --production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
