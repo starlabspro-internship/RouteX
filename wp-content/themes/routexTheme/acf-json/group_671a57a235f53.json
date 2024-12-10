@@ -62,40 +62,6 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 0
-        },
-        {
-            "key": "field_67505a1b2c845",
-            "label": "Header Logo Link",
-            "name": "header_logo_link",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_67505a362c846",
-            "label": "Company Name Link",
-            "name": "company_name_link",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -116,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733848703
+    "modified": 1733851970
 }

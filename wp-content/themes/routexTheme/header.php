@@ -1,9 +1,8 @@
 <?php
 $header_logo = get_field('header_logo', 'options');
 $header_logo_url = wp_get_attachment_image_url($header_logo, 'header-logo');
-$header_logo_link = get_field('header_logo_link', 'options');
 $company_name = get_field('company_name', 'options');
-$company_name_link = get_field('company_name_link', 'options');
+$home_url = get_home_url();
 $bordered_header = get_field('bordered_header', 'options');
 $appointment_link = get_field('appointment_link', 'options');
 ?>
@@ -24,8 +23,7 @@ $appointment_link = get_field('appointment_link', 'options');
     </style>
     <?php endif; ?>
     <style>
-    .header-container
-        {
+    .header-container {
         margin-top: 20px;
         margin-bottom: 20px;
         border-radius: <?php echo $bordered_header ? '50px': '0';
@@ -64,7 +62,7 @@ $appointment_link = get_field('appointment_link', 'options');
     }
 
     <?php endif;
-    
+
     ?>
     </style>
 
@@ -78,10 +76,10 @@ $appointment_link = get_field('appointment_link', 'options');
         <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? 'home-header' : 'site-header'; ?>">
             <div class="header-container">
                 <div class="site-branding">
-                    <a href="<?php echo esc_url($header_logo_link); ?>">
+                    <a href="<?php echo esc_url($home_url); ?>">
                         <img src="<?php echo esc_url($header_logo_url); ?>" alt="Header logo">
                     </a>
-                    <a href="<?php echo esc_url($company_name_link); ?>">
+                    <a href="<?php echo esc_url($home_url); ?>">
                         <div><?php echo esc_html($company_name); ?></div>
                     </a>
                 </div>
