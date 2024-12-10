@@ -8,8 +8,6 @@ if (have_posts()) :
         $approval = get_field('visa_approval');
         $link_1 = get_field('link_1');
         $link_2 = get_field('link_2');
-        $background_image = get_field('background_image'); 
-        $front_image = get_the_post_thumbnail_url(); 
 ?>
 
 <section class="story-single-section top-bottom-small">
@@ -34,7 +32,7 @@ if (have_posts()) :
     <div class="col-md-6">
          <div class="story-image-div">
          <?php
-             $front_image = get_the_post_thumbnail_url(); 
+             $front_image = get_the_post_thumbnail_url('success-story-large-img'); 
          ?>
              <svg viewBox="0 0 528 592" fill="none" xmlns="http://www.w3.org/2000/svg">
              <rect x="201.686" y="66.2148" width="331.348" height="475.451" rx="21.3651" transform="rotate(10 201.686 66.2148)" fill="#F1F5EB"/>

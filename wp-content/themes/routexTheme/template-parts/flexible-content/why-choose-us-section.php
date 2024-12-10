@@ -51,8 +51,10 @@ if (has_content_in_layout() || $phone_number) :
     
         if (get_row_layout() == 'left_layout') :
             $first_photo_third_sector = get_sub_field('image_1');
+            $first_photo_third_sector_url = wp_get_attachment_image_url($first_photo_third_sector, 'why-choose-us-left-img');
             $experience_text_third_sector = get_sub_field('experience_text');
             $third_photo_third_sector = get_sub_field('image_3');
+            $third_photo_third_sector_url = wp_get_attachment_image_url($third_photo_third_sector, 'why-choose-us-right-img');
             if ($first_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
             ?>
             <div class="col-xl-6">
@@ -62,7 +64,7 @@ if (has_content_in_layout() || $phone_number) :
                         <div class="choose-us-media-thumb-img">
                             <div class="choose-us-media-thumb-img-green-border" ></div>
                             <div class="choose-us-media-thumb-img-img" >
-                                <img src="<?php echo esc_url($first_photo_third_sector); ?>" alt="Why Choose Us Image">
+                                <img src="<?php echo esc_url($first_photo_third_sector_url); ?>" alt="Why Choose Us Image">
                             </div>
                         </div>
                         <?php endif; ?>
@@ -81,7 +83,7 @@ if (has_content_in_layout() || $phone_number) :
                         <?php endif; ?>
                         <?php if ($third_photo_third_sector) : ?>
                         <div class="choose-us-media-img-picture" >
-                            <img src="<?php echo esc_url($third_photo_third_sector); ?>" alt="Why Choose Us Image">
+                            <img src="<?php echo esc_url($third_photo_third_sector_url); ?>" alt="Why Choose Us Image">
                         </div>
                         <?php endif; ?>
                     </div>
@@ -141,7 +143,8 @@ if (has_content_in_layout() || $phone_number) :
                                 <div class="choose-us-item-content">
                                     <?php if ($card['card_icon']) : ?>
                                     <div class="choose-us-item-icon">
-                                        <img src="<?php echo esc_url($card['card_icon']) ?>" alt="">
+                                        <?php $cards_img_url = wp_get_attachment_image_url($card['card_icon'], 'why-choose-us-icon'); ?>
+                                        <img src="<?php echo esc_url($cards_img_url) ?>" alt="cards_img_url">
                                     </div>
                                     <?php endif; ?>
 
@@ -189,7 +192,8 @@ if (has_content_in_layout() || $phone_number) :
                     <?php if ($phone_number) : ?>
                     <div class="choose-us-button-text">
                         <div class="choose-us-button-text-icon">
-                            <img src="<?php echo esc_url($phone_icon); ?>" alt="">
+                            <?php $phone_icon_url = wp_get_attachment_image_url($phone_icon, 'phone-icon-img'); ?>
+                            <img src="<?php echo esc_url($phone_icon_url); ?>" alt="phone-icon-img">
                         </div>
                         <div class="choose-us-button-text-number">
                             <h6>Need help?</h6>

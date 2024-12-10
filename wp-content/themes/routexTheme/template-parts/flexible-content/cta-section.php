@@ -1,10 +1,13 @@
 <?php
 $left_image = get_sub_field('left_image');
+$left_image_url = wp_get_attachment_image_url($left_image, 'cta-left-img');
 $icon = get_sub_field('icon');
+$icon_url = wp_get_attachment_image_url($icon, 'visa-icon');
 $top_title = get_sub_field('top_title');
 $top_text = get_sub_field('top_text');
 $button = get_sub_field('button');
 $right_image = get_sub_field('right_image');
+$right_image_url = wp_get_attachment_image_url($right_image, 'cta-right-img');
 $bottom_counters = [];
 if (have_rows('bottom_counter')) :
     while (have_rows('bottom_counter')) : the_row();
@@ -21,7 +24,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
         <div class="col-md-4 col-12">
             <div class="imagediv">
             <?php if ($left_image) : ?>
-                <img src="<?php echo esc_url($left_image); ?>" class="img-fluid" alt="Left Image" />
+                <img src="<?php echo esc_url($left_image_url); ?>" class="img-fluid" alt="Left Image" />
             <?php else : ?>
                 <p>Left Image not found.</p>
             <?php endif; ?>
@@ -29,12 +32,12 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
         </div>
 
         <div class="col-md-8 col-12">
-            <div class="top-right-section ctadiv ">
+            <div class="top-right-section">
                 <div class="col-sm-8 col-12">
                     <div  class="left-content">
                         <?php if ($icon) : ?>
                             <div class="circle">
-                                <img src="<?php echo esc_url($icon); ?>" class="icon" alt="Icon" />
+                                <img src="<?php echo esc_url($icon_url); ?>" class="icon" alt="Icon" />
                             </div>
                         <?php endif; ?>
 
@@ -64,7 +67,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 <?php if ($right_image) : ?>
                     <div class="col-sm-4 col-12">
                         <div class="right-image">
-                            <img src="<?php echo esc_url($right_image); ?>" alt=""/>
+                            <img src="<?php echo esc_url($right_image_url); ?>" alt=""/>
                         </div>
                     </div>
                 <?php endif; ?>

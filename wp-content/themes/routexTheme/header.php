@@ -1,5 +1,6 @@
 <?php
 $header_logo = get_field('header_logo', 'options');
+$header_logo_url = wp_get_attachment_image_url($header_logo, 'header-logo');
 $header_logo_link = get_field('header_logo_link', 'options');
 $company_name = get_field('company_name', 'options');
 $company_name_link = get_field('company_name_link', 'options');
@@ -78,7 +79,7 @@ $appointment_link = get_field('appointment_link', 'options');
             <div class="header-container">
                 <div class="site-branding">
                     <a href="<?php echo esc_url($header_logo_link); ?>">
-                        <img src="<?php echo esc_url($header_logo); ?>" alt="Header logo">
+                        <img src="<?php echo esc_url($header_logo_url); ?>" alt="Header logo">
                     </a>
                     <a href="<?php echo esc_url($company_name_link); ?>">
                         <div><?php echo esc_html($company_name); ?></div>

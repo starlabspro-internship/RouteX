@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-		<img src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
+		<img class="thumbnail-img" src="<?php the_post_thumbnail_url('blog-large'); ?>" alt="Blog Image" />
 
 		<?php
 		if ( 'post' === get_post_type() ) :

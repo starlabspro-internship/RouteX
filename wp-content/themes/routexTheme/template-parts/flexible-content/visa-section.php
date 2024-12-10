@@ -42,7 +42,8 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                     <?php if ($card['image']) : ?>
                     <div class="col-lg-6">
                         <div class="visa-image">
-                            <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
+                            <?php $visa_category_img_url = wp_get_attachment_image_url($card['image'], 'visa-category-img'); ?>
+                            <img src="<?php echo esc_url($visa_category_img_url); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
                         </div>
                     </div>
                     <?php endif; ?>
@@ -72,8 +73,9 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
 
                                 <?php if ($card['icon']) : ?>
                                 <div class="visa-icon-container">
+                                    <?php $cards_img_url = wp_get_attachment_image_url($card['icon'], 'visa-icon'); ?>
                                     <?php 
-                                        $icon_content = file_get_contents($card['icon']);
+                                        $icon_content = file_get_contents($cards_img_url);
                                         echo $icon_content; 
                                     ?>
                                 </div>

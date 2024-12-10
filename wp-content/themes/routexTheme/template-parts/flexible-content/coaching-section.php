@@ -58,16 +58,15 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                 <div class="swiper-wrapper">
                 <?php
                     foreach ($cards as $card) :
-                        ?>
+                        if ($card['card_image']) : ?>
                         <div class="swiper-slide">
                             <div class="coaching__item-media">
-                                <?php if ($card['card_image']) : ?>
                                 <div class="coaching-item_thumb">
                                     <a href="<?php echo esc_url($card['card_link']); ?>">
-                                        <img class="coaching-item_thumb-image" src="<?php echo esc_url($card['card_image']) ?>" alt="Images not found">
+                                        <?php $supporting_coaching_img_url = wp_get_attachment_image_url($card['card_image'], 'supporting-coaching-img'); ?>
+                                        <img class="coaching-item_thumb-image" src="<?php echo esc_url($supporting_coaching_img_url) ?>" alt="supporting_coaching_img">
                                     </a>
                                 </div>
-                                <?php endif; ?>  
                                 <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
                                 <div class="coaching__item-media-img-title">
                                     <?php if ($card['card_title'] || $card['card_text'] ) : ?>
@@ -94,7 +93,7 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                 <?php endif; ?>
                             </div>
                         </div>
-                    <?php
+                        <?php endif;
                     endforeach;
                 ?>
                 </div>

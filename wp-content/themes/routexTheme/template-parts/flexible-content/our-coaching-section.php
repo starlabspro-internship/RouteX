@@ -76,26 +76,25 @@ if ($background_image || $small_title || $title || has_non_empty_cards($cards) |
                 <?php if (has_non_empty_cards($social_media_cards)): ?>
                     <div class="col-lg-4 col-md-5 col-12 align-items-center justify-content-center flex-column">
                         <?php foreach ($social_media_cards as $social_card): ?>
-                            <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($social_card['card_background_image']); ?>'); background-size: cover; background-position: center;">
+                            <?php $our_coaching_img_url = wp_get_attachment_image_url($social_card['card_background_image'], 'our-coaching-img'); ?>
+                            <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($our_coaching_img_url); ?>'); background-size: cover; background-position: center;">
                                 <div class="overlay-content text-center social-media-links-div">
                                     <?php if (!empty($social_card['links'])): ?>
                                         <?php $links = $social_card['links']; ?>
                                         <?php foreach (['twitter', 'facebook', 'instagram', 'linkedin'] as $platform): ?>
                                             <?php if (!empty($links[$platform])): ?>
                                                 <a style="text-decoration: none;" href="<?php echo esc_url($links[$platform]['url']); ?>" class="social-link" aria-label="<?php echo ucfirst($platform); ?> link">
-        <?php
-        $svg_icons = [
-            'twitter' => file_get_contents(get_template_directory() . '/assets/icons/x.svg'),
-            'facebook' => file_get_contents(get_template_directory() . '/assets/icons/facebook.svg'),
-            'instagram' => file_get_contents(get_template_directory() . '/assets/icons/instagram.svg'),
-            'linkedin' => file_get_contents(get_template_directory() . '/assets/icons/linkedin.svg'),
-        ];
+                                                    <?php
+                                                    $svg_icons = [
+                                                        'twitter' => file_get_contents(get_template_directory() . '/assets/icons/x.svg'),
+                                                        'facebook' => file_get_contents(get_template_directory() . '/assets/icons/facebook.svg'),
+                                                        'instagram' => file_get_contents(get_template_directory() . '/assets/icons/instagram.svg'),
+                                                        'linkedin' => file_get_contents(get_template_directory() . '/assets/icons/linkedin.svg'),
+                                                    ];
 
-        
-        echo str_replace('<svg', '<svg class="svg-link-icon"', $svg_icons[$platform]);
-        ?>
-    </a>
-
+                                                    echo str_replace('<svg', '<svg class="svg-link-icon"', $svg_icons[$platform]);
+                                                    ?>
+                                                </a>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     <?php endif; ?>

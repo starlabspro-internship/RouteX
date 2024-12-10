@@ -13,7 +13,7 @@ if (have_rows('logos')) :
     while (have_rows('logos')) : the_row();
         $logo_image = get_sub_field('logos_image');
         if ($logo_image) {
-            $logos[] = esc_url($logo_image);
+            $logos[] = $logo_image;
         }
     endwhile;
 endif;
@@ -25,7 +25,8 @@ if (has_non_empty_logos($logos)) :
             <?php $logos_to_display = array_merge($logos, $logos);
                 foreach ($logos_to_display as $logo_image): ?>
                 <div class="swiper-slide client-carousel-container-item">
-                    <img src="<?php echo $logo_image; ?>" 
+                    <?php $sponsors_img_url = wp_get_attachment_image_url($logo_image, 'sponsors-img'); ?>
+                    <img src="<?php echo esc_url($sponsors_img_url); ?>" 
                         alt="Client Logo" 
                         class="client-img">
                 </div>

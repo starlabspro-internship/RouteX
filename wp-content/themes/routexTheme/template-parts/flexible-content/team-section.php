@@ -28,6 +28,7 @@ if (has_team_content()) :
         <?php while (have_rows('team_members')) : the_row(); ?>
         <?php
         $profile_image = get_sub_field('profile_image');
+        $team_member_img_url = wp_get_attachment_image_url($profile_image, 'team-member-img');
         $name = get_sub_field('name');
         $position = get_sub_field('position');
         $team_member_id = uniqid('team_member_'); 
@@ -36,8 +37,7 @@ if (has_team_content()) :
         <div class="col-md-6 col-lg-4">
             <div class="team-member">
             <?php if ($profile_image) : ?>
-            <img src="<?php echo esc_url($profile_image['url']); ?>" alt="<?php echo esc_attr($name); ?>"
-                class="team-member-image">
+            <img src="<?php echo esc_url($team_member_img_url); ?>" alt="<?php echo esc_attr($name); ?>" class="team-member-image">
             <?php endif; ?>
 
             <div class="member-info-wrapper">

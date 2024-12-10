@@ -3,12 +3,15 @@
 <?php 
 $footer_top_section = get_field('footer_top_section', 'options');
 $left_support_message = $footer_top_section['left_support_message'] ?? null;  
-$left_support_img = $footer_top_section['left_support_img'] ?? null;  
+$left_support_img = $footer_top_section['left_support_img'] ?? null;
+$left_support_img_url = wp_get_attachment_image_url($left_support_img, 'footer-top-icon');
 $right_support_message = $footer_top_section['right_support_message'] ?? null;  
 $right_support_img = $footer_top_section['right_support_img'] ?? null; 
+$right_support_img_url = wp_get_attachment_image_url($right_support_img, 'footer-top-icon');
 
 $footer_routex = get_field('footer_routex', 'options');
 $footer_logo_image = $footer_routex['footer_logo_image'] ?? null;  
+$footer_logo_image_url = wp_get_attachment_image_url($footer_logo_image, 'footer-tlogo');
 $footer_logo_text = $footer_routex['footer_logo_text'] ?? null; 
 $footer_description = $footer_routex['footer_description'] ?? null; 
 $footer_social_links = $footer_routex['footer_social_links'] ?? null; 
@@ -44,7 +47,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                 <?php if ($left_support_img) : ?>
                 <div>
                     <div class="footer-left-svg">
-                        <img src="<?php echo esc_url($left_support_img); ?>" alt="left_support_img">
+                        <img src="<?php echo esc_url($left_support_img_url); ?>" alt="left_support_img">
                     </div>
                 </div>
                 <?php endif; ?>
@@ -61,7 +64,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                 <?php if ($right_support_img) : ?>
                 <div>
                     <div class="footer-right-svg">
-                        <img src="<?php echo esc_url($right_support_img); ?>" alt="right_support_img">
+                        <img src="<?php echo esc_url($right_support_img_url); ?>" alt="right_support_img">
                     </div>
                 </div>
                 <?php endif; ?>
@@ -81,8 +84,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                     <?php if ($footer_logo_image || $footer_logo_text) : ?>
                     <div class="footer__logo-container">
                         <?php if ($footer_logo_image) : ?>
-                        <img src="<?php echo esc_url($footer_logo_image); ?>" alt="RouteX Logo"
-                            class="footer__logo-icon">
+                        <img src="<?php echo esc_url($footer_logo_image_url); ?>" alt="RouteX Logo" class="footer__logo-icon">
                         <?php endif; ?>
                         <?php if ($footer_logo_text) : ?>
                         <p class="footer-logo-text"><?php echo esc_html($footer_logo_text); ?></p>

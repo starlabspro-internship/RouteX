@@ -426,7 +426,6 @@ add_filter('wpcf7_form_elements', function ($form) {
     return $form;
 });
 
-
 function contact_form() {
     $content = get_the_content(); 
     
@@ -465,6 +464,34 @@ function register_countries_post_type() {
 add_action('init', 'register_countries_post_type');
 
 add_image_size('blog-large', 850, 416, true);
+add_image_size('blog-small', 80, 80, true);
+add_image_size('hero-img', 525, 700, true);
+add_image_size('cards-img', 45, 45, true);
+add_image_size('why-choose-us-left-img', 267, 357, true);
+add_image_size('why-choose-us-right-img', 282, 464, true);
+add_image_size('why-choose-us-icon', 30, 30, true);
+add_image_size('phone-icon-img', 16, 16, true);
+add_image_size('our-countries-large-img', 410, 422, true);
+add_image_size('our-countries-small-img', 60, 60, true);
+add_image_size('visa-category-img', 274, 250, true);
+add_image_size('visa-icon', 45, 45, true);
+add_image_size('available-countries-img', 70, 70, true);
+add_image_size('cta-left-img', 410, 592, true);
+add_image_size('cta-right-img', 268, 358, true);
+add_image_size('supporting-coaching-img', 410, 324, true);
+add_image_size('our-coaching-img', 410, 449, true);
+add_image_size('testimonail-large-img', 520, 621, true);
+add_image_size('testimonail-small-img', 70, 70, true);
+add_image_size('recent-blogs-img', 410, 336, true);
+add_image_size('contact-form-img', 600, 672, true);
+add_image_size('team-member-img', 410, 370, true);
+add_image_size('success-story-small-img', 70, 70, true);
+add_image_size('success-story-large-img', 418, 482, true);
+add_image_size('sponsors-img', 252, 48, true);
+add_image_size('line-img', 252, 48, true); //check the id in acf
+add_image_size('footer-top-icon', 40, 40, true); 
+add_image_size('footer-logo', 40, 33, true);
+add_image_size('header-logo', 40, 33, true); 
 
 function register_stories_post_type() {
     $labels = array(
@@ -503,8 +530,6 @@ function register_stories_post_type() {
 }
 add_action('init', 'register_stories_post_type');
 
-
-
 function enqueue_google_maps_api() {
     // Enqueue Google Maps API
     wp_enqueue_script(
@@ -525,10 +550,6 @@ function enqueue_google_maps_api() {
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_maps_api');
-
-
-
-
 
 function custom_styles() {
     $image_2_url = esc_url(get_template_directory_uri() . '/assets/img/coaching-bg-img.png');

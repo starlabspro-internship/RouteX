@@ -72,12 +72,15 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                         <div class="countries-swiper-slide-single-inner">
                                             <?php if ($card['card_small_image']) : ?>
                                             <div class="countries-swiper-slide-single-small-img">
-                                                <img src="<?php echo esc_url($card['card_small_image']); ?>" alt="">
+                                                <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
+                                                <img src="<?php echo esc_url($card_small_image_url); ?>" alt="card_small_image">
                                             </div>
                                             <?php endif; ?>
+
                                             <?php if ($card['card_background']) : ?>
                                             <div class="countries-swiper-slide-single-img" >
-                                                <img src="<?php echo esc_url($card['card_background']); ?>" alt="">
+                                                <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
+                                                <img src="<?php echo esc_url($card_background_url); ?>" alt="card_background">
                                             </div>
                                             <?php endif; ?>
                                             
@@ -119,12 +122,14 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                             <div class="countries-swiper-slide-single-inner-zoomed">
                                 <?php if ($card['card_small_image']) : ?>
                                 <div class="countries-swiper-slide-single-small-img">
-                                    <img src="<?php echo esc_url($card['card_small_image']); ?>" alt="Card Image">
+                                    <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
+                                    <img src="<?php echo esc_url($card_small_image_url); ?>" alt="card_small_image">
                                 </div>
                                 <?php endif; ?>
                                 <?php if ($card['card_background']) : ?>
                                 <div class="countries-swiper-slide-single-img">
-                                    <img src="<?php echo esc_url($card['card_background']); ?>" alt="">
+                                    <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
+                                    <img src="<?php echo esc_url($card_background_url); ?>" alt="card_background">
                                 </div>
                                 <?php endif; ?>
                                 <div class="bg-overlay"></div>
