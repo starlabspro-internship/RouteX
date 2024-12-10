@@ -4,6 +4,8 @@ $button_first_sector = get_sub_field('button_first_sector');
 $videos_button = get_sub_field('videos_button');
 $image_first_sector = get_sub_field('image_first_sector');
 $image_url = wp_get_attachment_image_url($image_first_sector, 'hero-img');
+$attachment_meta = wp_get_attachment_metadata($image_first_sector);
+var_dump($attachment_meta);
 
 if ($text_area_first_sector || $button_first_sector || $videos_button || $image_first_sector) : ?>
     <section class="hero-section">
