@@ -83,7 +83,6 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
 $table_prefix = 'wp_';
-define( 'WP_MEMORY_LIMIT', '512M' );
 /**
  * For developers: WordPress debugging mode.
  *
