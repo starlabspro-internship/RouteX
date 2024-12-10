@@ -41,7 +41,12 @@ define( 'DB_COLLATE', '' );
 define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
 define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
 
-define('GITHUB_DEPLOYMENT_SLUG', '110a80c');
+define('GITHUB_DEPLOYMENT_SLUG', '4650c86');
+
+
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -78,7 +83,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
 $table_prefix = 'wp_';
-
+define( 'WP_MEMORY_LIMIT', '512M' );
 /**
  * For developers: WordPress debugging mode.
  *
@@ -91,7 +96,6 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
