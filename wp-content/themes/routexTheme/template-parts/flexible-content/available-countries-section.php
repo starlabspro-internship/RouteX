@@ -13,7 +13,7 @@ if ($countries_query->have_posts()) :
     while ($countries_query->have_posts()) : $countries_query->the_post();
         $countries[] = [
             'title' => get_the_title(),
-            'icon'  => get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'),
+            'icon'  => get_the_post_thumbnail_url(get_the_ID(), 'available-countries-img'),
             'link'  => get_permalink(),
             'bullet_points' => get_field('bullet_point_texts'),
         ];
@@ -62,7 +62,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                     <a href="<?php echo esc_url($country['link']); ?>" class="available-countries-item">
                         <?php if ($country['icon']) : ?>
                         <div class="available-countries-item-icon">
-                            <img src="<?php echo esc_url($country['icon']); ?>" alt="Country icon">
+                            <img src="<?php echo esc_url($country['icon']); ?>" alt="available-countries-img">
                         </div>
                         <?php endif; ?>
                         <div class="available-countries-item-content">
@@ -74,7 +74,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                                     <?php foreach ($country['bullet_points'] as $bullet_point) : ?>
                                         <?php if (!empty($bullet_point['bullet_point_text'])) : ?>
                                             <li>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/green-checkmark.svg" alt=""><?php echo esc_html($bullet_point['bullet_point_text']); ?>
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/green-checkmark.svg" alt="green-checkmark"><?php echo esc_html($bullet_point['bullet_point_text']); ?>
                                             </li>
                                         <?php endif; ?>
                                     <?php endforeach; ?>

@@ -20,10 +20,8 @@ if (have_rows('card_repeater')) :
                         <div class="card-body">
                             <div class="circle cardic">
                                 <?php if ($card['card_icon']) : ?>
-                                    <?php 
-                                    $icon_url = is_array($card['card_icon']) ? $card['card_icon']['url'] : $card['card_icon'];
-                                    ?>
-                                    <img src="<?php echo esc_url($icon_url); ?>" alt="Icon" class="card-icon">
+                                    <?php $cards_img_url = wp_get_attachment_image_url($card['card_icon'], 'cards-img'); ?>
+                                    <img src="<?php echo esc_url($cards_img_url); ?>" alt="Icon" class="card-icon">
                                 <?php endif; ?>
                             </div>
                             <?php if ($card['card_title']) : ?>

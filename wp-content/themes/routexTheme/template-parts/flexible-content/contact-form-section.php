@@ -39,7 +39,8 @@ if (has_content_in_layout()) :
             ?>
             <div class="col-lg-6">
                 <div class="contact-form-section-image">
-                    <img src="<?php echo esc_url($image); ?>" alt="Contact Form Image">
+                    <?php $contact_form_img_url = wp_get_attachment_image_url($image, 'contact-form-img'); ?>
+                    <img src="<?php echo esc_url($contact_form_img_url); ?>" alt="Contact Form Image">
                 </div>
             </div>
         <?php

@@ -12,59 +12,55 @@ get_header();
 
 <main id="primary" class="site-main">
     <?php if ( have_posts() ) : ?>
-
         <header class="page-header">
             <?php echo top_banner(); ?>
-        </header><!-- .page-header -->
-		<div class="container">
-        <div class="row">
-            <!-- Main Content (col-md-8) -->
-            <div class="col-12 col-md-8">
-                <?php
-                /* Start the Loop */
-                while ( have_posts() ) :
-                    the_post();
-                    get_template_part( 'template-parts/content', get_post_type() );
-                endwhile;
+        </header>
+		<div class="archive-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <?php
+                        while ( have_posts() ) :
+                            the_post();
+                            get_template_part( 'template-parts/content', get_post_type() );
+                        endwhile;
 
-                global $wp_query;
-                $big = 999999999;
+                        global $wp_query;
+                        $big = 999999999;
 
-                $pagination_links = paginate_links( array(
-                    'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                    'format'  => '?paged=%#%',
-                    'current' => max( 1, get_query_var( 'paged' ) ),
-                    'total'   => $wp_query->max_num_pages,
-                    'type'    => 'array',
-                    'prev_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/left-arrow-green-noTail.svg" alt="left-arrow-green-noTale" />',
-                    'next_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/right-arrow-green-noTail.svg" alt="right-arrow-green-noTale" />',
-                ) );
+                        $pagination_links = paginate_links( array(
+                            'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'format'  => '?paged=%#%',
+                            'current' => max( 1, get_query_var( 'paged' ) ),
+                            'total'   => $wp_query->max_num_pages,
+                            'type'    => 'array',
+                            'prev_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/left-arrow-green-noTail.svg" alt="left-arrow-green-noTale" />',
+                            'next_text' => '<img src="' . get_template_directory_uri() . '/assets/icons/right-arrow-green-noTail.svg" alt="right-arrow-green-noTale" />',
+                        ) );
 
-                if ( !empty( $pagination_links ) ) :
-                    echo '<div class="custom-pagination">';
-                    echo '<div class="custom-pagination-container">';
-                    foreach ( $pagination_links as $link ) :
-                        echo '<div class="page-item">' . $link . '</div>';
-                    endforeach;
-                    echo '</div>';
-                    echo '</div>';
-                else :
-                    get_template_part( 'template-parts/content', 'none' );
-                endif;
-                ?>
-            </div><!-- .col-md-8 -->
-
-            <?php get_template_part('blog-sidebar'); ?>
-            
-        </div><!-- .row -->
-						</div>
-
+                        if ( !empty( $pagination_links ) ) :
+                            echo '<div class="custom-pagination">';
+                            echo '<div class="custom-pagination-container">';
+                            foreach ( $pagination_links as $link ) :
+                                echo '<div class="page-item">' . $link . '</div>';
+                            endforeach;
+                            echo '</div>';
+                            echo '</div>';
+                        else :
+                            get_template_part( 'template-parts/content', 'none' );
+                        endif;
+                        ?>
+                    </div>
+                    <?php get_template_part('blog-sidebar'); ?>
+                </div>
+            </div>
+        </div>
     <?php else : ?>
 
         <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
     <?php endif; ?>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

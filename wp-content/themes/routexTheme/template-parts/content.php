@@ -30,9 +30,11 @@
 				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo $date_icon; ?>" alt="date-icon" /><?php echo $date; ?></p>
 			</div>
 		<?php endif; 
-
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		?>
+		if ( !is_singular() ) : 
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		else :
+			the_title( '<h2 class="entry-title">', '</h2>' );
+		endif;?>
 	</header>
 
 	<div class="entry-content">

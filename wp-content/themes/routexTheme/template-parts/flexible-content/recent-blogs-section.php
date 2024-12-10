@@ -62,7 +62,8 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                 <?php if ($card['card_background']) : ?>
                                 <div class="recent-blog-item-media">
                                     <a href="<?php echo esc_url($card['card_link']) ?>">
-                                        <img src="<?php echo esc_url($card['card_background']) ?>" alt="images not found">
+                                        <?php $recent_blogs_img_url = wp_get_attachment_image_url($card['card_background'], 'recent-blogs-img'); ?>
+                                        <img src="<?php echo esc_url($recent_blogs_img_url) ?>" alt="images not found">
                                     </a>
                                 </div>
                                 <?php endif; ?>

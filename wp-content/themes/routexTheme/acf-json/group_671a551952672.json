@@ -72,7 +72,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -97,7 +97,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -140,7 +140,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -644,33 +644,6 @@
                     "parent_repeater": "field_672ba335b4590"
                 }
             ]
-        },
-        {
-            "key": "field_6756f5da949ab",
-            "label": "Footer Background Image",
-            "name": "footer_background_image",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "World Map": "World Map",
-                "Vector Lines": "Vector Lines",
-                "None": "None"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -691,5 +664,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733758174
+    "modified": 1733847831
 }

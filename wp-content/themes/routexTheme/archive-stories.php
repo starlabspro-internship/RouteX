@@ -26,6 +26,7 @@ get_header();
                 $counter++;
 
                 $person_story_icon = get_field('person_story_icon'); 
+                $success_story_small_img_url = wp_get_attachment_image_url($person_story_icon, 'success-story-small-img');
                 $person_story_name = get_field('person_story_name');
                 $person_story_position = get_field('person_story_position');
         ?>
@@ -42,16 +43,16 @@ get_header();
                 <div class="story-card-contaiener">
                     <a href="<?php the_permalink(); ?>" class="story-card-link">
                         <div class="story-card card-<?php echo $card_class; ?>">
+                            <div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation">
 
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/quotation-green.svg" alt="Quotation">
-
-                        <p class="story-text">
-                            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                        </p>
-                        
+                                <p class="story-text">
+                                    <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                </p>
+                            </div>
 
                         <div class="story-card-details">
-                            <img class="story-card-icon" src="<?php echo esc_url($person_story_icon); ?>" alt="Person Icon" class="story-icon">
+                            <img class="story-card-icon" src="<?php echo esc_url($success_story_small_img_url); ?>" alt="Person Icon" class="story-icon">
                             <div class="story-card-person">
                                 <p class="story-card-person-name"><strong><?php echo esc_html($person_story_name); ?></strong></p>
                                 <p class="story-card-person-position"><?php echo esc_html($person_story_position); ?></p>

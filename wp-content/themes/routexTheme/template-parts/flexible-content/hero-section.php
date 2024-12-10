@@ -3,6 +3,7 @@ $text_area_first_sector = get_sub_field('text_area_first_sector');
 $button_first_sector = get_sub_field('button_first_sector');
 $videos_button = get_sub_field('videos_button');
 $image_first_sector = get_sub_field('image_first_sector');
+$image_url = wp_get_attachment_image_url($image_first_sector, 'hero-img');
 
 if ($text_area_first_sector || $button_first_sector || $videos_button || $image_first_sector) : ?>
     <section class="hero-section">
@@ -40,7 +41,7 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                 <div class="col-md-6" id="banner-right-content">
                     <div class="gray-photo">
                         <?php if ($image_first_sector) : ?>
-                            <img src="<?php echo esc_url($image_first_sector); ?>" alt="Photo">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="Photo">
                         <?php endif; ?>
                     </div>
                 </div>

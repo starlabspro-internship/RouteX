@@ -1,5 +1,5 @@
 <?php
-$testimonial_left_image = esc_url(get_sub_field('testimonial_left_image'));
+$testimonial_left_image = get_sub_field('testimonial_left_image');
 $testimonial_cards = [];
 $card_count = 0;
 
@@ -8,7 +8,7 @@ if (have_rows('testimonial_card')) {
         $card_count++;
         $testimonial_cards[] = [
             'text' => esc_html(get_sub_field('text')),
-            'icon' => esc_url(get_sub_field('icon')),
+            'icon' => get_sub_field('icon'),
             'title' => esc_attr(get_sub_field('title')),
             'name' => esc_html(get_sub_field('name')),
             'position' => esc_html(get_sub_field('position')),
@@ -24,7 +24,8 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
             <?php if ($testimonial_left_image): ?>
             <div class="col-lg-5">
                 <div class="testimonial-left">
-                    <img src="<?php echo esc_url($testimonial_left_image); ?>"/>
+                    <?php $testimonail_large_img_url = wp_get_attachment_image_url($testimonial_left_image, 'testimonail-large-img'); ?>
+                    <img src="<?php echo esc_url($testimonail_large_img_url); ?>"/>
                 </div>
             </div>
             <?php endif; ?>
@@ -43,7 +44,8 @@ if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
                                     <?php if ($card['icon'] || $card['name'] || $card['position']): ?>
                                         <div class="testimonial-icon">
                                             <?php if ($card['icon']): ?>
-                                            <img src="<?php echo $card['icon']; ?>" alt="<?php echo $card['title']; ?>" class="img-fluid">
+                                                <?php $testimonail_small_img_url = wp_get_attachment_image_url($card['icon'], 'testimonail-small-img'); ?>
+                                                <img src="<?php echo $testimonail_small_img_url; ?>" alt="<?php echo $card['title']; ?>" class="img-fluid">
                                             <?php endif; ?>
                                             <?php if ($card['name'] || $card['position']): ?>
                                             <div class="author-div">
