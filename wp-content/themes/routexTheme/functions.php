@@ -210,7 +210,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function add_google_fonts() {
     wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap', false );
 }
-add_action( 'wp_enqueue_scripts', 'add_google_fonts', 1);
+add_action( 'wp_enqueue_scripts', 'add_google_fonts', 2);
 
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 function my_acf_json_save_point($path) {
@@ -621,6 +621,7 @@ add_action('wp_footer', 'set_mailchimp_img_src');
 
 add_action('wp_head', function() {
     if (is_front_page()) {
+        echo '<!-- Debug: This is the front page -->';
         echo '<link rel="preload" as="image" href="https://routex.devops99.pro/wp-content/uploads/2024/11/kevin-mueller-e3fNaRz31Rs-unsplash-scaled.jpg" >';
     }
-});
+},1);
