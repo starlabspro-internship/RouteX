@@ -42,7 +42,8 @@ define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Addr
 define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
 
 define('GITHUB_DEPLOYMENT_SLUG', '5c03de6');
-
+define('WP_MEMORY_LIMIT', '512M');
+define('WP_MAX_MEMORY_LIMIT', '1024M');
 
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
