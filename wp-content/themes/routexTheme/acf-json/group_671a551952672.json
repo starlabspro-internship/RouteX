@@ -644,6 +644,33 @@
                     "parent_repeater": "field_672ba335b4590"
                 }
             ]
+        },
+        {
+            "key": "field_6756f5da949ab",
+            "label": "Footer Background Image",
+            "name": "footer_background_image",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "World Map": "World Map",
+                "Vector Lines": "Vector Lines",
+                "None": "None"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
