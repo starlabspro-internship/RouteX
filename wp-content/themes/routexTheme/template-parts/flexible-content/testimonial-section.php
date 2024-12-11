@@ -1,5 +1,5 @@
 <?php
-$testimonial_left_image = get_sub_field('testimonial_left_image');
+$testimonial_left_image = get_sub_field('primary_image');
 $testimonial_cards = [];
 $card_count = 0;
 

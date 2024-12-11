@@ -1,5 +1,5 @@
 <?php
-$left_image = get_sub_field('left_image');
+$left_image = get_sub_field('primary_image');
 $left_image_url = wp_get_attachment_image_url($left_image, 'cta-left-img');
 $icon = get_sub_field('icon');
 $icon_url = wp_get_attachment_image_url($icon, 'visa-icon');

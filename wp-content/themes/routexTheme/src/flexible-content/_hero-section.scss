@@ -39,8 +39,6 @@
     &.left-tower {
       top: 160px;
       left: 250px;
-      transform: scaleX(-1);
-      opacity: 0.5;
     }
 
     &.right-tower {
@@ -213,15 +211,13 @@
 
       &.left-tower {
         display: block;
-        top: 230px;
+        top: 250px;
         left: -50px;
-        transform: scaleX(-1);
-        opacity: 0.2;
       }
 
       &.right-tower {
-        top: 340px;
-        left: 1230px;
+        top: 280px;
+        left: 1130px;
         right: 0%;
         opacity: 1;
         height: 370px;
@@ -235,7 +231,7 @@
       position: absolute;
       z-index: 1;
       top: -360px;
-      left: 1100px;
+      left: 1050px;
       background-color: #91ff00;
       border-radius: 50%;
       opacity: 0.6;

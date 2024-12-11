@@ -77,8 +77,8 @@
                         },
                         {
                             "key": "field_671798c1e32af",
-                            "label": "Image - First Sector",
-                            "name": "image_first_sector",
+                            "label": "Primary Image",
+                            "name": "primary_image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -716,8 +716,8 @@
                     "sub_fields": [
                         {
                             "key": "field_6717ba416e142",
-                            "label": "Testimonial left image",
-                            "name": "testimonial_left_image",
+                            "label": "Primary Image",
+                            "name": "primary_image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -1290,8 +1290,8 @@
                     "sub_fields": [
                         {
                             "key": "field_6724f26b1d82e",
-                            "label": "Left Image",
-                            "name": "left_image",
+                            "label": "Primary Image",
+                            "name": "primary_image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "",
@@ -2620,5 +2620,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733847497
+    "modified": 1733945915
 }
