@@ -618,3 +618,9 @@ function set_mailchimp_img_src() {
     ";
 }
 add_action('wp_footer', 'set_mailchimp_img_src');
+
+add_action('wp_head', function() {
+    if (is_page('home')) {
+        echo '<link rel="preload" as="image" href="https://routex.devops99.pro/wp-content/uploads/2024/11/kevin-mueller-e3fNaRz31Rs-unsplash-scaled.jpg" >';
+    }
+});
