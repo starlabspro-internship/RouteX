@@ -2202,25 +2202,22 @@ body .thumbnail-img {
   align-items: center;
 }
 .hero-section .btn-wrapper .btn-transparent {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  display: inline-flex;
   align-items: center;
-  border-radius: 50px;
-  transition: background-color 0.3s, color 0.3s;
+  gap: 10px;
+  padding: 15px 30px;
+  color: var(--primary-color);
   text-decoration: none;
-  font-size: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 2px;
+  transition: all 0.3s ease;
 }
-.hero-section .btn-wrapper .btn-transparent:hover {
-  background-color: var(--light-color);
-  color: var(--secondary-color);
+.hero-section .btn-wrapper .btn-transparent .arrow-icon {
+  width: 16px;
+  height: auto;
+  transition: content 0.3s ease;
+  margin-top: 5px;
+}
+.hero-section .btn-wrapper .btn-transparent:hover .arrow-icon {
+  content: var(--hover-icon);
 }
 .hero-section .btn-wrapper .banner-video-button {
   width: 50px;
@@ -2545,7 +2542,7 @@ body .thumbnail-img {
   padding: 15px 5px;
   border: 1px solid var(--light-color);
   border-radius: 25px;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
   width: 100%;
   height: auto;
   margin-bottom: 30px;
@@ -2601,7 +2598,7 @@ body .thumbnail-img {
   display: inline-block;
   overflow: hidden;
   border-radius: 19px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 .svg-link:hover {
   background-color: var(--accent-color);
@@ -3098,17 +3095,8 @@ body .thumbnail-img {
   border: none;
   border-radius: 20px;
   margin-left: 5px;
-}
-.coaching__item-media-img-title-button:hover {
-  cursor: pointer;
-}
-.coaching__item-media-img-title-button:hover a.default-img {
-  display: none;
-}
-.coaching__item-media-img-title-button:hover a.hover-img {
-  display: flex;
-  border: 1px solid var(--accent-color);
-  background-color: var(--accent-color);
+  position: relative;
+  transition: all ease 0.3s;
 }
 .coaching__item-media-img-title-button a {
   border: 1px solid var(--light-color);
@@ -3118,9 +3106,33 @@ body .thumbnail-img {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  text-decoration: none;
+  transition: all ease 0.3s;
 }
-.coaching__item-media-img-title-button a.hover-img {
-  display: none;
+.coaching__item-media-img-title-button .arrow-icon {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.coaching__item-media-img-title-button .arrow-icon.default-img {
+  opacity: 1;
+  visibility: visible;
+}
+.coaching__item-media-img-title-button .arrow-icon.hover-img {
+  opacity: 0;
+  visibility: hidden;
+}
+.coaching__item-media-img-title-button a:hover {
+  background-color: var(--secondary-color);
+  transition: all ease 0.3s;
+}
+.coaching__item-media-img-title-button a:hover .arrow-icon.default-img {
+  opacity: 0;
+  visibility: hidden;
+}
+.coaching__item-media-img-title-button a:hover .arrow-icon.hover-img {
+  opacity: 1;
+  visibility: visible;
 }
 
 .coaching-item_thumb {
@@ -4377,7 +4389,7 @@ body .thumbnail-img {
   padding: 15px 30px;
   border: 1px solid var(--accent-color);
   border-radius: 30px;
-  transition: 0.3s;
+  transition: all ease 0.3s;
   text-decoration: none;
 }
 .choose-us-button-btn a:hover {
@@ -4400,7 +4412,7 @@ body .thumbnail-img {
   gap: 10px;
   padding: 15px 30px;
   border-radius: 30px;
-  transition: 0.3s;
+  transition: all ease 0.3s;
   text-decoration: none;
 }
 

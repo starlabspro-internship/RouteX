@@ -80,14 +80,18 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                     </div>
                                     <?php endif; ?> 
                                     <?php if ($card['card_link']) : ?>
-                                    <div class="coaching__item-media-img-title-button">
-                                        <a class="hover-img" href="<?php echo esc_url($card['card_link']); ?>">
-                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow-white.svg'); ?>" alt="button-upright-arrow-white">
-                                        </a>
-                                        <a class="default-img" href="<?php echo esc_url($card['card_link']); ?>">
-                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/button-upright-arrow.svg'); ?>" alt="button-upright-arrow">
-                                        </a>
-                                    </div>
+                                        <div class="coaching__item-media-img-title-button">
+    <a href="<?php echo esc_url($button_first_sector); ?>" 
+       class="btn btn-transparent">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow.svg" 
+             alt="Right Arrow Icon" 
+             class="arrow-icon default-img">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow-white.svg" 
+             alt="Right Arrow Icon (Hover)" 
+             class="arrow-icon hover-img">
+    </a>
+</div>
+
                                     <?php endif; ?> 
                                 </div>
                                 <?php endif; ?>

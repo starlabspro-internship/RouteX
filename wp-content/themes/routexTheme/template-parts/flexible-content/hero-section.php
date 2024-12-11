@@ -26,9 +26,12 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $image_
                         <?php endif; ?>
                         <div class="btn-wrapper">
                             <?php if ($button_first_sector) : ?>
-                                <a href="<?php echo esc_url($button_first_sector); ?>" class="btn btn-transparent">
+                                <a href="<?php echo esc_url($button_first_sector); ?>" 
+                                class="btn btn-transparent" 
+                                style="--default-icon: url('<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg'); 
+                                        --hover-icon: url('<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg');">
                                     Read More&nbsp;
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="Right Arrow Icon">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="Right Arrow Icon" class="arrow-icon">
                                 </a>
                             <?php endif; ?>
                             <?php if ($videos_button) : ?>

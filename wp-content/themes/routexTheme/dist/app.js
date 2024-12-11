@@ -22,6 +22,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./src/_header.scss":
+/*!**************************!*\
+  !*** ./src/_header.scss ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -111,6 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/dist/app": 0,
+/******/ 			"dist/header": 0,
 /******/ 			"dist/app": 0
 /******/ 		};
 /******/ 		
@@ -161,8 +175,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["dist/app"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/app"], () => (__webpack_require__("./src/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/_header.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

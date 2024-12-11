@@ -119,27 +119,28 @@
     align-items: center;
 
     .btn-transparent {
-      background-color: transparent;
-      color: var(--primary-color);
-      border: 1px solid var(--primary-color);
-      padding-left: 12px;
-      padding-right: 12px;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      display: inline-flex;
       align-items: center;
-      border-radius: 50px;
-      transition: background-color 0.3s, color 0.3s;
+      gap: 10px;
+      padding: 15px 30px;
+      color: var(--primary-color);
       text-decoration: none;
-      font-size: 10px;
-      display: flex;
-      flex-direction: row;
-      gap: 2px;
-
-      &:hover {
-        background-color: var(--light-color);
-        color: var(--secondary-color);
+      transition: all 0.3s ease;
+    
+      .arrow-icon {
+        width: 16px;
+        height: auto;
+        transition: content 0.3s ease;
+        margin-top: 5px;
+      }
+    
+      &:hover .arrow-icon {
+        content: var(--hover-icon);
       }
     }
+    
+    
+  
 
     .banner-video-button {
       width: 50px;

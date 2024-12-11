@@ -34,7 +34,7 @@
     padding: 15px 5px;
     border: 1px solid var(--light-color);
     border-radius: 25px;
-    transition: transform 0.2s;
+    transition: transform 0.3s;
     width: 100%;
     height: auto;
     margin-bottom: 30px;
@@ -85,7 +85,8 @@
 	display: inline-block;
 	overflow: hidden;
 	border-radius: 19px;
-	transition: background-color 0.2s ease;
+	transition: background-color 0.3s ease;
+    
 	&:hover {
 		background-color: var(--accent-color);
 		rect {
