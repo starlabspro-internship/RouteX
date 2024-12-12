@@ -475,7 +475,9 @@ function register_countries_post_type() {
     register_post_type('countries', $args);
 }
 add_action('init', 'register_countries_post_type');
-
+@ini_set( 'upload_max_filesize' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 add_image_size('blog-large', 850, 416, true);
 add_image_size('blog-small', 80, 80, true);
 add_image_size('hero-img', 525, 700, true);
