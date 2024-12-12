@@ -180,12 +180,11 @@ if (has_content_in_layout() || $phone_number) :
                 <?php if ($link_url || $phone_number) : ?>
                 <div class="choose-us-button">
                     <?php if ($link_url) : ?>
-                    <div class="choose-us-button-btn">
-                        <a href="<?php echo esc_url($link_url); ?>" class="default-img">
-                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="">
-                        </a>
-                        <a href="<?php echo esc_url($link_url); ?>" class="hover-img">
-                            Read More <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="">
+                        <div class="choose-us-button-btn">
+                        <a href="<?php echo esc_url($link_url); ?>" class="cta-button">
+                            Read More
+                            <img class="default-img-choose" src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="Default Arrow">
+                            <img class="hover-img-choose" src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="Hover Arrow">
                         </a>
                     </div>
                     <?php endif; ?>

@@ -1282,10 +1282,12 @@ body .thumbnail-img {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: ease 0.3s all;
 }
 .entry-button button:hover {
   background-color: var(--secondary-color);
   cursor: pointer;
+  transition: ease 0.3s all;
 }
 
 .entry-button-link {
@@ -3282,9 +3284,14 @@ body .thumbnail-img {
   color: var(--base-color);
 }
 .top-right-section .cta-button-container {
-  display: inline;
+  display: flex;
+  align-items: center;
 }
-.top-right-section .cta-button-container a {
+.top-right-section .cta-button-container {
+  display: flex;
+  align-items: center;
+}
+.top-right-section .cta-button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding: 15px 30px;
@@ -3292,28 +3299,38 @@ body .thumbnail-img {
   border-radius: 30px;
   text-decoration: none;
   display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 14px;
   line-height: 30px;
-  font-weight: var(--semibold);
-  transition: 0.3s;
-  gap: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
-.top-right-section .cta-button-container a:hover {
+.top-right-section .cta-button .default-img-cta {
+  display: inline;
+}
+.top-right-section .cta-button .hover-img-cta {
+  display: none;
+}
+.top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   border: 1px solid transparent;
 }
-.top-right-section .cta-button-container a.hover-img {
+.top-right-section .cta-button:hover .default-img-cta {
   display: none;
 }
-.top-right-section .cta-button-container div {
+.top-right-section .cta-button:hover .hover-img-cta {
+  display: inline;
+}
+.top-right-section .cta-button div {
   display: inline-block;
   border-radius: 30px;
 }
-.top-right-section .cta-button-container div:hover a.default-img {
+.top-right-section .cta-button div:hover a.default-img {
   display: none;
 }
-.top-right-section .cta-button-container div:hover a.hover-img {
+.top-right-section .cta-button div:hover a.hover-img {
   font-weight: var(--semibold);
   line-height: 30px;
   font-size: 14px;
@@ -4374,7 +4391,7 @@ body .thumbnail-img {
 .choose-us-button-btn {
   border-radius: 30px;
 }
-.choose-us-button-btn a {
+.choose-us-button-btn .cta-button {
   color: var(--secondary-color);
   font-weight: var(--semibold);
   line-height: 30px;
@@ -4385,31 +4402,27 @@ body .thumbnail-img {
   padding: 15px 30px;
   border: 1px solid var(--accent-color);
   border-radius: 30px;
-  transition: all ease 0.3s;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
-.choose-us-button-btn a:hover {
+.choose-us-button-btn .cta-button .default-img-choose {
+  display: inline;
+  transition: all 0.3s ease;
+}
+.choose-us-button-btn .cta-button .hover-img-choose {
+  display: none;
+  transition: all 0.3s ease;
+}
+.choose-us-button-btn .cta-button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
   border: 1px solid var(--secondary-color);
 }
-.choose-us-button-btn a.hover-img {
+.choose-us-button-btn .cta-button:hover .default-img-choose {
   display: none;
 }
-.choose-us-button-btn:hover a.default-img {
-  display: none;
-}
-.choose-us-button-btn:hover a.hover-img {
-  font-weight: var(--semibold);
-  line-height: 30px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: 30px;
-  transition: all ease 0.3s;
-  text-decoration: none;
+.choose-us-button-btn .cta-button:hover .hover-img-choose {
+  display: inline;
 }
 
 .choose-us-button-text {

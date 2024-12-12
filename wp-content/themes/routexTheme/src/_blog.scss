@@ -72,10 +72,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
+	transition: ease 0.3s all;
 
     &:hover {
       background-color: var(--secondary-color);
       cursor: pointer;
+	  transition: ease 0.3s all;
     }
   }
 }

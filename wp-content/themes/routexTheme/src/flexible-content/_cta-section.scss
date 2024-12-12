@@ -25,32 +25,53 @@
         color: var(--base-color);
     }
 
-    .cta-button-container{
-        display: inline;
-        a {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 15px 30px;
-            border: 1px solid var(--light-color);
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-flex;
-            font-size: 14px;
-            line-height: 30px;
-            font-weight: var(--semibold);
-            transition: 0.3s;
-            gap: 10px;
-
-            &:hover{
-                background-color: var(--accent-color);
-                color: var(--primary-color);
-                border: 1px solid transparent;
-            }
+    .cta-button-container {
+        display: flex;
+        align-items: center;
+    }
     
-            &.hover-img {
-                display: none;
-            }
+    .cta-button-container { 
+        display: flex;
+        align-items: center;
+    }
+    
+    .cta-button {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 15px 30px;
+        border: 1px solid var(--light-color);
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      
+        .default-img-cta {
+          display: inline;
         }
+      
+        .hover-img-cta {
+          display: none;
+        }
+      
+        &:hover {
+          background-color: var(--accent-color);
+          color: var(--primary-color);
+          border: 1px solid transparent;
+      
+          .default-img-cta {
+            display: none;
+          }
+      
+          .hover-img-cta {
+            display: inline;
+          }
+        }
+    
 
         div {
             display: inline-block;
