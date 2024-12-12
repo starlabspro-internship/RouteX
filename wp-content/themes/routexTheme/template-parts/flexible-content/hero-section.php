@@ -13,6 +13,7 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $primar
 <?php var_dump($attachment_meta); ?>
 </pre>
     <section class="hero-section">
+        HELLOOOOOOOOOOO
         <div class="container">
             <div class="decorative-icon left-tower">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/hero-left-tower.svg" alt="hero-left-tower">
