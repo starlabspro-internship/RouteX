@@ -40,14 +40,10 @@ define( 'DB_COLLATE', '' );
 
 define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
 define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
-<<<<<<< HEAD
-=======
 
->>>>>>> 739f10260854bbc678255c6ad29cfc4df62a10c9
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', '739f102');
+define('GITHUB_DEPLOYMENT_SLUG', 'c5e3782');
 define('WP_MEMORY_LIMIT', '512M');
-define('WP_TEMP_DIR', dirname(__FILE__) . '/wp-content/uploads/tmp');
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', false );
