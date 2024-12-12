@@ -619,9 +619,98 @@ function set_mailchimp_img_src() {
 }
 add_action('wp_footer', 'set_mailchimp_img_src');
 
+// add_action('wp_head', function() {
+//     if (is_page()) {
+//         // Start output buffering
+//         ob_start();
+
+//         // Get the content of the page (or you can include the page template here)
+//         include locate_template('page.php');
+
+//         // Get the content of the current page
+//         $content = ob_get_contents(); // Capture the output of the page template
+
+//         // Process the content for the first image inside <main>
+//         if (preg_match('/<main[^>]*>(.*?)<\/main>/is', $content, $main_matches)) {
+//             $main_content = $main_matches[1];
+
+//             // Look for the first image inside <main>
+//             if (preg_match('/<img[^>]+src="([^"]+)"/', $main_content, $image_matches)) {
+//                 $first_image_url = $image_matches[1];
+
+//                 // Preload the first image (this will be output in wp_head)
+//                 echo '<link rel="preload" as="image" href="' . esc_url($first_image_url) . '" />';
+//             }
+//         }
+
+//         // End output buffering without cleaning it to ensure content is rendered properly
+//         ob_end_flush();
+//     }
+// }, 1);
+
+// add_action('wp_head', function() {
+//     if (is_page()) {
+//         global $post;
+        
+//         // Get the content of the page
+//         $content = get_post_field('post_content', $post->ID);
+        
+//         // Extract the <main> tag's content
+//         if (preg_match('/<main[^>]*>(.*?)<\/main>/is', $content, $main_matches)) {
+//             $main_content = $main_matches[1];
+
+//             // Look for the first image inside <main>
+//             if (preg_match('/<img[^>]+src="([^"]+)"/', $main_content, $image_matches)) {
+//                 $first_image_url = $image_matches[1];
+
+//                 // Preload the first image
+//                 echo '<link rel="preload" as="image" href="' . esc_url($first_image_url) . '" />';
+//             }
+//         }
+//     }
+// }, 1);  
+
+// add_action('wp_head', function() {
+//     if (is_page()) {
+//         // Start output buffering to capture the page content
+//         ob_start();
+
+//         // Include the page template, which will render the page's body (like page.php)
+//         include locate_template('page.php');
+
+//         // Get the captured content
+//         $rendered_content = ob_get_clean();
+
+//         // Extract the <main> tag's content
+//         if (preg_match('/<main[^>]*>(.*?)<\/main>/is', $rendered_content, $main_matches)) {
+//             $main_content = $main_matches[1];
+            
+//             // Look for the first image inside <main>
+//             if (preg_match('/<img[^>]+src="([^"]+)"/', $main_content, $image_matches)) {
+//                 $first_image_url = $image_matches[1];
+
+//                 // Preload the first image as early as possible in the head
+//                 echo '<link rel="preload" as="image" href="' . esc_url($first_image_url) . '" />';
+//             }
+//         }
+//     }
+// }, 1);
+
 add_action('wp_head', function() {
     if (is_front_page()) {
-        echo '<!-- Debug: This is the front page -->';
-        echo '<link rel="preload" as="image" href="https://routex.devops99.pro/wp-content/uploads/2024/11/kevin-mueller-e3fNaRz31Rs-unsplash-scaled.jpg" >';
+        if (have_rows('sections')) {
+            while (have_rows('sections')) {
+                the_row();
+
+                $image_id = get_sub_field('primary_image');
+                if ($image_id) {
+                    $image_url = wp_get_attachment_image_url($image_id, 'full');
+                    echo '<link rel="preload" as="image" href="' . esc_url($image_url) . '" >';
+                    break;
+                }
+            }
+
+            reset_rows();
+        }
     }
-},1);
+}, 1);

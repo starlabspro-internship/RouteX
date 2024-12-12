@@ -39,8 +39,6 @@
     &.left-tower {
       top: 160px;
       left: 250px;
-      transform: scaleX(-1);
-      opacity: 0.5;
     }
 
     &.right-tower {
@@ -119,27 +117,28 @@
     align-items: center;
 
     .btn-transparent {
-      background-color: transparent;
-      color: var(--primary-color);
-      border: 1px solid var(--primary-color);
-      padding-left: 12px;
-      padding-right: 12px;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      display: inline-flex;
       align-items: center;
-      border-radius: 50px;
-      transition: background-color 0.3s, color 0.3s;
+      gap: 10px;
+      padding: 15px 30px;
+      color: var(--primary-color);
       text-decoration: none;
-      font-size: 10px;
-      display: flex;
-      flex-direction: row;
-      gap: 2px;
-
-      &:hover {
-        background-color: var(--light-color);
-        color: var(--secondary-color);
+      transition: all 0.3s ease;
+    
+      .arrow-icon {
+        width: 16px;
+        height: auto;
+        transition: content 0.3s ease;
+        margin-top: 5px;
+      }
+    
+      &:hover .arrow-icon {
+        content: var(--hover-icon);
       }
     }
+    
+    
+  
 
     .banner-video-button {
       width: 50px;
@@ -212,15 +211,13 @@
 
       &.left-tower {
         display: block;
-        top: 230px;
+        top: 250px;
         left: -50px;
-        transform: scaleX(-1);
-        opacity: 0.2;
       }
 
       &.right-tower {
-        top: 340px;
-        left: 1230px;
+        top: 280px;
+        left: 1130px;
         right: 0%;
         opacity: 1;
         height: 370px;
@@ -234,7 +231,7 @@
       position: absolute;
       z-index: 1;
       top: -360px;
-      left: 1100px;
+      left: 1050px;
       background-color: #91ff00;
       border-radius: 50%;
       opacity: 0.6;

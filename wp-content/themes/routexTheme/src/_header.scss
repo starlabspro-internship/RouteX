@@ -137,10 +137,6 @@
     line-height: 25px;
 }
 
-#primary-menu .menu-item-has-children img{
-    margin-top: 15px;
-}
-
 .submenu-arrow {
     width: 16px;
     height: 16px;
@@ -299,7 +295,7 @@
         border: transparent;
         padding-left: 10px;
         line-height: 2px;
-        width: 200px; 
+        width: 170px; 
     }
 
     #primary-menu .menu-item-has-children:hover > .sub-menu,
@@ -402,3 +398,4 @@
         font-size: 14px;
     }
 }
+

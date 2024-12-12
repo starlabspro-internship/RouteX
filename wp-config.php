@@ -41,9 +41,11 @@ define( 'DB_COLLATE', '' );
 define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
 define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
 
+<<<<<<< HEAD
 define('GITHUB_DEPLOYMENT_SLUG', 'c649fce');
+=======
+define('WP_MEMORY_LIMIT', '512M');
 
-define('WP_MEMORY_LIMIT', '256M');
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', false );
