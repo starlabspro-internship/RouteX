@@ -1035,6 +1035,15 @@ select {
     padding: 0 0;
   }
 }
+.var-dump-style {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  overflow: scroll;
+  z-index: 1001;
+  height: 300px;
+}
+
 .title {
   font-weight: var(--bold);
   font-size: 28px;

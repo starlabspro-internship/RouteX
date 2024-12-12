@@ -17,23 +17,28 @@ if (have_rows('bottom_counter')) :
         ];
     endwhile;
 endif;
-if ($left_image || $icon || $top_title || $top_text || $button || $right_image || has_non_empty_cards($bottom_counters)) : 
+
+$has_non_empty_cards_boolean = has_non_empty_cards($bottom_counters);
+
+if ($left_image || $icon || $top_title || $top_text || $button || $right_image || $has_non_empty_cards_boolean) : 
+    $is_split_layout = $left_image && ($icon || $top_title || $top_text || $button || $right_image || $has_non_empty_cards_boolean);
+    $is_split_layout_2 = $right_image && ($icon || $top_title || $top_text || $button);
 ?>
 <section class="cta-container top-bottom-small">
     <div class="row">
-        <div class="col-md-4 col-12">
+        <?php if ($left_image) : ?>
+        <div class="<?php echo esc_attr($is_split_layout ? 'col-md-4 col-12' : 'col-12'); ?>">
             <div class="imagediv">
-            <?php if ($left_image) : ?>
                 <img src="<?php echo esc_url($left_image_url); ?>" class="img-fluid" alt="Left Image" />
-            <?php else : ?>
-                <p>Left Image not found.</p>
-            <?php endif; ?>
             </div>
         </div>
+        <?php endif; ?>
 
-        <div class="col-md-8 col-12">
+        <?php if ($icon || $top_title || $top_text || $button || $right_image || $has_non_empty_cards_boolean) : ?>
+        <div class="<?php echo esc_attr($is_split_layout ? 'col-md-8 col-12' : 'col-12'); ?>">
             <div class="top-right-section">
-                <div class="col-sm-8 col-12">
+                <?php if ($icon || $top_title || $top_text || $button) : ?>
+                <div class="<?php echo esc_attr($is_split_layout_2 ? 'col-sm-8 col-12' : 'col-12'); ?>">
                     <div  class="left-content">
                         <?php if ($icon) : ?>
                             <div class="circle">
@@ -66,9 +71,10 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                         <?php endif; ?>
                     </div>
                 </div>
+                <?php endif; ?>
 
                 <?php if ($right_image) : ?>
-                    <div class="col-sm-4 col-12">
+                    <div class="<?php echo esc_attr($is_split_layout_2 ? 'col-sm-4 col-12' : 'col-12'); ?>">
                         <div class="right-image">
                             <img src="<?php echo esc_url($right_image_url); ?>" alt=""/>
                         </div>
@@ -76,7 +82,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 <?php endif; ?>
             </div>
 
-            <?php if (has_non_empty_cards($bottom_counters)) : ?>
+            <?php if ($has_non_empty_cards_boolean) : ?>
                 <div class="bottom-counter">
                     <?php foreach ($bottom_counters as $counter) : ?>
                         <?php if ($counter['numbers'] || $counter['title']) : ?>
@@ -93,6 +99,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 </div>
             <?php endif; ?>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endif; ?>

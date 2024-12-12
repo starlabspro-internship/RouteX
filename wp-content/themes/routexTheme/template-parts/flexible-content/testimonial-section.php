@@ -15,22 +15,26 @@ if (have_rows('testimonial_card')) {
         ];
     endwhile;
 }
-if ($testimonial_left_image || has_non_empty_cards($testimonial_cards)) :
+
+$has_non_empty_cards_boolean = has_non_empty_cards($testimonial_cards);
+
+if ($testimonial_left_image || $has_non_empty_cards_boolean) :
+    $is_split_layout = $testimonial_left_image && $has_non_empty_cards_boolean;
 ?>
 
 <section class="testimonial-section top-bottom-small">
     <div class="testimonial-section-container">
         <div class="row">
             <?php if ($testimonial_left_image): ?>
-            <div class="col-lg-5">
+            <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-5' : 'col-12'); ?>">
                 <div class="testimonial-left">
                     <?php $testimonail_large_img_url = wp_get_attachment_image_url($testimonial_left_image, 'testimonail-large-img'); ?>
                     <img src="<?php echo esc_url($testimonail_large_img_url); ?>"/>
                 </div>
             </div>
             <?php endif; ?>
-            <?php if (has_non_empty_cards($testimonial_cards)): ?>
-            <div class="col-lg-7 flex-column justify-content-center">
+            <?php if ($has_non_empty_cards_boolean): ?>
+            <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-7 flex-column justify-content-center' : 'col-12 flex-column justify-content-center'); ?>">
                 <div class="testimonial-right">
                     <div class="swiper testimonial-swiper testimonial-cards">
                         <div class="swiper-wrapper">
