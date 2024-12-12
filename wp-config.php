@@ -44,13 +44,13 @@ define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPr
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'memory_limit', '256M' );
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', 'd054e01');
+define('GITHUB_DEPLOYMENT_SLUG', 'dcdf4fd');
 define('WP_MEMORY_LIMIT', '512M');
 define('WP_TEMP_DIR', dirname(__FILE__) . '/wp-content/uploads/tmp');
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', false );
-define( 'DISALLOW_FILE_MODS', true );
+define( 'DISALLOW_FILE_MODS', false );
 /**#@+
  * Authentication unique keys and salts.
  *
