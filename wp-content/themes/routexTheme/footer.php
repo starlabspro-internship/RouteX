@@ -37,7 +37,7 @@ $menu_link_text = $footer_menu_links['menu_link_text'] ?? null;
 $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;  
 
 ?>
-<footer class="<?php echo (is_home() || is_front_page()) ? 'footer__area-home' : 'footer__area'; ?>">
+<footer class="<?php echo (is_front_page()) ? 'footer__area-home' : 'footer__area'; ?>">
     <section class="footer__area-common">
     <?php if ($left_support_message || $right_support_message) : ?>
     <div class="footer-top-container">

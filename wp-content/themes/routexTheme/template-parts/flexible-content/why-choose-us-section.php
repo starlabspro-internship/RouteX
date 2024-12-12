@@ -3,114 +3,65 @@ $contact_information = get_field('contact_information', 'options');
 $phone_information = $contact_information['phone_information'] ?? null;   
 $phone_number = $phone_information['phone_number'] ?? null;  
 $phone_icon = $phone_information['phone_icon'] ?? null;  
+$left_group = get_sub_field('left_group');
+$first_image = $left_group['first_image'] ?? null; 
+$first_image_url = wp_get_attachment_image_url($first_image, 'why-choose-us-left-img');
+$experience_number = $left_group['experience_number'] ?? null;
+$second_image = $left_group['second_image'] ?? null;
+$second_image_url = wp_get_attachment_image_url($second_image, 'why-choose-us-right-img');
+$right_group = get_sub_field('right_group');
+$subtitle = $right_group['subtitle'] ?? null;
+$title = $right_group['title'] ?? null;
+$text_area = $right_group['text_area'] ?? null;
+$button_link = $right_group['button_link'] ?? null;
+$cards = $right_group['cards'] ?? null;
 
-function has_content_in_layout() {
-    $has_content = false;
-    if (have_rows('why_choose_us')) :
-        while (have_rows('why_choose_us')) : the_row();
+$has_non_empty_cards_boolean = has_non_empty_cards($cards);
 
-            if (get_row_layout() == 'left_layout') :
-                $first_photo_third_sector = get_sub_field('image_1');
-                $experience_text_third_sector = get_sub_field('experience_text');
-                $third_photo_third_sector = get_sub_field('image_3');
-                if ($first_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
-                    $has_content = true;
-                endif;
-            endif;
-
-            if (get_row_layout() == 'right_layout') :
-                $subtitle = get_sub_field('subtitle');
-                $title = get_sub_field('title');
-                $text_area = get_sub_field('text_area');
-                if (!empty($subtitle) || !empty($title) || !empty($text_area)) :
-                    $has_content = true;
-                endif;
-
-                if (have_rows('cards')) :
-                    while (have_rows('cards')) : the_row();
-                        if (get_sub_field('card_icon') || get_sub_field('card_title') || has_non_empty_values(get_sub_field('card_bullet_points'))) :
-                            $has_content = true;
-                        endif;
-                    endwhile;
-                endif;
-            endif;
-
-        endwhile;
-    endif;
-
-    return $has_content;
-}
-
-if (has_content_in_layout() || $phone_number) :
-    ?>
-        <section class="choose-us-section top-bottom-small">
-            <div class="choose-us-section-container ">
-                    <div class="row">
-    <?php
-    while (have_rows('why_choose_us')) : the_row();
-    
-        if (get_row_layout() == 'left_layout') :
-            $first_photo_third_sector = get_sub_field('image_1');
-            $first_photo_third_sector_url = wp_get_attachment_image_url($first_photo_third_sector, 'why-choose-us-left-img');
-            $experience_text_third_sector = get_sub_field('experience_text');
-            $third_photo_third_sector = get_sub_field('image_3');
-            $third_photo_third_sector_url = wp_get_attachment_image_url($third_photo_third_sector, 'why-choose-us-right-img');
-            if ($first_photo_third_sector || $experience_text_third_sector || $third_photo_third_sector) :
-            ?>
-            <div class="col-xl-6">
+if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience_number || $second_image ||$subtitle || $title || $text_area || $button_link) :
+    $is_split_layout = ($subtitle || $title || $text_area || $has_non_empty_cards_boolean || $button_link || $phone_number) && ($first_image || $experience_number || $second_image);
+?>
+<section class="choose-us-section top-bottom-small">
+    <div class="choose-us-section-container ">
+        <div class="row">
+            <?php if ($first_image || $experience_number || $second_image) :?>
+            <div class="<?php echo esc_attr($is_split_layout ? 'col-xl-6' : 'col-12'); ?>">
                 <div class="choose-us-media">
                     <div class="choose-us-media-thumb">
-                        <?php if ($first_photo_third_sector) : ?>
+                        <?php if ($first_image) : ?>
                         <div class="choose-us-media-thumb-img">
                             <div class="choose-us-media-thumb-img-green-border" ></div>
                             <div class="choose-us-media-thumb-img-img" >
-                                <img src="<?php echo esc_url($first_photo_third_sector_url); ?>" alt="Why Choose Us Image">
+                                <img src="<?php echo esc_url($first_image_url); ?>" alt="Why Choose Us Image">
                             </div>
                         </div>
                         <?php endif; ?>
                         <div class="choose-us-media-thumb-circle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="choose-us-circle-img">
                         </div>
                     </div>
                     <div class="choose-us-media-img">
-                        <?php if ($experience_text_third_sector) : ?>
+                        <?php if ($experience_number) : ?>
                         <div class="choose-us-text">
                             <h3 class="choose-us-item-title">
-                                <?php echo esc_html($experience_text_third_sector) ?>
+                                <?php echo esc_html($experience_number) ?>
                             </h3>
                             <p>Years Of <br> Experience</p>
                         </div>
                         <?php endif; ?>
-                        <?php if ($third_photo_third_sector) : ?>
+                        <?php if ($second_image) : ?>
                         <div class="choose-us-media-img-picture" >
-                            <img src="<?php echo esc_url($third_photo_third_sector_url); ?>" alt="Why Choose Us Image">
+                            <img src="<?php echo esc_url($second_image_url); ?>" alt="Why Choose Us Image">
                         </div>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
-        <?php
+            <?php
             endif;
-        endif;
-        
-        if (get_row_layout() == 'right_layout') :
-            $subtitle = get_sub_field('subtitle');
-            $title = get_sub_field('title');
-            $text_area = get_sub_field('text_area');
-            $cards = [];
-            if (have_rows('cards')) :
-                while (have_rows('cards')) : the_row();
-                    $cards[] = [
-                        'card_icon' => get_sub_field('card_icon'),
-                        'card_title' => get_sub_field('card_title'),
-                        'card_bullet_points' => get_sub_field('card_bullet_points'),
-                    ];
-                endwhile;
-            endif;
-            $link_url = get_sub_field('button_link');
-            if ($subtitle || $title || $text_area || has_non_empty_cards($cards) || $link_url || $phone_number) :
-            ?>
-            <div class="col-xl-6">
+
+            if ($subtitle || $title || $text_area || $has_non_empty_cards_boolean || $button_link || $phone_number) :?>
+            <div class="<?php echo esc_attr($is_split_layout ? 'col-xl-6' : 'col-12'); ?>">
                 <?php if ($title || $subtitle) : ?>
                 <div class="choose-us-section-title-container">
                     <?php if ($subtitle) : ?>
@@ -153,13 +104,14 @@ if (has_content_in_layout() || $phone_number) :
                                     <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
-                                <?php if ($card['card_bullet_points']) : ?>
+                                <?php if ($card['card_bullet_points']) :?>
                                 <div class="choose-us-item-content-list">
                                     <ul>
                                         <?php
                                             foreach ($card['card_bullet_points'] as $point) :
                                                 $card_text = $point['bullet_point_text'];
-                                                if (!empty($card_text)) : ?>
+                                                if (!empty($card_text)) : 
+                                                ?>
                                                 <li>
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="">
                                                     <?php echo esc_html($card_text) ?>
@@ -170,17 +122,17 @@ if (has_content_in_layout() || $phone_number) :
                                         ?>
                                     </ul>
                                 </div>
-                                <?php endif; ?>
+                                <?php endif;?>
                             </div>
                         </div>
                     <?php endforeach; ?>
                     </div>
                 </div>
                 <?php endif; ?>
-                <?php if ($link_url || $phone_number) : ?>
+                <?php if ($button_link || $phone_number) : ?>
                 <div class="choose-us-button">
-                    <?php if ($link_url) : ?>
-                        <div class="choose-us-button-btn">
+                    <?php if ($button_link) : ?>
+                    <div class="choose-us-button-btn">
                         <a href="<?php echo esc_url($link_url); ?>" class="cta-button">
                             Read More
                             <img class="default-img-choose" src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="Default Arrow">
@@ -203,16 +155,8 @@ if (has_content_in_layout() || $phone_number) :
                 </div>
                 <?php endif; ?>
             </div>
-
-        <?php
-            endif;
-        endif;
-    endwhile; 
-    ?>
-                </div>
-            </div>
-        </section>
-    <?php
-endif;
-?> 
-
+            <?php endif;?>
+        </div>
+    </div>
+</section>
+<?php endif;?> 

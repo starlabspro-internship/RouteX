@@ -9,6 +9,15 @@ $padding-30: 30px;
 $button-padding: 15px 30px;
 $button-border-radius: 20px;
 
+.var-dump-style{
+    position: absolute;
+    top: 0;
+    width: 300px;
+    overflow: scroll;
+    z-index: 1001;
+    height: 300px;
+}
+
 .title {
 	font-weight: var(--bold);
 	font-size: 28px;
