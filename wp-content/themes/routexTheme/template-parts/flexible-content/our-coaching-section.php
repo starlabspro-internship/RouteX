@@ -63,11 +63,8 @@ if ($background_image || $small_title || $title || $has_non_empty_cards_boolean 
                                             <p><?php echo esc_html($card['position']); ?></p>
                                         </div>
                                         <div class="card-person-link">
-                                            <?php
-                                                $svg_icon = file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');
-                                            ?>
                                             <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
-                                                <?php echo $svg_icon; ?>
+                                                <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');?>
                                             </a>
                                         </div>
                                     </div>

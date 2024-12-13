@@ -71,6 +71,9 @@
         width: 60px;
         height: 61px;
         border-radius: 20px;
+        &:hover svg path{
+            fill: var(--primary-color);
+        }
     }
 }
 

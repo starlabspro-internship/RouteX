@@ -475,6 +475,7 @@ function register_countries_post_type() {
     register_post_type('countries', $args);
 }
 add_action('init', 'register_countries_post_type');
+
 add_image_size('blog-large', 850, 416, true);
 add_image_size('blog-small', 80, 80, true);
 add_image_size('hero-img', 525, 700, true);
@@ -500,7 +501,7 @@ add_image_size('team-member-img', 410, 370, true);
 add_image_size('success-story-small-img', 70, 70, true);
 add_image_size('success-story-large-img', 418, 482, true);
 add_image_size('sponsors-img', 252, 48, true);
-add_image_size('line-img', 252, 48, true); //check the id in acf
+add_image_size('line-img', 350, 65, true);
 add_image_size('footer-top-icon', 40, 40, true); 
 add_image_size('footer-logo', 40, 33, true);
 add_image_size('header-logo', 40, 33, true); 

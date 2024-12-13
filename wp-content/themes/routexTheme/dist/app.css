@@ -1035,6 +1035,23 @@ select {
     padding: 0 0;
   }
 }
+.default-img-choose {
+  display: inline;
+  transition: all 0.3s ease;
+}
+
+.hover-img-choose {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+a:hover .default-img-choose {
+  display: none;
+}
+a:hover .hover-img-choose {
+  display: inline;
+}
+
 .var-dump-style {
   position: absolute;
   top: 0;
@@ -2144,8 +2161,6 @@ body .thumbnail-img {
   top: 65%;
   left: 54%;
   opacity: 1;
-  height: 20px;
-  width: 200px;
 }
 .hero-section .decorative-circle {
   width: 460px;
@@ -2219,14 +2234,8 @@ body .thumbnail-img {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-.hero-section .btn-wrapper .btn-transparent .arrow-icon {
-  width: 16px;
-  height: auto;
-  transition: content 0.3s ease;
-  margin-top: 5px;
-}
-.hero-section .btn-wrapper .btn-transparent:hover .arrow-icon {
-  content: var(--hover-icon);
+.hero-section .btn-wrapper .btn-transparent:hover svg path {
+  fill: var(--secondary-color);
 }
 .hero-section .btn-wrapper .banner-video-button {
   width: 50px;
@@ -2298,8 +2307,6 @@ body .thumbnail-img {
     left: 1130px;
     right: 0%;
     opacity: 1;
-    height: 370px;
-    width: 370px;
   }
   .hero-section .decorative-circle {
     width: 460px;
@@ -2597,6 +2604,9 @@ body .thumbnail-img {
   height: 61px;
   border-radius: 20px;
 }
+.link-container a:hover svg path {
+  fill: var(--primary-color);
+}
 
 .visa-icon-container {
   display: flex;
@@ -2774,6 +2784,9 @@ body .thumbnail-img {
   border-radius: 50%;
   background-color: transparent;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .countries-section-button:hover {
   border: 1px solid var(--accent-color);
@@ -3029,14 +3042,8 @@ body .thumbnail-img {
   background-color: var(--accent-color);
   cursor: pointer;
 }
-.coaching-section-button:hover img.default-img {
-  display: none;
-}
-.coaching-section-button:hover img.hover-img {
-  display: inline;
-}
-.coaching-section-button img.hover-img {
-  display: none;
+.coaching-section-button:hover svg path {
+  fill: var(--primary-color);
 }
 
 .coaching-item {
@@ -3122,6 +3129,14 @@ body .thumbnail-img {
   text-decoration: none;
   transition: all ease 0.3s;
 }
+.coaching__item-media-img-title-button a:hover {
+  background-color: var(--secondary-color);
+  transition: all ease 0.3s;
+  border: 1px solid transparent;
+}
+.coaching__item-media-img-title-button a:hover svg path {
+  fill: var(--primary-color);
+}
 .coaching__item-media-img-title-button .arrow-icon {
   position: absolute;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -3133,18 +3148,6 @@ body .thumbnail-img {
 .coaching__item-media-img-title-button .arrow-icon.hover-img {
   opacity: 0;
   visibility: hidden;
-}
-.coaching__item-media-img-title-button a:hover {
-  background-color: var(--secondary-color);
-  transition: all ease 0.3s;
-}
-.coaching__item-media-img-title-button a:hover .arrow-icon.default-img {
-  opacity: 0;
-  visibility: hidden;
-}
-.coaching__item-media-img-title-button a:hover .arrow-icon.hover-img {
-  opacity: 1;
-  visibility: visible;
 }
 
 .coaching-item_thumb {
@@ -3320,41 +3323,13 @@ body .thumbnail-img {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.top-right-section .cta-button .default-img-cta {
-  display: inline;
-}
-.top-right-section .cta-button .hover-img-cta {
-  display: none;
-}
 .top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   border: 1px solid transparent;
 }
-.top-right-section .cta-button:hover .default-img-cta {
-  display: none;
-}
-.top-right-section .cta-button:hover .hover-img-cta {
-  display: inline;
-}
-.top-right-section .cta-button div {
-  display: inline-block;
-  border-radius: 30px;
-}
-.top-right-section .cta-button div:hover a.default-img {
-  display: none;
-}
-.top-right-section .cta-button div:hover a.hover-img {
-  font-weight: var(--semibold);
-  line-height: 30px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: 30px;
-  transition: 0.3s;
-  text-decoration: none;
+.top-right-section .cta-button:hover svg path {
+  fill: var(--primary-color);
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;
@@ -3502,6 +3477,9 @@ body .thumbnail-img {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   cursor: pointer;
+}
+.testimonial-section-container .testimonial-buttons .button-testimonial:hover svg path {
+  fill: var(--primary-color);
 }
 .testimonial-section-container .testimonial-buttons .button-testimonial img {
   width: 15px;
@@ -3718,6 +3696,9 @@ body .thumbnail-img {
 }
 .our-coaching-section-container .card-container .card .person-link:hover {
   color: var(--primary-color);
+}
+.our-coaching-section-container .card-container .card .person-link:hover svg path {
+  fill: var(--primary-color);
 }
 .our-coaching-section-container .bg-image {
   position: relative;
@@ -4054,14 +4035,8 @@ body .thumbnail-img {
   background-color: var(--accent-color);
   cursor: pointer;
 }
-.recent-blogs-section-button:hover img.default-img {
-  display: none;
-}
-.recent-blogs-section-button:hover img.hover-img {
-  display: inline;
-}
-.recent-blogs-section-button img.hover-img {
-  display: none;
+.recent-blogs-section-button:hover svg path {
+  fill: var(--primary-color);
 }
 
 .recent-blogs-item {
@@ -4123,18 +4098,6 @@ body .thumbnail-img {
   margin-bottom: 0;
 }
 
-.recent_blogs-item-media-img-title-button {
-  display: flex;
-  align-items: center;
-}
-.recent_blogs-item-media-img-title-button a {
-  background: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 17px;
-}
-
 .recent_blogs-thumb {
   height: 324px;
 }
@@ -4174,15 +4137,16 @@ body .thumbnail-img {
   justify-content: space-between;
   padding-bottom: 20px;
 }
-.recent-blog-item-text-meta span a {
-  color: var(--base-color);
-  font-weight: var(--regular);
+.recent-blog-item-text-meta span p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
   gap: 6px;
-  line-height: 22px;
-  text-decoration: none;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: var(--regular);
+  color: var(--base-color);
 }
 
 .recent-blog-item-text-bottom a {
@@ -4200,6 +4164,9 @@ body .thumbnail-img {
   margin-bottom: 10px;
   margin-top: 0;
 }
+.recent-blog-item-text-bottom a:hover {
+  color: var(--accent-color);
+}
 .recent-blog-item-text-bottom p {
   font-weight: var(--regular);
   color: var(--base-color);
@@ -4208,8 +4175,11 @@ body .thumbnail-img {
 }
 
 .recent-blog-item-text-bottom-readmore {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+}
+.recent-blog-item-text-bottom-readmore:hover svg path {
+  fill: var(--accent-color);
 }
 
 .choose-us-section-container {
@@ -4405,7 +4375,7 @@ body .thumbnail-img {
 .choose-us-button-btn {
   border-radius: 30px;
 }
-.choose-us-button-btn .cta-button {
+.choose-us-button-btn a {
   color: var(--secondary-color);
   font-weight: var(--semibold);
   line-height: 30px;
@@ -4419,24 +4389,13 @@ body .thumbnail-img {
   transition: all 0.3s ease;
   text-decoration: none;
 }
-.choose-us-button-btn .cta-button .default-img-choose {
-  display: inline;
-  transition: all 0.3s ease;
-}
-.choose-us-button-btn .cta-button .hover-img-choose {
-  display: none;
-  transition: all 0.3s ease;
-}
-.choose-us-button-btn .cta-button:hover {
+.choose-us-button-btn a:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
   border: 1px solid var(--secondary-color);
 }
-.choose-us-button-btn .cta-button:hover .default-img-choose {
-  display: none;
-}
-.choose-us-button-btn .cta-button:hover .hover-img-choose {
-  display: inline;
+.choose-us-button-btn a:hover svg path {
+  fill: var(--primary-color);
 }
 
 .choose-us-button-text {

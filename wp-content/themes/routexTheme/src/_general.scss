@@ -9,6 +9,26 @@ $padding-30: 30px;
 $button-padding: 15px 30px;
 $button-border-radius: 20px;
 
+.default-img-choose {
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+.hover-img-choose {
+    display: none;
+    transition: all 0.3s ease;
+}
+a{
+    &:hover{
+        .default-img-choose {
+            display: none;
+        }
+        
+        .hover-img-choose {
+            display: inline;
+        }
+    }
+}
 .var-dump-style{
     position: absolute;
     top: 0;
@@ -17,7 +37,6 @@ $button-border-radius: 20px;
     z-index: 1001;
     height: 300px;
 }
-
 .title {
 	font-weight: var(--bold);
 	font-size: 28px;

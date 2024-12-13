@@ -4,8 +4,9 @@ $lines = [];
 if (have_rows('lines')) :
     while (have_rows('lines')) : the_row();
         $line_image = get_sub_field('line_image');
+        $image_url = wp_get_attachment_image_url($line_image, 'line-img');
         if ($line_image) {
-            $lines[] = esc_url($line_image);
+            $lines[] = esc_url($image_url);
         }
     endwhile;
 endif;

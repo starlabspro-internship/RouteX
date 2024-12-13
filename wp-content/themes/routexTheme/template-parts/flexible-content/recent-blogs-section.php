@@ -1,19 +1,48 @@
 <?php
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
+
+// if (have_rows('blog_cards')) :
+//     while (have_rows('blog_cards')) : the_row();
+//         $cards[] = [
+//             'card_background' => get_sub_field('blog_image'),
+//             'card_title' => get_sub_field('blog_title'),
+//             'card_date' => get_sub_field('blog_date'),
+//             'card_text' => get_sub_field('blog_text'),
+//             'card_link' => get_sub_field('blog_link'),
+//             'card_creator' => get_sub_field('blog_creator'),
+//         ];
+//     endwhile;
+// endif;
+
+$args = [
+    'post_type' => 'post', // Specify the post type
+    'posts_per_page' => 6, // Adjust the number of posts to retrieve (use -1 for all posts)
+    'orderby' => 'date', // Order by date
+    'order' => 'DESC', // Descending order
+    'category_name' => 'blog', // Filter by the "blog" category (use the slug of the category)
+];
+
+$query = new WP_Query($args);
+
+// Initialize an array for the cards
 $cards = [];
-if (have_rows('blog_cards')) :
-    while (have_rows('blog_cards')) : the_row();
+
+if ($query->have_posts()) :
+    while ($query->have_posts()) : $query->the_post();
         $cards[] = [
-            'card_background' => get_sub_field('blog_image'),
-            'card_title' => get_sub_field('blog_title'),
-            'card_date' => get_sub_field('blog_date'),
-            'card_text' => get_sub_field('blog_text'),
-            'card_link' => get_sub_field('blog_link'),
-            'card_creator' => get_sub_field('blog_creator'),
+            'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img'), // Get the featured image URL
+            'card_title' => get_the_title(), // Get the post title
+            'card_date' => get_the_date(), // Get the post date
+            'card_text' => get_the_excerpt(), // Get the excerpt
+            'card_link' => get_permalink(), // Get the permalink
+            'card_creator' => get_the_author(), // Get the author's name
         ];
     endwhile;
 endif;
+
+// Reset post data
+wp_reset_postdata();
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
 <section class="recent-blogs-section top-bottom-small">
@@ -25,29 +54,23 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                 <div class="recent-blogs-section-subtitles">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
                         <div class="subtitle recent-blogs-subtitle">
-                            <?php
-                                echo esc_html($small_title);
-                            ?>
+                            <?php echo esc_html($small_title);?>
                         </div>
                 </div>
                 <?php endif; ?>
                 <?php if ($title) : ?>
                 <div class="title recent-blogs-title">
-                    <?php
-                        echo esc_html($title);
-                    ?>
+                    <?php echo esc_html($title);?>
                 </div>
                 <?php endif; ?>
             </div>
             <?php endif; ?>
             <div class="recent-blogs-section-buttons">
                 <button class="recent-blogs-section-button" aria-label="Previous slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
+                    <?php echo file_get_contents(get_template_directory() . '/assets/icons/left-arrow-green.svg');?>
                 </button>
                 <button class="recent-blogs-section-button" aria-label="Next slide"> 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
+                    <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-green.svg');?>
                 </button>
             </div>
         </div>
@@ -55,15 +78,14 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
         <?php if (has_non_empty_cards($cards)) : ?>
         <div >
             <div class="swiper recent-blogs-section-swiper">
-                <div class="swiper-wrapper">   
+                <div class="swiper-wrapper align-items-start">   
                     <?php foreach ($cards as $card) : ?>
                         <div class="swiper-slide">
                             <div class="recent-blog-item-slide-inner">
                                 <?php if ($card['card_background']) : ?>
                                 <div class="recent-blog-item-media">
                                     <a href="<?php echo esc_url($card['card_link']) ?>">
-                                        <?php $recent_blogs_img_url = wp_get_attachment_image_url($card['card_background'], 'recent-blogs-img'); ?>
-                                        <img src="<?php echo esc_url($recent_blogs_img_url) ?>" alt="images not found">
+                                        <img src="<?php echo esc_url($card['card_background']) ?>" alt="Recent Blog Image">
                                     </a>
                                 </div>
                                 <?php endif; ?>
@@ -71,10 +93,10 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                     <?php if ($card['card_date'] || $card['card_creator']) : ?>
                                     <div class="recent-blog-item-text-meta">
                                         <?php if ($card['card_date']) : ?>
-                                        <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt=""><?php echo esc_html($card['card_date']) ?></a></span>
+                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt=""><?php echo esc_html($card['card_date']) ?></p></span>
                                         <?php endif; ?>
                                         <?php if ($card['card_creator']) : ?>
-                                        <span><a href="<?php echo esc_url($card['card_link']) ?>"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="">By <?php echo esc_html($card['card_creator']) ?></a></span>
+                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="">By <?php echo esc_html($card['card_creator']) ?></p></span>
                                         <?php endif; ?>
                                     </div>
                                     <?php endif; ?>
@@ -88,7 +110,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                         <?php endif; ?>
                                         <?php if ($card['card_link']) : ?>
                                         <a class="recent-blog-item-text-bottom-readmore"  href="<?php echo esc_url($card['card_link']) ?>">Read More 
-                                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-bigger-tale-green.svg') ?>" alt=""> 
+                                            <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-bigger-tale-green.svg');?>
                                         </a>
                                         <?php endif; ?>
                                     </div>

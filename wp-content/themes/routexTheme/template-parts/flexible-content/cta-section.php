@@ -42,7 +42,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                     <div  class="left-content">
                         <?php if ($icon) : ?>
                             <div class="circle">
-                                <img src="<?php echo esc_url($icon); ?>" class="icon" alt="Icon" />
+                                <img src="<?php echo esc_url($icon_url); ?>" class="icon" alt="Icon" />
                             </div>
                         <?php endif; ?>
 
@@ -56,18 +56,13 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
 
                         <?php if ($button) : ?>
                             <div class="cta-button-container">
-                                    <div>
-                                        <a href="<?php echo esc_url($button); ?>" class="cta-button">
-                                            Contact us 
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-bigger-tale-green.svg" 
-                                                alt="Right Arrow Icon" 
-                                                class=" default-img-cta">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" 
-                                                alt="Right Arrow Icon (Hover)" 
-                                                class=" hover-img-cta">
-                                        </a>
-                                    </div>
+                                <div>
+                                    <a href="<?php echo esc_url($button); ?>" class="cta-button">
+                                        Contact us 
+                                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-bigger-tale-green.svg');?>
+                                    </a>
                                 </div>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>

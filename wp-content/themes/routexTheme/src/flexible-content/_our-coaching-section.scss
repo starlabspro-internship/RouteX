@@ -81,6 +81,10 @@
 
                 &:hover {
                     color: var(--primary-color);
+
+                    svg path{
+                        fill: var(--primary-color);
+                    }
                 }
             }
         }

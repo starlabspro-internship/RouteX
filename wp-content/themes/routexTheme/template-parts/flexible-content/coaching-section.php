@@ -42,12 +42,10 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
             <?php if (has_non_empty_cards($cards)) : ?>
             <div class="coaching-section-buttons">
                 <button class="coaching-section-button" aria-label="Previous slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="" class="hover-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="" class="default-img">
+                    <?php echo file_get_contents(get_template_directory() . '/assets/icons/left-arrow-green.svg');?>
                 </button>
                 <button class="coaching-section-button" aria-label="Next slide"> 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="" class="hover-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
+                    <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-green.svg');?>
                 </button>
             </div>
             <?php endif; ?>
@@ -81,17 +79,10 @@ if ($title || $small_title || has_non_empty_cards($cards)) :
                                     <?php endif; ?> 
                                     <?php if ($card['card_link']) : ?>
                                         <div class="coaching__item-media-img-title-button">
-    <a href="<?php echo esc_url($button_first_sector); ?>" 
-       class="btn btn-transparent">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow.svg" 
-             alt="Right Arrow Icon" 
-             class="arrow-icon default-img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow-white.svg" 
-             alt="Right Arrow Icon (Hover)" 
-             class="arrow-icon hover-img">
-    </a>
-</div>
-
+                                            <a href="<?php echo esc_url($button_first_sector); ?>">
+                                                <?php echo file_get_contents(get_template_directory() . '/assets/icons/button-upright-arrow.svg');?>
+                                            </a>
+                                        </div>
                                     <?php endif; ?> 
                                 </div>
                                 <?php endif; ?>

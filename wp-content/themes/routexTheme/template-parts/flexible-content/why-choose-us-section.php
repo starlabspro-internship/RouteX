@@ -133,10 +133,9 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                 <div class="choose-us-button">
                     <?php if ($button_link) : ?>
                     <div class="choose-us-button-btn">
-                        <a href="<?php echo esc_url($link_url); ?>" class="cta-button">
+                        <a href="<?php echo esc_url($link_url); ?>">
                             Read More
-                            <img class="default-img-choose" src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-bigger-tale-green.svg" alt="Default Arrow">
-                            <img class="hover-img-choose" src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="Hover Arrow">
+                            <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-bigger-tale-green.svg');?>
                         </a>
                     </div>
                     <?php endif; ?>

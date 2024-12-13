@@ -45,8 +45,6 @@
       top: 65%;
       left: 54%;
       opacity: 1;
-      height: 20px;
-      width: 200px;
     }
   }
 
@@ -125,21 +123,10 @@
       text-decoration: none;
       transition: all 0.3s ease;
     
-      .arrow-icon {
-        width: 16px;
-        height: auto;
-        transition: content 0.3s ease;
-        margin-top: 5px;
-      }
-    
-      &:hover .arrow-icon {
-        content: var(--hover-icon);
+      &:hover svg path{
+        fill: var(--secondary-color);
       }
     }
-    
-    
-  
-
     .banner-video-button {
       width: 50px;
       height: 50px;
@@ -220,8 +207,6 @@
         left: 1130px;
         right: 0%;
         opacity: 1;
-        height: 370px;
-        width: 370px;
       }
     }
 

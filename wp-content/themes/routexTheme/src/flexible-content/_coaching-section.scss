@@ -41,18 +41,9 @@
 		border: 1px solid var(--accent-color);
 		background-color: var(--accent-color);
 		cursor: pointer;
-		img {
-			&.default-img {
-				display: none;
-			}
-			&.hover-img {
-				display: inline;
-			}
-		}
-	}
-	img {
-		&.hover-img {
-			display: none;
+
+		svg path{
+			fill: var(--primary-color);
 		}
 	}
 }
@@ -135,6 +126,15 @@
         position: relative;
         text-decoration: none;
 		transition: all ease 0.3s;
+
+		&:hover {
+			background-color: var(--secondary-color);
+			transition: all ease 0.3s;
+			border: 1px solid transparent;
+			svg path{
+				fill: var(--primary-color);
+			}
+		}
     }
 
     .arrow-icon {
@@ -151,24 +151,7 @@
         opacity: 0;
         visibility: hidden;
     }
-
-    a:hover {
-		background-color: var(--secondary-color);
-		transition: all ease 0.3s;
-        .arrow-icon.default-img {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .arrow-icon.hover-img {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
 }
-
-
-  
 .coaching-item_thumb {
 	height: 324px;
 }
