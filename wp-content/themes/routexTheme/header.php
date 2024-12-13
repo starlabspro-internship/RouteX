@@ -14,6 +14,7 @@ $appointment_link = get_field('appointment_link', 'options');
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php wp_head(); ?>
     <?php if(get_field('dark_mode', 'options')): ?>
     <style>
@@ -103,7 +104,9 @@ $appointment_link = get_field('appointment_link', 'options');
                     <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
                         <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg"
                             alt="Right arrow" />
-                    </a>
+                    </a>                
+                    <button id="dark-mode-toggle"><i class="fa fa-moon-o"></i>
+                    </button>
                 </div>
             </div>
         </header>
@@ -139,6 +142,45 @@ $appointment_link = get_field('appointment_link', 'options');
                 }
 
             });
+
+            function getCookie(name) {
+            let cookieArr = document.cookie.split(';');
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split('=');
+                if (name == cookiePair[0].trim()) {
+                return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+            }
+
+            function setCookie(name, value, days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+            }
+
+            function toggleDarkMode() {
+            let darkMode = document.body.classList.toggle('dark-mode');
+            
+            setCookie('dark_mode', darkMode ? '1' : '0', 365);
+            }
+
+            window.onload = function() {
+            let darkModeCookie = getCookie('dark_mode');
+            if (darkModeCookie === '1') {
+                document.body.classList.add('dark-mode');  
+            } else {
+                document.body.classList.remove('dark-mode');  
+            }
+
+            const darkModeToggleBtn = document.getElementById('dark-mode-toggle');
+            if (darkModeToggleBtn) {
+                darkModeToggleBtn.addEventListener('click', toggleDarkMode);
+            }
+            };
+
         });
         </script>
     </div>

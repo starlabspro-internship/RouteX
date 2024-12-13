@@ -2355,10 +2355,15 @@ body .thumbnail-img {
     border-radius: 50px;
     transition: background-color 0.3s, color 0.3s;
     text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .hero-section .btn-wrapper .btn-transparent .default-img-hero {
+    display: inline;
   }
   .hero-section .btn-wrapper .btn-transparent:hover {
-    background-color: var(--light-color);
-    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid transparent;
   }
   .hero-section .btn-wrapper .video-text {
     font-size: 16px;

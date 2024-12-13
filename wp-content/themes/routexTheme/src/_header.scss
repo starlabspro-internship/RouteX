@@ -213,6 +213,38 @@
 
 .button-div {
     order: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#dark-mode-toggle {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 50px;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+    font-weight: var(--semibold);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    gap: 10px;
+    cursor: pointer;
+    .fa{
+        font-size: 20px;
+    }
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#dark-mode-toggle:visited {
+    color: var(--primary-color);
 }
 
 .appointment-button {
@@ -225,7 +257,7 @@
     border: none;
     border-radius: 30px;
     text-decoration: none;
-    display: none;
+    display: flex;
     align-items: center;
     font-size: 10px;
     line-height: 30px;
@@ -242,6 +274,7 @@
 .appointment-button:visited {
     color: var(--primary-color);
 }
+
 @include media-sm {
     .appointment-button {
         display: flex;

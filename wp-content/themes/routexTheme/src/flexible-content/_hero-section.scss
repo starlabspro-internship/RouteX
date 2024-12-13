@@ -282,9 +282,17 @@
         transition: background-color 0.3s, color 0.3s;
         text-decoration: none;
 
+        transition: all 0.3s ease;
+      
+        .default-img-hero {
+          display: inline;
+        }
+      
+      
         &:hover {
-          background-color: var(--light-color);
-          color: var(--secondary-color);
+          background-color: var(--accent-color);
+          color: var(--primary-color);
+          border: 1px solid transparent;
         }
       }
 
