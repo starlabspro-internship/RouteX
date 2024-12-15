@@ -56,7 +56,6 @@ echo top_banner();
 
                             <?php if ($address) : ?>
                                 <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
                                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/location-icon.svg'); ?>" alt="button-upright-arrow">
                                     <p><?php echo esc_attr($address); ?></p>
                                 </div>

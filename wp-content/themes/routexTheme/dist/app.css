@@ -1865,15 +1865,11 @@ body .thumbnail-img {
 .contact-card .contact-item {
   display: flex;
   align-items: center;
-}
-.contact-card .contact-item i {
-  color: red;
-  margin-right: 10px;
-  align-items: center;
+  padding-left: 10px;
 }
 .contact-card .contact-item p {
   color: var(--secondary-color);
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .contact-card .contact-link {
   margin-top: 25px;
@@ -3036,14 +3032,38 @@ body .thumbnail-img {
   border-radius: 50%;
   background-color: transparent;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.coaching-section-button .arrow-icon {
+  width: 15px;
+  height: 15px;
+  transition: filter 0.3s ease;
+  position: absolute;
+}
+.coaching-section-button .hover-img {
+  display: none;
 }
 .coaching-section-button:hover {
-  border: 1px solid var(--accent-color);
   background-color: var(--accent-color);
   cursor: pointer;
 }
-.coaching-section-button:hover svg path {
-  fill: var(--primary-color);
+.coaching-section-button:hover .default-img {
+  display: none;
+}
+.coaching-section-button:hover .hover-img {
+  display: inline-block;
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .coaching-section-button img.arrow-icon {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .coaching-section-button:hover img.arrow-icon {
+  filter: brightness(1) invert(0);
 }
 
 .coaching-item {
@@ -3129,14 +3149,6 @@ body .thumbnail-img {
   text-decoration: none;
   transition: all ease 0.3s;
 }
-.coaching__item-media-img-title-button a:hover {
-  background-color: var(--secondary-color);
-  transition: all ease 0.3s;
-  border: 1px solid transparent;
-}
-.coaching__item-media-img-title-button a:hover svg path {
-  fill: var(--primary-color);
-}
 .coaching__item-media-img-title-button .arrow-icon {
   position: absolute;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -3148,6 +3160,18 @@ body .thumbnail-img {
 .coaching__item-media-img-title-button .arrow-icon.hover-img {
   opacity: 0;
   visibility: hidden;
+}
+.coaching__item-media-img-title-button a:hover {
+  background-color: var(--secondary-color);
+  transition: all ease 0.3s;
+}
+.coaching__item-media-img-title-button a:hover .arrow-icon.default-img {
+  opacity: 0;
+  visibility: hidden;
+}
+.coaching__item-media-img-title-button a:hover .arrow-icon.hover-img {
+  opacity: 1;
+  visibility: visible;
 }
 
 .coaching-item_thumb {
@@ -3323,13 +3347,43 @@ body .thumbnail-img {
   font-weight: 600;
   transition: all 0.3s ease;
 }
+.top-right-section .cta-button .default-img-cta {
+  display: inline;
+  margin-top: 3px;
+}
+.top-right-section .cta-button .hover-img-cta {
+  display: none;
+}
 .top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   border: 1px solid transparent;
 }
-.top-right-section .cta-button:hover svg path {
-  fill: var(--primary-color);
+.top-right-section .cta-button:hover .default-img-cta {
+  display: none;
+}
+.top-right-section .cta-button:hover .hover-img-cta {
+  display: inline;
+  margin-top: 3px;
+}
+.top-right-section .cta-button div {
+  display: inline-block;
+  border-radius: 30px;
+}
+.top-right-section .cta-button div:hover a.default-img {
+  display: none;
+}
+.top-right-section .cta-button div:hover a.hover-img {
+  font-weight: var(--semibold);
+  line-height: 30px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+  text-decoration: none;
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;
