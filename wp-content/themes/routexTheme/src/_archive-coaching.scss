@@ -1,0 +1,67 @@
+.coaching-archive-container {
+    width: 1650px;
+    .custom-coaching-card {
+        margin: 20px;
+        background: var(--primary-color);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        width: auto; /* Ensure card takes full width of column */
+        height: 250px;
+  
+        .custom-card-img {
+            width: 200px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+  
+        .custom-card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 60%; 
+            height: 100%;
+  
+            .custom-card-title {
+                color: var(--secondary-color);
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 25px;
+                margin-bottom: 5px;
+            }
+  
+            .custom-card-text {
+                font-size: 16px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                line-height: 30px;
+            }
+            
+            
+            .custom-card-link {
+                color: var(--accent-color);
+                font-weight: 600;
+                text-decoration: none;
+                margin-top: 20px;
+                display: inline-flex; 
+                align-items: center; 
+                text-align: left;
+                gap: 10px; 
+              
+                &:hover {
+                    text-decoration: underline;
+                }
+            
+                img {
+                    width: 16px;
+                    height: 16px; 
+                }
+            }
+            
+        }
+    }
+}

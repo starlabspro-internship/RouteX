@@ -1,0 +1,112 @@
+
+
+/* Styling for featured image */
+.featured-image img {
+    width: 100%;
+    max-height: 455px; /* Adjust this for the desired image height */
+    border-radius: 30px; /* Rounded corners */
+    object-fit: cover; /* Ensures the image scales nicely */
+}
+
+/* Title styling */
+.coaching-title {
+    font-size: 50px; /* Set title size to 50px */
+    font-weight: bold;
+    color: var(--primary-color); /* Customize color as needed */
+    margin-bottom: 30px; /* Space below the title */
+}
+
+.coaching-single p{
+    color: var(--base-color);
+}
+
+
+
+/* Sidebar coaching styles */
+.sidebar-coaching {
+    .recent-posts {
+      ul {
+        padding: 20px; /* Padding around the entire list */
+        margin: 0;
+        list-style: none; /* Remove default list style */
+        background-color: var(--contrast-color);
+        border-radius: 20px; /* Rounded corners for the entire list */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        li {
+          display: flex;
+          justify-content: space-between; /* Align text to the left and container for SVG to the right */
+          align-items: center; /* Vertically center the items */
+          padding: 20px 30px; /* Add spacing inside each list item */
+          border-radius: 999px; /* Rounded corners for each list item */
+          transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+          background-color: var(--primary-color);
+          transition: 0.5s ease all;
+          
+          a {
+            color: var(--secondary-color);
+            text-decoration: none; /* Remove underline from links */
+            font-weight: var(--bold);
+            flex-grow: 1; /* Let the text take up available space */
+            display: flex;
+            justify-content: space-between; /* Ensures text and the SVG container are aligned on opposite sides */
+            align-items: center;
+          }
+          
+          .right-arrow-container {
+            background-color: var(--contrast-color); 
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 2px;
+            padding-bottom: 5px; 
+            border-radius: 50%; 
+            
+            img {
+              width: 10px; 
+              height: 10px;
+            }
+          }
+
+          &:hover{
+            .right-arrow-container {
+                background-color: var(--accent-color); 
+                transition: 0.5s ease all;
+                
+                img {
+                    filter: invert(1) brightness(10);
+                }
+              }
+          }
+        }
+      }
+    }
+
+    .contact-card-coaching {
+        background-color: var(--contrast-color);
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        .contact-item-coaching {
+          width: 100%;
+          height: auto;
+          align-self: center;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 88px;
+            height: 88px;
+            align-self: center;
+          }
+        }
+        p{
+            color: var(--secondary-color);
+            font-size: 23px;
+            text-align: center;
+            font-weight: var(--bold);
+        }
+      }
+    }

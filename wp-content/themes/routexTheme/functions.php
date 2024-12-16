@@ -530,18 +530,56 @@ function register_stories_post_type() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-book',
         'supports'           => array('title', 'editor', 'thumbnail'),
-        'has_archive'        => true,  // Ensure the archive is enabled
+        'has_archive'        => true,  
         'rewrite'            => array(
             'slug'       => 'stories', 
             'with_front' => false,
         ),
         'query_var'          => true,
-        'show_in_rest'       => true, // Enable Gutenberg support if needed
+        'show_in_rest'       => true, 
     );
 
     register_post_type('stories', $args);
 }
 add_action('init', 'register_stories_post_type');
+
+function register_coaching_post_type() {
+    $labels = array(
+        'name'               => 'Coaching',
+        'singular_name'      => 'Coaching',
+        'menu_name'          => 'Coaching',
+        'name_admin_bar'     => 'Coaching',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Coaching',
+        'new_item'           => 'New Coaching',
+        'edit_item'          => 'Edit Coaching',
+        'view_item'          => 'View Coaching',
+        'all_items'          => 'All Coaching',
+        'search_items'       => 'Search Coaching',
+        'not_found'          => 'No Coaching found.',
+        'not_found_in_trash' => 'No Coaching found in Trash.',
+        'parent_item_colon'  => 'Parent Coaching:',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-awards',
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'has_archive'        => true,  
+        'rewrite'            => array(
+            'slug'       => 'coaching', 
+            'with_front' => false,
+        ),
+        'query_var'          => true,
+        'show_in_rest'       => true, 
+    );
+
+    register_post_type('coaching', $args);
+}
+add_action('init', 'register_coaching_post_type');
+
 
 function enqueue_google_maps_api() {
     // Enqueue Google Maps API
