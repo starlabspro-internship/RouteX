@@ -77,6 +77,7 @@ body.dark-mode svg-link2 {
 
 body.dark-mode .entry-title a,
 body.dark-mode .country-single,
+body.dark-mode .custom-card-text,
 body.dark-mode .entry-meta p{
   color: var(--accent-color);
 }

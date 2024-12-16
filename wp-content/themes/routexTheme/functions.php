@@ -141,7 +141,7 @@ function routextheme_scripts() {
     if (defined('GITHUB_DEPLOYMENT_SLUG')) {
         $theme_version = GITHUB_DEPLOYMENT_SLUG;
     } else {
-        $theme_version = '1.0.3';
+        $theme_version = '1.0.5';
     }
 
     wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');

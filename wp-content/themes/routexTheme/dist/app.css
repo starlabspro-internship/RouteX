@@ -1364,28 +1364,28 @@ body .thumbnail-img {
   border: 2px solid var(--accent-color);
 }
 
-.sidebar .sidebar-card-title {
+.sidebar2 .sidebar-card-title {
   color: var(--secondary-color);
   font-weight: var(--bold);
   font-size: 22px;
   border-bottom: 1px solid var(--light-color);
   padding-bottom: 10px;
 }
-.sidebar .sidebar-card {
+.sidebar2 .sidebar-card {
   margin-top: 40px;
   padding: 25px;
   padding-top: 5px;
   border-radius: 20px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
 }
-.sidebar .sidebar-card form {
+.sidebar2 .sidebar-card form {
   border: 1px solid var(--light-color);
   border-radius: 40px;
   padding: 0px;
   display: flex;
   align-items: center;
 }
-.sidebar .sidebar-card form .search-field {
+.sidebar2 .sidebar-card form .search-field {
   width: 100%;
   padding: 15px;
   background-color: transparent;
@@ -1397,13 +1397,13 @@ body .thumbnail-img {
   border-radius: 20px;
   margin-right: 10px;
 }
-.sidebar .sidebar-card form .search-field::-moz-placeholder {
+.sidebar2 .sidebar-card form .search-field::-moz-placeholder {
   color: var(--light-color);
 }
-.sidebar .sidebar-card form .search-field::placeholder {
+.sidebar2 .sidebar-card form .search-field::placeholder {
   color: var(--light-color);
 }
-.sidebar .sidebar-card form .search-submit {
+.sidebar2 .sidebar-card form .search-submit {
   color: none;
   background-color: var(--primary-color);
   border: none;
@@ -1413,48 +1413,48 @@ body .thumbnail-img {
   padding: 0;
   margin-right: 20px;
 }
-.sidebar .popular-post {
+.sidebar2 .popular-post {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 }
-.sidebar .popular-post .popular-post-thumbnail {
+.sidebar2 .popular-post .popular-post-thumbnail {
   flex: 0 0 80px;
   height: 80px;
   margin-right: 12px;
   overflow: hidden;
   border-radius: 20px;
 }
-.sidebar .popular-post .popular-post-thumbnail img {
+.sidebar2 .popular-post .popular-post-thumbnail img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 10px;
 }
-.sidebar .popular-post .popular-post-info {
+.sidebar2 .popular-post .popular-post-info {
   flex-grow: 1;
   padding-top: 0;
   margin-top: 0;
 }
-.sidebar .popular-post .popular-post-info .popular-post-date {
+.sidebar2 .popular-post .popular-post-info .popular-post-date {
   font-size: 16px;
   color: var(--base-color);
   margin: 0;
   display: flex;
   gap: 7px;
 }
-.sidebar .popular-post .popular-post-info .popular-post-title {
+.sidebar2 .popular-post .popular-post-info .popular-post-title {
   font-size: 18px;
   font-weight: var(--bold);
   color: var(--secondary-color);
   margin: 5px 0 0;
 }
-.sidebar .popular-post-link {
+.sidebar2 .popular-post-link {
   text-decoration: none;
   color: inherit;
 }
-.sidebar .popular-post {
+.sidebar2 .popular-post {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
@@ -1462,55 +1462,55 @@ body .thumbnail-img {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
-.sidebar .popular-post .popular-post-thumbnail {
+.sidebar2 .popular-post .popular-post-thumbnail {
   flex: 0 0 80px;
   height: 80px;
   margin-right: 12px;
   overflow: hidden;
   border-radius: 10px;
 }
-.sidebar .popular-post .popular-post-thumbnail img {
+.sidebar2 .popular-post .popular-post-thumbnail img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 5px;
 }
-.sidebar .popular-post .popular-post-info {
+.sidebar2 .popular-post .popular-post-info {
   flex-grow: 1;
   padding-top: 0;
   margin-top: 0;
 }
-.sidebar .popular-post .popular-post-info .popular-post-date {
+.sidebar2 .popular-post .popular-post-info .popular-post-date {
   font-size: 16px;
   color: var(--base-color);
   margin: 0;
   display: flex;
   gap: 7px;
 }
-.sidebar .popular-post .popular-post-info .popular-post-title {
+.sidebar2 .popular-post .popular-post-info .popular-post-title {
   font-size: 18px;
   font-weight: var(--bold);
   color: var(--secondary-color);
   margin: 5px 0 0;
 }
-.sidebar .category-list {
+.sidebar2 .category-list {
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
 }
-.sidebar .category-list li {
+.sidebar2 .category-list li {
   margin-bottom: 10px;
 }
-.sidebar .category-list a {
+.sidebar2 .category-list a {
   text-decoration: none;
   color: var(--secondary-color);
   font-weight: var(--regular);
 }
-.sidebar .category-list a:hover {
+.sidebar2 .category-list a:hover {
   color: var(--accent-color);
 }
-.sidebar .tag-link {
+.sidebar2 .tag-link {
   text-decoration: none;
   color: var(--base-color);
   border: 1px solid var(--light-color);
@@ -1520,7 +1520,7 @@ body .thumbnail-img {
   display: inline-block;
   transition: all 0.3s ease;
 }
-.sidebar .tag-link:hover {
+.sidebar2 .tag-link:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   border-color: var(--contrast-color);
@@ -2274,7 +2274,7 @@ body .thumbnail-img {
 }
 @media (min-width: 768px) {
   .coaching-archive-container {
-    width: 1650px;
+    width: 1450px;
   }
   .coaching-archive-container .custom-coaching-card {
     height: 230px;

@@ -1,5 +1,5 @@
 <div class="col-12 col-md-4">
-    <div class="sidebar">
+    <div class="sidebar2">
         <div class="card sidebar-card">
             <div class="card-header">
                 <h3 class="sidebar-card-title">Search Here</h3>
