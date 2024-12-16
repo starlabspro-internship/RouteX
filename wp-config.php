@@ -20,34 +20,29 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-// define( 'DB_NAME', 'Routex_db' );
-define( 'DB_NAME', 'routex_db' );
-/** Database username */
-define( 'DB_USER', 'root' );
 
-/** Database password */
-// define( 'DB_PASSWORD', 'password' );
-define( 'DB_PASSWORD', '' );
-/** Database hostname */
-// define( 'DB_HOST', '23.88.98.228' );
-define( 'DB_HOST', 'localhost:3307' );
+define('DB_NAME', 'routex_db');
+define('DB_USER', 'routex_user');
+define('DB_PASSWORD', 'password');
+define('DB_HOST', 'localhost');
 
-/** Database charset to use in creating database tables. */
+
+
 define( 'DB_CHARSET', 'utf8' );
-
+define('WP_ALLOW_REPAIR', true);
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-// define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
-// define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
-
+define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
+define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
+define( 'WP_ALLOW_REPAIR', true );
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', 'c5e3782');
+define('GITHUB_DEPLOYMENT_SLUG', 'v1.0.0');
 define('WP_MEMORY_LIMIT', '512M');
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
-define( 'DISALLOW_FILE_MODS', false );
+//define( 'WP_DEBUG', true );
+//define( 'WP_DEBUG_LOG', true );
+//define( 'WP_DEBUG_DISPLAY', false );
+//define( 'DISALLOW_FILE_MODS', false );
 /**#@+
  * Authentication unique keys and salts.
  *
