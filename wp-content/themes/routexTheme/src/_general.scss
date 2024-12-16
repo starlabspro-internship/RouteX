@@ -137,6 +137,12 @@ a{
     .top-banner {
       border-radius: 50px;
     }
+
+    .top-banner {
+        &::after{
+            border-radius: 50px;
+        }
+      }
 }
 @include media-sm {
     .banner-title {

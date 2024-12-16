@@ -26,6 +26,107 @@
         padding: 0;
         margin: 0;
     }
+    .visa-details-title{
+        color: var(--dark-color);
+        margin-top: 0;
+    }
+    .visa-details-text{
+        color: var(--base-color);
+        font-weight: var(--regular);
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .visa-small-header{
+        font-weight: var(--semibold);
+        font-size: 30px;
+        line-height: 36px;
+        color: var(--dark-color);
+        margin-bottom: 20px;
+    }
+    .questions-item{
+        columns: 1;
+        padding-top: 40px;
+    }
+    .question-item-button-image{
+        width: 30px;
+        height: 30px;
+        img{
+            width: 14px;
+            height: 14px;
+        }
+    }
+    .visa-categories{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 20px;
+        p{
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .visa-category{
+            font-size: 18px;
+            font-weight: var(--semibold);
+            line-height: 28px;
+            color: var(--secondary-color);
+        }
+        .visa-category-reason{
+            font-size: 16px;
+            font-weight: var(--regular);
+            line-height: 30px;
+            color: var(--base-color);
+        }
+        &:last-child {
+            p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .continents-list{
+        margin-top: 0;
+        background-color: var(--contrast-color);
+    }
+    .contact-card{
+        background-color: var(--contrast-color);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary-color);
+        padding: 20px 0;
+        p{
+            font-size: 16px;
+            font-weight: var(--regular);
+            line-height: 30px;
+            margin-bottom: 10px;   
+        }
+        .contact-phone-icon{
+            width: 96px;
+            height: 96px;
+            border-radius: 100%;
+            background-color: var(--accent-color);
+            padding: 5px;
+            margin: 10px 0;
+
+            div{
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                border: 1px solid var(--primary-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .contact-link{
+            margin-top: 0;
+            margin-left: 0;
+            font-weight: var(--bold);
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
 }
 .visa-card {
     display: flex;
@@ -72,7 +173,7 @@
         height: 61px;
         border-radius: 20px;
         &:hover svg path{
-            fill: var(--primary-color);
+            fill: var(--secondary-color);
         }
     }
 }
@@ -82,6 +183,10 @@
 	align-items: center;
 	justify-content: right;
 	width: 100%;
+    position: relative;
+}
+.visa-icon-container svg{
+    z-index: 1;
 }
 .svg-link {
 	position: relative;
@@ -102,6 +207,15 @@
 	&:focus {
 		outline: none;
 	}
+}
+.behind-circle{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: var(--contrast-color);
+    position: absolute;
+    top: -10px;
+    right: -10px;
 }
 .visa-section-subtitles {
 	gap: 10px;
@@ -195,5 +309,6 @@
 @include media-lg{
     .visa-card {
         padding-right: 0;
+        padding-left: 5px;
     }
 }

@@ -1,19 +1,31 @@
 <?php
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
+
+$args = [
+    'post_type' => 'visa',
+    'posts_per_page' => 4,
+    'orderby' => 'date', 
+    'order' => 'DESC'
+];
+
+$query = new WP_Query($args);
+
 $visa_cards = [];
 
-if (have_rows('visa_cards')) :
-    while (have_rows('visa_cards')) : the_row();
+if ($query->have_posts()) :
+    while ($query->have_posts()) : $query->the_post();
         $visa_cards[] = [
-            'image' => get_sub_field('visa_card_image'),
-            'title' => get_sub_field('visa_card_title'),
-            'text' => get_sub_field('visa_card_text'),
-            'link' => get_sub_field('visa_card_link'),
-            'icon' => get_sub_field('visa_card_icon')
+            'image' => get_the_post_thumbnail_url(get_the_ID(), 'visa-category-img'),
+            'title' => get_the_title(),
+            'text' => get_field('visa_short_text'),
+            'link' => get_permalink(),
+            'icon' => get_field('visa_icon')
         ];
     endwhile;
 endif;
+
+wp_reset_postdata();
 
 if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
 ?>
@@ -42,8 +54,7 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                     <?php if ($card['image']) : ?>
                     <div class="col-lg-6">
                         <div class="visa-image">
-                            <?php $visa_category_img_url = wp_get_attachment_image_url($card['image'], 'visa-category-img'); ?>
-                            <img src="<?php echo esc_url($visa_category_img_url); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
+                            <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
                         </div>
                     </div>
                     <?php endif; ?>
