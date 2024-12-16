@@ -26,23 +26,21 @@ define('DB_USER', 'routex_user');
 define('DB_PASSWORD', 'password');
 define('DB_HOST', 'localhost');
 
-
-
-define( 'DB_CHARSET', 'utf8' );
+define('DB_CHARSET', 'utf8');
 define('WP_ALLOW_REPAIR', true);
 /** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define('DB_COLLATE', '');
 
-define('WP_HOME', 'https://routex.devops99.pro'); // Replace with your Site Address
-define('WP_SITEURL', 'https://routex.devops99.pro'); // Replace with your WordPress Address
-define( 'WP_ALLOW_REPAIR', true );
+define('WP_HOME', 'https://routex.devops99.pro'); 
+define('WP_SITEURL', 'https://routex.devops99.pro'); 
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', 'v1.0.0');
+define('GITHUB_DEPLOYMENT_SLUG', 'v1.0.6'); 
 define('WP_MEMORY_LIMIT', '512M');
 //define( 'WP_DEBUG', true );
 //define( 'WP_DEBUG_LOG', true );
 //define( 'WP_DEBUG_DISPLAY', false );
 //define( 'DISALLOW_FILE_MODS', false );
+
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -54,14 +52,14 @@ define('WP_MEMORY_LIMIT', '512M');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -78,6 +76,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
 $table_prefix = 'wp_';
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -93,13 +92,11 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
-
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+if (!defined('ABSPATH')) {
+    define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */

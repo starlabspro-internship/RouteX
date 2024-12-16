@@ -141,7 +141,7 @@ function routextheme_scripts() {
     if (defined('GITHUB_DEPLOYMENT_SLUG')) {
         $theme_version = GITHUB_DEPLOYMENT_SLUG;
     } else {
-        $theme_version = '1.0.5';
+        $theme_version = '1.0.6';
     }
 
     wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');
@@ -167,6 +167,7 @@ function routextheme_scripts() {
     wp_enqueue_style('critical-header-css');  
 }
 add_action('wp_enqueue_scripts', 'routextheme_scripts');
+
 
 function enqueue_critical_css() {
     $header_css_path = get_template_directory() . '/dist/header.css';
