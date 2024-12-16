@@ -40,15 +40,14 @@ echo top_banner();
                         <div class="card-body">
                             <?php if ($phone_number) : ?>
                                 <div class="contact-item">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/phone-icon.svg'); ?>" alt="button-upright-arrow">
+                                    <?php $phone_icon_url = wp_get_attachment_image_url($phone_icon, 'phone-icon-img'); ?>
+                                    <?php echo file_get_contents($phone_icon_url);?>
                                     <p><?php echo esc_attr($phone_number); ?></p>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ($email) : ?>
                                 <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt"></i>
                                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/mail-icon.svg'); ?>" alt="button-upright-arrow">
                                     <p><?php echo esc_attr($email); ?></p>
                                 </div>

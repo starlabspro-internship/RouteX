@@ -82,7 +82,13 @@
         display: flex;
         align-items: center;
         padding-left: 10px;
-
+        svg {
+            width: 16px;
+            height: 16px;
+            path{
+                fill: var(--accent-color);
+            }
+        }
         p{
             color: var(--secondary-color);
             padding-left: 20px;

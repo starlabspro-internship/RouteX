@@ -389,7 +389,18 @@ function top_banner() {
             $title = str_replace('Archives: ', '', $title); 
             $title = wp_strip_all_tags($title); 
         } elseif (is_singular()) {
-            $title = get_the_title(); 
+            if (get_post_type() === 'visa') {
+
+                $current_url = $_SERVER['REQUEST_URI'];
+        
+                if (preg_match('/\/visa\/[^\/]+/', $current_url)) {
+                    $title ='Visa Details';
+                } else {
+                    $title = get_the_title();
+                }
+            } else{
+                $title = get_the_title(); 
+            }
         }
     }
     ?>
@@ -469,7 +480,7 @@ function register_countries_post_type() {
         'menu_icon'          => 'dashicons-location-alt',
         'show_in_rest'       => true,
 		'can_export'         => true,
-        'menu_position'      => 2,
+        'menu_position'      => 3,
     );
 
     register_post_type('countries', $args);
@@ -484,6 +495,7 @@ add_image_size('why-choose-us-left-img', 267, 357, true);
 add_image_size('why-choose-us-right-img', 282, 464, true);
 add_image_size('why-choose-us-icon', 30, 30, true);
 add_image_size('phone-icon-img', 16, 16, true);
+add_image_size('contact-phone-icon-img', 43, 40, true); 
 add_image_size('our-countries-large-img', 410, 422, true);
 add_image_size('our-countries-small-img', 60, 60, true);
 add_image_size('visa-category-img', 274, 250, true);
@@ -542,6 +554,35 @@ function register_stories_post_type() {
     register_post_type('stories', $args);
 }
 add_action('init', 'register_stories_post_type');
+
+function register_visa_post_type() {
+    $labels = array(
+        'name'               => __('Visa', 'routexTheme'),
+        'singular_name'      => __('Visa', 'routexTheme'),
+        'menu_name'          => __('Visas', 'routexTheme'),
+        'all_items'          => __('All Visas', 'routexTheme'),
+        'add_new_item'       => __('Add New Visa', 'routexTheme'),
+        'edit_item'          => __('Edit Visa', 'routexTheme'),
+        'view_item'          => __('View Vias', 'routexTheme'),
+        'search_items'       => __('Search Visas', 'routexTheme'),
+        'not_found'          => __('No Visas Found', 'routexTheme'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'visa'),
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'menu_icon'          => 'dashicons-airplane',
+        'show_in_rest'       => true,
+		'can_export'         => true,
+        'menu_position'      => 4,
+    );
+
+    register_post_type('visa', $args);
+}
+add_action('init', 'register_visa_post_type');
 
 function enqueue_google_maps_api() {
     // Enqueue Google Maps API

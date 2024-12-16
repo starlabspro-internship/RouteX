@@ -31,13 +31,10 @@ if (have_posts()) :
     
     <div class="col-md-6">
          <div class="story-image-div">
-         <?php
-             $front_image = get_the_post_thumbnail_url('success-story-large-img'); 
-         ?>
              <svg viewBox="0 0 528 592" fill="none" xmlns="http://www.w3.org/2000/svg">
              <rect x="201.686" y="66.2148" width="331.348" height="475.451" rx="21.3651" transform="rotate(10 201.686 66.2148)" fill="#F1F5EB"/>
              <rect x="2.89324" y="114.178" width="412.764" height="476.323" transform="rotate(-5 2.89324 114.178)" fill="none" stroke="var(--accent-color)" stroke-width="11" rx="20" ry="20"/>
-             <image x="2.89324" y="114.178" width="412.764" height="476.323" transform="rotate(-5 2.89324 114.178)" href="<?php echo esc_url($front_image); ?>" clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice" />
+             <image x="2.89324" y="114.178" width="412.764" height="476.323" transform="rotate(-5 2.89324 114.178)" href="<?php the_post_thumbnail_url('success-story-large-img') ?>" clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice" />
              <defs>
              <clipPath id="clip">
                  <rect x="2.89324" y="114.178" width="412.764" height="476.323" rx="20" ry="20"/>

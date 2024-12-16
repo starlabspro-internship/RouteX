@@ -2,46 +2,31 @@
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
 
-// if (have_rows('blog_cards')) :
-//     while (have_rows('blog_cards')) : the_row();
-//         $cards[] = [
-//             'card_background' => get_sub_field('blog_image'),
-//             'card_title' => get_sub_field('blog_title'),
-//             'card_date' => get_sub_field('blog_date'),
-//             'card_text' => get_sub_field('blog_text'),
-//             'card_link' => get_sub_field('blog_link'),
-//             'card_creator' => get_sub_field('blog_creator'),
-//         ];
-//     endwhile;
-// endif;
-
 $args = [
-    'post_type' => 'post', // Specify the post type
-    'posts_per_page' => 6, // Adjust the number of posts to retrieve (use -1 for all posts)
-    'orderby' => 'date', // Order by date
-    'order' => 'DESC', // Descending order
-    'category_name' => 'blog', // Filter by the "blog" category (use the slug of the category)
+    'post_type' => 'post',
+    'posts_per_page' => 6,
+    'orderby' => 'date', 
+    'order' => 'DESC',
+    'category_name' => 'blog',
 ];
 
 $query = new WP_Query($args);
 
-// Initialize an array for the cards
 $cards = [];
 
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         $cards[] = [
-            'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img'), // Get the featured image URL
-            'card_title' => get_the_title(), // Get the post title
-            'card_date' => get_the_date(), // Get the post date
-            'card_text' => get_the_excerpt(), // Get the excerpt
-            'card_link' => get_permalink(), // Get the permalink
-            'card_creator' => get_the_author(), // Get the author's name
+            'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img'),
+            'card_title' => get_the_title(),
+            'card_date' => get_the_date(),
+            'card_text' => get_the_excerpt(),
+            'card_link' => get_permalink(),
+            'card_creator' => get_the_author(),
         ];
     endwhile;
 endif;
 
-// Reset post data
 wp_reset_postdata();
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
