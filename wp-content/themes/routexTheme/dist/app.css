@@ -1891,55 +1891,53 @@ body .thumbnail-img {
     width: 285px;
   }
 }
-/* Styling for featured image */
 .featured-image img {
   width: 100%;
-  max-height: 455px; /* Adjust this for the desired image height */
-  border-radius: 30px; /* Rounded corners */
+  max-height: 455px;
+  border-radius: 30px;
   -o-object-fit: cover;
-     object-fit: cover; /* Ensures the image scales nicely */
+     object-fit: cover;
+  margin-top: 30px;
 }
 
-/* Title styling */
 .coaching-title {
-  font-size: 50px; /* Set title size to 50px */
+  font-size: 50px;
   font-weight: bold;
-  color: var(--primary-color); /* Customize color as needed */
-  margin-bottom: 30px; /* Space below the title */
+  color: var(--primary-color);
+  margin-bottom: 30px;
 }
 
 .coaching-single p {
   color: var(--base-color);
 }
 
-/* Sidebar coaching styles */
 .sidebar-coaching .recent-posts ul {
-  padding: 20px; /* Padding around the entire list */
+  padding: 20px;
   margin: 0;
-  list-style: none; /* Remove default list style */
+  list-style: none;
   background-color: var(--contrast-color);
-  border-radius: 20px; /* Rounded corners for the entire list */
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 .sidebar-coaching .recent-posts ul li {
   display: flex;
-  justify-content: space-between; /* Align text to the left and container for SVG to the right */
-  align-items: center; /* Vertically center the items */
-  padding: 20px 30px; /* Add spacing inside each list item */
-  border-radius: 999px; /* Rounded corners for each list item */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
   background-color: var(--primary-color);
   transition: 0.5s ease all;
 }
 .sidebar-coaching .recent-posts ul li a {
   color: var(--secondary-color);
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: none;
   font-weight: var(--bold);
-  flex-grow: 1; /* Let the text take up available space */
+  flex-grow: 1;
   display: flex;
-  justify-content: space-between; /* Ensures text and the SVG container are aligned on opposite sides */
+  justify-content: space-between;
   align-items: center;
 }
 .sidebar-coaching .recent-posts ul li .right-arrow-container {
@@ -1988,6 +1986,11 @@ body .thumbnail-img {
   font-weight: var(--bold);
 }
 
+@media (min-width: 768px) {
+  .featured-image img {
+    margin-top: 0;
+  }
+}
 .stories {
   padding: 40px 0;
 }
@@ -2211,7 +2214,7 @@ body .thumbnail-img {
   }
 }
 .coaching-archive-container {
-  width: 1650px;
+  width: auto;
 }
 .coaching-archive-container .custom-coaching-card {
   margin: 20px;
@@ -2222,11 +2225,11 @@ body .thumbnail-img {
   box-shadow: none;
   display: flex;
   flex-direction: row;
-  width: auto; /* Ensure card takes full width of column */
-  height: 250px;
+  width: auto;
+  height: auto;
 }
 .coaching-archive-container .custom-coaching-card .custom-card-img {
-  width: 200px;
+  max-width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
   border-top-left-radius: 20px;
@@ -2247,7 +2250,7 @@ body .thumbnail-img {
   margin-bottom: 5px;
 }
 .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-text {
-  font-size: 16px;
+  font-size: 11px;
   margin-top: 10px;
   margin-bottom: 5px;
   line-height: 30px;
@@ -2268,6 +2271,22 @@ body .thumbnail-img {
 .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-link img {
   width: 16px;
   height: 16px;
+}
+@media (min-width: 768px) {
+  .coaching-archive-container {
+    width: 1650px;
+  }
+  .coaching-archive-container .custom-coaching-card {
+    height: 230px;
+  }
+  .coaching-archive-container .custom-card-img {
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+  }
+  .coaching-archive-container .custom-card-text {
+    font-size: 16px;
+  }
 }
 
 .hero-section {

@@ -1,5 +1,5 @@
 .coaching-archive-container {
-    width: 1650px;
+    width: auto;
     .custom-coaching-card {
         margin: 20px;
         background: var(--primary-color);
@@ -9,11 +9,11 @@
         box-shadow: none;
         display: flex;
         flex-direction: row;
-        width: auto; /* Ensure card takes full width of column */
-        height: 250px;
+        width: auto; 
+        height: auto;
   
         .custom-card-img {
-            width: 200px;
+            max-width: 150px;
             object-fit: cover;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
@@ -35,7 +35,7 @@
             }
   
             .custom-card-text {
-                font-size: 16px;
+                font-size: 11px;
                 margin-top: 10px;
                 margin-bottom: 5px;
                 line-height: 30px;
@@ -63,5 +63,20 @@
             }
             
         }
+    }
+
+    @include media-md {
+      width: 1650px;
+      .custom-coaching-card {
+        height: 230px;
+      }
+      .custom-card-img {
+        width: 200px;
+        max-width: 200px;
+        height: auto;
+      }
+      .custom-card-text {
+        font-size: 16px;
+      }
     }
 }
