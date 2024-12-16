@@ -24,7 +24,7 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $primar
   
             <div class="row align-items-center" id="banner-content">
                 <?php if ($text_area_first_sector || $button_first_sector || $videos_button) : ?>
-                <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?>">
+                <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?> contentdiv-hero">
                     <div class="hero-content">
                         <?php if ($text_area_first_sector) : ?>
                             <h1 class="hero-content-title"><?php echo esc_html($text_area_first_sector); ?></h1>

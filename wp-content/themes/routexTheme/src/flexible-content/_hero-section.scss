@@ -192,6 +192,10 @@
       }
     }
 
+    .contentdiv-hero{
+      display: flex;
+    }
+
     .decorative-icon {
       position: absolute;
       z-index: 1;
@@ -319,5 +323,8 @@
 @include media-xxxl{
   .hero-section{
     border-radius: 40px;
+  }
+  .contentdiv-hero{
+    display: flex;
   }
 }
