@@ -34,8 +34,8 @@ define('WP_ALLOW_REPAIR', true);
 /** The database collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 define('WP_TEMP_DIR', ABSPATH . 'wp-content/temp/');
-define('WP_HOME', 'https://routex.devops99.pro'); 
-define('WP_SITEURL', 'https://routex.devops99.pro'); 
+define('WP_HOME', 'http://routex.devops99.pro'); 
+define('WP_SITEURL', 'http://routex.devops99.pro'); 
 define('WP_MAX_MEMORY_LIMIT', '256M');
 define('GITHUB_DEPLOYMENT_SLUG', 'f38a653');
 define('WP_MEMORY_LIMIT', '512M');
