@@ -182,3 +182,16 @@ a{
         padding: 60px 0;
     }
 }
+
+.custom-bullet {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+.custom-bullet-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}

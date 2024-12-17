@@ -730,23 +730,6 @@ function add_custom_bullet_point_plugin($plugin_array) {
     return $plugin_array;
 }
 
-function custom_bullet_point_styles() {
-    echo '<style>
-        .custom-bullet {
-            display: flex;
-            align-items: center;
-            list-style-type: none;
-            padding-left: 30px;
-            margin-bottom: 10px;
-        }
-        .custom-bullet-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 10px;
-        }
-    </style>';
-}
 
 add_filter('mce_buttons', 'add_custom_bullet_point_button');
 add_filter('mce_external_plugins', 'add_custom_bullet_point_plugin');
-add_action('admin_head', 'custom_bullet_point_styles');
