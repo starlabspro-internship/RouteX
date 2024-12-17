@@ -197,7 +197,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                 <?php if (has_non_empty_text($footer_menu_links)) : ?>
                 <div class="col-md-6">
                     <div class="footer__copyright-menu">
-                        <ul>
+                        <!-- <ul>
                             <?php foreach ($footer_menu_links as $menu_links) : ?>
                                 <?php if ($menu_links['menu_link_text']) : ?>
                                 <li>
@@ -208,7 +208,19 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                                 </li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                        </ul>
+                        </ul> -->
+                        <nav id="site-navigation">
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'menu-2',
+                                    'menu_id'        => 'footer-menu',
+                                    'walker'          => new WP_Bootstrap_Navwalker(),
+                                    'container'       => false,
+                                )
+                            );
+                            ?>
+                        </nav>
                     </div>
                 </div>
                 <?php endif; ?>

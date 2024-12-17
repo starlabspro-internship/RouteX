@@ -1687,6 +1687,12 @@ body .thumbnail-img {
   width: 100%;
 }
 
+.term-conditions {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .story-single-section {
   max-width: 1290px;
   margin: 0 auto;
@@ -2725,7 +2731,6 @@ body .thumbnail-img {
   transition: all 0.3s;
 }
 .client-img:hover {
-  cursor: pointer;
   transform: scale(1.1);
 }
 
@@ -3668,43 +3673,13 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.top-right-section .cta-button .default-img-cta {
-  display: inline;
-  margin-top: 3px;
-}
-.top-right-section .cta-button .hover-img-cta {
-  display: none;
-}
 .top-right-section .cta-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   border: 1px solid transparent;
 }
-.top-right-section .cta-button:hover .default-img-cta {
-  display: none;
-}
-.top-right-section .cta-button:hover .hover-img-cta {
-  display: inline;
-  margin-top: 3px;
-}
-.top-right-section .cta-button div {
-  display: inline-block;
-  border-radius: 30px;
-}
-.top-right-section .cta-button div:hover a.default-img {
-  display: none;
-}
-.top-right-section .cta-button div:hover a.hover-img {
-  font-weight: var(--semibold);
-  line-height: 30px;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: 30px;
-  transition: 0.3s;
-  text-decoration: none;
+.top-right-section .cta-button:hover svg path {
+  fill: var(--primary-color);
 }
 .top-right-section .img2 {
   border-radius: 20px 20px 20px 0;

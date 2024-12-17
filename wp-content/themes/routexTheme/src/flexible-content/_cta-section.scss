@@ -15,26 +15,21 @@
     height: auto;
     border-radius: 20px; 
     margin-bottom: 30px;
-
     .title2 {
         color: var(--secondary-color);
         margin: 15px 0;
     }
-
     p {
         color: var(--base-color);
     }
-
     .cta-button-container {
         display: flex;
         align-items: center;
     }
-    
     .cta-button-container { 
         display: flex;
         align-items: center;
     }
-    
     .cta-button {
         background-color: var(--primary-color);
         color: var(--secondary-color);
@@ -49,58 +44,15 @@
         line-height: 30px;
         font-weight: 600;
         transition: all 0.3s ease;
-      
-        .default-img-cta {
-          display: inline;
-          margin-top: 3px;
-        }
-      
-        .hover-img-cta {
-          display: none;
-        }
-      
         &:hover {
           background-color: var(--accent-color);
           color: var(--primary-color);
           border: 1px solid transparent;
-      
-          .default-img-cta {
-            display: none;
-          }
-      
-          .hover-img-cta {
-            display: inline;
-            margin-top: 3px;
-          }
-        }
-    
-
-        div {
-            display: inline-block;
-            border-radius: 30px;
-            &:hover {
-
-                a {
-                    &.default-img {
-                        display: none;
-                    }
-                    &.hover-img {
-                        font-weight: var(--semibold);
-                        line-height: 30px;
-                        font-size: 14px;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 10px;
-                        padding: 15px 30px;
-                        border-radius: 30px;
-                        transition: 0.3s;
-                        text-decoration: none;
-                    }
-                }
+            svg path{
+                fill: var(--primary-color);
             }
         }
     }
-
     .img2 {
         border-radius: 20px 20px 20px 0;
         padding-top: 10px;
