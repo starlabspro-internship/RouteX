@@ -84,7 +84,7 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                     <?php echo esc_html($text_area) ?>
                 </p>
                 <?php endif; ?>
-                <?php if (has_non_empty_cards($cards)) : ?>
+                <?php if ($has_non_empty_cards_boolean) : ?>
                 <div class="choose-us-cards">
                     <div class="row">
                     <?php foreach ($cards as $card) : ?>

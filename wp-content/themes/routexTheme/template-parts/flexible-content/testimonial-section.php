@@ -48,6 +48,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                                     <?php if ($card['icon'] || $card['name'] || $card['position']): ?>
                                         <div class="testimonial-icon">
                                             <?php if ($card['icon']): ?>
+                                                <!-- <?php var_dump($card['icon']); ?> -->
                                                 <?php $testimonail_small_img_url = wp_get_attachment_image_url($card['icon'], 'testimonail-small-img'); ?>
                                                 <img src="<?php echo $testimonail_small_img_url; ?>" alt="<?php echo $card['title']; ?>" class="img-fluid">
                                             <?php endif; ?>

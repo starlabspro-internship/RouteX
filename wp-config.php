@@ -23,8 +23,11 @@
 
 define('DB_NAME', 'routex_db');
 define('DB_USER', 'routex_user');
+// define('DB_USER', 'root');
 define('DB_PASSWORD', 'password');
+// define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
+// define('DB_HOST', 'localhost:3307');
 
 define('DB_CHARSET', 'utf8');
 define('WP_ALLOW_REPAIR', true);
