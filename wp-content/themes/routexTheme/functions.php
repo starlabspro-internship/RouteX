@@ -335,6 +335,10 @@ if(function_exists('acf_add_options_page')){
 }
 
 function has_non_empty_cards($cards) {
+    if (!is_array($cards)) {
+        return false;
+    }
+    
     foreach ($cards as $card) {
         foreach ($card as $index => $value) {
             if ($index === 'card_bullet_points') {

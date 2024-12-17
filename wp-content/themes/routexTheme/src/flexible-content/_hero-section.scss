@@ -123,8 +123,13 @@
       text-decoration: none;
       transition: all 0.3s ease;
     
-      &:hover svg path{
-        fill: var(--secondary-color);
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--secondary-color);
+        border: 1px solid transparent;
+        svg path{
+          fill: var(--secondary-color);
+        }
       }
     }
     .banner-video-button {
@@ -275,13 +280,6 @@
       
         .default-img-hero {
           display: inline;
-        }
-      
-      
-        &:hover {
-          background-color: var(--accent-color);
-          color: var(--primary-color);
-          border: 1px solid transparent;
         }
       }
 

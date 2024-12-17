@@ -2416,6 +2416,11 @@ body .thumbnail-img {
   text-decoration: none;
   transition: all 0.3s ease;
 }
+.hero-section .btn-wrapper .btn-transparent:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border: 1px solid transparent;
+}
 .hero-section .btn-wrapper .btn-transparent:hover svg path {
   fill: var(--secondary-color);
 }
@@ -2551,11 +2556,6 @@ body .thumbnail-img {
   }
   .hero-section .btn-wrapper .btn-transparent .default-img-hero {
     display: inline;
-  }
-  .hero-section .btn-wrapper .btn-transparent:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: 1px solid transparent;
   }
   .hero-section .btn-wrapper .video-text {
     font-size: 16px;

@@ -5,8 +5,13 @@ $videos_button = get_sub_field('videos_button');
 $primary_image = get_sub_field('primary_image');
 $image_url = wp_get_attachment_image_url($primary_image, 'hero-img');
 
-if ($text_area_first_sector || $button_first_sector || $videos_button || $primary_image) : ?>
+if ($text_area_first_sector || $button_first_sector || $videos_button || $primary_image) : 
+
+$is_split_layout = $primary_image && ($text_area_first_sector || $button_first_sector || $videos_button);
+
+?>
     <section class="hero-section">
+        HELOOOOOOOO
         <div class="container">
             <div class="decorative-icon left-tower">
                 <?php
@@ -21,10 +26,10 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $primar
             </div>
 
             <div class="decorative-circle"></div>
-  
+
             <div class="row align-items-center" id="banner-content">
                 <?php if ($text_area_first_sector || $button_first_sector || $videos_button) : ?>
-                <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?> contentdiv-hero">
+                <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?>">
                     <div class="hero-content">
                         <?php if ($text_area_first_sector) : ?>
                             <h1 class="hero-content-title"><?php echo esc_html($text_area_first_sector); ?></h1>
@@ -36,14 +41,20 @@ if ($text_area_first_sector || $button_first_sector || $videos_button || $primar
                                     <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow.svg');?>
                                 </a>
                             <?php endif; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-6" id="banner-right-content">
-                        <div class="gray-photo">
-                            <?php if ($primary_image) : ?>
-                                <img src="<?php echo esc_url($image_url); ?>" alt="Photo">
+                            <?php if ($videos_button) : ?>
+                                <a href="<?php echo esc_url($videos_button); ?>" class="banner-video-button">
+                                    <?php echo file_get_contents(get_template_directory() . '/assets/icons/play_button.svg');?>
+                                </a>
+                                <a href="<?php echo esc_url($videos_button); ?>" class="video-text">Watch Our Videos</a>
                             <?php endif; ?>
                         </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if ($primary_image) : ?>
+                <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?>" id="banner-right-content">
+                    <div class="gray-photo">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="Photo">
                     </div>
                 </div>
                 <?php endif; ?>
