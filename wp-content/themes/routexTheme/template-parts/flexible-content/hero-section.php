@@ -11,7 +11,6 @@ $is_split_layout = $primary_image && ($text_area_first_sector || $button_first_s
 
 ?>
     <section class="hero-section">
-        HELOOOOOOOO
         <div class="container">
             <div class="decorative-icon left-tower">
                 <?php
