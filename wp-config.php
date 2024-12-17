@@ -34,7 +34,7 @@ define('DB_COLLATE', '');
 define('WP_HOME', 'https://routex.devops99.pro'); 
 define('WP_SITEURL', 'https://routex.devops99.pro'); 
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', '4bad989');
+define('GITHUB_DEPLOYMENT_SLUG', 'e2995ac');
 define('WP_MEMORY_LIMIT', '512M');
 //define( 'WP_DEBUG', true );
 //define( 'WP_DEBUG_LOG', true );
