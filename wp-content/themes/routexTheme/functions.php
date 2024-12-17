@@ -734,3 +734,16 @@ function add_custom_bullet_point_plugin($plugin_array) {
 
 add_filter('mce_buttons', 'add_custom_bullet_point_button');
 add_filter('mce_external_plugins', 'add_custom_bullet_point_plugin');
+
+
+function disable_recaptcha() {
+    global $post;
+    
+	if( !has_shortcode($post->post_content, 'contact-form-7') ){
+		wp_dequeue_script( 'google-recaptcha' );
+		wp_deregister_script( 'google-recaptcha' );
+		add_filter( 'wpcf7_load_js', '__return_false' );
+		add_filter( 'wpcf7_load_css', '__return_false' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'disable_recaptcha', 99999 );

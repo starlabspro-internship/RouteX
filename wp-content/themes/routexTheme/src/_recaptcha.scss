@@ -1,8 +1,3 @@
 .grecaptcha-badge{
-    visibility: hidden;
-}
-
-body.recaptcha-display .grecaptcha-badge {
-    visibility: visible;
     z-index: 1;
 }

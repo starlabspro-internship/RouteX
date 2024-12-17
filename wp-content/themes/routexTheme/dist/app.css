@@ -1226,11 +1226,6 @@ a:hover .hover-img-choose {
 }
 
 .grecaptcha-badge {
-  visibility: hidden;
-}
-
-body.recaptcha-display .grecaptcha-badge {
-  visibility: visible;
   z-index: 1;
 }
 
