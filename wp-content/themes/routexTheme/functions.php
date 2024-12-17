@@ -718,3 +718,35 @@ add_action('wp_head', function() {
         reset_rows();
     }
 }, 1);
+
+
+function add_custom_bullet_point_button($buttons) {
+    array_push($buttons, 'separator', 'custom_bullet_point');
+    return $buttons;
+}
+
+function add_custom_bullet_point_plugin($plugin_array) {
+    $plugin_array['custom_bullet_point'] = get_template_directory_uri() . '/custom-editor-button.js'; // Ensure correct path
+    return $plugin_array;
+}
+
+function custom_bullet_point_styles() {
+    echo '<style>
+        .custom-bullet {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .custom-bullet-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+    </style>';
+}
+
+add_filter('mce_buttons', 'add_custom_bullet_point_button');
+add_filter('mce_external_plugins', 'add_custom_bullet_point_plugin');
+add_action('admin_head', 'custom_bullet_point_styles');
