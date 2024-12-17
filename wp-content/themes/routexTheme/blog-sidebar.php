@@ -68,22 +68,24 @@
             </div>
         </div>
     
-        <div class="card sidebar-card">
-            <div class="card-header">
-                <h3 class="sidebar-card-title">Popular Tags</h3>
-            </div>
-            <div class="card-body">
-                <?php
-                $tags = get_tags();
-                if ($tags) :
+        <?php
+        // Check if there are tags before displaying the "Popular Tags" card
+        $tags = get_tags();
+        if ($tags) : ?>
+            <div class="card sidebar-card">
+                <div class="card-header">
+                    <h3 class="sidebar-card-title">Popular Tags</h3>
+                </div>
+                <div class="card-body">
+                    <?php
                     foreach ($tags as $tag) :
-                ?>
+                    ?>
                         <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" class="tag-link"><?php echo esc_html($tag->name); ?></a>
-                <?php
+                    <?php
                     endforeach;
-                endif;
-                ?>
+                    ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </div>

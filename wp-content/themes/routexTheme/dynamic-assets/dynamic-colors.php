@@ -84,7 +84,9 @@ body.dark-mode .entry-meta p{
 
 
 /* For inline SVGs in dark mode */
-body.dark-mode .decorative-icon svg {
+body.dark-mode .decorative-icon svg,
+body.dark-mode #dark-mode-toggle svg,
+body.dark-mode .card-bottom-layout .svg-link:hover path{
     filter: brightness(0) invert(1);
 }
 

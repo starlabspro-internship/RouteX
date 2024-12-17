@@ -16,7 +16,7 @@ $visa_cards = [];
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         $visa_cards[] = [
-            'image' => get_the_post_thumbnail_url(get_the_ID(), 'visa-category-img'),
+            'image' => get_post_thumbnail_id(get_the_ID()), 
             'title' => get_the_title(),
             'text' => get_field('visa_short_text'),
             'link' => get_permalink(),
@@ -54,7 +54,12 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                     <?php if ($card['image']) : ?>
                     <div class="col-lg-6">
                         <div class="visa-image">
-                            <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="img-fluid">
+                            <?php
+                            echo wp_get_attachment_image( $card['image'], 'visa-category-img', false, [
+                                'alt' => esc_attr($card['title']),
+                                'class' => 'img-fluid',
+                            ] );
+                            ?>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -74,15 +79,17 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                                 <?php if ($card['link']) : ?>
                                 <div class="link-container">
                                     <a href="<?php echo esc_url($card['link']); ?>">
-                                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/upright-arrow-light-green.svg');?>
+                                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/upright-arrow-light-green.svg'); ?>
                                     </a>
                                 </div>
                                 <?php endif; ?>
 
                                 <?php if ($card['icon']) : ?>
                                 <div class="visa-icon-container">
-                                    <?php $cards_img_url = wp_get_attachment_image_url($card['icon'], 'visa-icon'); ?>
-                                    <?php echo file_get_contents($cards_img_url);?>
+                                    <?php
+                                    $cards_img_url = wp_get_attachment_image_url($card['icon'], 'visa-icon');
+                                    echo file_get_contents($cards_img_url);
+                                    ?>
                                 </div>
                                 <?php endif; ?>
                             </div>
