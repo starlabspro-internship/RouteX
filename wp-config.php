@@ -34,7 +34,7 @@ define('WP_TEMP_DIR', ABSPATH . 'wp-content/temp/');
 define('WP_HOME', 'https://routex.devops99.pro'); 
 define('WP_SITEURL', 'https://routex.devops99.pro'); 
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', 'c643bf3');
+define('GITHUB_DEPLOYMENT_SLUG', '98be9f1');
 define('WP_MEMORY_LIMIT', '512M');
 //define( 'WP_DEBUG', true );
 //define( 'WP_DEBUG_LOG', true );
