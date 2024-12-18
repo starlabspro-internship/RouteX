@@ -411,13 +411,13 @@ function top_banner() {
     }
     ?>
 
-    <div class="top-banner">
-        <div class="container">
-            <h1 class="banner-title"><?php echo esc_html($title); ?></h1> 
-        </div>
+<div class="top-banner">
+    <div class="container">
+        <h1 class="banner-title"><?php echo esc_html($title); ?></h1>
     </div>
+</div>
 
-    <?php
+<?php
     return ob_get_clean(); 
 }
 
@@ -739,3 +739,17 @@ function disable_recaptcha() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'disable_recaptcha', 99999 );
+
+function create_team_cpt() {
+    register_post_type('team-details', array(
+        'labels' => array(
+            'name' => __('Team Members'),
+            'singular_name' => __('Team Member')
+        ),
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'rewrite' => array('slug' => 'team-details'), 
+        'has_archive' => true,
+    ));
+}
+add_action('init', 'create_team_cpt');

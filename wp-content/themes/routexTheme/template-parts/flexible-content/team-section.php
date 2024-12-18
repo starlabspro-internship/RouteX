@@ -34,57 +34,69 @@ if (has_team_content()) :
         $team_member_img_url_medium = wp_get_attachment_image_url($profile_image, 'team-member-img-medium');
         $team_member_img_url_small = wp_get_attachment_image_url($profile_image, 'team-member-img-small');
         $name = get_sub_field('name');
+        $name_url = get_sub_field('name_url');
         $position = get_sub_field('position');
         $team_member_id = uniqid('team_member_'); 
         ?>
 
         <div class="col-md-6 col-lg-4">
             <div class="team-member">
-            <?php if ($profile_image) : ?>
-            <img src="<?php echo esc_url($team_member_img_url); ?>"
-                 srcset="<?php echo esc_url($team_member_img_url_large); ?> 1024w, 
-                         <?php echo esc_url($team_member_img_url_medium); ?> 768w, 
-                         <?php echo esc_url($team_member_img_url_small); ?> 480w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"
-                 alt="<?php echo esc_attr($name); ?>" class="team-member-image">
-            <?php endif; ?>
+                <?php if ($profile_image) : ?>
+                <img src="<?php echo esc_url($team_member_img_url); ?>" alt="<?php echo esc_attr($name); ?>"
+                    class="team-member-image">
+                <?php endif; ?>
 
-            <div class="member-info-wrapper">
-                <div class="member-info">
-                    <?php if ($name) : ?>
-                    <h3 class="team-member-name"><?php echo esc_html($name); ?></h3>
-                    <?php endif; ?>
+                <div class="member-info-wrapper">
+                    <div class="member-info">
+                        <?php
+                        $name = get_sub_field('name');
+                        $name_url = get_sub_field('name_url');
+                        ?>
 
-                    <?php if ($position) : ?>
-                    <p class="team-member-position"><?php echo esc_html($position); ?></p>
-                    <?php endif; ?>
-                </div>
+                        <?php if ($name) : ?>
+                        <h3 class="team-member-name">
+                            <?php if ($name_url) : ?>
+                            <a href="<?php echo esc_url($name_url); ?>" target="_blank">
+                                <?php echo esc_html($name); ?>
+                            </a>
+                            <?php else : ?>
+                            <?php echo esc_html($name); ?>
+                            <?php endif; ?>
+                        </h3>
+                        <?php endif; ?>
 
-                <?php if (have_rows('social_links')) : ?>
-                <div class="social-links-container">
-                    <button class="social-toggle" data-target="#<?php echo esc_attr($team_member_id); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/team-icon.svg" />
-                    </button>
-                    <div class="social-icons" id="<?php echo esc_attr($team_member_id); ?>">
+                        <?php if ($position) : ?>
+                        <p class="team-member-position"><?php echo esc_html($position); ?></p>
+                        <?php endif; ?>
+                    </div>
 
-                        <div class="social-links-wrapper">
-                            <?php while (have_rows('social_links')) : the_row(); ?>
-                            <?php
+                    <?php if (have_rows('social_links')) : ?>
+                    <div class="social-links-container">
+                        <button class="social-toggle" data-target="#<?php echo esc_attr($team_member_id); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/team-icon.svg" />
+                        </button>
+                        <div class="social-icons" id="<?php echo esc_attr($team_member_id); ?>">
+
+                            <?php if (have_rows('social_links')) : ?>
+                            <div class="social-links-wrapper">
+                                <?php while (have_rows('social_links')) : the_row(); ?>
+                                <?php
                             $social_icon = get_sub_field('social_icon');
                             $social_url = get_sub_field('social_url');
                              ?>
-                            <?php if ($social_url && $social_icon) : ?>
-                            <a href="<?php echo esc_url($social_url); ?>" target="_blank" class="social-link">
-                                <img src="<?php echo esc_url($social_icon); ?>" alt="Social Icon">
-                            </a>
+                                <?php if ($social_url && $social_icon) : ?>
+                                <a href="<?php echo esc_url($social_url); ?>" target="_blank" class="social-link">
+                                    <img src="<?php echo esc_url($social_icon); ?>" alt="Social Icon">
+                                </a>
+                                <?php endif; ?>
+                                <?php endwhile; ?>
+                            </div>
                             <?php endif; ?>
-                            <?php endwhile; ?>
-                        </div>
 
+                        </div>
                     </div>
+                    <?php endif; ?>
                 </div>
-                <?php endif; ?>
-            </div>
             </div>
         </div>
         <?php endwhile; ?>
@@ -92,4 +104,3 @@ if (has_team_content()) :
     </div>
     <?php endif; ?>
 </section>
-

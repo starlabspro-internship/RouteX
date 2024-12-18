@@ -15,12 +15,9 @@
 /*!**********************!*\
   !*** ./src/app.scss ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nUndefined mixin.\n\u001b[34m    ╷\u001b[0m\n\u001b[34m327 │\u001b[0m \u001b[31m┌\u001b[0m \u001b[31m@include media-sd {\u001b[0m\n\u001b[34m328 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  .team-member-image-wrapper {\u001b[0m\n\u001b[34m329 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m    height: 300px;\u001b[0m\n\u001b[34m330 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  }\u001b[0m\n\u001b[34m331 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m\u001b[0m\n\u001b[34m332 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  .team-details-name {\u001b[0m\n\u001b[34m333 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m    font-size: 1.8rem;\u001b[0m\n\u001b[34m334 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  }\u001b[0m\n\u001b[34m335 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m\u001b[0m\n\u001b[34m336 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  .contact-me-section {\u001b[0m\n\u001b[34m337 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m    padding: 20px;\u001b[0m\n\u001b[34m338 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  }\u001b[0m\n\u001b[34m339 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m\u001b[0m\n\u001b[34m340 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  .submit-button {\u001b[0m\n\u001b[34m341 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m    font-size: 12px;\u001b[0m\n\u001b[34m342 │\u001b[0m \u001b[31m│\u001b[0m \u001b[31m  }\u001b[0m\n\u001b[34m343 │\u001b[0m \u001b[31m└\u001b[0m \u001b[31m}\u001b[0m\n\u001b[34m    ╵\u001b[0m\n  src\\flexible-content\\team-details-section.scss 327:1  @import\n  src\\app.scss 35:9                                     root stylesheet\n    at processResult (C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\webpack\\lib\\NormalModule.js:889:19)\n    at C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\webpack\\lib\\NormalModule.js:1030:5\n    at C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\laragon\\www\\RouteX\\wp-content\\themes\\routexTheme\\node_modules\\sass-loader\\dist\\index.js:67:5)");
 
 /***/ }),
 
@@ -124,8 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/dist/app": 0,
-/******/ 			"dist/header": 0,
-/******/ 			"dist/app": 0
+/******/ 			"dist/header": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -175,9 +171,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/header","dist/app"], () => (__webpack_require__("./src/_header.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/header"], () => (__webpack_require__("./src/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/header"], () => (__webpack_require__("./src/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/header"], () => (__webpack_require__("./src/_header.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
