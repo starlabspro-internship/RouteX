@@ -1,6 +1,7 @@
 <?php
 $left_image = get_sub_field('primary_image');
 $left_image_url = wp_get_attachment_image_url($left_image, 'cta-left-img');
+$left_image_srcset = wp_get_attachment_image_srcset($left_image, 'cta-left-img');
 $icon = get_sub_field('icon');
 $icon_url = wp_get_attachment_image_url($icon, 'visa-icon');
 $top_title = get_sub_field('top_title');
@@ -8,6 +9,7 @@ $top_text = get_sub_field('top_text');
 $button = get_sub_field('button');
 $right_image = get_sub_field('right_image');
 $right_image_url = wp_get_attachment_image_url($right_image, 'cta-right-img');
+$right_image_srcset = wp_get_attachment_image_srcset($right_image, 'cta-right-img');
 $bottom_counters = [];
 if (have_rows('bottom_counter')) :
     while (have_rows('bottom_counter')) : the_row();
@@ -29,7 +31,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
         <?php if ($left_image) : ?>
         <div class="<?php echo esc_attr($is_split_layout ? 'col-md-4 col-12' : 'col-12'); ?>">
             <div class="imagediv">
-                <img src="<?php echo esc_url($left_image_url); ?>" class="img-fluid" alt="Left Image" />
+                <img src="<?php echo esc_url($left_image_url); ?>" srcset="<?php echo esc_attr($left_image_srcset); ?>" class="img-fluid" alt="Left Image" />
             </div>
         </div>
         <?php endif; ?>
@@ -59,7 +61,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                                 <div>
                                     <a href="<?php echo esc_url($button); ?>" class="cta-button">
                                         Contact us 
-                                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-bigger-tale-green.svg');?>
+                                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-bigger-tale-green.svg'); ?>
                                     </a>
                                 </div>
                             </div>
@@ -71,7 +73,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 <?php if ($right_image) : ?>
                     <div class="<?php echo esc_attr($is_split_layout_2 ? 'col-sm-4 col-12' : 'col-12'); ?>">
                         <div class="right-image">
-                            <img src="<?php echo esc_url($right_image_url); ?>" alt=""/>
+                            <img src="<?php echo esc_url($right_image_url); ?>" srcset="<?php echo esc_attr($right_image_srcset); ?>" alt=""/>
                         </div>
                     </div>
                 <?php endif; ?>

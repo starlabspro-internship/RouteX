@@ -5,6 +5,8 @@ $videos_button = get_sub_field('videos_button');
 $primary_image = get_sub_field('primary_image');
 $image_url = wp_get_attachment_image_url($primary_image, 'hero-img');
 
+$image_srcset = wp_get_attachment_image_srcset($primary_image, 'hero-img');
+
 if ($text_area_first_sector || $button_first_sector || $videos_button || $primary_image) : 
 
 $is_split_layout = $primary_image && ($text_area_first_sector || $button_first_sector || $videos_button);
@@ -53,11 +55,11 @@ $is_split_layout = $primary_image && ($text_area_first_sector || $button_first_s
                 <?php if ($primary_image) : ?>
                 <div class="<?php echo esc_attr($is_split_layout ? 'col-md-6' : 'col-12'); ?>" id="banner-right-content">
                     <div class="gray-photo">
-                        <img src="<?php echo esc_url($image_url); ?>" alt="Photo">
+                        <img src="<?php echo esc_url($image_url); ?>" srcset="<?php echo esc_attr($image_srcset); ?>" alt="Photo">
                     </div>
                 </div>
                 <?php endif; ?>
             </div>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; ?> 

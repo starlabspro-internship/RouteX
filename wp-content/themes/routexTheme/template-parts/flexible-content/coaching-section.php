@@ -14,7 +14,7 @@ $coaching_posts = new WP_Query($args);
 if ($title || $small_title || $coaching_posts->have_posts()) :
 ?>
 <section class="coaching-section top-bottom-small">
-    <div class="coaching-section-container ">
+    <div class="coaching-section-container">
         <div class="coaching-section-title-container">
             <?php if ($title || $small_title) : ?>
             <div class="coaching-section-titles">
@@ -55,7 +55,7 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
                 <?php
                     while ($coaching_posts->have_posts()) : $coaching_posts->the_post();
                         $post_id = get_the_ID();
-                        $card_image = get_the_post_thumbnail_url($post_id, 'supporting-coaching-img'); 
+                        $card_image_id = get_post_thumbnail_id($post_id); 
                         $card_title = get_the_title();
                         $card_link = get_permalink();
                         $card_text = wp_trim_words(get_the_content(), 10); 
@@ -64,8 +64,18 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
                         <div class="coaching__item-media">
                             <div class="coaching-item_thumb">
                                 <a href="<?php echo esc_url($card_link); ?>">
-                                    <?php if ($card_image) : ?>
-                                        <img class="coaching-item_thumb-image" src="<?php echo esc_url($card_image); ?>" alt="Coaching image">
+                                    <?php if ($card_image_id) : ?>
+                                        <?php 
+                                        echo wp_get_attachment_image(
+                                            $card_image_id, 
+                                            'supporting-coaching-img', 
+                                            false, 
+                                            [
+                                                'class' => 'coaching-item_thumb-image',
+                                                'alt'   => esc_attr($card_title),
+                                            ]
+                                        ); 
+                                        ?>
                                     <?php endif; ?>
                                 </a>
                             </div>

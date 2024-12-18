@@ -6,9 +6,11 @@ $phone_icon = $phone_information['phone_icon'] ?? null;
 $left_group = get_sub_field('left_group');
 $first_image = $left_group['first_image'] ?? null; 
 $first_image_url = wp_get_attachment_image_url($first_image, 'why-choose-us-left-img');
+$first_image_srcset = wp_get_attachment_image_srcset($first_image, 'why-choose-us-left-img'); 
 $experience_number = $left_group['experience_number'] ?? null;
 $second_image = $left_group['second_image'] ?? null;
 $second_image_url = wp_get_attachment_image_url($second_image, 'why-choose-us-right-img');
+$second_image_srcset = wp_get_attachment_image_srcset($second_image, 'why-choose-us-right-img'); 
 $right_group = get_sub_field('right_group');
 $subtitle = $right_group['subtitle'] ?? null;
 $title = $right_group['title'] ?? null;
@@ -32,7 +34,9 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                         <div class="choose-us-media-thumb-img">
                             <div class="choose-us-media-thumb-img-green-border" ></div>
                             <div class="choose-us-media-thumb-img-img" >
-                                <img src="<?php echo esc_url($first_image_url); ?>" alt="Why Choose Us Image">
+                                <img src="<?php echo esc_url($first_image_url); ?>" 
+                                     srcset="<?php echo esc_attr($first_image_srcset); ?>"
+                                     alt="Why Choose Us Image">
                             </div>
                         </div>
                         <?php endif; ?>
@@ -51,7 +55,9 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                         <?php endif; ?>
                         <?php if ($second_image) : ?>
                         <div class="choose-us-media-img-picture" >
-                            <img src="<?php echo esc_url($second_image_url); ?>" alt="Why Choose Us Image">
+                            <img src="<?php echo esc_url($second_image_url); ?>" 
+                                 srcset="<?php echo esc_attr($second_image_srcset); ?>"
+                                 alt="Why Choose Us Image">
                         </div>
                         <?php endif; ?>
                     </div>
@@ -158,4 +164,4 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
         </div>
     </div>
 </section>
-<?php endif;?> 
+<?php endif;?>

@@ -12,9 +12,9 @@ $countries = [];
 if ($countries_query->have_posts()) :
     while ($countries_query->have_posts()) : $countries_query->the_post();
         $countries[] = [
-            'title' => get_the_title(),
-            'icon'  => get_the_post_thumbnail_url(get_the_ID(), 'available-countries-img'),
-            'link'  => get_permalink(),
+            'title'         => esc_html(get_the_title()),
+            'icon_id'       => get_post_thumbnail_id(),
+            'link'          => esc_url(get_permalink()),
             'bullet_points' => get_field('bullet_point_texts'),
         ];
     endwhile;
@@ -34,7 +34,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                     <div class="subtitle available-countries-subtitle">
                         <?php echo esc_html($smalltitle); ?>
                     </div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-2.svg" alt="">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/subtitle-icon-2.svg" alt="">
                 </div>
                 <?php endif; ?>
                 <?php if ($title) : ?>
@@ -44,10 +44,12 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                 <?php endif; ?>
             </div>
             <?php endif; ?>
+
             <?php if ($button) : ?>
             <div class="available-countries-section-buttons">
-                <a class="available-countries-section-button" href="<?php echo esc_url($button); ?>">View More 
-                    <img src="<?php echo get_template_directory_uri() . '/assets/icons/right-arrow-white-bigger-tale.svg'; ?>" alt="">
+                <a class="available-countries-section-button" href="<?php echo esc_url($button); ?>">
+                    View More 
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-white-bigger-tale.svg'); ?>" alt="">
                 </a>
             </div>
             <?php endif; ?>
@@ -60,11 +62,18 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                 <?php foreach ($countries as $country) : ?>
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <a href="<?php echo esc_url($country['link']); ?>" class="available-countries-item">
-                        <?php if ($country['icon']) : ?>
+                        <?php if ($country['icon_id']) : ?>
                         <div class="available-countries-item-icon">
-                            <img src="<?php echo esc_url($country['icon']); ?>" alt="available-countries-img">
+                            <img 
+                                src="<?php echo esc_url(wp_get_attachment_image_url($country['icon_id'], 'medium')); ?>" 
+                                srcset="<?php echo esc_attr(wp_get_attachment_image_srcset($country['icon_id'], 'available-countries-img')); ?>" 
+                                sizes="(max-width: 768px) 100vw, 33vw" 
+                                alt="<?php echo esc_attr(get_the_title($country['icon_id'])); ?>" 
+                                loading="lazy"
+                            >
                         </div>
                         <?php endif; ?>
+                        
                         <div class="available-countries-item-content">
                             <h3><?php echo esc_html($country['title']); ?></h3>
 
@@ -74,7 +83,8 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                                     <?php foreach ($country['bullet_points'] as $bullet_point) : ?>
                                         <?php if (!empty($bullet_point['bullet_point_text'])) : ?>
                                             <li>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/green-checkmark.svg" alt="green-checkmark"><?php echo esc_html($bullet_point['bullet_point_text']); ?>
+                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/green-checkmark.svg" alt="green-checkmark">
+                                                <?php echo esc_html($bullet_point['bullet_point_text']); ?>
                                             </li>
                                         <?php endif; ?>
                                     <?php endforeach; ?>

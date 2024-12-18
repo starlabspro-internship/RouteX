@@ -39,8 +39,14 @@ if (has_content_in_layout()) :
             ?>
             <div class="col-lg-6">
                 <div class="contact-form-section-image">
-                    <?php $contact_form_img_url = wp_get_attachment_image_url($image, 'contact-form-img'); ?>
-                    <img src="<?php echo esc_url($contact_form_img_url); ?>" alt="Contact Form Image">
+                    <?php 
+                    $contact_form_img_url = wp_get_attachment_image_url($image, 'full'); 
+                    $contact_form_img_srcset = wp_get_attachment_image_srcset($image, 'contact-form-img');
+                    ?>
+                    <img src="<?php echo esc_url($contact_form_img_url); ?>" 
+                        srcset="<?php echo esc_url($contact_form_img_srcset); ?>" 
+                        sizes="(max-width: 1024px) 100vw, 50vw" 
+                        alt="Contact Form Image">
                 </div>
             </div>
         <?php

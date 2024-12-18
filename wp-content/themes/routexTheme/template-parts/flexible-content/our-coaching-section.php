@@ -64,7 +64,7 @@ if ($background_image || $small_title || $title || $has_non_empty_cards_boolean 
                                         </div>
                                         <div class="card-person-link">
                                             <a class="person-link" href="<?php echo esc_url($card['person_link'] ?: '#'); ?>" aria-label="Link to <?php echo esc_html($card['name']); ?>'s profile">
-                                                <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg');?>
+                                                <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg'); ?>
                                             </a>
                                         </div>
                                     </div>
@@ -77,8 +77,12 @@ if ($background_image || $small_title || $title || $has_non_empty_cards_boolean 
                 <?php if ($has_non_empty_social_cards_boolean): ?>
                     <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-4 col-md-5 col-12 align-items-center justify-content-center flex-column' : 'col-12 align-items-center justify-content-center flex-column'); ?>">
                         <?php foreach ($social_media_cards as $social_card): ?>
-                            <?php $our_coaching_img_url = wp_get_attachment_image_url($social_card['card_background_image'], 'our-coaching-img'); ?>
-                            <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($our_coaching_img_url); ?>'); background-size: cover; background-position: center;">
+                            <?php
+                            $card_bg_image_id = $social_card['card_background_image'];
+                            $card_bg_image_url = wp_get_attachment_image_url($card_bg_image_id, 'our-coaching-img');
+                            $card_bg_image_srcset = wp_get_attachment_image_srcset($card_bg_image_id, 'our-coaching-img');
+                            ?>
+                            <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($card_bg_image_url); ?>'); background-size: cover; background-position: center;">
                                 <div class="overlay-content text-center social-media-links-div">
                                     <?php if (!empty($social_card['links'])): ?>
                                         <?php $links = $social_card['links']; ?>
