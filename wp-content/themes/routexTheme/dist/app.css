@@ -5288,13 +5288,13 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   margin-bottom: 10px;
   font-size: 1rem;
   color: var(--secondary-color);
+  text-align: left;
+  margin-left: 0;
 }
 
 .team-details-info li strong {
   color: var(--secondary-color);
   font-weight: bold;
-  text-align: left;
-  margin-left: 0;
 }
 
 .team-details-info li a {
@@ -5475,7 +5475,7 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
     padding: 20px 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .team-detail-m {
     flex-direction: row;
     gap: 40px;
@@ -5490,7 +5490,6 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   }
   .professional-skills-section,
   .contact-me-section {
-    flex: 1;
     max-width: 50%;
     margin-left: 0;
   }

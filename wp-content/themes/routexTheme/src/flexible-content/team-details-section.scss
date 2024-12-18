@@ -70,13 +70,13 @@
   margin-bottom: 10px;
   font-size: 1rem;
   color: var(--secondary-color);
+  text-align: left;
+  margin-left: 0;
 }
 
 .team-details-info li strong {
   color: var(--secondary-color);
   font-weight: bold;
-  text-align: left;
-  margin-left: 0;
 }
 
 .team-details-info li a {
@@ -260,44 +260,23 @@
   }
 }
 
-@include media-md {
+@include media-lg {
   .team-detail-m {
     flex-direction: row;
     gap: 40px;
   }
 
-  .skill-info {
-    font-size: 0.8rem;
-  }
-}
-
-@include media-sd {
   .team-member-image-wrapper {
     flex: 0 0 440px;
     height: 425px;
   }
 
-  .team-details-name {
-    font-size: 1.8rem;
-  }
-
-  .contact-me-section {
-    padding: 20px;
-  }
-
-  .submit-button {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-contact-wrapper {
-    flex-direction: column;
-    align-items: center;
+  .professional-skills-section {
+    width: 50%;
+    margin: 0 auto;
   }
   .professional-skills-section,
   .contact-me-section {
-    flex: 1;
     max-width: 50%;
     margin-left: 0;
   }
