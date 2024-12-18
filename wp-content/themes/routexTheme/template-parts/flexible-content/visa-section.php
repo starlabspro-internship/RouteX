@@ -58,6 +58,8 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
                             echo wp_get_attachment_image( $card['image'], 'visa-category-img', false, [
                                 'alt' => esc_attr($card['title']),
                                 'class' => 'img-fluid',
+                                'srcset' => wp_get_attachment_image_srcset( $card['image'], 'visa-category-img' ),
+                                'sizes' => '(max-width: 600px) 100vw, 50vw' // Adjust sizes for responsive images
                             ] );
                             ?>
                         </div>

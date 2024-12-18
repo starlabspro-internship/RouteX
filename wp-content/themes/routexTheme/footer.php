@@ -191,7 +191,6 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                 <?php endif; ?>
     
                 <div class="col-md-6">
-                    HELLOO
                     <div class="footer__copyright-menu">
                         <nav id="site-navigation">
                             <?php

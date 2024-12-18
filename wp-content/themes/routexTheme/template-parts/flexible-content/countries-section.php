@@ -73,17 +73,20 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                             <?php if ($card['card_small_image']) : ?>
                                             <div class="countries-swiper-slide-single-small-img">
                                                 <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
-                                                <img src="<?php echo esc_url($card_small_image_url); ?>" alt="card_small_image">
+                                                <?php $card_small_image_srcset = wp_get_attachment_image_srcset($card['card_small_image'], 'our-countries-small-img'); ?>
+                                                <img src="<?php echo esc_url($card_small_image_url); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
                                             </div>
                                             <?php endif; ?>
 
                                             <?php if ($card['card_background']) : ?>
                                             <div class="countries-swiper-slide-single-img" >
                                                 <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
-                                                <img src="<?php echo esc_url($card_background_url); ?>" alt="card_background">
+                                                <?php $card_background_srcset = wp_get_attachment_image_srcset($card['card_background'], 'our-countries-large-img'); ?>
+                                                <img src="<?php echo esc_url($card_background_url); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
                                             </div>
                                             <?php endif; ?>
                                             
+
                                             <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
                                             <div class="countries-swiper-slide-single-content">
                                                 <?php if ($card['card_title']) : ?>
@@ -123,13 +126,15 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                 <?php if ($card['card_small_image']) : ?>
                                 <div class="countries-swiper-slide-single-small-img">
                                     <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
-                                    <img src="<?php echo esc_url($card_small_image_url); ?>" alt="card_small_image">
+                                    <?php $card_small_image_srcset = wp_get_attachment_image_srcset($card['card_small_image'], 'our-countries-small-img'); ?>
+                                    <img src="<?php echo esc_url($card_small_image_url); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
                                 </div>
                                 <?php endif; ?>
                                 <?php if ($card['card_background']) : ?>
                                 <div class="countries-swiper-slide-single-img">
                                     <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
-                                    <img src="<?php echo esc_url($card_background_url); ?>" alt="card_background">
+                                    <?php $card_background_srcset = wp_get_attachment_image_srcset($card['card_background'], 'our-countries-large-img'); ?>
+                                    <img src="<?php echo esc_url($card_background_url); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
                                 </div>
                                 <?php endif; ?>
                                 <div class="bg-overlay"></div>
@@ -184,4 +189,4 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
         });
     </script>
 </section>
-<?php endif; ?>
+<?php endif; ?>  

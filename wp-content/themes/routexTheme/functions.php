@@ -142,7 +142,7 @@ function routextheme_scripts() {
     if (defined('GITHUB_DEPLOYMENT_SLUG')) {
         $theme_version = GITHUB_DEPLOYMENT_SLUG;
     } else {
-        $theme_version = '1.0.6';
+        $theme_version = '1.0.7';
     }
 
     wp_enqueue_style('bootstrap-grid', 'https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css', [], null, 'all');
@@ -628,23 +628,15 @@ function register_visa_post_type() {
 add_action('init', 'register_visa_post_type');
 
 function enqueue_google_maps_api() {
-    // Enqueue Google Maps API
-    wp_enqueue_script(
-        'google-maps-api',
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyAs90-E-fdAckSikKJruLSj6ItmWupSZok&callback=initMap',  // Use your API key here
-        array(),
-        null,
-        true
-    );
-    
-    // Enqueue Custom Map Initialization Script
-    wp_enqueue_script(
-        'acf-google-map-script',  // Enqueue custom script to initialize the map
-        get_template_directory_uri() . '/js/google-map.js',
-        array('google-maps-api'),
-        null,
-        true
-    );
+    if (is_page() && has_block('acf/location-map-section')) {
+        wp_enqueue_script(
+            'google-maps-api',
+            'https://maps.googleapis.com/maps/api/js?key=AIzaSyAs90-E-fdAckSikKJruLSj6ItmWupSZok&callback=initMap',  // Use your API key here
+            array(),
+            null,
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_maps_api');
 

@@ -29,6 +29,9 @@ if (has_team_content()) :
         <?php
         $profile_image = get_sub_field('profile_image');
         $team_member_img_url = wp_get_attachment_image_url($profile_image, 'team-member-img');
+        $team_member_img_url_large = wp_get_attachment_image_url($profile_image, 'team-member-img-large');
+        $team_member_img_url_medium = wp_get_attachment_image_url($profile_image, 'team-member-img-medium');
+        $team_member_img_url_small = wp_get_attachment_image_url($profile_image, 'team-member-img-small');
         $name = get_sub_field('name');
         $position = get_sub_field('position');
         $team_member_id = uniqid('team_member_'); 
@@ -37,7 +40,12 @@ if (has_team_content()) :
         <div class="col-md-6 col-lg-4">
             <div class="team-member">
             <?php if ($profile_image) : ?>
-            <img src="<?php echo esc_url($team_member_img_url); ?>" alt="<?php echo esc_attr($name); ?>" class="team-member-image">
+            <img src="<?php echo esc_url($team_member_img_url); ?>"
+                 srcset="<?php echo esc_url($team_member_img_url_large); ?> 1024w, 
+                         <?php echo esc_url($team_member_img_url_medium); ?> 768w, 
+                         <?php echo esc_url($team_member_img_url_small); ?> 480w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"
+                 alt="<?php echo esc_attr($name); ?>" class="team-member-image">
             <?php endif; ?>
 
             <div class="member-info-wrapper">
@@ -85,3 +93,4 @@ if (has_team_content()) :
     </div>
     <?php endif; ?>
 </section>
+<?php endif; ?>

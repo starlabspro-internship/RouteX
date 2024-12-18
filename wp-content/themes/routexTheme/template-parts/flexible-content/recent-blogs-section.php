@@ -18,6 +18,7 @@ if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         $cards[] = [
             'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img'),
+            'card_background_srcset' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-large') . ' 1024w, ' . get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-medium') . ' 768w, ' . get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-small') . ' 480w',
             'card_title' => get_the_title(),
             'card_date' => get_the_date(),
             'card_text' => get_the_excerpt(),
@@ -70,7 +71,10 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                 <?php if ($card['card_background']) : ?>
                                 <div class="recent-blog-item-media">
                                     <a href="<?php echo esc_url($card['card_link']) ?>">
-                                        <img src="<?php echo esc_url($card['card_background']) ?>" alt="Recent Blog Image">
+                                        <img src="<?php echo esc_url($card['card_background']) ?>" 
+                                             srcset="<?php echo esc_attr($card['card_background_srcset']); ?>"
+                                             sizes="(max-width: 1024px) 100vw, 1024px"
+                                             alt="Recent Blog Image">
                                     </a>
                                 </div>
                                 <?php endif; ?>
