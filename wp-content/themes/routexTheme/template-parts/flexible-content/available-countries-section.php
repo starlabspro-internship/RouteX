@@ -2,9 +2,10 @@
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
 $button = get_post_type_archive_link('countries');
+$post_category = get_sub_field('post_category');
 
 $countries_query = new WP_Query([
-    'post_type'      => 'countries',
+    'post_type'      => $post_category,
     'posts_per_page' => 4,
 ]);
 
