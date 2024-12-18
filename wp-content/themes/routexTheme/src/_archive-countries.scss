@@ -57,7 +57,7 @@
         }
 
         hr {
-            width: 325px;
+            width: 90%;
         }
     }
 
@@ -117,9 +117,12 @@
 
 @include media-md{
     .countries-archive-section {
+        .country-card{
+            width: 100%;
+        }
         .continents-list{
         hr {
-            width: 285px;
+            width: 90%;
         }
     }
     }

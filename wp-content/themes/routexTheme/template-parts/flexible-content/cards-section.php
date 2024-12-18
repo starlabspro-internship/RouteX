@@ -30,7 +30,7 @@ if (have_rows('card_repeater')) :
                                         srcset="<?php echo esc_attr($cards_img_srcset); ?>" 
                                         sizes="(max-width: 768px) 100vw, 33vw" 
                                         alt="<?php echo esc_attr($cards_img_alt ?: 'Icon'); ?>" 
-                                        class="card-icon" 
+                                        class="card-icon"
                                         loading="lazy"
                                     >
                                 <?php endif; ?>

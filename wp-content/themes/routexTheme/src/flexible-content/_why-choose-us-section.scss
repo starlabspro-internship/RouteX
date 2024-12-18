@@ -78,6 +78,7 @@
 	gap: 30px;
 	width: 100%;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 .choose-us-media-thumb-img-green-border {
 	position: absolute;
@@ -236,12 +237,18 @@
 .choose-us-cards {
 	margin: 40px 0 40px 0;
 }
+@include media-md{
+	.choose-us-media {
+		justify-content: center;
+    }
+}
 @include media-xl{
     .choose-us-section-title-container{
         margin-top: 0;
     }
     .choose-us-media {
         flex-wrap: nowrap;
+		justify-content: center;
     }
 }
 @include media-sm{

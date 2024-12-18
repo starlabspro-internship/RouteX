@@ -89,9 +89,7 @@ $appointment_link = get_field('appointment_link', 'options');
                     );
                     ?>
                 </nav>
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/menu-svgrepo-com.svg" alt="">
-                </button>
+                
                 <div class="button-div">
                     <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
                         <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg"
@@ -109,6 +107,9 @@ $appointment_link = get_field('appointment_link', 'options');
                         </defs>
                         </svg>
                     </button>
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/menu-svgrepo-com.svg" alt="">
+                </button>
                 </div>
             </div>
         </header>

@@ -32,8 +32,8 @@ $countries_query = new WP_Query($args);
 <?php echo top_banner(); ?>
 <section class="countries-archive-section py-5">
     <div class="container" id="countries-archive-div">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row" id="countries-archive-row">
+            <div class="col-md-4" id="countries-archive-item">
                 <ul class="continents-list">
                     <?php foreach ($continents as $index => $continent) : ?>
                         <li class="list-group-item <?php echo $current_continent === $continent ? 'active' : ''; ?>">
@@ -52,7 +52,7 @@ $countries_query = new WP_Query($args);
             </div>
             <div class="col-md-8">
                 <?php if ($countries_query->have_posts()) : ?>
-                    <div class="row g-4" >
+                    <div class="row g-4" id="countries-archive-row2">
                         <?php 
                         while ($countries_query->have_posts()) : $countries_query->the_post(); 
                         ?>
