@@ -32,10 +32,6 @@ $subscription_form = $subscribe['subscription_form'] ?? null;
 $footer_bottom = get_field('footer_bottom', 'options');
 $footer_copyright = $footer_bottom['footer_copyright'] ?? null;  
 
-$footer_menu_links = get_field('footer_menu_links', 'options');
-$menu_link_text = $footer_menu_links['menu_link_text'] ?? null;  
-$menu_link_url = $footer_menu_links['menu_link_url'] ?? null;  
-
 ?>
 <footer class="<?php echo (is_front_page()) ? 'footer__area-home' : 'footer__area'; ?>">
     <section class="footer__area-common">
@@ -182,7 +178,7 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
     </div>
     <?php endif; ?>
     
-    <?php if ($footer_copyright || has_non_empty_text($footer_menu_links)) : ?>
+    <?php if ($footer_copyright) : ?>
     <div class="footer__bottom-wrapper">
         <div class="footer__bottom-wrapper-container">
             <div class="row"> 
@@ -194,21 +190,9 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                 </div>
                 <?php endif; ?>
     
-                <?php if (has_non_empty_text($footer_menu_links)) : ?>
                 <div class="col-md-6">
+                    HELLOO
                     <div class="footer__copyright-menu">
-                        <!-- <ul>
-                            <?php foreach ($footer_menu_links as $menu_links) : ?>
-                                <?php if ($menu_links['menu_link_text']) : ?>
-                                <li>
-                                    <a href="<?php echo esc_url($menu_links['menu_link_url']); ?>" target="_blank"
-                                        rel="noopener noreferrer">
-                                        <?php echo esc_html($menu_links['menu_link_text']); ?>
-                                    </a>
-                                </li>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </ul> -->
                         <nav id="site-navigation">
                             <?php
                             wp_nav_menu(
@@ -223,7 +207,6 @@ $menu_link_url = $footer_menu_links['menu_link_url'] ?? null;
                         </nav>
                     </div>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>

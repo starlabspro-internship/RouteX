@@ -581,96 +581,6 @@
                     "append": ""
                 }
             ]
-        },
-        {
-            "key": "field_672ba335b4590",
-            "label": "footer_menu_links",
-            "name": "footer_menu_links",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_672ba34bb4591",
-                    "label": "menu_link_text",
-                    "name": "menu_link_text",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_672ba335b4590"
-                },
-                {
-                    "key": "field_672ba355b4592",
-                    "label": "menu_link_url",
-                    "name": "menu_link_url",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_672ba335b4590"
-                }
-            ]
-        },
-        {
-            "key": "field_6756f5da949ab",
-            "label": "Footer Background Image",
-            "name": "footer_background_image",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "World Map": "World Map",
-                "Vector Lines": "Vector Lines",
-                "None": "None"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -691,5 +601,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733847831
+    "modified": 1734474776
 }
