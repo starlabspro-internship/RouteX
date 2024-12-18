@@ -1021,114 +1021,6 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
-                        },
-                        {
-                            "key": "field_6718dbd517ed1",
-                            "label": "Cards",
-                            "name": "cards",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "table",
-                            "min": 0,
-                            "max": 0,
-                            "collapsed": "",
-                            "button_label": "Add Row",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_6718dbe817ed2",
-                                    "label": "Card Image",
-                                    "name": "card_image",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "id",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "preview_size": "medium",
-                                    "parent_repeater": "field_6718dbd517ed1"
-                                },
-                                {
-                                    "key": "field_6718dbef17ed3",
-                                    "label": "Card Title",
-                                    "name": "card_title",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_6718dbd517ed1"
-                                },
-                                {
-                                    "key": "field_6718dbf617ed4",
-                                    "label": "Card Text",
-                                    "name": "card_text",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_6718dbd517ed1"
-                                },
-                                {
-                                    "key": "field_6718dc03a31bb",
-                                    "label": "Card Link",
-                                    "name": "card_link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "url",
-                                    "parent_repeater": "field_6718dbd517ed1"
-                                }
-                            ]
                         }
                     ],
                     "min": "",
@@ -1401,75 +1293,6 @@
                                 "id": ""
                             },
                             "return_format": "url"
-                        },
-                        {
-                            "key": "field_6718d9c6fcdfa",
-                            "label": "Cards",
-                            "name": "cards",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "row",
-                            "min": 0,
-                            "max": 4,
-                            "collapsed": "",
-                            "button_label": "Add Row",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_672e2fccda0c1",
-                                    "label": "Card Bullet Points",
-                                    "name": "card_bullet_points",
-                                    "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "layout": "table",
-                                    "pagination": 0,
-                                    "min": 0,
-                                    "max": 0,
-                                    "collapsed": "",
-                                    "button_label": "Add Row",
-                                    "rows_per_page": 20,
-                                    "parent_repeater": "field_6718d9c6fcdfa",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_672e3010da0c2",
-                                            "label": "Bullet Point Text",
-                                            "name": "bullet_point_text",
-                                            "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_672e2fccda0c1"
-                                        }
-                                    ]
-                                }
-                            ]
                         }
                     ],
                     "min": "",
@@ -1520,6 +1343,144 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_6718d7d7ff29b",
+                            "label": "Visa Cards",
+                            "name": "visa_cards",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 4,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6718d7efff29c",
+                                    "label": "Visa Card Image",
+                                    "name": "visa_card_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                },
+                                {
+                                    "key": "field_6718d7faff29d",
+                                    "label": "Visa Card Title",
+                                    "name": "visa_card_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                },
+                                {
+                                    "key": "field_6718d809ff29e",
+                                    "label": "Visa Card Text",
+                                    "name": "visa_card_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                },
+                                {
+                                    "key": "field_6718d81cff2a0",
+                                    "label": "Visa Card Link",
+                                    "name": "visa_card_link",
+                                    "aria-label": "",
+                                    "type": "page_link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": "",
+                                    "taxonomy": "",
+                                    "allow_archives": 1,
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                },
+                                {
+                                    "key": "field_6718d811ff29f",
+                                    "label": "Visa Card Icon",
+                                    "name": "visa_card_icon",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_6718d7d7ff29b"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -2330,5 +2291,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734365825
+    "modified": 1734518463
 }
