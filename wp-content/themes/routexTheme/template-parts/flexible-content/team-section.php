@@ -56,7 +56,7 @@ if (has_team_content()) :
                         <?php if ($name) : ?>
                         <h3 class="team-member-name">
                             <?php if ($name_url) : ?>
-                            <a href="<?php echo esc_url($name_url); ?>" target="_blank">
+                            <a href="<?php echo esc_url($name_url); ?>">
                                 <?php echo esc_html($name); ?>
                             </a>
                             <?php else : ?>

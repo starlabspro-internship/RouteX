@@ -9,7 +9,6 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -37,7 +36,6 @@
 
 .team-details-content {
   flex: 1;
-  max-width: 720px;
 }
 
 .team-details-name {
@@ -64,6 +62,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: left;
+  padding-left: 0;
 }
 
 .team-details-info li {
@@ -75,6 +75,8 @@
 .team-details-info li strong {
   color: var(--secondary-color);
   font-weight: bold;
+  text-align: left;
+  margin-left: 0;
 }
 
 .team-details-info li a {
@@ -100,7 +102,6 @@
 .professional-skills-section {
   width: 50%;
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 .skills-wrapper {
@@ -141,7 +142,6 @@
 }
 
 .professional-skills-section {
-  max-width: 400px;
   margin: 0 auto;
   padding: 20px 0;
 }
@@ -187,136 +187,83 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
 .professional-skills-section,
 .contact-me-section {
   flex: 1;
-  max-width: 48%;
+  max-width: 90%;
+  margin-left: 0;
 }
 
-.contact-me-section {
-  flex: 1;
-  max-width: 48%;
-  background-color: var(--contrast-color);
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-me-section .section-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--secondary-color);
-  margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--light-color);
-  border-radius: 7px;
-  font-size: 14px;
-}
-
-.contact-form textarea {
+.team-details-section {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 40px;
+  padding: 20px;
 }
 
-.form-row {
+.team-detail-m {
   display: flex;
-  gap: 15px;
-}
-
-.form-group.half-width {
-  width: 50%;
-}
-
-.form-checkbox {
-  display: inline-block;
-  font-size: 14px;
-  color: var(--secondary-color);
-}
-.form-checkbox input[type="checkbox"] {
-  margin: 0 5px 0 0;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
-.form-checkbox label {
-  vertical-align: middle;
-  line-height: 16px;
-  cursor: pointer;
-}
-.contact-form .form-submit {
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  gap: 20px;
 }
 
-.submit-button {
-  width: 202px;
-  height: 50px;
-  background-color: var(--accent-color);
-  color: var(--light-color);
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+.team-member-image-wrapper {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.submit-button:hover {
-  background-color: var(--secondary-color);
+.team-member-image-members {
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-@include media-xl {
+.team-details-content {
+  width: 100%;
+  text-align: center;
+}
+
+.professional-skills-section {
+  width: 100%;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+.skills-wrapper {
+  gap: 10px;
+}
+
+@include media-sm {
   .team-detail-m {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
   }
 
-  .skills-contact-wrapper {
-    flex-direction: column;
-    align-items: center;
+  .team-details-content {
+    text-align: left;
   }
 
-  .professional-skills-section,
-  .contact-me-section {
-    max-width: 100%;
-    margin-bottom: 20px;
+  .team-member-image-wrapper {
+    flex: 0 0 300px;
+    height: 300px;
   }
 
-  .form-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .form-group.half-width {
+  .professional-skills-section {
     width: 100%;
-  }
-
-  .submit-button {
-    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
   }
 }
 
 @include media-md {
-  .team-details-name {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
+  .team-detail-m {
+    flex-direction: row;
+    gap: 40px;
   }
 
   .skill-info {
@@ -324,9 +271,10 @@
   }
 }
 
-/*@include media-sm {
+@include media-sd {
   .team-member-image-wrapper {
-    height: 300px;
+    flex: 0 0 440px;
+    height: 425px;
   }
 
   .team-details-name {
@@ -340,34 +288,17 @@
   .submit-button {
     font-size: 12px;
   }
-}*/
+}
 
 @media (max-width: 768px) {
   .skills-contact-wrapper {
     flex-direction: column;
     align-items: center;
   }
-
   .professional-skills-section,
   .contact-me-section {
-    max-width: 100%;
-    flex: none;
-  }
-
-  .contact-me-section {
-    margin-top: 20px;
-  }
-
-  .contact-form .form-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .form-group.half-width {
-    width: 100%;
-  }
-
-  .submit-button {
-    width: 40%;
+    flex: 1;
+    max-width: 50%;
+    margin-left: 0;
   }
 }
