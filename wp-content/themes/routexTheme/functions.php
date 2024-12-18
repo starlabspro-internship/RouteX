@@ -212,7 +212,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function add_google_fonts() {
     wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap', false );
 }
-add_action( 'wp_enqueue_scripts', 'add_google_fonts', 2);
+add_action( 'wp_enqueue_scripts', 'add_google_fonts');
 
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 function my_acf_json_save_point($path) {
