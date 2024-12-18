@@ -1,13 +1,13 @@
 <?php
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
+$post_category = get_sub_field('post_category');
 
 $args = [
-    'post_type' => 'post',
+    'post_type' => $post_category,
     'posts_per_page' => 6,
     'orderby' => 'date', 
     'order' => 'DESC',
-    'category_name' => 'blog',
 ];
 
 $query = new WP_Query($args);
@@ -21,7 +21,7 @@ if ($query->have_posts()) :
             'card_background_srcset' => get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-large') . ' 1024w, ' . get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-medium') . ' 768w, ' . get_the_post_thumbnail_url(get_the_ID(), 'recent-blogs-img-small') . ' 480w',
             'card_title' => get_the_title(),
             'card_date' => get_the_date(),
-            'card_text' => get_the_excerpt(),
+            'card_text' => substr(get_the_excerpt(), 0, 80) . '...',
             'card_link' => get_permalink(),
             'card_creator' => get_the_author(),
         ];
@@ -29,6 +29,7 @@ if ($query->have_posts()) :
 endif;
 
 wp_reset_postdata();
+
 if ($small_title || $title || has_non_empty_cards($cards)) :
 ?>
 <section class="recent-blogs-section top-bottom-small">

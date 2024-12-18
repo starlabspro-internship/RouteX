@@ -1,19 +1,36 @@
 <?php
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
+$post_category = get_sub_field('post_category');
+
+$args = [
+    'post_type' => $post_category,
+    'posts_per_page' => 20,
+    'orderby' => 'date', 
+    'order' => 'DESC',
+];
+
+$query = new WP_Query($args);
+
 $cards = [];
-if (have_rows('cards')) :
-    while (have_rows('cards')) : the_row();
+
+if ($query->have_posts()) :
+    while ($query->have_posts()) : $query->the_post();
         $cards[] = [
-            'card_small_image' => get_sub_field('card_small_image'),
-            'card_background' => get_sub_field('card_background'),
-            'card_title' => get_sub_field('card_title'),
-            'card_text' => get_sub_field('card_text'),
-            'card_link' => get_sub_field('card_link'),
+            'card_small_image' => get_the_post_thumbnail_url(get_the_ID(), 'our-countries-small-img'),
+            'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'our-countries-large-img'),
+            'card_title' => get_the_title(),
+            'card_text' => substr(get_the_excerpt(), 0, 70) . '...',
+            'card_link' => get_permalink(),
         ];
     endwhile;
 endif;
-if ($smalltitle || $title || has_non_empty_cards($cards)) : 
+
+wp_reset_postdata();
+
+$has_non_empty_cards_boolean = has_non_empty_cards($cards);
+
+if ($smalltitle || $title || $has_non_empty_cards_boolean) : 
 ?>
 <section class="countries-section">
     <div class="countries-section-container top-bottom">
@@ -48,7 +65,7 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                 </button>
             </div>
         </div>
-        <?php if (has_non_empty_cards($cards)) : ?>
+        <?php if ($has_non_empty_cards_boolean) : ?>
         <div class="countries-section-slider-1">
             <div class="swiper countries-section-swiper">
                 <div class="swiper-wrapper">
@@ -72,21 +89,18 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                                         <div class="countries-swiper-slide-single-inner">
                                             <?php if ($card['card_small_image']) : ?>
                                             <div class="countries-swiper-slide-single-small-img">
-                                                <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
                                                 <?php $card_small_image_srcset = wp_get_attachment_image_srcset($card['card_small_image'], 'our-countries-small-img'); ?>
-                                                <img src="<?php echo esc_url($card_small_image_url); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
+                                                <img src="<?php echo esc_url($card['card_small_image']); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
                                             </div>
                                             <?php endif; ?>
 
                                             <?php if ($card['card_background']) : ?>
                                             <div class="countries-swiper-slide-single-img" >
-                                                <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
                                                 <?php $card_background_srcset = wp_get_attachment_image_srcset($card['card_background'], 'our-countries-large-img'); ?>
-                                                <img src="<?php echo esc_url($card_background_url); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
+                                                <img src="<?php echo esc_url($card['card_background']); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
                                             </div>
                                             <?php endif; ?>
                                             
-
                                             <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
                                             <div class="countries-swiper-slide-single-content">
                                                 <?php if ($card['card_title']) : ?>
@@ -125,16 +139,14 @@ if ($smalltitle || $title || has_non_empty_cards($cards)) :
                             <div class="countries-swiper-slide-single-inner-zoomed">
                                 <?php if ($card['card_small_image']) : ?>
                                 <div class="countries-swiper-slide-single-small-img">
-                                    <?php $card_small_image_url = wp_get_attachment_image_url($card['card_small_image'], 'our-countries-small-img'); ?>
                                     <?php $card_small_image_srcset = wp_get_attachment_image_srcset($card['card_small_image'], 'our-countries-small-img'); ?>
-                                    <img src="<?php echo esc_url($card_small_image_url); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
+                                    <img src="<?php echo esc_url($card['card_small_image']); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
                                 </div>
                                 <?php endif; ?>
                                 <?php if ($card['card_background']) : ?>
                                 <div class="countries-swiper-slide-single-img">
-                                    <?php $card_background_url = wp_get_attachment_image_url($card['card_background'], 'our-countries-large-img'); ?>
                                     <?php $card_background_srcset = wp_get_attachment_image_srcset($card['card_background'], 'our-countries-large-img'); ?>
-                                    <img src="<?php echo esc_url($card_background_url); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
+                                    <img src="<?php echo esc_url($card['card_background']); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
                                 </div>
                                 <?php endif; ?>
                                 <div class="bg-overlay"></div>

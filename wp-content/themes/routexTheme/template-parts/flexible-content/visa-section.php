@@ -1,9 +1,10 @@
 <?php
 $smalltitle = get_sub_field('smalltitle');
 $title = get_sub_field('title');
+$post_category = get_sub_field('post_category');
 
 $args = [
-    'post_type' => 'visa',
+    'post_type' => $post_category,
     'posts_per_page' => 4,
     'orderby' => 'date', 
     'order' => 'DESC'
@@ -27,7 +28,9 @@ endif;
 
 wp_reset_postdata();
 
-if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
+$has_non_empty_cards_boolean = has_non_empty_cards($visa_cards);
+
+if ($smalltitle || $title || $has_non_empty_cards_boolean) :
 ?>
 
 <section class="text-center visa-section top-bottom-small">
@@ -46,7 +49,7 @@ if ($smalltitle || $title || has_non_empty_cards($visa_cards)) :
         </div>
     <?php endif; ?>
 
-    <?php if (has_non_empty_cards($visa_cards)) : ?>
+    <?php if ($has_non_empty_cards_boolean) : ?>
     <div class="row">
         <?php foreach ($visa_cards as $card) : ?>
             <div class="col-md-6">

@@ -41,29 +41,12 @@
 	justify-content: center;
 	align-items: center;
 	position: relative; 
-
-	.arrow-icon {
-		width: 15px;
-		height: 15px;
-		transition: filter 0.3s ease;
-		position: absolute; 
-	}
-
-	.hover-img {
-		display: none;
-	}
-
 	&:hover {
 		background-color: var(--accent-color);
+		border: 1px solid transparent;
 		cursor: pointer;
-		
-		.default-img {
-			display: none;
-		}
-
-		.hover-img {
-			display: inline-block;
-			filter: brightness(0) invert(1); 
+		svg path{
+			fill: var(--primary-color);
 		}
 	}
 }
@@ -75,7 +58,6 @@ body.dark-mode .coaching-section-button img.arrow-icon {
 body.dark-mode .coaching-section-button:hover img.arrow-icon {
 	filter: brightness(1) invert(0); 
 }
-
 
 .coaching-item {
 	padding: 40px 30px;
@@ -156,40 +138,16 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
         position: relative;
         text-decoration: none;
 		transition: all ease 0.3s;
-    }
-
-    .arrow-icon {
-        position: absolute;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .arrow-icon.default-img {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .arrow-icon.hover-img {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    a:hover {
-		background-color: var(--secondary-color);
-		transition: all ease 0.3s;
-        .arrow-icon.default-img {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .arrow-icon.hover-img {
-            opacity: 1;
-            visibility: visible;
-        }
+		&:hover {
+			background-color: var(--secondary-color);
+			border: 1px solid transparent;
+			transition: all ease 0.3s;
+			svg path{
+				fill: var(--primary-color);
+			}
+		}
     }
 }
-
-
-  
 .coaching-item_thumb {
 	height: 324px;
 }

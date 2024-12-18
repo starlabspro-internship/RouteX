@@ -1,9 +1,10 @@
 <?php
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
+$post_category = get_sub_field('post_category');
 
 $args = array(
-    'post_type' => 'coaching',  
+    'post_type' => $post_category,  
     'posts_per_page' => 5,      
     'orderby' => 'date',       
     'order' => 'DESC'           
@@ -37,12 +38,10 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
             <?php if ($coaching_posts->have_posts()) : ?>
                 <div class="coaching-section-buttons">
                     <button class="coaching-section-button" aria-label="Previous slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow.svg" alt="Previous Arrow" class="arrow-icon hover-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/left-arrow-green.svg" alt="Previous Arrow (Default)" class="arrow-icon default-img">
+                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/left-arrow-green.svg');?>
                     </button>
                     <button class="coaching-section-button" aria-label="Next slide">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow.svg" alt="Next Arrow" class="arrow-icon hover-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="Next Arrow (Default)" class="arrow-icon default-img">
+                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-green.svg');?>
                     </button>
                 </div>
             <?php endif; ?>
@@ -94,9 +93,8 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
                                 <?php endif; ?>
                                 <?php if ($card_link) : ?>
                                     <div class="coaching__item-media-img-title-button">
-                                        <a href="<?php echo esc_url($card_link); ?>" class="btn btn-transparent">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow.svg" alt="Right Arrow Icon" class="arrow-icon default-img">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/button-upright-arrow-white.svg" alt="Right Arrow Icon (Hover)" class="arrow-icon hover-img">
+                                        <a href="<?php echo esc_url($card_link); ?>">
+                                            <?php echo file_get_contents(get_template_directory() . '/assets/icons/button-upright-arrow.svg');?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
