@@ -1,4 +1,10 @@
 <?php
+//Begin Really Simple Security session cookie settings
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
+//END Really Simple Security cookie settings
+
 /**
  * The base configuration for WordPress
  *
@@ -28,17 +34,22 @@ define('DB_PASSWORD', 'password');
 // define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 // define('DB_HOST', 'localhost:3307');
-define('WP_HOME', 'http://routex.devops99.pro');
-define('WP_SITEURL', 'http://routex.devops99.pro');
+
 define('DB_CHARSET', 'utf8');
 define('WP_ALLOW_REPAIR', true);
+
 define('DB_COLLATE', '');
 define('WP_TEMP_DIR', ABSPATH . 'wp-content/temp/');
+
 define('WP_HOME', 'http://routex.devops99.pro');
 define('WP_SITEURL', 'http://routex.devops99.pro');
+
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', '5426f94');
+define('GITHUB_DEPLOYMENT_SLUG', '07c320f');
+
 define('WP_MEMORY_LIMIT', '512M');
+$_SERVER['HTTPS'] = 'on';
+
 //define( 'WP_DEBUG', true );
 //define( 'WP_DEBUG_LOG', true );
 //define( 'WP_DEBUG_DISPLAY', false );
