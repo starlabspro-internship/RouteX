@@ -9,6 +9,7 @@ function has_team_content() {
     }
     return $has_content;
 }
+
 if (has_team_content()) :
 ?>
 
@@ -66,7 +67,6 @@ if (has_team_content()) :
                     </button>
                     <div class="social-icons" id="<?php echo esc_attr($team_member_id); ?>">
 
-                        <?php if (have_rows('social_links')) : ?>
                         <div class="social-links-wrapper">
                             <?php while (have_rows('social_links')) : the_row(); ?>
                             <?php
@@ -80,7 +80,6 @@ if (has_team_content()) :
                             <?php endif; ?>
                             <?php endwhile; ?>
                         </div>
-                        <?php endif; ?>
 
                     </div>
                 </div>
@@ -93,4 +92,4 @@ if (has_team_content()) :
     </div>
     <?php endif; ?>
 </section>
-<?php endif; ?>
+
