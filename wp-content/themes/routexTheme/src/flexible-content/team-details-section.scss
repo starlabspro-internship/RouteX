@@ -324,7 +324,7 @@
   }
 }
 
-@include media-sd {
+/*@include media-sm {
   .team-member-image-wrapper {
     height: 300px;
   }
@@ -340,7 +340,7 @@
   .submit-button {
     font-size: 12px;
   }
-}
+}*/
 
 @media (max-width: 768px) {
   .skills-contact-wrapper {

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -1859,7 +1858,7 @@ body .thumbnail-img {
   color: var(--accent-color);
 }
 .continents-list hr {
-  width: 325px;
+  width: 90%;
 }
 
 .contact-card {
@@ -1914,7 +1913,7 @@ body .thumbnail-img {
 
 @media (min-width: 768px) {
   .continents-list hr {
-    width: 285px;
+    width: 90%;
   }
 }
 .featured-image img {
@@ -2185,7 +2184,7 @@ body .thumbnail-img {
   color: var(--accent-color);
 }
 .countries-archive-section .continents-list hr {
-  width: 325px;
+  width: 90%;
 }
 .countries-archive-section .country-card {
   border: 1px solid var(--light-color);
@@ -2235,8 +2234,11 @@ body .thumbnail-img {
 }
 
 @media (min-width: 768px) {
+  .countries-archive-section .country-card {
+    width: 100%;
+  }
   .countries-archive-section .continents-list hr {
-    width: 285px;
+    width: 90%;
   }
 }
 .coaching-archive-container {
@@ -2303,7 +2305,7 @@ body .thumbnail-img {
     width: 1450px;
   }
   .coaching-archive-container .custom-coaching-card {
-    height: 230px;
+    height: 270px;
   }
   .coaching-archive-container .custom-card-img {
     width: 200px;
@@ -4591,6 +4593,7 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   gap: 30px;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .choose-us-media-thumb-img-green-border {
@@ -4761,12 +4764,18 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   margin: 40px 0 40px 0;
 }
 
+@media (min-width: 768px) {
+  .choose-us-media {
+    justify-content: center;
+  }
+}
 @media (min-width: 1200px) {
   .choose-us-section-title-container {
     margin-top: 0;
   }
   .choose-us-media {
     flex-wrap: nowrap;
+    justify-content: center;
   }
 }
 @media (min-width: 576px) {
@@ -5220,7 +5229,6 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
 .team-member-image-wrapper {
   flex: 0 0 440px;
   height: 425px;
-  background-color: var(--light-color);
   border-radius: 10px;
 }
 
@@ -5403,6 +5411,8 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
 }
 
 .contact-me-section {
+  flex: 1;
+  max-width: 48%;
   background-color: var(--contrast-color);
   border-radius: 12px;
   padding: 30px;
@@ -5426,8 +5436,9 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
 }
 
 .contact-form textarea {
-  resize: none;
-  height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .form-row {
@@ -5484,8 +5495,7 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   background-color: var(--secondary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+@media (min-width: 1200px) {
   .team-detail-m {
     flex-direction: column;
     align-items: center;
@@ -5510,7 +5520,7 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .team-details-name {
     font-size: 2rem;
   }
@@ -5521,20 +5531,23 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 480px) {
+/*@include media-sm {
   .team-member-image-wrapper {
     height: 300px;
   }
+
   .team-details-name {
     font-size: 1.8rem;
   }
+
   .contact-me-section {
     padding: 20px;
   }
+
   .submit-button {
     font-size: 12px;
   }
-}
+}*/
 @media (max-width: 768px) {
   .skills-contact-wrapper {
     flex-direction: column;
@@ -5546,16 +5559,16 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
     flex: none;
   }
   .contact-me-section {
-    margin-top: 20px; /* Hapësirë shtesë midis seksioneve */
+    margin-top: 20px;
   }
   .contact-form .form-row {
-    flex-direction: column; /* Inputet njëra mbi tjetrën */
-    gap: 10px; /* Hapësirë midis inputeve */
+    flex-direction: column;
+    gap: 10px;
   }
   .form-group.half-width {
-    width: 100%; /* Inputet të marrin gjithë gjerësinë */
+    width: 100%;
   }
   .submit-button {
-    width: 40%; /* Butoni të mbushë gjerësinë */
+    width: 40%;
   }
 }
