@@ -695,6 +695,26 @@ function set_mailchimp_img_src() {
 }
 add_action('wp_footer', 'set_mailchimp_img_src');
 
+// add_action('wp_head', function() {
+//     if (have_rows('sections')) {
+//         while (have_rows('sections')) {
+//             the_row();
+
+//             $image_id = get_sub_field('primary_image');
+//             if ($image_id) {
+//                 $image_url = wp_get_attachment_image_url($image_id, 'hero-img');
+//                 $image_srcset = wp_get_attachment_image_srcset($image_id, 'hero-img');
+
+//                 echo '<link rel="preload" as="image" href="' . esc_url($image_url) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
+
+//                 break;
+//             }
+//         }
+
+//         reset_rows();
+//     }
+// }, 1);
+
 add_action('wp_head', function() {
     if (have_rows('sections')) {
         while (have_rows('sections')) {
@@ -702,15 +722,37 @@ add_action('wp_head', function() {
 
             $image_id = get_sub_field('primary_image');
             if ($image_id) {
-                $image_url = wp_get_attachment_image_url($image_id, 'full');
-                echo '<link rel="preload" as="image" href="' . esc_url($image_url) . '" >';
+                $image_srcset = wp_get_attachment_image_srcset($image_id, 'hero-img');
+                
+                $srcset_items = explode(',', $image_srcset);
+                $smallest_image = null;
+
+                foreach ($srcset_items as $item) {
+                    preg_match('/\s*(.+)\s+(\d+)w/', $item, $matches);
+                    if ($matches) {
+                        $url = trim($matches[1]);
+                        $width = (int) $matches[2];
+
+                        if (!$smallest_image || $width < $smallest_image['width']) {
+                            $smallest_image = [
+                                'url' => $url,
+                                'width' => $width,
+                            ];
+                        }
+                    }
+                }
+
+                if ($smallest_image) {
+                    echo '<link rel="preload" as="image" href="' . esc_url($smallest_image['url']) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
+                }
+
                 break;
             }
         }
-
         reset_rows();
     }
 }, 1);
+
 
 
 function add_custom_bullet_point_button($buttons) {
