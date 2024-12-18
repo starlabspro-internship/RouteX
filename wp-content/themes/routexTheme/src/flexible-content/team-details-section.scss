@@ -1,0 +1,373 @@
+.team-details-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.team-detail-m {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member-image-wrapper {
+  flex: 0 0 440px;
+  height: 425px;
+
+  border-radius: 10px;
+}
+
+.team-details-position {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  color: var(--base-color);
+}
+
+.team-member-image-members {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.team-details-content {
+  flex: 1;
+  max-width: 720px;
+}
+
+.team-details-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.team-details-position {
+  font-size: 1.2rem;
+  color: var(--base-color);
+  margin-bottom: 20px;
+}
+
+.team-details-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--base-color);
+  margin-bottom: 20px;
+}
+
+.team-details-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-details-info li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.team-details-info li strong {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.team-details-info li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.team-details-info li a:hover {
+  text-decoration: underline;
+}
+
+.team-details-position-experience {
+  color: var(--base-color);
+}
+
+.team-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.professional-skills-section {
+  width: 50%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--base-color);
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.professional-skills-section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--base-color);
+}
+
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.skills-contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.professional-skills-section,
+.contact-me-section {
+  flex: 1;
+  max-width: 48%;
+}
+
+.contact-me-section {
+  flex: 1;
+  max-width: 48%;
+  background-color: var(--contrast-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-me-section .section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light-color);
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group.half-width {
+  width: 50%;
+}
+
+.form-checkbox {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+.form-checkbox input[type="checkbox"] {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.form-checkbox label {
+  vertical-align: middle;
+  line-height: 16px;
+  cursor: pointer;
+}
+.contact-form .form-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  width: 202px;
+  height: 50px;
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@include media-xl {
+  .team-detail-m {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .professional-skills-section,
+  .contact-me-section {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group.half-width {
+    width: 100%;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+@include media-md {
+  .team-details-name {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .skill-info {
+    font-size: 0.8rem;
+  }
+}
+
+@include media-sd {
+  .team-member-image-wrapper {
+    height: 300px;
+  }
+
+  .team-details-name {
+    font-size: 1.8rem;
+  }
+
+  .contact-me-section {
+    padding: 20px;
+  }
+
+  .submit-button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .professional-skills-section,
+  .contact-me-section {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .contact-me-section {
+    margin-top: 20px;
+  }
+
+  .contact-form .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group.half-width {
+    width: 100%;
+  }
+
+  .submit-button {
+    width: 40%;
+  }
+}
