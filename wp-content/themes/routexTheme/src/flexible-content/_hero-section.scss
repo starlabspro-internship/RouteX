@@ -97,11 +97,12 @@
 
   .video-text {
     color: var(--primary-color);
-    font-size: 10px;
+    font-size: 12px;
     position: relative;
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s ease-in-out;
-    text-align: right;
+    text-align: center;
+    padding: 14px;
 
     &:hover {
       color: var(--accent-color);
@@ -118,10 +119,13 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 30px;
+      padding: 15px 15px;
       color: var(--primary-color);
       text-decoration: none;
+      border: 1px solid var(--primary-color);
+        border-radius: 50px;
       transition: all 0.3s ease;
+      font-size: 12px;
     
       &:hover {
         background-color: var(--accent-color);
@@ -133,8 +137,8 @@
       }
     }
     .banner-video-button {
-      width: 50px;
-      height: 50px;
+      width: 30px;
+      height: 30px;
       background-color: rgba(0, 77, 64, 0.9);
       border-radius: 50%;
       display: flex;
@@ -271,8 +275,6 @@
       .btn-transparent {
         background-color: transparent;
         color: var(--primary-color);
-        border: 1px solid var(--primary-color);
-        border-radius: 50px;
         transition: background-color 0.3s, color 0.3s;
         text-decoration: none;
 
@@ -281,6 +283,17 @@
         .default-img-hero {
           display: inline;
         }
+      }
+
+      .hero-section .btn-wrapper .btn-transparent{
+        font-size: 10px;
+        width: 145px;
+      }
+
+      .hero-section .btn-wrapper .video-text{
+          font-size: 10px;
+          width: 150px;
+          padding: 5px;
       }
 
       .video-text {
@@ -312,6 +325,16 @@
     font-size: 16px;
     padding: 16px 25px;
   }
+  .hero-section .btn-wrapper .btn-transparent{
+    font-size: 16px;
+    width: 160px;
+}
+
+.hero-section .btn-wrapper .video-text{
+    font-size: 16px;
+    width: 150px;
+    padding: 5px;
+}
 }
 @include media-xl{
   .hero-section .hero-content .hero-content-title {

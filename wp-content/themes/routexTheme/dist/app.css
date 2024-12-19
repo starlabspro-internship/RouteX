@@ -1926,10 +1926,11 @@ body .thumbnail-img {
 }
 
 .coaching-title {
-  font-size: 50px;
+  font-size: 36px;
   font-weight: bold;
   color: var(--primary-color);
   margin-bottom: 30px;
+  line-height: 45px;
 }
 
 .coaching-single p {
@@ -2014,6 +2015,9 @@ body .thumbnail-img {
 @media (min-width: 768px) {
   .featured-image img {
     margin-top: 0;
+  }
+  .coaching-title {
+    font-size: 50px;
   }
 }
 .stories {
@@ -2274,11 +2278,11 @@ body .thumbnail-img {
   color: var(--secondary-color);
   font-size: 18px;
   font-weight: 700;
-  margin-top: 25px;
+  margin-top: 3px;
   margin-bottom: 5px;
 }
 .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-text {
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 10px;
   margin-bottom: 5px;
   line-height: 30px;
@@ -2287,7 +2291,7 @@ body .thumbnail-img {
   color: var(--accent-color);
   font-weight: 600;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 5px;
   display: inline-flex;
   align-items: center;
   text-align: left;
@@ -2305,15 +2309,23 @@ body .thumbnail-img {
     width: 1450px;
   }
   .coaching-archive-container .custom-coaching-card {
-    height: 270px;
+    height: 240px;
   }
   .coaching-archive-container .custom-card-img {
     width: 200px;
     max-width: 200px;
     height: auto;
   }
-  .coaching-archive-container .custom-card-text {
-    font-size: 16px;
+  .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-text {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-link {
+    margin-top: 15px;
   }
 }
 
@@ -2408,13 +2420,14 @@ body .thumbnail-img {
 }
 .hero-section .video-text {
   color: var(--primary-color);
-  font-size: 10px;
+  font-size: 12px;
   position: relative;
   text-decoration: none;
   transition: color 0.3s, -webkit-text-decoration 0.3s ease-in-out;
   transition: color 0.3s, text-decoration 0.3s ease-in-out;
   transition: color 0.3s, text-decoration 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
-  text-align: right;
+  text-align: center;
+  padding: 14px;
 }
 .hero-section .video-text:hover {
   color: var(--accent-color);
@@ -2429,10 +2442,13 @@ body .thumbnail-img {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 30px;
+  padding: 15px 15px;
   color: var(--primary-color);
   text-decoration: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
   transition: all 0.3s ease;
+  font-size: 12px;
 }
 .hero-section .btn-wrapper .btn-transparent:hover {
   background-color: var(--accent-color);
@@ -2443,8 +2459,8 @@ body .thumbnail-img {
   fill: var(--secondary-color);
 }
 .hero-section .btn-wrapper .banner-video-button {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: rgba(0, 77, 64, 0.9);
   border-radius: 50%;
   display: flex;
@@ -2566,14 +2582,21 @@ body .thumbnail-img {
   .hero-section .btn-wrapper .btn-transparent {
     background-color: transparent;
     color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 50px;
     transition: background-color 0.3s, color 0.3s;
     text-decoration: none;
     transition: all 0.3s ease;
   }
   .hero-section .btn-wrapper .btn-transparent .default-img-hero {
     display: inline;
+  }
+  .hero-section .btn-wrapper .hero-section .btn-wrapper .btn-transparent {
+    font-size: 10px;
+    width: 145px;
+  }
+  .hero-section .btn-wrapper .hero-section .btn-wrapper .video-text {
+    font-size: 10px;
+    width: 150px;
+    padding: 5px;
   }
   .hero-section .btn-wrapper .video-text {
     font-size: 16px;
@@ -2599,6 +2622,15 @@ body .thumbnail-img {
   .hero-section .btn-wrapper .btn-transparent {
     font-size: 16px;
     padding: 16px 25px;
+  }
+  .hero-section .btn-wrapper .btn-transparent {
+    font-size: 16px;
+    width: 160px;
+  }
+  .hero-section .btn-wrapper .video-text {
+    font-size: 16px;
+    width: 150px;
+    padding: 5px;
   }
 }
 @media (min-width: 1200px) {

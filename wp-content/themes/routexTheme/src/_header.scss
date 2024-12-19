@@ -234,13 +234,15 @@
     padding-right: 15px;
     min-height: 50px;
     border: none;
-    border-radius: 30px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     line-height: 30px;
     font-weight: var(--semibold);
     transition: background-color 0.3s ease, color 0.3s ease;
     gap: 10px;
+    justify-content: center;
+    width: 52px;
     cursor: pointer;
     .fa{
         font-size: 20px;
@@ -335,6 +337,7 @@
         font-weight: var(--thin);
         display: flex;
     }
+
 }
 
 @include media-lg {
@@ -439,6 +442,10 @@
 
     .menu-toggle {
         display: none;
+    }
+
+    #dark-mode-toggle{
+        width: 60px;
     }
 }
 @include media-xl {

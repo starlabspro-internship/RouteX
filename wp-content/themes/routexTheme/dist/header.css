@@ -234,13 +234,15 @@
   padding-right: 15px;
   min-height: 50px;
   border: none;
-  border-radius: 30px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   line-height: 30px;
   font-weight: var(--semibold);
   transition: background-color 0.3s ease, color 0.3s ease;
   gap: 10px;
+  justify-content: center;
+  width: 52px;
   cursor: pointer;
 }
 #dark-mode-toggle .fa {
@@ -421,6 +423,9 @@
   }
   .menu-toggle {
     display: none;
+  }
+  #dark-mode-toggle {
+    width: 60px;
   }
 }
 @media (min-width: 1200px) {
