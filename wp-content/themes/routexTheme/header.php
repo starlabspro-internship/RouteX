@@ -33,6 +33,8 @@ $appointment_link = get_field('appointment_link', 'options');
         ?>;
     }
 
+
+
     .sub-menu {
         padding-left: 20px;
         background-color: <?php echo $bordered_header ? ((is_home() || is_front_page()) ? 'var(--primary-color)' : 'var(--contrast-color)'): ((is_home() || is_front_page()) ? 'var(--contrast-color)' : 'var(--primary-color)');
