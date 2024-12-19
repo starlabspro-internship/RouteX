@@ -209,11 +209,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// function add_google_fonts() {
-//     wp_enqueue_style( 'plus-jakarta-sans', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap', false );
-// }
-// add_action( 'wp_enqueue_scripts', 'add_google_fonts');
-
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 function my_acf_json_save_point($path) {
     $path = get_stylesheet_directory() . '/acf-json';
@@ -247,6 +242,17 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
+
+        if (in_array('current-menu-item', $classes)) {
+            $classes[] = 'active';
+        }
+
+        $current_url = home_url(add_query_arg(null, null));
+        $current_url = str_replace('/RouteX/RouteX/', '/RouteX/', $current_url);
+
+        if ($current_url == $item->url) {
+            $classes[] = 'current-menu-item active';
+        }
 
         $has_children = in_array('menu-item-has-children', $classes);
         if ($has_children) {
