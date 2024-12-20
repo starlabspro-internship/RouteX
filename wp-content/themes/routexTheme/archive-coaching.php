@@ -16,6 +16,11 @@ get_header();
             'posts_per_page' => 9,
             'paged'          => get_query_var('paged') ? get_query_var('paged') : 1,
         );
+
+        if (isset($_GET['author']) && is_numeric($_GET['author'])) {
+            $args['author'] = intval($_GET['author']);
+        }
+
         $coaching_query = new WP_Query($args);
 
         if ($coaching_query->have_posts()) :
@@ -31,10 +36,9 @@ get_header();
                             <?php echo wp_trim_words(get_the_content(), 8, '...'); ?>
                         </p>
                         <a href="<?php the_permalink(); ?>" class="custom-card-link">
-    Read More
-    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/upright-arrow-lightgreen.svg'); ?>" alt="button-upright-arrow">
-</a>
-
+                            Read More
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/upright-arrow-lightgreen.svg'); ?>" alt="button-upright-arrow">
+                        </a>
                     </div>
                 </div>
             </div>
