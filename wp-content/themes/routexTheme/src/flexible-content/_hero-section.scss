@@ -285,19 +285,15 @@
         }
       }
 
-      .hero-section .btn-wrapper .btn-transparent{
-        font-size: 10px;
-        width: 145px;
+      .btn-transparent{
+        font-size: 12px;
+        width: 140px;
       }
 
-      .hero-section .btn-wrapper .video-text{
-          font-size: 10px;
+      .video-text{
+          font-size: 12px;
           width: 150px;
-          padding: 5px;
-      }
-
-      .video-text {
-        font-size: 16px;
+          padding: 0px;
       }
 
       .banner-video-button {
@@ -325,20 +321,20 @@
     font-size: 16px;
     padding: 16px 25px;
   }
-  .hero-section .btn-wrapper .btn-transparent{
-    font-size: 16px;
-    width: 160px;
-}
 
-.hero-section .btn-wrapper .video-text{
-    font-size: 16px;
-    width: 150px;
-    padding: 5px;
-}
 }
 @include media-xl{
   .hero-section .hero-content .hero-content-title {
     font-size: 70px;
+  }.hero-section .btn-wrapper .btn-transparent{
+    font-size: 16px;
+    width: 160px;
+  }
+
+  .hero-section .btn-wrapper .video-text{
+      font-size: 16px;
+      width: 150px;
+      padding: 5px;
   }
 }
 @include media-xxxl{
@@ -347,5 +343,5 @@
   }
   .contentdiv-hero{
     display: flex;
-  }
+  }  
 }
