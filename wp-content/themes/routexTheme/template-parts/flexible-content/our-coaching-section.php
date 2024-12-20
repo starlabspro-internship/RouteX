@@ -23,7 +23,7 @@ foreach ($users as $user) {
 
         $cards[] = [
             'name' => $user->display_name,
-            'email' => $user->user_email,
+            'position' => get_user_meta($user->ID, 'position', true),
             'person_link' => $user_coaching_archive_url,
         ];
     }
@@ -74,7 +74,7 @@ $has_non_empty_social_cards_boolean = has_non_empty_cards($social_media_cards);
                                     <div class="card">
                                         <div class="name-position-div">
                                             <h5><?php echo esc_html($card['name']); ?></h5>
-                                            <p><?php echo esc_html($card['email']); ?></p>
+                                            <p><?php echo esc_html($card['position']); ?></p>
                                         </div>
                                         <div class="card-person-links">
                                             <a class="person-link" href="<?php echo esc_url($card['person_link']); ?>" aria-label="Link to coaching posts by <?php echo esc_html($card['name']); ?>">
@@ -124,4 +124,4 @@ $has_non_empty_social_cards_boolean = has_non_empty_cards($social_media_cards);
             <?php endif; ?>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; ?> 
