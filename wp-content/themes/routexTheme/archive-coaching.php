@@ -11,16 +11,29 @@ get_header();
 <div class="coaching-archive-container container py-5">
     <div class="row gx-4 gy-5">
         <?php
-        $args = array(
-            'post_type'      => 'coaching',
-            'posts_per_page' => 9,
-            'paged'          => get_query_var('paged') ? get_query_var('paged') : 1,
-        );
-
-        if (isset($_GET['author']) && is_numeric($_GET['author'])) {
-            $args['author'] = intval($_GET['author']);
+        // Check if 'author' query parameter is set
+        if (isset($_GET['author'])) {
+            $author_id = intval($_GET['author']);
+            
+            // Modify the query to filter by author ID
+            $args = [
+                'post_type' => 'coaching',
+                'author' => $author_id,
+                'post_status' => 'publish',
+                'posts_per_page' => 9, // Or adjust this as needed
+                'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+            ];
+        } else {
+            // Default query if no author is specified
+            $args = [
+                'post_type' => 'coaching',
+                'post_status' => 'publish',
+                'posts_per_page' => 9, // Or adjust this as needed
+                'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+            ];
         }
 
+        // Run the query
         $coaching_query = new WP_Query($args);
 
         if ($coaching_query->have_posts()) :
@@ -55,6 +68,7 @@ get_header();
 </div>
 
 <?php
+// Pagination
 $pagination_links = paginate_links(array(
     'base'    => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
     'format'  => '?paged=%#%',
