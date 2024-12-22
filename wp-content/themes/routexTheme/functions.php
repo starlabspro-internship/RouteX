@@ -567,7 +567,7 @@ function register_stories_post_type() {
 }
 add_action('init', 'register_stories_post_type');
 
-// Register Coaching Custom Post Type
+
 function register_coaching_post_type() {
     $labels = array(
         'name'               => 'Coaching',
@@ -595,7 +595,7 @@ function register_coaching_post_type() {
         'has_archive'        => true,
         'rewrite'            => array(
             'slug'       => 'coaching',
-            'with_front' => false, // Ensures clean URLs
+            'with_front' => false, 
         ),
         'query_var'          => true,
         'show_in_rest'       => true,
@@ -605,39 +605,38 @@ function register_coaching_post_type() {
 }
 add_action('init', 'register_coaching_post_type');
 
-// Add 'author' Query Variable
 function coaching_author_query_vars($query_vars) {
     $query_vars[] = 'author';
     return $query_vars;
 }
 add_filter('query_vars', 'coaching_author_query_vars');
 
-// Filter Coaching by Author
 function filter_coaching_by_author($query) {
-    // Ensure it is the main query and a coaching archive
     if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
         $author_id = get_query_var('author');
         if ($author_id) {
-            $query->set('author', $author_id); // Filter by author ID
+            $query->set('author', $author_id); 
         }
     }
 }
 add_action('pre_get_posts', 'filter_coaching_by_author');
 
-// Flush Rewrite Rules on Activation
 function coaching_flush_rewrite_rules() {
     register_coaching_post_type();
     flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'coaching_flush_rewrite_rules');
 
-// Error Logging for Debugging (Optional)
 function log_debug_info() {
     if (is_post_type_archive('coaching') && get_query_var('author')) {
         error_log('Coaching archive queried with author ID: ' . get_query_var('author'));
     }
 }
 add_action('template_redirect', 'log_debug_info');
+
+
+
+
 
 function register_visa_post_type() {
     $labels = array(
