@@ -17,14 +17,15 @@ foreach ($users as $user) {
         'post_status' => 'publish',
         'posts_per_page' => -1,
     ]);
+    
 
     if (!empty($user_coaching_posts)) {
-        $user_coaching_archive_url = add_query_arg('author', $user->ID, get_post_type_archive_link('coaching'));
-
+        $user_coaching_archive_url = home_url("/coaching/author/{$user->ID}/");
+        
         $cards[] = [
             'name' => $user->display_name,
             'position' => get_user_meta($user->ID, 'position', true),
-            'person_link' => $user_coaching_archive_url,
+            'person_link' => $user_coaching_archive_url, 
         ];
     }
 }
@@ -77,14 +78,9 @@ $has_non_empty_social_cards_boolean = has_non_empty_cards($social_media_cards);
                                             <p><?php echo esc_html($card['position']); ?></p>
                                         </div>
                                         <div class="card-person-links">
-                                        <div class="card-person-links">
-    <a class="person-link" href="<?php 
-        echo esc_url($card['person_link']);
-    ?>" aria-label="Link to coaching posts by <?php echo esc_html($card['name']); ?>">
-        <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg'); ?>
-    </a>
-</div>
-
+                                            <a class="person-link" href="<?php echo esc_url($card['person_link']); ?>" aria-label="Link to coaching posts by <?php echo esc_html($card['name']); ?>">
+                                                <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg'); ?>
+                                            </a>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -129,4 +125,4 @@ $has_non_empty_social_cards_boolean = has_non_empty_cards($social_media_cards);
             <?php endif; ?>
         </div>
     </section>
-<?php endif; ?> 
+<?php endif; ?>   

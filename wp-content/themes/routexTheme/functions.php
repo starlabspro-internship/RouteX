@@ -604,6 +604,31 @@ function register_coaching_post_type() {
 }
 add_action('init', 'register_coaching_post_type');
 
+function filter_coaching_by_author($query) {
+    if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
+        if ($author_id = get_query_var('author')) {
+            $query->set('author', $author_id); 
+            error_log('Filtering by author ID: ' . $author_id); 
+        }
+    }
+}
+
+function coaching_author_pagination_query_vars($query_vars) {
+    $query_vars[] = 'author';
+    return $query_vars;
+}
+add_filter('query_vars', 'coaching_author_pagination_query_vars');
+
+function filter_coaching_by_author_for_pagination($query) {
+    if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
+        $author_id = get_query_var('author');
+        if ($author_id) {
+            $query->set('author', $author_id);
+        }
+    }
+}
+add_action('pre_get_posts', 'filter_coaching_by_author_for_pagination');
+
 function register_visa_post_type() {
     $labels = array(
         'name'               => __('Visa', 'routexTheme'),
@@ -632,6 +657,8 @@ function register_visa_post_type() {
     register_post_type('visa', $args);
 }
 add_action('init', 'register_visa_post_type');
+
+
 
 function enqueue_google_maps_api() {
     if (is_page() && has_block('acf/location-map-section')) {
