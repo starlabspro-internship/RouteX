@@ -567,6 +567,7 @@ function register_stories_post_type() {
 }
 add_action('init', 'register_stories_post_type');
 
+// Register Coaching Custom Post Type
 function register_coaching_post_type() {
     $labels = array(
         'name'               => 'Coaching',
@@ -591,43 +592,52 @@ function register_coaching_post_type() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-awards',
         'supports'           => array('title', 'editor', 'thumbnail'),
-        'has_archive'        => true,  
+        'has_archive'        => true,
         'rewrite'            => array(
-            'slug'       => 'coaching', 
-            'with_front' => false,
+            'slug'       => 'coaching',
+            'with_front' => false, // Ensures clean URLs
         ),
         'query_var'          => true,
-        'show_in_rest'       => true, 
+        'show_in_rest'       => true,
     );
 
     register_post_type('coaching', $args);
 }
 add_action('init', 'register_coaching_post_type');
 
-function filter_coaching_by_author($query) {
-    if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
-        if ($author_id = get_query_var('author')) {
-            $query->set('author', $author_id); 
-            error_log('Filtering by author ID: ' . $author_id); 
-        }
-    }
-}
-
-function coaching_author_pagination_query_vars($query_vars) {
+// Add 'author' Query Variable
+function coaching_author_query_vars($query_vars) {
     $query_vars[] = 'author';
     return $query_vars;
 }
-add_filter('query_vars', 'coaching_author_pagination_query_vars');
+add_filter('query_vars', 'coaching_author_query_vars');
 
-function filter_coaching_by_author_for_pagination($query) {
+// Filter Coaching by Author
+function filter_coaching_by_author($query) {
+    // Ensure it is the main query and a coaching archive
     if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
         $author_id = get_query_var('author');
         if ($author_id) {
-            $query->set('author', $author_id);
+            $query->set('author', $author_id); // Filter by author ID
         }
     }
 }
-add_action('pre_get_posts', 'filter_coaching_by_author_for_pagination');
+add_action('pre_get_posts', 'filter_coaching_by_author');
+
+// Flush Rewrite Rules on Activation
+function coaching_flush_rewrite_rules() {
+    register_coaching_post_type();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'coaching_flush_rewrite_rules');
+
+// Error Logging for Debugging (Optional)
+function log_debug_info() {
+    if (is_post_type_archive('coaching') && get_query_var('author')) {
+        error_log('Coaching archive queried with author ID: ' . get_query_var('author'));
+    }
+}
+add_action('template_redirect', 'log_debug_info');
 
 function register_visa_post_type() {
     $labels = array(
