@@ -569,38 +569,25 @@ add_action('init', 'register_stories_post_type');
 
 
 function register_coaching_post_type() {
-    $labels = array(
-        'name'               => 'Coaching',
-        'singular_name'      => 'Coaching',
-        'menu_name'          => 'Coaching',
-        'name_admin_bar'     => 'Coaching',
-        'add_new'            => 'Add New',
-        'add_new_item'       => 'Add New Coaching',
-        'new_item'           => 'New Coaching',
-        'edit_item'          => 'Edit Coaching',
-        'view_item'          => 'View Coaching',
-        'all_items'          => 'All Coaching',
-        'search_items'       => 'Search Coaching',
-        'not_found'          => 'No Coaching found.',
-        'not_found_in_trash' => 'No Coaching found in Trash.',
-        'parent_item_colon'  => 'Parent Coaching:',
-    );
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-awards',
-        'supports'           => array('title', 'editor', 'thumbnail'),
-        'has_archive'        => true,
-        'rewrite'            => array(
-            'slug'       => 'coaching',
-            'with_front' => false, 
-        ),
-        'query_var'          => true,
-        'show_in_rest'       => true,
-    );
-
+    $args = [
+        'labels' => [
+            'name' => 'Coaching',
+            'singular_name' => 'Coaching',
+            'menu_name' => 'Coaching',
+            'name_admin_bar' => 'Coaching',
+            'add_new' => 'Add New',
+            'add_new_item' => 'Add New Coaching',
+            'edit_item' => 'Edit Coaching',
+            'view_item' => 'View Coaching',
+            'all_items' => 'All Coaching',
+        ],
+        'public' => true,
+        'menu_icon' => 'dashicons-awards',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'coaching', 'with_front' => false],
+        'show_in_rest' => true,
+    ];
     register_post_type('coaching', $args);
 }
 add_action('init', 'register_coaching_post_type');
@@ -612,27 +599,14 @@ function coaching_author_query_vars($query_vars) {
 add_filter('query_vars', 'coaching_author_query_vars');
 
 function filter_coaching_by_author($query) {
-    if (is_post_type_archive('coaching') && !is_admin() && $query->is_main_query()) {
+    if ($query->is_main_query() && is_post_type_archive('coaching')) {
         $author_id = get_query_var('author');
         if ($author_id) {
-            $query->set('author', $author_id); 
+            $query->set('author', $author_id);
         }
     }
 }
 add_action('pre_get_posts', 'filter_coaching_by_author');
-
-function coaching_flush_rewrite_rules() {
-    register_coaching_post_type();
-    flush_rewrite_rules();
-}
-register_activation_hook(__FILE__, 'coaching_flush_rewrite_rules');
-
-function log_debug_info() {
-    if (is_post_type_archive('coaching') && get_query_var('author')) {
-        error_log('Coaching archive queried with author ID: ' . get_query_var('author'));
-    }
-}
-add_action('template_redirect', 'log_debug_info');
 
 
 
