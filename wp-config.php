@@ -45,7 +45,7 @@ define('WP_HOME', 'http://routex.devops99.pro');
 define('WP_SITEURL', 'http://routex.devops99.pro');
 
 define('WP_MAX_MEMORY_LIMIT', '256M');
-define('GITHUB_DEPLOYMENT_SLUG', '07c320f');
+define('GITHUB_DEPLOYMENT_SLUG', 'eea19ca');
 
 define('WP_MEMORY_LIMIT', '512M');
 $_SERVER['HTTPS'] = 'on';
