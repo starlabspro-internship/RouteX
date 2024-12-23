@@ -233,7 +233,7 @@ add_action('wp_enqueue_scripts', 'enqueue_critical_css');
 
 function defer_parsing_of_js($tag, $handle) {
 
-    $defer_libraries = ['jquery-core', 'jquery-migrate','bodhi_svg_inline'];
+    $defer_libraries = ['jquery-core', 'jquery-migrate','bodhi_svg_inline-js'];
 
     if (in_array($handle, $defer_libraries, true)) {
         $tag = str_replace(' src', ' defer src', $tag);
