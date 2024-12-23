@@ -70,7 +70,7 @@ $appointment_link = get_field('appointment_link', 'options');
             <div class="header-container">
                 <div class="site-branding">
                     <a href="<?php echo esc_url($home_url); ?>">
-                        <img src="<?php echo esc_url($header_logo_url); ?>" alt="Header logo">
+                        <img src="<?php echo esc_url($header_logo_url); ?>" alt="Header logo" width="40" height="34">
                     </a>
                     <a href="<?php echo esc_url($home_url); ?>">
                         <div><?php echo esc_html($company_name); ?></div>
@@ -93,7 +93,7 @@ $appointment_link = get_field('appointment_link', 'options');
                 <div class="button-div">
                     <a href="<?php echo esc_url($appointment_link); ?>" class="appointment-button">Get An Appointment
                         <img src="<?php echo get_template_directory_uri() ?>/assets/icons/right-arrow.svg"
-                            alt="Right arrow" />
+                            alt="Right arrow" alt="right-arrow-white-bigger-tale" width="14" height="16"/>
                     </a>                
                     <button id="dark-mode-toggle">
                         <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,8 +108,8 @@ $appointment_link = get_field('appointment_link', 'options');
                         </svg>
                     </button>
                     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/menu-svgrepo-com.svg" alt="">
-                </button>
+                        <?php echo file_get_contents(get_template_directory() . '/assets/icons/menu-svgrepo-com.svg');?>
+                    </button>
                 </div>
             </div>
         </header>

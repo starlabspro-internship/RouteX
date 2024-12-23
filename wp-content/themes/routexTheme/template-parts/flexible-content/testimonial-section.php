@@ -1,4 +1,6 @@
 <?php
+load_swiper_assets();
+
 $testimonial_left_image = get_sub_field('primary_image');
 $testimonial_cards = [];
 $card_count = 0;
@@ -29,9 +31,8 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
             <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-5' : 'col-12'); ?>">
                 <div class="testimonial-left">
                     <?php
-                    // Set the image sizes for srcset (e.g., small, medium, large)
                     $testimonial_left_image_srcset = wp_get_attachment_image_srcset($testimonial_left_image, 'testimonail-large-img');
-                    $testimonial_left_image_sizes = '(max-width: 768px) 100vw, 50vw'; // Example for responsive image sizes
+                    $testimonial_left_image_sizes = '(max-width: 768px) 100vw, 50vw';
                     $testimonial_left_img_url = wp_get_attachment_image_url($testimonial_left_image, 'testimonail-large-img');
                     ?>
                     <img 
@@ -39,6 +40,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                         srcset="<?php echo esc_attr($testimonial_left_image_srcset); ?>"
                         sizes="<?php echo esc_attr($testimonial_left_image_sizes); ?>"
                         alt="Testimonial Image"
+                        loading="lazy"
                     />
                 </div>
             </div>
@@ -51,7 +53,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                         <?php foreach ($testimonial_cards as $index => $card): ?>
                             <div class="testimonial-card swiper-slide">
                                 <div class="testimonial-content">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/qoute.svg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/qoute.svg" alt="qoute" width="73" height="56">
                                     <?php if ($card['text']): ?>
                                     <p class="testimonial-text"><?php echo $card['text']; ?></p>
                                     <?php endif; ?>
@@ -59,9 +61,8 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                                         <div class="testimonial-icon">
                                             <?php if ($card['icon']): ?>
                                                 <?php
-                                                // Set the image sizes for srcset (e.g., small, medium, large)
                                                 $testimonail_small_img_srcset = wp_get_attachment_image_srcset($card['icon'], 'testimonail-small-img');
-                                                $testimonail_small_img_sizes = '(max-width: 768px) 100vw, 50vw'; // Example for responsive image sizes
+                                                $testimonail_small_img_sizes = '(max-width: 768px) 100vw, 50vw';
                                                 $testimonail_small_img_url = wp_get_attachment_image_url($card['icon'], 'testimonail-small-img');
                                                 ?>
                                                 <img 
@@ -70,6 +71,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                                                     sizes="<?php echo esc_attr($testimonail_small_img_sizes); ?>"
                                                     alt="<?php echo $card['title']; ?>" 
                                                     class="img-fluid"
+                                                    loading="lazy"
                                                 >
                                             <?php endif; ?>
                                             <?php if ($card['name'] || $card['position']): ?>

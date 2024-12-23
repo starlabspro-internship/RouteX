@@ -2723,7 +2723,7 @@ body .thumbnail-img {
 }
 
 .client-img {
-  width: auto;
+  width: 252px;
   height: 48px;
   max-width: 100%;
   transition: all 0.3s;

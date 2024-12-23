@@ -35,7 +35,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                     <div class="subtitle available-countries-subtitle">
                         <?php echo esc_html($smalltitle); ?>
                     </div>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/subtitle-icon-2.svg" alt="">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/subtitle-icon-2.svg" alt="subtitle-icon-2" width="52" height="10" loading="lazy">
                 </div>
                 <?php endif; ?>
                 <?php if ($title) : ?>
@@ -50,7 +50,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
             <div class="available-countries-section-buttons">
                 <a class="available-countries-section-button" href="<?php echo esc_url($button); ?>">
                     View More 
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-white-bigger-tale.svg'); ?>" alt="">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/right-arrow-white-bigger-tale.svg'); ?>" alt="right-arrow-white-bigger-tale" width="15" height="10">
                 </a>
             </div>
             <?php endif; ?>
@@ -84,7 +84,7 @@ if ($smalltitle || $title || $button || !empty($countries)) :
                                     <?php foreach ($country['bullet_points'] as $bullet_point) : ?>
                                         <?php if (!empty($bullet_point['bullet_point_text'])) : ?>
                                             <li>
-                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/green-checkmark.svg" alt="green-checkmark">
+                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/green-checkmark.svg" alt="green-checkmark" width="16" height="12">
                                                 <?php echo esc_html($bullet_point['bullet_point_text']); ?>
                                             </li>
                                         <?php endif; ?>

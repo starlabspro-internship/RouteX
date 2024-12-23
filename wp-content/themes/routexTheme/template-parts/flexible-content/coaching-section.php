@@ -1,4 +1,6 @@
 <?php
+load_swiper_assets();
+
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
 $post_category = get_sub_field('post_category');
@@ -21,7 +23,7 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
             <div class="coaching-section-titles">
                 <?php if ($small_title) : ?>
                 <div class="coaching-section-subtitles">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="subtitle-icon-3" width="21" height="21" loading="lazy">
                     <div class="subtitle coaching-subtitle">
                         <?php echo esc_html($small_title); ?>
                     </div>
@@ -65,16 +67,13 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
                                 <a href="<?php echo esc_url($card_link); ?>">
                                     <?php if ($card_image_id) : ?>
                                         <?php 
-                                        echo wp_get_attachment_image(
-                                            $card_image_id, 
-                                            'supporting-coaching-img', 
-                                            false, 
-                                            [
-                                                'class' => 'coaching-item_thumb-image',
-                                                'alt'   => esc_attr($card_title),
-                                            ]
-                                        ); 
+                                        $card_image_url = wp_get_attachment_image_url($card_image_id, 'supporting-coaching-img'); 
+                                        $card_image_srcset = wp_get_attachment_image_srcset($card_image_id, 'supporting-coaching-img');
                                         ?>
+                                        <img class="coaching-item_thumb-image" src="<?php echo esc_url($card_image_url); ?>" 
+                                            srcset="<?php echo esc_attr($card_image_srcset); ?>" 
+                                            alt="coaching-item_thumb-image"
+                                            loading="lazy">
                                     <?php endif; ?>
                                 </a>
                             </div>

@@ -38,7 +38,7 @@ if ($background_image || $small_title || $title || $has_non_empty_cards_boolean 
             <div class="title-subtitle-div">
                 <?php if ($small_title): ?>
                     <div class="our-coaching-section-subtitle">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" class="img-fluid" alt="Passport Icon" width="21" height="21" loading="lazy">
                         <div class="subtitle our-coaching-section-subtitle-costum">
                             <?php echo esc_html($small_title); ?>
                         </div>

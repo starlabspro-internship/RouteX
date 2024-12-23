@@ -1,4 +1,6 @@
 <?php
+load_swiper_assets();
+
 function has_non_empty_logos($logos) {
     foreach ($logos as $logo) {
         if (!empty($logo)) {
@@ -39,7 +41,8 @@ if (has_non_empty_logos($logos)) :
                         srcset="<?php echo esc_url($sponsors_img_srcset); ?>" 
                         sizes="(max-width: 1024px) 100vw, 150px" 
                         alt="<?php echo esc_attr($sponsors_img_alt); ?>" 
-                        class="client-img">
+                        class="client-img"
+                        loading="lazy">
                 </div>
             <?php endforeach; ?>
         </div>
