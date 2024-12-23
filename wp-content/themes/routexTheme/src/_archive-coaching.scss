@@ -68,12 +68,14 @@
     @include media-md {
       width: 1450px;
       .custom-coaching-card {
-        height: 240px;
+        height: 280px;
+        width: 320px;
       }
       .custom-card-img {
         width: 200px;
         max-width: 200px;
-        height: auto;
+        height: 100%;
+        object-fit: cover;      
       }
       .custom-coaching-card .custom-card-body .custom-card-title{
         font-size: 18px;
