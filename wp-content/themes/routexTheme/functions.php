@@ -172,7 +172,7 @@ add_action('wp_head', function() {
                 }
 
                 if ($smallest_image) {
-                    echo '<link rel="preload" as="image" href="' . esc_url($smallest_image['url']) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
+                    echo '<link rel="preload" fetchpriority="high" as="image" href="' . esc_url($smallest_image['url']) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
                 }
 
                 break;
