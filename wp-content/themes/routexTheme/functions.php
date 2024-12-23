@@ -195,7 +195,7 @@ add_action('wp_enqueue_scripts', 'dynamic_fonts_scripts',2);
 function routextheme_scripts() {
     global $theme_version;
 
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
 
     wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], $theme_version, 'all');
     wp_enqueue_style('style');
