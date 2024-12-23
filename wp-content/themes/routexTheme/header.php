@@ -112,7 +112,8 @@ $appointment_link = get_field('appointment_link', 'options');
                             </defs>
                         </svg>
                     </button>
-                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <?php echo file_get_contents(get_template_directory() . '/assets/icons/menu-svgrepo-com.svg');?>
                     </button>
                 </div>
