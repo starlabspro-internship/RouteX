@@ -68,25 +68,12 @@ if ($smalltitle || $title || $has_non_empty_cards_boolean) :
             </div>
         </div>
         <?php if ($has_non_empty_cards_boolean) : ?>
-        <div class="countries-section-slider-1">
             <div class="swiper countries-section-swiper">
                 <div class="swiper-wrapper">
-                <?php
-                $card_count = 0;
-                ?>
-                    <div class="swiper-slide">
-                        <div class="countries-swiper-slide-single">
-                            <ul class="countries-swiper-slide-item">
-                                <?php foreach ($cards as $card) : ?>
-                                    <?php if ($card_count > 0 && $card_count % 5 === 0) : ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="countries-swiper-slide-single">
-                                            <ul class="countries-swiper-slide-item">
-                                    <?php endif; ?>
-    
+                    <?php foreach ($cards as $card) : ?>
+                        <div class="swiper-slide">
+                            <div class="countries-swiper-slide-single">
+                                <ul class="countries-swiper-slide-item">
                                     <li>
                                         <div class="countries-swiper-slide-single-inner">
                                             <?php if ($card['card_small_image']) : ?>
@@ -123,72 +110,37 @@ if ($smalltitle || $title || $has_non_empty_cards_boolean) :
                                             <?php endif; ?>
                                         </div>
                                     </li>
-    
-                                    <?php $card_count++; ?>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="countries-section-slider-2">
-            <div class="swiper countries-section-swiper">
-                <div class="swiper-wrapper" >
-                <?php foreach ($cards as $card) : ?>
-                    <div class="swiper-slide">
-                        <div class="countries-swiper-slide-single">
-                            <div class="countries-swiper-slide-single-inner-zoomed">
-                                <?php if ($card['card_small_image']) : ?>
-                                <div class="countries-swiper-slide-single-small-img">
-                                    <?php $card_small_image_srcset = wp_get_attachment_image_srcset($card['card_small_image'], 'our-countries-small-img'); ?>
-                                    <img src="<?php echo esc_url($card['card_small_image']); ?>" srcset="<?php echo esc_attr($card_small_image_srcset); ?>" alt="card_small_image">
-                                </div>
-                                <?php endif; ?>
-                                <?php if ($card['card_background']) : ?>
-                                <div class="countries-swiper-slide-single-img">
-                                    <?php $card_background_srcset = wp_get_attachment_image_srcset($card['card_background'], 'our-countries-large-img'); ?>
-                                    <img src="<?php echo esc_url($card['card_background']); ?>" srcset="<?php echo esc_attr($card_background_srcset); ?>" alt="card_background">
-                                </div>
-                                <?php endif; ?>
-                                <div class="bg-overlay"></div>
-                                <?php if ($card['card_title'] || $card['card_text'] || $card['card_link']) : ?>
-                                <div class="countries-swiper-slide-single-content">
-                                    <?php if ($card['card_title']) : ?>
-                                    <h4><?php echo esc_html($card['card_title']); ?></h4>
-                                    <?php endif; ?>
-                                    <?php if ($card['card_text']) : ?>
-                                    <p><?php echo esc_html($card['card_text']); ?></p>
-                                    <?php endif; ?>
-                                    <?php if ($card['card_link']) : ?>
-                                    <div class="countries-swiper-slide-single-content-button">
-                                        <a href="<?php echo esc_url($card['card_link']); ?>">Apply Now
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="right-arrow-white-bigger-tale" width="15" height="10">
-                                        </a>
-                                    </div>
-                                    <?php endif; ?>
-                                </div>
-                                <?php endif; ?>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </div>
         <?php endif; ?>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper('.countries-section-swiper', {
-                loop: true,
+                loop: false,
                 navigation: {
                     nextEl: '.countries-section-button[aria-label="Next slide"]',
                     prevEl: '.countries-section-button[aria-label="Previous slide"]',
                 },
                 slidesPerView: 1,
+                slidesPerGroup: 1,
                 spaceBetween: 30,
+                watchOverflow: true,
+                breakpoints: {
+                    768: { // For tablets and larger screens
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                    },
+                    1024: { // For desktops
+                        slidesPerView: 5,
+                        slidesPerGroup: 5,
+                    },
+                }
             });
 
         });
