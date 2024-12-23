@@ -36,12 +36,13 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                             <div class="choose-us-media-thumb-img-img" >
                                 <img src="<?php echo esc_url($first_image_url); ?>" 
                                      srcset="<?php echo esc_attr($first_image_srcset); ?>"
-                                     alt="Why Choose Us Image">
+                                     alt="Why Choose Us Image"
+                                     loading="lazy">
                             </div>
                         </div>
                         <?php endif; ?>
                         <div class="choose-us-media-thumb-circle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="choose-us-circle-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/choose-us-circle-img.png" alt="choose-us-circle-img" loading="lazy">
                         </div>
                     </div>
                     <div class="choose-us-media-img">
@@ -57,7 +58,8 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                         <div class="choose-us-media-img-picture" >
                             <img src="<?php echo esc_url($second_image_url); ?>" 
                                  srcset="<?php echo esc_attr($second_image_srcset); ?>"
-                                 alt="Why Choose Us Image">
+                                 alt="Why Choose Us Image"
+                                 loading="lazy">
                         </div>
                         <?php endif; ?>
                     </div>
@@ -72,7 +74,7 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                 <div class="choose-us-section-title-container">
                     <?php if ($subtitle) : ?>
                     <div class="choose-us-section-subtitles">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="subtitle-icon-3" width="21" height="21" loading="lazy">
                         <div class="subtitle choose-us-subtitle">
                             <?php echo esc_html($subtitle) ?>
                         </div> 
@@ -101,7 +103,7 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                                     <?php if ($card['card_icon']) : ?>
                                     <div class="choose-us-item-icon">
                                         <?php $cards_img_url = wp_get_attachment_image_url($card['card_icon'], 'why-choose-us-icon'); ?>
-                                        <img src="<?php echo esc_url($cards_img_url) ?>" alt="cards_img_url">
+                                        <img src="<?php echo esc_url($cards_img_url) ?>" alt="cards_img_url" loading="lazy">
                                     </div>
                                     <?php endif; ?>
 
@@ -119,7 +121,7 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                                                 if (!empty($card_text)) : 
                                                 ?>
                                                 <li>
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="light-green-checkmark" width="16" height="12">
                                                     <?php echo esc_html($card_text) ?>
                                                 </li>
                                                 <?php
@@ -149,7 +151,7 @@ if ($phone_number || $has_non_empty_cards_boolean || $first_image || $experience
                     <div class="choose-us-button-text">
                         <div class="choose-us-button-text-icon">
                             <?php $phone_icon_url = wp_get_attachment_image_url($phone_icon, 'phone-icon-img'); ?>
-                            <img src="<?php echo esc_url($phone_icon_url); ?>" alt="phone-icon-img">
+                            <img src="<?php echo esc_url($phone_icon_url); ?>" alt="phone-icon-img" loading="lazy">
                         </div>
                         <div class="choose-us-button-text-number">
                             <h6>Need help?</h6>

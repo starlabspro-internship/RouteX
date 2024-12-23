@@ -59,7 +59,7 @@ $has_non_empty_social_cards_boolean = !empty($social_media_cards);
                 <div class="title-subtitle-div">
                     <?php if ($small_title): ?>
                         <div class="our-coaching-section-subtitle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon" width="21" height="21" loading="lazy">
                             <div class="subtitle"><?php echo esc_html($small_title); ?></div>
                         </div>
                     <?php endif; ?>

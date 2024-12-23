@@ -43,7 +43,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                 <?php if ($left_support_img) : ?>
                 <div>
                     <div class="footer-left-svg">
-                        <img src="<?php echo esc_url($left_support_img_url); ?>" alt="left_support_img">
+                        <img src="<?php echo esc_url($left_support_img_url); ?>" alt="left_support_img" loading="lazy">
                     </div>
                 </div>
                 <?php endif; ?>
@@ -60,7 +60,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                 <?php if ($right_support_img) : ?>
                 <div>
                     <div class="footer-right-svg">
-                        <img src="<?php echo esc_url($right_support_img_url); ?>" alt="right_support_img">
+                        <img src="<?php echo esc_url($right_support_img_url); ?>" alt="right_support_img" loading="lazy">
                     </div>
                 </div>
                 <?php endif; ?>
@@ -80,7 +80,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                     <?php if ($footer_logo_image || $footer_logo_text) : ?>
                     <div class="footer__logo-container">
                         <?php if ($footer_logo_image) : ?>
-                        <img src="<?php echo esc_url($footer_logo_image_url); ?>" alt="RouteX Logo" class="footer__logo-icon">
+                        <img src="<?php echo esc_url($footer_logo_image_url); ?>" alt="RouteX Logo" class="footer__logo-icon" loading="lazy">
                         <?php endif; ?>
                         <?php if ($footer_logo_text) : ?>
                         <p class="footer-logo-text"><?php echo esc_html($footer_logo_text); ?></p>
@@ -96,7 +96,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                     <div class="footer__social">
                         <?php foreach ($footer_social_links as $social) : ?>
                         <a href="<?php echo esc_url($social['social_url']); ?>" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo esc_url($social['social_icon']); ?>" alt="Social Icon" class="social_icon">
+                            <img src="<?php echo esc_url($social['social_icon']); ?>" alt="Social Icon" class="social_icon" height="17" loading="lazy">
                         </a>
                         <?php endforeach; ?>
                     </div>
@@ -118,7 +118,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                                     <?php if($services_link['service_link_text']): ?>
                                     <li>
                                         <a href="<?= esc_url($services_link['service_link_url']); ?>">
-                                            <img src="<?= get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="light-green-checkmark">
+                                            <img src="<?= get_template_directory_uri(); ?>/assets/icons/light-green-checkmark.svg" alt="light-green-checkmark" width="16" height="12" loading="lazy">
                                             <?= esc_html($services_link['service_link_text']); ?>
                                         </a>
                                     </li>
@@ -144,7 +144,7 @@ $footer_copyright = $footer_bottom['footer_copyright'] ?? null;
                                 <?php if($useful_link['link_text']): ?>
                                 <li>
                                     <a href="<?= esc_url($useful_link['link_url']); ?>">
-                                        <img src="<?= get_template_directory_uri(); ?>/assets/icons/right-arrow-light-green-without-tale.svg" alt="right-arrow-light-green-without-tale">
+                                        <img src="<?= get_template_directory_uri(); ?>/assets/icons/right-arrow-light-green-without-tale.svg" alt="right-arrow-light-green-without-tale" width="8" height="12" loading="lazy">
                                         <?= esc_html($useful_link['link_text']); ?>
                                     </a>
                                 </li>

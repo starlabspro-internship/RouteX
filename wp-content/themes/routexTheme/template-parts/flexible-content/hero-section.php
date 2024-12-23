@@ -15,15 +15,11 @@ $is_split_layout = $primary_image && ($text_area_first_sector || $button_first_s
     <section class="hero-section">
         <div class="container">
             <div class="decorative-icon left-tower">
-                <?php
-                    echo file_get_contents(get_template_directory() . '/assets/icons/hero-left-tower.svg');
-                ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/hero-left-tower.svg" alt="hero-left-tower" width="453" height="536">
             </div>
 
             <div class="decorative-icon right-tower">
-                <?php
-                    echo file_get_contents(get_template_directory() . '/assets/icons/hero-right-tower.svg');
-                ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/hero-right-tower.svg" alt="hero-left-tower" width="453" height="536">
             </div>
 
             <div class="decorative-circle"></div>

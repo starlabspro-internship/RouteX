@@ -36,7 +36,7 @@ if ($smalltitle || $title || $has_non_empty_cards_boolean) :
 <section class="text-center visa-section top-bottom-small">
     <?php if ($smalltitle) : ?>
         <div class="visa-section-subtitles">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/passport-icon.svg" class="img-fluid" alt="Passport Icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" class="img-fluid" alt="Passport Icon" width="21" height="21" loading="lazy">
             <div class="subtitle visa-section-title-subtitle">
             <?php echo esc_html($smalltitle); ?>
             </div>
@@ -57,14 +57,16 @@ if ($smalltitle || $title || $has_non_empty_cards_boolean) :
                     <?php if ($card['image']) : ?>
                     <div class="col-lg-6">
                         <div class="visa-image">
-                            <?php
-                            echo wp_get_attachment_image( $card['image'], 'visa-category-img', false, [
-                                'alt' => esc_attr($card['title']),
-                                'class' => 'img-fluid',
-                                'srcset' => wp_get_attachment_image_srcset( $card['image'], 'visa-category-img' ),
-                                'sizes' => '(max-width: 600px) 100vw, 50vw' // Adjust sizes for responsive images
-                            ] );
+                            <?php 
+                            $card_image_url = wp_get_attachment_image_url($card['image'], 'visa-category-img'); 
+                            $card_image_srcset = wp_get_attachment_image_srcset($card['image'], 'visa-category-img');
                             ?>
+                            <img class="img-fluid" src="<?php echo esc_url($card_image_url); ?>" 
+                                srcset="<?php echo esc_attr($card_image_srcset); ?>" 
+                                alt="visa-category-img"
+                                sizes ="(max-width: 600px) 100vw, 50vw"
+                                loading="lazy"
+                                width="281" height="250">
                         </div>
                     </div>
                     <?php endif; ?>

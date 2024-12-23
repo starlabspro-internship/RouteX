@@ -1,4 +1,6 @@
 <?php
+load_swiper_assets();
+
 $small_title = get_sub_field('small_title');
 $title = get_sub_field('title');
 $post_category = get_sub_field('post_category');
@@ -39,7 +41,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
             <div class="recent-blogs-section-titles">
                 <?php if ($small_title) : ?>
                 <div class="recent-blogs-section-subtitles">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="subtitle-icon-3" width="21" height="21">
                         <div class="subtitle recent-blogs-subtitle">
                             <?php echo esc_html($small_title);?>
                         </div>
@@ -75,7 +77,8 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                         <img src="<?php echo esc_url($card['card_background']) ?>" 
                                              srcset="<?php echo esc_attr($card['card_background_srcset']); ?>"
                                              sizes="(max-width: 1024px) 100vw, 1024px"
-                                             alt="Recent Blog Image">
+                                             alt="Recent Blog Image"
+                                             loading="lazy">
                                     </a>
                                 </div>
                                 <?php endif; ?>
@@ -83,10 +86,10 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
                                     <?php if ($card['card_date'] || $card['card_creator']) : ?>
                                     <div class="recent-blog-item-text-meta">
                                         <?php if ($card['card_date']) : ?>
-                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt=""><?php echo esc_html($card['card_date']) ?></p></span>
+                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/date-icon.svg') ?>" alt="date-icon" width="11" height="13"><?php echo esc_html($card['card_date']) ?></p></span>
                                         <?php endif; ?>
                                         <?php if ($card['card_creator']) : ?>
-                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="">By <?php echo esc_html($card['card_creator']) ?></p></span>
+                                        <span><p><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/user-icon.svg') ?>" alt="user-icon" width="11" height="13">By <?php echo esc_html($card['card_creator']) ?></p></span>
                                         <?php endif; ?>
                                     </div>
                                     <?php endif; ?>

@@ -27,7 +27,7 @@
 				$date = get_the_date('F j, Y');
 				?>
 
-				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo $date_icon; ?>" alt="date-icon" /><?php echo $date; ?></p>
+				<p><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo $date_icon; ?>" alt="date-icon" width="11" height="13"/><?php echo $date; ?></p>
 			</div>
 		<?php endif; 
 		if ( !is_singular() ) : 
@@ -68,7 +68,7 @@
 	<?php
 	if ( !is_singular() ) : ?>
 		<div class="entry-button">
-			<a class="entry-button-link" href="<?= esc_url( get_permalink() ) ?>" rel="bookmark"><button>Learn More <img src="<?= get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="date-icon" /></button></a>
+			<a class="entry-button-link" href="<?= esc_url( get_permalink() ) ?>" rel="bookmark"><button>Learn More <img src="<?= get_template_directory_uri(); ?>/assets/icons/right-arrow-white-bigger-tale.svg" alt="right-arrow-white-bigger-tale" width="15" height="10" /></button></a>
 		</div>
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

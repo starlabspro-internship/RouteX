@@ -1,4 +1,6 @@
 <?php
+load_swiper_assets();
+
 $lines = [];
 
 if (have_rows('lines')) :

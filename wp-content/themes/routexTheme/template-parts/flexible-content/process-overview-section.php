@@ -20,7 +20,7 @@ if ($small_title || $title || has_non_empty_cards($cards)) :
             <div class="process-overview-section-titles">
                 <?php if ($small_title) : ?>
                 <div class="process-overview-section-subtitles">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/subtitle-icon-3.svg" alt="subtitle-icon-3" width="21" height="21">
                     <div class="subtitle process-overview-subtitle">
                         <?php
                             echo esc_html($small_title);

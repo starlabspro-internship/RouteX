@@ -31,7 +31,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
         <?php if ($left_image) : ?>
         <div class="<?php echo esc_attr($is_split_layout ? 'col-md-4 col-12' : 'col-12'); ?>">
             <div class="imagediv">
-                <img src="<?php echo esc_url($left_image_url); ?>" srcset="<?php echo esc_attr($left_image_srcset); ?>" class="img-fluid" alt="Left Image" />
+                <img src="<?php echo esc_url($left_image_url); ?>" srcset="<?php echo esc_attr($left_image_srcset); ?>" class="img-fluid" alt="Left Image" loading="lazy"/>
             </div>
         </div>
         <?php endif; ?>
@@ -44,7 +44,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                     <div  class="left-content">
                         <?php if ($icon) : ?>
                             <div class="circle">
-                                <img src="<?php echo esc_url($icon_url); ?>" class="icon" alt="Icon" />
+                                <img src="<?php echo esc_url($icon_url); ?>" class="icon" alt="Icon" loading="lazy"/>
                             </div>
                         <?php endif; ?>
 
@@ -73,7 +73,7 @@ if ($left_image || $icon || $top_title || $top_text || $button || $right_image |
                 <?php if ($right_image) : ?>
                     <div class="<?php echo esc_attr($is_split_layout_2 ? 'col-sm-4 col-12' : 'col-12'); ?>">
                         <div class="right-image">
-                            <img src="<?php echo esc_url($right_image_url); ?>" srcset="<?php echo esc_attr($right_image_srcset); ?>" alt=""/>
+                            <img src="<?php echo esc_url($right_image_url); ?>" srcset="<?php echo esc_attr($right_image_srcset); ?>" alt="right-image" loading="lazy"/>
                         </div>
                     </div>
                 <?php endif; ?>
