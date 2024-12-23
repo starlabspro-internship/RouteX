@@ -2309,12 +2309,15 @@ body .thumbnail-img {
     width: 1450px;
   }
   .coaching-archive-container .custom-coaching-card {
-    height: 240px;
+    height: 280px;
+    width: 320px;
   }
   .coaching-archive-container .custom-card-img {
     width: 200px;
     max-width: 200px;
-    height: auto;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .coaching-archive-container .custom-coaching-card .custom-card-body .custom-card-title {
     font-size: 18px;
