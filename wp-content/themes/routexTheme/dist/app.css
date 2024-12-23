@@ -3112,6 +3112,10 @@ body .thumbnail-img {
   display: none;
 }
 
+.hide-buttons {
+  display: block;
+}
+
 .countries-section-slider-2 {
   display: block;
 }
@@ -3319,6 +3323,9 @@ body .thumbnail-img {
   }
   .countries-section-slider-1 {
     display: block;
+  }
+  .hide-buttons {
+    display: none;
   }
   .countries-section-slider-2 {
     display: none;

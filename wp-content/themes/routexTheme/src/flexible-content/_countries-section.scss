@@ -23,6 +23,9 @@
 .countries-section-slider-1 {
 	display: none;
 }
+.hide-buttons{
+	display: block;
+}
 .countries-section-slider-2 {
 	display: block;
 }
@@ -221,6 +224,9 @@
 	}
 	.countries-section-slider-1 {
 		display: block;
+	}
+	.hide-buttons{
+		display: none;
 	}
 	.countries-section-slider-2 {
 		display: none;
