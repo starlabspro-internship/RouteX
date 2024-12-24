@@ -196,8 +196,6 @@ add_action('wp_enqueue_scripts', 'dynamic_fonts_scripts',2);
 function routextheme_scripts() {
     global $theme_version;
 
-    // wp_enqueue_script('jquery');
-
     wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], $theme_version, 'all');
     wp_enqueue_style('style');
 
@@ -813,18 +811,6 @@ function disable_recaptcha() {
 }
 add_action( 'wp_enqueue_scripts', 'disable_recaptcha', 99999 );
 
-// function disable_swiper() {
-//     global $post;
-    
-// 	if( !has_shortcode($post->post_content, 'contact-form-7') ){
-// 		wp_dequeue_script( 'google-recaptcha' );
-// 		wp_deregister_script( 'google-recaptcha' );
-// 		add_filter( 'wpcf7_load_js', '__return_false' );
-// 		add_filter( 'wpcf7_load_css', '__return_false' );
-// 	}
-// }
-// add_action( 'wp_enqueue_scripts', 'disable_swiper', 99999 );
-
 function create_team_cpt() {
     register_post_type('team-details', array(
         'labels' => array(
@@ -838,3 +824,5 @@ function create_team_cpt() {
     ));
 }
 add_action('init', 'create_team_cpt');
+
+add_filter( 'big_image_size_threshold', '__return_false' );
