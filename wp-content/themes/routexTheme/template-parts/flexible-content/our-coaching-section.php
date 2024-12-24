@@ -2,12 +2,48 @@
 $background_image = get_sub_field('background_image');
 $small_title = get_sub_field('sub_title');
 $title = get_sub_field('title');
+$author_selection = get_sub_field('choose_coaching_authors');
 
-$users = get_users([
-    'number' => 3,
-    'orderby' => 'registered',
-    'order' => 'DESC',
-]);
+if ($author_selection === 'Show authors with most posts') {
+    $users = get_users([
+        'meta_key' => 'coaching_post_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
+        'number' => 3, 
+        'meta_value_num' => 1, 
+    ]);
+
+
+} elseif ($author_selection === 'Show authors who made the latest posts') {
+    $latest_posts = get_posts([
+        'post_type' => 'coaching',
+        'posts_per_page' => 3,
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    ]);
+
+
+    $users = [];
+    foreach ($latest_posts as $post) {
+        $author = get_user_by('ID', $post->post_author);
+
+
+        if ($author && !in_array($author, $users)) {
+            $users[] = $author; 
+        }
+    }
+} else {
+    $users = get_users([
+        'number' => 5, 
+        'orderby' => 'registered',
+        'order' => 'DESC',
+    ]);
+
+}
+
+
+
 
 $cards = [];
 foreach ($users as $user) {
@@ -29,8 +65,7 @@ foreach ($users as $user) {
 
         $cards[] = [
             'name' => $user->display_name,
-            'position' => get_user_meta($user->ID, 'position', true),
-            'person_link' => $user_coaching_archive_url, 
+            'person_link' => $user_coaching_archive_url,
         ];
     }
 }
@@ -77,7 +112,6 @@ $has_non_empty_social_cards_boolean = !empty($social_media_cards);
                                 <?php foreach ($cards as $card): ?>
                                     <div class="card">
                                         <h3><?php echo esc_html($card['name']); ?></h3>
-                                        <p><?php echo esc_html($card['position']); ?></p>
                                         <a class="person-link" href="<?php echo esc_url($card['person_link']); ?>" aria-label="View coaching posts by <?php echo esc_html($card['name']); ?>">
                                             <?php echo file_get_contents(get_template_directory() . '/assets/icons/right-arrow-circle.svg'); ?>
                                         </a>

@@ -659,7 +659,8 @@ function register_coaching_post_type() {
         'supports' => ['title', 'editor', 'thumbnail'],
         'has_archive' => true,
         'rewrite' => ['slug' => 'coaching', 'with_front' => false],
-        'show_in_rest' => true,
+        'show_in_rest' => true, // Ensures REST API support
+        'show_in_admin_bar' => true, // Optional for admin bar visibility
     ];
     register_post_type('coaching', $args);
 }
@@ -681,8 +682,29 @@ function filter_coaching_by_author($query) {
 }
 add_action('pre_get_posts', 'filter_coaching_by_author');
 
+function update_coaching_post_count($post_id) {
+    if (get_post_type($post_id) !== 'coaching' || wp_is_post_revision($post_id)) {
+        return;
+    }
 
+    $author_id = get_post_field('post_author', $post_id);
 
+    $args = [
+        'author' => $author_id,
+        'post_type' => 'coaching',
+        'post_status' => 'publish',
+        'fields' => 'ids',
+        'posts_per_page' => -1, 
+    ];
+    $query = new WP_Query($args);
+    $post_count = $query->found_posts;
+
+    update_user_meta($author_id, 'coaching_post_count', $post_count);
+
+    error_log("Author {$author_id} now has {$post_count} coaching posts.");
+}
+add_action('save_post', 'update_coaching_post_count');
+add_action('delete_post', 'update_coaching_post_count');
 
 
 function register_visa_post_type() {
