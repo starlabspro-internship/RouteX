@@ -12,8 +12,6 @@ if ($author_selection === 'Show authors with most posts') {
         'number' => 3, 
         'meta_value_num' => 1, 
     ]);
-
-
 } elseif ($author_selection === 'Show authors who made the latest posts') {
     $latest_posts = get_posts([
         'post_type' => 'coaching',
@@ -23,11 +21,9 @@ if ($author_selection === 'Show authors with most posts') {
         'order' => 'DESC',
     ]);
 
-
     $users = [];
     foreach ($latest_posts as $post) {
         $author = get_user_by('ID', $post->post_author);
-
 
         if ($author && !in_array($author, $users)) {
             $users[] = $author; 
@@ -39,11 +35,11 @@ if ($author_selection === 'Show authors with most posts') {
         'orderby' => 'registered',
         'order' => 'DESC',
     ]);
-
 }
 
-
-
+if (empty($users)) {
+    // Handle case with no users, maybe show a message or default content
+}
 
 $cards = [];
 foreach ($users as $user) {
