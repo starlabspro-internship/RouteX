@@ -6,8 +6,6 @@ if (have_posts()) :
         $visa_applied = get_field('visa_applied');
         $visa_type = get_field('visa_type');
         $approval = get_field('visa_approval');
-        $link_1 = get_field('apply_link');
-        $link_2 = get_field('read_more_link');
 ?>
 
 <section class="story-single-section top-bottom-small">
@@ -20,12 +18,18 @@ if (have_posts()) :
             <p><strong style="color: var(--secondary-color);">Visa Type:&nbsp;&nbsp;</strong>  <?php echo esc_html($visa_type); ?></p>
             <p><strong style="color: var(--secondary-color);">Approval:&nbsp;&nbsp;</strong>  <?php echo esc_html($approval); ?></p>
 
+            <?php if(get_post_type_archive_link('visa') || get_post_type_archive_link('stories')) :?>
             <div class="story-buttons">
-                <a href="<?php echo esc_url($link_1); ?>" class="apply-button">Apply for a visa
+                <?php if(get_post_type_archive_link('visa')) :?>
+                <a href="<?php echo esc_url(get_post_type_archive_link('visa')); ?>" class="apply-button">Apply for a visa
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/right-arrow-green.svg" alt="" class="default-img">
                 </a> 
-                <a href="<?php echo esc_url($link_2); ?>" class="read-more-button">Read More Stories</a>
-            </a>                          
+                <?php endif ?> 
+                <?php if(get_post_type_archive_link('stories')) :?>
+                <a href="<?php echo esc_url(get_post_type_archive_link('stories')); ?>" class="read-more-button">Read More Stories</a>
+                <?php endif ?>
+            </a>      
+            <?php endif ?>                  
         </div>
     </div>
     
