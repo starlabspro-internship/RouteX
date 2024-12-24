@@ -19,7 +19,9 @@ $cards = [];
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         $cards[] = [
-            'card_small_image' => get_the_post_thumbnail_url(get_the_ID(), 'our-countries-small-img'),
+            'card_small_image' => get_field('small_image') 
+            ? wp_get_attachment_image_url(get_field('small_image'), 'our-countries-small-img') 
+            : get_the_post_thumbnail_url(get_the_ID(), 'our-countries-small-img'),
             'card_background' => get_the_post_thumbnail_url(get_the_ID(), 'our-countries-large-img'),
             'card_title' => get_the_title(),
             'card_text' => substr(get_the_excerpt(), 0, 70) . '...',
