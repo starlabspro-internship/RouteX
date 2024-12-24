@@ -825,4 +825,6 @@ function create_team_cpt() {
 }
 add_action('init', 'create_team_cpt');
 
-add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter('wp_image_editors', function($editors) {
+    return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
+});
