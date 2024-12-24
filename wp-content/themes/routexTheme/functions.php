@@ -151,6 +151,7 @@ add_action('wp_head', function() {
 
             $image_id = get_sub_field('primary_image');
             if ($image_id) {
+                $image_src = wp_get_attachment_image_url($image_id, 'hero-img');
                 $image_srcset = wp_get_attachment_image_srcset($image_id, 'hero-img');
                 
                 $srcset_items = explode(',', $image_srcset);
@@ -172,7 +173,7 @@ add_action('wp_head', function() {
                 }
 
                 if ($smallest_image) {
-                    echo '<link rel="preload" fetchpriority="high" as="image" href="' . esc_url($smallest_image['url']) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
+                    echo '<link rel="preload" fetchpriority="high" as="image" href="' . esc_url($image_src) . '" imagesrcset="' . esc_attr($image_srcset) . '">';
                 }
 
                 break;
