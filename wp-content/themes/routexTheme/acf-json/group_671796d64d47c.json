@@ -887,6 +887,32 @@
                             "min": "",
                             "max": "",
                             "button_label": "Add Row"
+                        },
+                        {
+                            "key": "field_676aa90f197ce",
+                            "label": "Choose Coaching Authors",
+                            "name": "choose_coaching_authors",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Show authors with most posts": "Show authors with most posts",
+                                "Show authors who made the latest posts": "Show authors who made the latest posts"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
