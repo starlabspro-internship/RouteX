@@ -3893,9 +3893,15 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
 .testimonial-section-container .testimonial-icon .author-div {
   width: 70%;
   padding-left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-block;
+}
+.testimonial-section-container .testimonial-icon .author-div a {
+  text-decoration: none;
+  display: inline-block;
+}
+.testimonial-section-container .testimonial-icon .author-div a:hover {
+  -webkit-text-decoration: 2px solid var(--primary-color) underline;
+          text-decoration: 2px solid var(--primary-color) underline;
 }
 .testimonial-section-container .testimonial-icon .author-name {
   margin: 0;

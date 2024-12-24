@@ -2,21 +2,32 @@
 load_swiper_assets();
 
 $testimonial_left_image = get_sub_field('primary_image');
-$testimonial_cards = [];
-$card_count = 0;
 
-if (have_rows('testimonial_card')) {
-    while (have_rows('testimonial_card')): the_row();
-        $card_count++;
+$args = [
+    'post_type' => 'stories',
+    'posts_per_page' => 3,
+    'orderby' => 'date', 
+    'order' => 'DESC',
+];
+
+$query = new WP_Query($args);
+
+$testimonial_cards = [];
+
+if ($query->have_posts()) :
+    while ($query->have_posts()) : $query->the_post();
         $testimonial_cards[] = [
-            'text' => esc_html(get_sub_field('text')),
-            'icon' => get_sub_field('icon'),
-            'title' => esc_attr(get_sub_field('title')),
-            'name' => esc_html(get_sub_field('name')),
-            'position' => esc_html(get_sub_field('position')),
+            'icon' => get_field('person_story_icon'),
+            'title' => get_the_title(),
+            'text' => substr(get_the_excerpt(), 0, 215) . '...',
+            'link' => get_permalink(),
+            'name' => esc_html(get_field('person_story_name')),
+            'position' => esc_html(get_field('person_story_position')),
         ];
     endwhile;
-}
+endif;
+
+wp_reset_postdata();
 
 $has_non_empty_cards_boolean = has_non_empty_cards($testimonial_cards);
 
@@ -77,7 +88,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
                                             <?php if ($card['name'] || $card['position']): ?>
                                             <div class="author-div">
                                                 <?php if ($card['name']): ?>
-                                                <p class="author-name"><?php echo $card['name']; ?></p>
+                                                <a href="<?php echo esc_url($card['link']) ?>"><p class="author-name"><?php echo $card['name']; ?></p></a>
                                                 <?php endif; ?>
                                                 <?php if ($card['position']): ?>
                                                 <p class="author-position"><?php echo $card['position']; ?></p>

@@ -97,9 +97,16 @@
         .author-div {
             width: 70%;
             padding-left: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: inline-block;
+
+            a{
+                text-decoration: none;
+                display: inline-block;
+                &:hover{
+                    text-decoration:2px solid var(--primary-color) underline;
+
+                }
+            }
         }
         .author-name {
             margin: 0;
