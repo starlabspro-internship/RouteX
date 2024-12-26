@@ -5,7 +5,7 @@
   RouteX is a fully customizable WordPress theme designed for managing and showcasing products, ideal for businesses and individuals seeking a professional online presence.
 
 - **Bootstrap 5.x Framework**:  
-  Built with the latest Bootstrap framework, RouteX ensures responsive, mobile-first design for seamless browsing across all devices.
+  Built with the latest Bootstrap Grid framework, RouteX ensures responsive, mobile-first design for seamless browsing across all devices.
 
 - **Swiper Integration**:  
   Includes the Swiper library for touch-friendly sliders and carousels, making user interactions smooth and engaging.
@@ -18,6 +18,39 @@
 
 - **Starter Theme - Underscores**:  
   Built on the lightweight Underscores theme, providing a solid foundation for custom WordPress development.
+
+- **Advanced Custom Fields PRO**:  
+  Customize WordPress with powerful, professional and intuitive fields.
+  
+- **Classic Editor**:  
+  Enables the WordPress classic editor and the old-style Edit Post screen with TinyMCE, Meta Boxes, etc. Supports the older plugins that extend this screen.
+
+- **Contact Form 7**:  
+  Just another contact form plugin. Simple but flexible.
+
+- **Converter for Media**:  
+  Speed up your website by using our WebP & AVIF Converter (formerly WebP Converter for Media). Serve WebP and AVIF images instead of standard formats JPEG, PNG and GIF now!
+
+- **EWWW Image Optimizer**:  
+  Smaller Images, Faster Sites, Happier Visitors. Comprehensive image optimization that doesn't require a degree in rocket science.
+
+- **MC4WP: Mailchimp for WordPress**:  
+  MC4WP: Mailchimp for WordPress by ibericode lets you easily add various sign-up methods to your site, helping you grow your email list. It integrates seamlessly with WordPress forms and offers a user-friendly interface.
+
+- **Regenerate Thumbnails**:  
+  Regenerate the thumbnails for one or more of your image uploads. Useful when changing their sizes or your theme.
+
+- **SVG Support**:  
+  Upload SVG files to the Media Library and render SVG files inline for direct styling/animation of an SVG's internal elements using CSS/JS.
+
+- **WP Fastest Cache**:  
+  WP Fastest Cache is a WordPress plugin that boosts your website speed by creating static HTML files, compressing files, and leveraging browser caching. It's user-friendly and helps improve your site's performance and SEO.
+
+- **WP Mail SMTP**:  
+  Reconfigures the wp_mail() function to use Gmail/Mailgun/SendGrid/SMTP instead of the default mail() and creates an options page to manage the settings.
+
+- **Yoast SEO**:  
+  The first true all-in-one SEO solution for WordPress, including on-page content analysis, XML sitemaps and much more.
 
 - **Fully Responsive and Retina Ready**:  
   RouteX is optimized for all screen sizes and devices, offering a flawless experience on mobile, desktop, and retina displays.
