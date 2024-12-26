@@ -13,7 +13,6 @@ $is_split_layout = $primary_image && ($text_area_first_sector || $button_first_s
 
 ?>
 <section class="hero-section">
-    HELLOOO
     <div class="container">
         <div class="decorative-icon left-tower">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/hero-left-tower.svg"
