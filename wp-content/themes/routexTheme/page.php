@@ -77,6 +77,10 @@ if (have_rows('sections')) :
             get_template_part('template-parts/flexible-content/line-section'); 
         endif;
 
+        if (get_row_layout() == 'our-videos') :
+            get_template_part('template-parts/flexible-content/our_videos'); 
+        endif;
+
     endwhile; 
 ?>
 </main>

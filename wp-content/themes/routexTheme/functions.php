@@ -220,6 +220,10 @@ function load_swiper_assets() {
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 }
+function get_youtube_video_id($url) {
+    preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+    return $matches[1] ?? '';
+}
 
 function enqueue_critical_css() {
     $header_css_path = get_template_directory() . '/dist/header.css';
