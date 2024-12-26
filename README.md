@@ -85,4 +85,22 @@
 #### 10. **Changing Theme Settings**
    - Go to Theme Settings in the left menu where you have options to edit Global Settings, Header Settings, Footer Settings, and Company Settings.
 
-This step-by-step guide ensures you can easily manage and update the RouteX project while leveraging its powerful features.
+#### 11. **Changing WP Fastest Cache Settings**
+   - Go to WP Fastest Cache in the left menu where you have options to edit the cache, delete it and other options.
+
+#### 12. **Changing Yoast SEO Settings**
+   - Go to Yoast SEO in the left menu where you have options to edit the yoast settings, to improve the SEO.
+
+#### 13. **Acivate Mailchimp**
+   - Go to MC4WP in the left menu where you have the option to activate mailchimp and personalise it more.
+
+#### 14. **Edit WP Mail SMTP**
+   - Go to WP Mail SMTP in the left menu where you have the option to edit WP Mail SMTP and personalise it more.
+
+#### 15. **Use EWWW Image Optimizer**
+   - Go to Tools>EWWW Image Optimizer in the left menu where you have the option to use EWWW Image Optimizer features.
+
+#### 14. **Edit Converter for Media**
+   - Go to Settings>Converter for Media in the left menu where you have the option to edit Converter for Media and personalise it more.
+     
+This guide ensures you can easily manage and update the RouteX project while leveraging its powerful features.
