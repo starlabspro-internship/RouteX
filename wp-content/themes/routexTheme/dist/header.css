@@ -287,8 +287,8 @@
   color: var(--primary-color);
 }
 
-.menu-item-object-custom:hover {
-  cursor: alias;
+#primary-menu .menu-item-object-custom a:hover {
+  cursor: default;
 }
 
 @media (min-width: 576px) {

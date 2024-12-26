@@ -286,9 +286,11 @@
 .appointment-button:visited {
     color: var(--primary-color);
 }
-.menu-item-object-custom{
-    &:hover{
-        cursor:alias;
+#primary-menu .menu-item-object-custom{
+    a{
+        &:hover{
+        cursor:default;
+        }
     }
 }
 @include media-sm {
