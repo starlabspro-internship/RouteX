@@ -68,37 +68,21 @@
 #### 5. **Adding Posts**  
    - Navigate to **Posts** in the left menu and click **Add New**.  
    - Enter the post content, select a **Featured Image**, and assign it to the **Blogs** category to ensure it appears in the blogs section.  
-   - Add or create **Tags** to organize your posts.  
+   - Add or create **Tags** to organize your posts.
+     
+#### 6. **Adding Stories, Visas, Countries, Team Members and Coaching Items**
+   - Navigate to the left menu and click **Add New**.
 
-#### 6. **Adding New Stories**  
-   - Go to **Stories** in the left menu.  
-   - Click **Add New** and fill in the fields for your story.  
-
-#### 7. **Adding New Visas**  
-   - Navigate to **Visas** in the left menu.  
-   - Click **Add New** and complete the necessary fields.  
-
-#### 8. **Adding New Countries**  
-   - Go to **Countries** in the left menu.  
-   - Click **Add New** and fill out the required details.  
-
-#### 9. **Adding New Coaching Items**  
-   - Navigate to **Coaching** in the left menu.  
-   - Click **Add New** and input the necessary information.
-
-#### 10. **Adding New Team Members**
-   - Go to the left menu Team Members and fill in the fields.
-
-#### 11. **Making Changes to the Contact Form**
+#### 7. **Making Changes to the Contact Form**
    - Go to the left menu Contact Form and edit.
 
-#### 12. **Changing Menus of Header and Footer**
+#### 8. **Changing Menus of Header and Footer**
    - Go to Appearance > Menu then edit your menus or create a new one.
 
-#### 13. **Regenerating Thumbnails**
+#### 9. **Regenerating Thumbnails**
    - Go to Tools in the left menu and click Regenerate Thumbnails.
 
-#### 14. **Changing Theme Settings**
+#### 10. **Changing Theme Settings**
    - Go to Theme Settings in the left menu where you have options to edit Global Settings, Header Settings, Footer Settings, and Company Settings.
 
 This step-by-step guide ensures you can easily manage and update the RouteX project while leveraging its powerful features.
