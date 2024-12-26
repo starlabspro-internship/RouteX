@@ -31,7 +31,7 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
                 </div>
                 <?php endif; ?>
                 <?php if ($title) : ?>
-                <div class="title coaching-title">
+                <div class="title coaching-titlee">
                     <?php echo esc_html($title); ?>
                 </div>
                 <?php endif; ?>

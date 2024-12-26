@@ -121,7 +121,7 @@ $has_non_empty_social_cards_boolean = !empty($social_media_cards);
                         <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-4 col-md-5 col-12' : 'col-12'); ?>">
                             <?php foreach ($social_media_cards as $social_card): ?>
                                 <?php $card_bg_image_url = wp_get_attachment_image_url($social_card['card_background_image'], 'our-coaching-img'); ?>
-                                <div class="position-relative bg-image" style="background-image: url('<?php echo esc_url($card_bg_image_url); ?>'); background-size: cover; background-position: center;">
+                                <div class="position-relative bg-image <?php echo esc_attr($is_split_layout ? '' : 'bg-image-full'); ?>" style="background-image: url('<?php echo esc_url($card_bg_image_url); ?>'); background-size: cover; background-position: center;">
                                     <div class="overlay-content text-center social-media-links-div">
                                         <?php if (!empty($social_card['links'])): ?>
                                             <?php foreach (['twitter', 'facebook', 'instagram', 'linkedin'] as $platform): ?>

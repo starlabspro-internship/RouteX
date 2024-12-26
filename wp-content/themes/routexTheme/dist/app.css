@@ -614,6 +614,16 @@ select {
   margin-bottom: 1.5em;
 }
 
+*::-moz-selection {
+  background-color: var(--light-color);
+  color: var(--accent-color);
+}
+
+*::selection {
+  background-color: var(--light-color);
+  color: var(--accent-color);
+}
+
 .footer__area {
   padding-top: 60px;
   background-color: var(--primary-color);
@@ -3374,7 +3384,7 @@ body .thumbnail-img {
   margin-bottom: 60px;
 }
 
-.coaching-title {
+.coaching-titlee {
   color: var(--secondary-color);
 }
 
@@ -4179,6 +4189,10 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   }
   .our-coaching-section-container .bg-image {
     height: 100%;
+    margin-top: 0;
+  }
+  .our-coaching-section-container .bg-image-full {
+    height: 400px;
     margin-top: 0;
   }
 }
