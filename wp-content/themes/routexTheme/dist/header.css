@@ -140,11 +140,9 @@
 }
 
 .submenu-arrow {
-  width: 16px;
-  height: 16px;
-  margin-left: 10px;
-  padding-top: 6px;
+  margin-left: 5px;
   transition: transform 0.3s ease;
+  display: inline-flex;
 }
 
 .main-navigation.active,
@@ -185,6 +183,9 @@
 #primary-menu .menu-item.active > a {
   color: var(--accent-color);
 }
+#primary-menu .menu-item.active > a .submenu-arrow svg path {
+  fill: var(--accent-color);
+}
 
 #primary-menu .menu-item .sub-menu li.active > a {
   color: var(--accent-color);
@@ -218,6 +219,9 @@
 
 #primary-menu li a:hover {
   color: var(--accent-color);
+}
+#primary-menu li a:hover .submenu-arrow svg path {
+  fill: var(--accent-color);
 }
 
 .button-div {
@@ -289,6 +293,9 @@
 
 #primary-menu .menu-item-object-custom a:hover {
   cursor: default;
+}
+#primary-menu .menu-item-object-custom ul li a:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 576px) {

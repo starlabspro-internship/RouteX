@@ -139,11 +139,9 @@
 }
 
 .submenu-arrow {
-    width: 16px;
-    height: 16px;
-    margin-left: 10px;
-    padding-top: 6px;
+    margin-left: 5px;
     transition: transform 0.3s ease;
+    display: inline-flex;
 }
 
 
@@ -184,6 +182,11 @@
 
 #primary-menu .menu-item.active > a {
     color: var(--accent-color);
+    .submenu-arrow {
+        svg path{
+            fill: var(--accent-color);
+        }
+    }   
 }
 
 #primary-menu .menu-item .sub-menu li.active > a{
@@ -218,6 +221,11 @@
 
 #primary-menu li a:hover {
     color: var(--accent-color);
+    .submenu-arrow {
+        svg path{
+            fill: var(--accent-color);
+        }
+    }   
 }
 
 .button-div {
@@ -290,6 +298,15 @@
     a{
         &:hover{
         cursor:default;
+        }
+    }
+    ul {
+        li{
+            a{
+                &:hover{
+                    cursor:pointer;
+                }
+            }
         }
     }
 }

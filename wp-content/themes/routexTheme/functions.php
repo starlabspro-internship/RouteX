@@ -356,7 +356,9 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
             }
         }
 
-        $arrow = $has_children ? '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Arrow" class="submenu-arrow" />' : '';
+        // $arrow = $has_children ? '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Arrow" class="submenu-arrow" />' : '';
+
+        $arrow = $has_children ? '<div class="submenu-arrow">' . file_get_contents(get_template_directory() . '/assets/icons/downwards-arrow-no-tail.svg') . '</div>' : '';
 
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
