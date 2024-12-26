@@ -287,6 +287,10 @@
   color: var(--primary-color);
 }
 
+.menu-item-object-custom:hover {
+  cursor: alias;
+}
+
 @media (min-width: 576px) {
   .appointment-button {
     display: flex;

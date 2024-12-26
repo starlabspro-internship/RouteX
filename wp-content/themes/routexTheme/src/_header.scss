@@ -286,7 +286,11 @@
 .appointment-button:visited {
     color: var(--primary-color);
 }
-
+.menu-item-object-custom{
+    &:hover{
+        cursor:alias;
+    }
+}
 @include media-sm {
     .appointment-button {
         display: flex;
