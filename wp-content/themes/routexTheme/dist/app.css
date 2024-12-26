@@ -3959,6 +3959,12 @@ body.dark-mode .coaching-section-button:hover img.arrow-icon {
   .testimonial-section-container .testimonial-left img {
     position: absolute;
   }
+  .testimonial-section-container .full-testimonial-image {
+    height: 730px;
+  }
+  .testimonial-section-container .full-testimonial-image img {
+    position: absolute;
+  }
   .testimonial-section-container .testimonial__content-button-border::before {
     width: 250px;
   }

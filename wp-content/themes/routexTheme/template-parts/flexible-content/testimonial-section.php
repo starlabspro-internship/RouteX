@@ -2,6 +2,10 @@
 load_swiper_assets();
 
 $testimonial_left_image = get_sub_field('primary_image');
+$show_storie_posts = get_sub_field('show_storie_posts');
+$has_non_empty_cards_boolean = false;
+
+if ($show_storie_posts) :
 
 $args = [
     'post_type' => 'stories',
@@ -31,6 +35,8 @@ wp_reset_postdata();
 
 $has_non_empty_cards_boolean = has_non_empty_cards($testimonial_cards);
 
+endif;
+
 if ($testimonial_left_image || $has_non_empty_cards_boolean) :
     $is_split_layout = $testimonial_left_image && $has_non_empty_cards_boolean;
 ?>
@@ -40,7 +46,7 @@ if ($testimonial_left_image || $has_non_empty_cards_boolean) :
         <div class="row">
             <?php if ($testimonial_left_image): ?>
             <div class="<?php echo esc_attr($is_split_layout ? 'col-lg-5' : 'col-12'); ?>">
-                <div class="testimonial-left">
+                <div class="testimonial-left <?php echo esc_attr($is_split_layout ? '' : 'full-testimonial-image'); ?>">
                     <?php
                     $testimonial_left_image_srcset = wp_get_attachment_image_srcset($testimonial_left_image, 'testimonail-large-img');
                     $testimonial_left_image_sizes = '(max-width: 768px) 100vw, 50vw';

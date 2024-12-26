@@ -165,6 +165,12 @@
                 position: absolute;
             }
         }
+        .full-testimonial-image{
+            height: 730px;
+            img{
+                position: absolute;
+            }
+        }
         .testimonial__content-button-border {
             &::before {
                 width: 250px;
