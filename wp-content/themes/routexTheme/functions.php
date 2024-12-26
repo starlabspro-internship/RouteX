@@ -360,8 +360,6 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
             }
         }
 
-        // $arrow = $has_children ? '<img src="' . get_template_directory_uri() . '/assets/icons/downwards-arrow-no-tail.svg" alt="Arrow" class="submenu-arrow" />' : '';
-
         $arrow = $has_children ? '<div class="submenu-arrow">' . file_get_contents(get_template_directory() . '/assets/icons/downwards-arrow-no-tail.svg') . '</div>' : '';
 
         $item_output = $args->before;
@@ -723,7 +721,7 @@ function register_visa_post_type() {
         'all_items'          => __('All Visas', 'routexTheme'),
         'add_new_item'       => __('Add New Visa', 'routexTheme'),
         'edit_item'          => __('Edit Visa', 'routexTheme'),
-        'view_item'          => __('View Vias', 'routexTheme'),
+        'view_item'          => __('View Visa', 'routexTheme'),
         'search_items'       => __('Search Visas', 'routexTheme'),
         'not_found'          => __('No Visas Found', 'routexTheme'),
     );
