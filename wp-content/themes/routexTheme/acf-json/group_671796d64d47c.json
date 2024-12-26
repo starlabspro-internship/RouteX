@@ -691,6 +691,88 @@
                             "append": ""
                         },
                         {
+                            "key": "field_672a15de66a56",
+                            "label": "Cards",
+                            "name": "cards",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 3,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_672a15ef66a57",
+                                    "label": "Name",
+                                    "name": "name",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_672a15de66a56"
+                                },
+                                {
+                                    "key": "field_672a15f566a58",
+                                    "label": "Position",
+                                    "name": "position",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_672a15de66a56"
+                                },
+                                {
+                                    "key": "field_672a229289f0c",
+                                    "label": "Person_Link",
+                                    "name": "person_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "parent_repeater": "field_672a15de66a56"
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_672a162066a5a",
                             "label": "Social Media Card",
                             "name": "social_media_card",
@@ -1394,7 +1476,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_6718c285ec86c",
-                                    "label": "",
+                                    "label": "logo",
                                     "name": "logos_image",
                                     "aria-label": "",
                                     "type": "image",
@@ -1997,9 +2079,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_type",
                 "operator": "==",
-                "value": "page"
+                "value": "top_level"
             }
         ]
     ],

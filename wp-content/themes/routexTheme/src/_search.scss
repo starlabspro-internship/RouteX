@@ -49,3 +49,15 @@
 		width: 100%;
 	}
 }
+.search-no-results{
+	.no-results{
+		.page-header{
+			text-align: center;
+		}
+		.page-content{
+			p{
+				text-align: center;
+			}
+		}
+	}
+}

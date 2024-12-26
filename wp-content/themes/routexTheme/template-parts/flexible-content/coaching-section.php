@@ -53,7 +53,7 @@ if ($title || $small_title || $coaching_posts->have_posts()) :
         <?php if ($coaching_posts->have_posts()) : ?>
         <div class="">
             <div class="swiper coaching-section-swiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper align-items-start">
                     <?php
                     while ($coaching_posts->have_posts()) : $coaching_posts->the_post();
                         $post_id = get_the_ID();
