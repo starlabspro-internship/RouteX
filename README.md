@@ -84,6 +84,21 @@
 
 #### 9. **Adding New Coaching Items**  
    - Navigate to **Coaching** in the left menu.  
-   - Click **Add New** and input the necessary information.  
+   - Click **Add New** and input the necessary information.
+
+#### 10. **Adding New Team Members**
+   - Go to the left menu Team Members and fill in the fields.
+
+#### 11. **Making Changes to the Contact Form**
+   - Go to the left menu Contact Form and edit.
+
+#### 12. **Changing Menus of Header and Footer**
+   - Go to Appearance > Menu then edit your menus or create a new one.
+
+#### 13. **Regenerating Thumbnails**
+   - Go to Tools in the left menu and click Regenerate Thumbnails.
+
+#### 14. **Changing Theme Settings**
+   - Go to Theme Settings in the left menu where you have options to edit Global Settings, Header Settings, Footer Settings, and Company Settings.
 
 This step-by-step guide ensures you can easily manage and update the RouteX project while leveraging its powerful features.
