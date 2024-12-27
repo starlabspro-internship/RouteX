@@ -1476,7 +1476,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_6718c285ec86c",
-                                    "label": "logo",
+                                    "label": "",
                                     "name": "logos_image",
                                     "aria-label": "",
                                     "type": "image",
@@ -2498,9 +2498,9 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "post_type",
                 "operator": "==",
-                "value": "top_level"
+                "value": "page"
             }
         ]
     ],
@@ -2513,5 +2513,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735223667
+    "modified": 1735294486
 }
