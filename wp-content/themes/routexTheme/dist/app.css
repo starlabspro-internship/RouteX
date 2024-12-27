@@ -1945,7 +1945,7 @@ body .thumbnail-img {
 .coaching-title {
   font-size: 36px;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin-bottom: 30px;
   line-height: 45px;
 }
