@@ -7,24 +7,34 @@ require_once(ABSPATH . '/wp-load.php');
 
 header("Content-type: text/css");
 
-$brand_colors = get_field('brand_colors', 'options');
-$dark_mode = get_field('dark_mode', 'options') ?: false;  
+// $brand_colors = get_field('brand_colors', 'options');
+// $dark_mode = get_field('dark_mode', 'options') ?: false;  
 
-$primary_color = esc_attr($brand_colors['primary']);
-$secondary_color = esc_attr($brand_colors['secondary']);
-$base_color = esc_attr($brand_colors['base']);
-$contrast_color = esc_attr($brand_colors['contrast']);
-$light_color = esc_attr($brand_colors['light']);
-$dark_color = esc_attr($brand_colors['dark']);
-$accent_color = esc_attr($brand_colors['accent']);
-$negatives_color = esc_attr($brand_colors['negatives']);
-$neutrals_color = esc_attr($brand_colors['neutrals']);
-$positives_color = esc_attr($brand_colors['positives']);
-$extra_color = esc_attr($brand_colors['extra_color']);
+// $primary_color = esc_attr($brand_colors['primary']);
+// $secondary_color = esc_attr($brand_colors['secondary']);
+// $base_color = esc_attr($brand_colors['base']);
+// $contrast_color = esc_attr($brand_colors['contrast']);
+// $light_color = esc_attr($brand_colors['light']);
+// $dark_color = esc_attr($brand_colors['dark']);
+// $accent_color = esc_attr($brand_colors['accent']);
+// $negatives_color = esc_attr($brand_colors['negatives']);
+// $neutrals_color = esc_attr($brand_colors['neutrals']);
+// $positives_color = esc_attr($brand_colors['positives']);
+// $extra_color = esc_attr($brand_colors['extra_color']);
 
+$primary_color = "#ffffff";
+$secondary_color = "#034833";
+$base_color = "#727272";
+$contrast_color = "#f1f5eb";
+$light_color = "#e3dbd8";
+$dark_color = "#111214";
+$accent_color = "#83cd20";
+$negatives_color = "#dc3232";
+$neutrals_color = "#20b0cd";
+$positives_color = "#046a14";
+$extra_color = "#d5dfd4";
 ?>
 
-/* Dark mode styles */
 :root {
   --primary-color: <?php echo $primary_color; ?>;
   --secondary-color: <?php echo $secondary_color; ?>;
@@ -39,6 +49,7 @@ $extra_color = esc_attr($brand_colors['extra_color']);
   --extra-color: <?php echo $extra_color; ?>;
 }
 
+/* Dark mode styles */
 body.dark-mode {
   --primary-color: <?php echo $positives_color; ?>;
   --secondary-color: <?php echo $accent_color; ?>;
